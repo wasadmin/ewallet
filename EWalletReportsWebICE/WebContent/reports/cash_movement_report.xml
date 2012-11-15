@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cash_movement_report" pageWidth="842" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="840" columnSpacing="5" leftMargin="1" rightMargin="1" topMargin="20" bottomMargin="20" scriptletClass="zw.co.esolutions.ewallet.scriptlets.GenericScriptlet">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="103"/>
+	<property name="ireport.y" value="1016"/>
+	<import value="java.sql.Connection"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="zw.co.esolutions.ewallet.enums.TransactionType"/>
+	<import value="java.sql.Timestamp"/>
+	<import value="java.util.Date"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<template><![CDATA["/opt/ewallet/globals/ReportStyles.jrtx"]]></template>
+	<parameter name="reportTitle" class="java.lang.String"/>
+	<parameter name="pageHeader" class="java.lang.String"/>
+	<parameter name="fromDate" class="java.sql.Timestamp"/>
+	<parameter name="toDate" class="java.sql.Timestamp"/>
+	<parameter name="schema" class="java.lang.String"/>
+	<parameter name="connection_tauttee" class="java.sql.Connection"/>
+	<parameter name="SubreportParameter" class="net.sf.jasperreports.engine.JasperReport" isForPrompting="false"/>
+	<field name="sourceMobile" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sourceAccountNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="targetMobile" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="destinationAccountNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="utilityAccount" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="transactionType" class="java.lang.Object">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dateCreated" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valueDate" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="profileId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.Object">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="responseCode" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="narrative" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="messageId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="branchId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="transactionLocationId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fromBankId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="tellerAmount" class="java.lang.Long" incrementType="Group" incrementGroup="TellerGroup" calculation="Sum">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<variable name="v_tellerTotal" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<variable name="v_tellerCount" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup" calculation="Count">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<variable name="v_depositTotal" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<variable name="v_depositCount" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup"/>
+	<variable name="v_dateCreated" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.dateCreated()]]></variableExpression>
+	</variable>
+	<variable name="v_valueDate" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.valueDate()]]></variableExpression>
+	</variable>
+	<variable name="v_responseCode" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.responseCode()]]></variableExpression>
+	</variable>
+	<variable name="v_sourceMobile" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.sourceMobile()]]></variableExpression>
+	</variable>
+	<variable name="v_targetMobile" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.targetMobile()]]></variableExpression>
+	</variable>
+	<variable name="v_transactionType" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.transactionType()]]></variableExpression>
+	</variable>
+	<variable name="v_status" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.status()]]></variableExpression>
+	</variable>
+	<variable name="v_profileId" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.profileId()]]></variableExpression>
+	</variable>
+	<variable name="tellerDepositSum" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("DEPOSIT")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="tellerDepositCount" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("DEPOSIT")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="tellerWithSum" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="tellerWithNonSum" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL_NONHOLDER")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="tellerWithCount" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="tellerWithNonCount" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL_NONHOLDER")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="tellerCount" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup">
+		<variableExpression><![CDATA[$V{tellerDepositCount}.longValue() + $V{tellerWithCount}.longValue() + $V{tellerWithNonCount}.longValue()]]></variableExpression>
+	</variable>
+	<variable name="tellerSum" class="java.lang.Long" resetType="Group" resetGroup="TellerGroup">
+		<variableExpression><![CDATA[$V{tellerDepositSum}.longValue() - $V{tellerWithSum}.longValue() - $V{tellerWithNonSum}.longValue()]]></variableExpression>
+	</variable>
+	<variable name="branchDepositSum" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("DEPOSIT")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="branchDepositCount" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("DEPOSIT")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="branchWithSum" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="branchWithNonSum" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL_NONHOLDER")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="branchWithCount" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="branchWithNonCount" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL_NONHOLDER")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="branchCount" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup">
+		<variableExpression><![CDATA[$V{branchDepositCount}.longValue() + $V{branchWithCount}.longValue() + $V{branchWithNonCount}.longValue()]]></variableExpression>
+	</variable>
+	<variable name="branchSum" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup">
+		<variableExpression><![CDATA[$V{branchDepositSum}.longValue() - $V{branchWithSum}.longValue() - $V{branchWithNonSum}.longValue()]]></variableExpression>
+	</variable>
+	
+	<variable name="bankDepositSum" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("DEPOSIT")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="bankDepositCount" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("DEPOSIT")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bankWithSum" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="bankWithNonSum" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL_NONHOLDER")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="bankWithCount" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bankWithNonCount" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL_NONHOLDER")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bankCount" class="java.lang.Long" resetType="Group" resetGroup="BankGroup">
+		<variableExpression><![CDATA[$V{bankDepositCount}.longValue() + $V{bankWithCount}.longValue() + $V{bankWithNonCount}.longValue()]]></variableExpression>
+	</variable>
+	<variable name="bankSum" class="java.lang.Long" resetType="Group" resetGroup="BankGroup">
+		<variableExpression><![CDATA[$V{bankDepositSum}.longValue() - $V{bankWithSum}.longValue() - $V{bankWithNonSum}.longValue()]]></variableExpression>
+	</variable>
+	
+	<variable name="depositSum" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("DEPOSIT")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="depositCount" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("DEPOSIT")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="withSum" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="withNonSum" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL_NONHOLDER")) ? $F{amount} : 0]]></variableExpression>
+	</variable>
+	<variable name="withCount" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="withNonCount" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{transactionType}.toString().equals(new String("WITHDRAWAL_NONHOLDER")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="grandCount" class="java.lang.Long">
+		<variableExpression><![CDATA[$V{depositCount}.longValue() + $V{withCount}.longValue() + $V{withNonCount}.longValue()]]></variableExpression>
+	</variable>
+	<variable name="grandSum" class="java.lang.Long">
+		<variableExpression><![CDATA[$V{depositSum}.longValue() - $V{withSum}.longValue() - $V{withNonSum}.longValue()]]></variableExpression>
+	</variable>
+	<group name="BankGroup">
+		<groupExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{fromBankId})]]></groupExpression>
+		<groupHeader>
+			<band height="40" splitType="Stretch">
+				<textField isBlankWhenNull="true">
+					<reportElement x="51" y="10" width="650" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="14" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{fromBankId})]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="346" splitType="Stretch">
+				<staticText>
+					<reportElement x="1" y="304" width="132" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true" isUnderline="false"/>
+					</textElement>
+					<text><![CDATA[END BANK     :]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="133" y="304" width="708" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="14" isBold="true" isUnderline="true" isStrikeThrough="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{fromBankId})]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="100" y="142" width="740" height="140"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="181" y="182" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[TRANSACTION]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="381" y="182" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL TRANSACTIONS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="581" y="182" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL AMOUNT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="181" y="202" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[DEPOSIT]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="381" y="202" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bankDepositCount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="581" y="202" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{bankDepositSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="181" y="222" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[HOLDER WITHDRAWAL]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="381" y="222" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bankWithCount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="581" y="222" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["-"+(new DecimalFormat("#,##0.00")).format(new Double($V{bankWithSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="181" y="242" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[NON-HOLDER WITHDRAWAL ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="381" y="242" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bankWithNonCount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="581" y="242" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["-"+(new DecimalFormat("#,##0.00")).format(new Double($V{bankWithNonSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="181" y="262" width="200" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ TOTALS ]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="101" y="142" width="740" height="40"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="16" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{fromBankId})+" Transactions"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="381" y="262" width="200" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bankCount}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="581" y="262" width="200" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{bankSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="BranchGroup">
+		<groupExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{transactionLocationId})]]></groupExpression>
+		<groupHeader>
+			<band height="40" splitType="Stretch">
+				<staticText>
+					<reportElement x="0" y="10" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[BRANCH:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="201" y="10" width="639" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{transactionLocationId})]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="357" splitType="Stretch">
+				<staticText>
+					<reportElement x="1" y="336" width="170" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[END BRANCH:]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="100" y="99" width="740" height="140"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="170" y="139" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[TRANSACTION]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="370" y="139" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL TRANSACTIONS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="570" y="139" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL AMOUNT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="170" y="159" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[DEPOSIT]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="370" y="159" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{branchDepositCount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="570" y="159" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{branchDepositSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="170" y="179" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[HOLDER WITHDRAWAL]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="370" y="179" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{branchWithCount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="570" y="179" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["-"+(new DecimalFormat("#,##0.00")).format(new Double($V{branchWithSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="170" y="199" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[NON-HOLDER WITHDRAWAL ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="370" y="199" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{branchWithNonCount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="570" y="199" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["-"+(new DecimalFormat("#,##0.00")).format(new Double($V{branchWithNonSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="170" y="219" width="200" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ TOTALS ]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="171" y="336" width="650" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{transactionLocationId})]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="99" width="740" height="40"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="16" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{transactionLocationId})+" Transactions"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="370" y="219" width="200" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{branchCount}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="570" y="219" width="200" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{branchSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="TellerGroup">
+		<groupExpression><![CDATA[$V{v_profileId}]]></groupExpression>
+		<groupHeader>
+			<band height="40" splitType="Stretch">
+				<staticText>
+					<reportElement x="100" y="10" width="100" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[TELLER :]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="201" y="10" width="650" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_SCRIPTLET}.profileId()]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="180" splitType="Stretch">
+				<rectangle>
+					<reportElement x="100" y="0" width="740" height="140"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="181" y="40" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[TRANSACTION]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="381" y="40" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL TRANSACTIONS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="581" y="40" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL AMOUNT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="181" y="60" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[DEPOSIT]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="381" y="60" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{tellerDepositCount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="581" y="60" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{tellerDepositSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="181" y="80" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[HOLDER WITHDRAWAL]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="381" y="80" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{tellerWithCount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="581" y="80" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["-"+(new DecimalFormat("#,##0.00")).format(new Double($V{tellerWithSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="181" y="100" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[NON-HOLDER WITHDRAWAL ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="381" y="100" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{tellerWithNonCount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="581" y="100" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["-"+(new DecimalFormat("#,##0.00")).format(new Double($V{tellerWithNonSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="181" y="120" width="200" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ TOTALS ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="381" y="120" width="200" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="581" y="120" width="200" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+				</textField>
+				<staticText>
+					<reportElement x="100" y="160" width="100" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[END:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="201" y="160" width="450" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$V{v_profileId}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="381" y="120" width="200" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{tellerCount}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="581" y="120" width="200" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{tellerSum}.longValue()) / 100)]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="0" width="740" height="40"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="16" isBold="true" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$V{v_profileId}+" Transactions"]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="50" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="840" height="1" forecolor="#000000"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Sans_Normal" x="0" y="10" width="840" height="30"/>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{reportTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="840" height="30"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="840" height="30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="16" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{pageHeader}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE RECEIVED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="85" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE PROCESSED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="170" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TXN REF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="255" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TXN TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="340" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOURCE MOBILE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="425" y="0" width="100" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOURCE ACCOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="530" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TARGET MOBILE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="615" y="0" width="100" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TARGET ACCOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="720" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AMOUNT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{v_dateCreated}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="85" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{v_valueDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="170" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{messageId}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="255" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{v_transactionType}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="340" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{v_sourceMobile}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="425" y="0" width="100" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sourceAccountNumber}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="530" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{v_targetMobile}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="615" y="0" width="100" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{destinationAccountNumber}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="720" y="0" width="80" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("#,##0.00").format(new Double($F{amount}.longValue())/100.00)]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="760" y="13" width="30" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Page | ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="790" y="13" width="50" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="140" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="102" width="237" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL TRANSACTIONS:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="237" y="102" width="63" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="102" width="236" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[GRAND CASH MOVEMENT :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="536" y="102" width="200" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("#,##0.00").format(new Double($V{grandSum}.longValue())/100.00)]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="760" y="102" width="30" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Page | ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="790" y="102" width="50" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="82" width="237" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NON-HOLDER WITHDRAWALS :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="62" width="236" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[HOLDER WITHDRAWALS :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="42" width="236" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[DEPOSITS :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="237" y="82" width="63" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$V{withNonCount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="237" y="62" width="63" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$V{withCount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="237" y="42" width="63" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$V{depositCount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="42" width="236" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[DEPOSIT AMOUNT :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="62" width="236" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[HOLDER WITHDRAWAL AMOUNT :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="82" width="236" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[NON-HOLDER AMOUNT :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="12" width="236" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="15" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[GRAND TOTALS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="536" y="82" width="200" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["-"+(new DecimalFormat("#,##0.00")).format(new Double($V{withNonSum}.longValue()) / 100)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="536" y="62" width="200" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["-"+(new DecimalFormat("#,##0.00")).format(new Double($V{withSum}.longValue()) / 100)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="536" y="42" width="200" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{depositSum}.longValue()) / 100)]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>PublicTopupWebService</display-name>
+	
+	<servlet>
+		<servlet-name>zw.co.esolutions.topup.ws.impl.TopupWebServiceImpl</servlet-name>
+		<servlet-class>com.ibm.ws.websvcs.transport.http.WASAxis2Servlet</servlet-class>
+		<security-role-ref>
+			<role-name>eSolutions</role-name>
+            <role-link>eSolutions</role-link>
+		</security-role-ref>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>zw.co.esolutions.topup.ws.impl.TopupWebServiceImpl</servlet-name>
+		<url-pattern>/TopupWebServiceImplService</url-pattern>
+	</servlet-mapping>
+
+    <!-- SECURITY CONSTRAINT -->
+    <security-constraint>
+        <display-name>e-Solutions Security Constraint</display-name>
+        <web-resource-collection>
+        	<web-resource-name>SecureService</web-resource-name>
+        	<url-pattern>/TopupWebServiceImplService/*</url-pattern>
+        	<url-pattern>/*</url-pattern>
+        	<http-method>GET</http-method>
+        	<http-method>POST</http-method>
+        	<http-method>DELETE</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+        	<role-name>eSolutions</role-name>
+        </auth-constraint>
+       <!-- 
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+        -->
+    </security-constraint>
+
+    <!-- SECURITY ROLE -->
+    <security-role>
+        <role-name>eSolutions</role-name>
+    </security-role>
+
+    <!-- LOGIN CONFIGURATION-->
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+    
+    
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

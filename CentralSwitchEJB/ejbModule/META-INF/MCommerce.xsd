@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://msg.mcommerce.esolutions.co.zw" xmlns:tns="http://msg.mcommerce.esolutions.co.zw" elementFormDefault="qualified">
+
+   <complexType name="MobileProfile">
+    	<sequence>
+    		<element name="mobileNetworkOperator">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="ECONET"></enumeration>
+    					<enumeration value="NETONE"></enumeration>
+    					<enumeration value="TELECEL"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="mobileNumber" type="string"></element>
+    		<element name="secretCode" type="string"></element>
+    		<element name="passwordRetryCount" type="int"></element>
+    		<element name="timeout" type="dateTime"></element>
+    		<element name="customerId" type="string"></element>
+    		<element name="referralCode" type="string"></element>
+    		<element name="referralProcessed" type="boolean"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="status">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="ACTIVE"></enumeration>
+    					<enumeration value="DISAPPROVED"></enumeration>
+    					<enumeration value="INACTIVE"></enumeration>
+    					<enumeration value="AWAITING_APPROVAL"></enumeration>
+    					<enumeration value="LOCKED"></enumeration>
+    					<enumeration value="DELETED"></enumeration>
+    					<enumeration value="HOT"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="id" type="string"></element>
+    		<element name="bankId" type="string"></element>
+    		<element name="primary" type="boolean"></element>
+    		<element name="notification" type="string"></element>
+    	</sequence>
+   </complexType>
+    
+   
+    <complexType name="ContactDetails">
+    	<sequence>
+    		<element name="contactName" type="string"></element>
+    		<element name="id" type="string"></element>
+    		<element name="telephone" type="string"></element>
+    		<element name="email" type="string"></element>
+    		<element name="fax" type="string"></element>
+    		<element name="street" type="string"></element>
+    		<element name="surburb" type="string"></element>
+    		<element name="city" type="string"></element>
+    		<element name="country" type="string"></element>
+    		<element name="ownerId" type="string"></element>
+    		<element name="ownerType" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="BankBranch">
+    	<sequence>
+    		<element name="branchName" type="string"></element>
+    		<element name="branchCode" type="string"></element>
+    		<element name="id" type="string"></element>
+    		<element name="contactDetailsId" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="bankId" type="string"></element>
+    		<element name="status">
+    		   <simpleType>
+    		   	<restriction base="string">
+    		   		<enumeration value="ACTIVE"></enumeration>
+    		   		<enumeration value="DISABLED"></enumeration>
+    		   		<enumeration value="AWAITING_APPROVAL"></enumeration>
+    		   		<enumeration value="INACTIVE"></enumeration>
+    		   		<enumeration value="DISAPPROVED"></enumeration>
+    		   		<enumeration value="DELETED"></enumeration>
+    		   	</restriction>
+    		   </simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Bank">
+    	<sequence>
+    		<element name="bankName" type="string"></element>
+    		<element name="code" type="string"></element>
+    		<element name="contactDetailsId" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="id" type="string"></element>
+    		<element name="status">
+    		   <simpleType>
+    		   	<restriction base="string">
+    		   		<enumeration value="ACTIVE"></enumeration>
+    		   		<enumeration value="DISABLED"></enumeration>
+    		   		<enumeration value="AWAITING_APPROVAL"></enumeration>
+    		   		<enumeration value="INACTIVE"></enumeration>
+    		   		<enumeration value="DISAPPROVED"></enumeration>
+    		   		<enumeration value="DELETED"></enumeration>
+    		   	</restriction>
+    		   </simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Customer">
+    	<sequence>
+    		<element name="title" type="string"></element>
+    		<element name="lastName" type="string"></element>
+    		<element name="firstNames" type="string"></element>
+    		<element name="nationalId" type="string"></element>
+    		<element name="contactDetailsId" type="string"></element>
+    		<element name="dateOfBirth" type="dateTime"></element>
+    		<element name="gender">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="MALE"></enumeration>
+    					<enumeration value="FEMALE"></enumeration>
+    					<enumeration value="UNSPECIFIED"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="maritalStatus">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="SINGLE"></enumeration>
+    					<enumeration value="MARRIED"></enumeration>
+    					<enumeration value="WIDOWED"></enumeration>
+    					<enumeration value="UNSPECIFIED"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="branchId" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="status">
+    		   <simpleType>
+    		   	<restriction base="string">
+    		   		<enumeration value="DRAFT"></enumeration>
+    		   		<enumeration value="AWAITING_ACTIVATION"></enumeration>
+    		   		<enumeration value="ACTIVE"></enumeration>
+    		   		<enumeration value="SUSPENDED"></enumeration>
+    		   		<enumeration value="TERMINATED"></enumeration>
+    		   		<enumeration value="DELETED"></enumeration>
+    		   		<enumeration value="AWAITING_APPROVAL"></enumeration>
+    		   		<enumeration value="INACTIVE"></enumeration>
+    		   		<enumeration value="DISAPPROVED"></enumeration>
+    		   	</restriction>
+    		   </simpleType>
+    		</element>
+    		<element name="customerClass">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="REGULAR"></enumeration>
+    					<enumeration value="EMPLOYEE"></enumeration>
+    					<enumeration value="AGENT"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="id" type="string"></element>
+    		<element name="customerAutoRegStatus" type="string"></element>
+    	</sequence>
+    </complexType>
+
+ 	<complexType name="MobileOriginatedShortMessage">							<!-- Sent by VAS Gateway to Payment Gateway -->
+		<sequence>
+			<element name="version" type="string" />
+			<element name="smscMessageId" type="string" />
+			<element name="uuid" type="string" /><!-- Generated by VAS Gateway -->
+			<element name="dateReceived" type="dateTime" /><!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="subscriberId" type="string" />
+			<element name="destinationId" type="string" />
+			<element name="shortMessage" type="string" />
+			<element name="mobileNetworkOperator">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="NETONE"></enumeration>
+						<enumeration value="ECONET"></enumeration>
+						<enumeration value="TELECEL"></enumeration>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="originatorId">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="ECONET_SMPP"></enumeration>
+						<enumeration value="ECONET_USSD"></enumeration>
+						
+					</restriction>
+				</simpleType>
+			</element>
+		</sequence>
+ 	</complexType>
+
+	<complexType name="MobileOriginatedShortMessageRes">					<!-- Sent by Payment Gateway to VAS Gateway -->
+
+		<sequence>
+			<element name="version" type="string" />
+			<element name="smscMessageId" type="string" />
+			<element name="uuid" type="string" />
+			<element name="status" type="string" />
+			<element name="narration" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="MobileTerminatedShortMessage">							<!-- Sent by Payment Gateway to VAS Gateway -->
+
+		<sequence>
+			<element name="version" type="string" />
+			<element name="userMessageId" type="string" />	<!-- Generated by Payment Gateway -->
+			<element name="uuid" type="string" />   				<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="string" /> <!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="subscriberId" type="string" />
+			<element name="shortMessage" type="string" />
+			<element name="deliveryReportRequired" type="boolean" />
+		</sequence>
+	</complexType>
+
+	<complexType name="MobileTerminatedShortMessageRes">					<!-- Sent by Payment Gateway to VAS Gateway -->
+
+		<sequence>
+			<element name="version" type="string" />
+			<element name="userMessageId" type="string" />	<!-- Generated by Payment Gateway -->
+			<element name="uuid" type="string" />   				<!-- Generated by Payment Gateway -->
+			<element name="smscMessageId" type="string" />	<!-- Generated by SMSC -->
+			<element name="dateRequested" type="string" /> <!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="dateSent" type="string" /> 			<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="subscriberId" type="string" />
+			<element name="status" type="string" />   			<!-- Refer to SMPP3.4 specification, section 5.1.3 -->
+			<element name="narration" type="string" />			<!-- Refer to SMPP3.4 specification, section 5.1.3 -->
+		</sequence>
+	</complexType>
+
+	<complexType name="DeliveryReport">														<!-- Sent by VAS Gateway to Payment Gateway -->
+
+		<sequence>
+			<element name="version" type="string" />
+			<element name="userMessageId" type="string" />
+			<element name="uuid" type="string" />   				<!-- Generated by Payment Gateway -->
+			<element name="smscMessageId" type="string" />	<!-- Generated by SMSC -->
+			<element name="dateRequested" type="string" /> <!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="dateSent" type="string" /> 			<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="dateDelivered" type="string" /> <!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="subscriberId" type="string" />
+			<element name="status" type="string" />   			<!-- Refer to SMPP3.4 specification, section 5.1.3 -->
+			<element name="narration" type="string" />			<!-- Refer to SMPP3.4 specification, section 5.1.3 -->
+		</sequence>
+	</complexType>
+
+	<complexType name="DeliveryReportRes">												<!-- Sent by Payment Gateway to VAS Gateway -->
+
+		<sequence>
+			<element name="version" type="string" />
+			<element name="userMessageId" type="string" />
+			<element name="uuid" type="string" />
+			<element name="smscMessageId" type="string" />
+			<element name="uuid" type="string" />
+			<element name="status" type="string" />
+			<element name="narration" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="MobileSubscriberQuery">											<!-- Sent by Payment Gateway to VAS Gateway -->
+
+		<sequence>
+			<element name="version" type="string" />
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="sourceMobile" type="string" />
+			<element name="targetMobile" type="string" />
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="bankServiceId" type="string" />
+			<element name="serviceCommand" type="string" /> 	<!-- topup, bill payment -->
+			<element name="amount" type="double" />					<!-- For checking account balance, min, max values -->
+		</sequence>
+	</complexType>
+
+	<complexType name="MobileSubscriberQueryRes">										<!-- Sent by Payment Gateway to VAS Gateway -->
+
+		<sequence>
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="dateProcessed" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="subscriberId" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="currentBalance" type="double" />
+			<element name="serviceClass" type="string" />
+			<element name="subscriberType" type="string" />
+			<element name="creditLimit" type="double" />
+			<element name="minimumTopup" type="double" />
+			<element name="maximumTopup" type="double" />
+			<element name="expiryDate" type="dateTime" />     	<!-- yyyy-MM-dd -->
+			<element name="responseCode" type="string" />   				<!-- ACK, NACK -->
+			<element name="narrative" type="string" />
+			<element name="vasReference" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="TopupReq">																		<!-- Sent by Payment Gateway to VAS Gateway -->
+		<sequence>
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="sourceMobile" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="targetMobile" type="string" />
+			<element name="amount" type="double" />					<!-- For checking account balance, min, max values -->
+			<element name="bankServiceId" type="string" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="TopupReqRetry">																		<!-- Sent by Payment Gateway to VAS Gateway -->
+		<sequence>
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="sourceMobile" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="targetMobile" type="string" />
+			<element name="amount" type="double" />					<!-- For checking account balance, min, max values -->
+			<element name="bankServiceId" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="TopupRes">																		<!-- Sent by VAS Gateway to Payment Gateway -->
+
+		<sequence>
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="dateProcessed" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="subscriberId" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="responseCode" type="string" />   				<!-- ACK, NACK -->
+			<element name="narrative" type="string" />
+			<element name="initialBalance" type="double" />
+			<element name="finalBalance" type="double" />
+			<element name="expiryDate" type="dateTime" />
+			<element name="days" type="long" /> 				<!-- Generated by VAS Gateway -->
+		</sequence>
+	</complexType>
+	
+	<complexType name="TopupResRetry">																		<!-- Sent by VAS Gateway to Payment Gateway -->
+
+		<sequence>
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="dateProcessed" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="subscriberId" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="responseCode" type="string" />   				<!-- ACK, NACK -->
+			<element name="narrative" type="string" />
+			<element name="initialBalance" type="double" />
+			<element name="finalBalance" type="double" />
+			<element name="expiryDate" type="dateTime" />
+			<element name="days" type="long" /> 				<!-- Generated by VAS Gateway -->
+		</sequence>
+	</complexType>
+
+	<complexType name="TopupReversalReq">														<!-- Sent by Payment Gateway to VAS Gateway -->
+
+		<sequence>
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="sourceMobile" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="targetMobile" type="string" />
+			<element name="amount" type="double" />					<!-- For checking account balance, min, max values -->
+			<element name="bankServiceId" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="TopupReversalRes">														<!-- Sent by VAS Gateway to Payment Gateway -->
+
+		<sequence>
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="dateProcessed" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="subscriberId" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="responseCode" type="string" />   				<!-- ACK, NACK -->
+			<element name="narrative" type="string" />
+			<element name="initialBalance" type="double" />
+			<element name="finalBalance" type="double" />
+			<element name="expiryDate" type="dateTime" />
+			<element name="days" type="long" />
+		</sequence>
+	</complexType>
+
+	<complexType name="BillPaymentReq">															<!-- Sent by Payment Gateway to VAS Gateway -->
+
+		<sequence>
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="sourceMobile" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="targetMobile" type="string" />
+			<element name="amount" type="double" />					<!-- For checking account balance, min, max values -->
+			<element name="bankServiceId" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="BillPaymentRes">															<!-- Sent by VAS Gateway to Payment Gateway -->
+
+		<sequence>
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="dateProcessed" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="subscriberId" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="responseCode" type="string" />   				<!-- ACK, NACK -->
+			<element name="narrative" type="string" />
+			<element name="initialBalance" type="double" />
+			<element name="finalBalance" type="double" />
+			<element name="expiryDate" type="dateTime" />
+			<element name="days" type="long" />
+		</sequence>
+	</complexType>
+
+	<complexType name="BillPaymentReversalReq">											<!-- Sent by Payment Gateway to VAS Gateway -->
+
+		<sequence>
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="sourceMobile" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="targetMobile" type="string" />
+			<element name="amount" type="double" />					<!-- For checking account balance, min, max values -->
+			<element name="bankServiceId" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="BillPaymentReversalRes">											<!-- Sent by VAS Gateway to Payment Gateway -->
+
+		<sequence>
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="dateProcessed" type="dateTime" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="subscriberId" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="responseCode" type="string" />   				<!-- ACK, NACK -->
+			<element name="narrative" type="string" />
+			<element name="initialBalance" type="double" />
+			<element name="finalBalance" type="double" />
+			<element name="expiryDate" type="dateTime" />
+			<element name="days" type="long" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Transaction">
+		<sequence>
+			<element name="additionalData" type="string" /><!-- 
+				yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="uuid" type="string" /><!-- Generated 
+				by Payment Gateway -->
+			<element name="airtimeBalance" type="double" /><!-- 
+				Generated by VAS Gateway -->
+			<element name="amount" type="double" />
+			<element name="bankAccountBalance" type="double" />
+			<element name="bankId" type="string" /><!-- beneficiary 
+				subscribe -->
+			<element name="currency" type="string" />
+			<element name="narrative" type="string" />
+			<element name="mobileNetworkOperator">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="ECONET"></enumeration>
+    					<enumeration value="NETONE"></enumeration>
+    					<enumeration value="TELECEL"></enumeration>
+    				</restriction>
+    			</simpleType>    		
+    		</element>
+			<element name="customerId" type="string" />
+			<element name="passwordPrompt" type="string" />
+			<element name="dateProcessed" type="dateTime" />
+			<element name="dateReceived" type="dateTime" />
+			<element name="mobileNumber" type="string" />
+			<element name="referenceNo" type="string" />
+			<element name="replyQueue" type="string" />
+			<element name="responseCode" type="string" />
+			<element name="serviceId" type="string" />
+			<element name="sourceAccount" type="string" />
+			<element name="status" type="string" />
+			<element name="targetAccount" type="string" />
+			<element name="targetMobile" type="string" />
+			<element name="transactionType" type="string" />
+			<element name="utility" type="string" />
+			<element name="merchantReference" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="SettlementReportRes">												<!-- Sent by VAS Gateway to Payment Gateway -->
+
+		<sequence>
+			<element name="version" type="string" />
+			<element name="uuid" type="string" />   					<!-- Generated by Payment Gateway -->
+			<element name="dateRequested" type="string" /> 	<!-- yyyy-MM-dd HH:mm:ss.SSS -->
+			<element name="subscriberId" type="string" /> 		<!-- beneficiary subscribe -->
+			<element name="sourceId" type="string" />
+			<element name="serviceCommand" type="string" /> 	<!-- bill payment -->
+			<element name="amount" type="double" />					<!-- For checking account balance, min, max values -->
+			<element name="issuingBankBin" type="string" />
+			<element name="issuingBankName" type="string" />
+			<element name="bankReference" type="string" />
+			<element name="status" type="string" />   				<!-- ACK, NACK -->
+			<element name="narration" type="string" />
+			<element name="accountBalance" type="double" />
+			<element name="expiryDate" type="string" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Error">
+		<sequence>
+			<element name="version" type="string" />
+			<element name="errorCode" type="string" />
+			<element name="errorMessage" type="string" />
+			<element name="errorDetail" type="string" />
+			<element name="vendorCode" type="string"
+				minOccurs="0" maxOccurs="1" />
+		</sequence>
+	</complexType>
+<!-- 
+	<element name="Message" type="tns:Message"></element>
+   	
+   	 -->
+   	
+   	<element name="BankRegistrationMessage" type="tns:BankRegistrationMessage"></element>
+   	
+	<complexType name="Message">
+		<sequence>
+			<choice>
+				<element name="MobileOriginatedShortMessage" type="tns:MobileOriginatedShortMessage" />
+				<element name="MobileOriginatedShortMessageRes" type="tns:MobileOriginatedShortMessageRes" />
+				<element name="MobileTerminatedShortMessage" type="tns:MobileTerminatedShortMessage" />
+				<element name="MobileTerminatedShortMessageRes" type="tns:MobileTerminatedShortMessageRes" />
+				<element name="DeliveryReport" type="tns:DeliveryReport" />
+				<element name="DeliveryReportRes" type="tns:DeliveryReportRes" />
+				<element name="MobileSubscriberQuery" type="tns:MobileSubscriberQuery" />
+				<element name="MobileSubscriberQueryRes" type="tns:MobileSubscriberQueryRes" />
+				<element name="TopupReq" type="tns:TopupReq" />
+				<element name="TopupRes" type="tns:TopupRes" />
+				<element name="TopupReversalReq" type="tns:TopupReversalReq" />
+				<element name="TopupReversalRes" type="tns:TopupReversalRes" />
+				<element name="BillPaymentReq" type="tns:BillPaymentReq" />
+				<element name="BillPaymentRes" type="tns:BillPaymentRes" />
+				<element name="BillPaymentReversalReq" type="tns:BillPaymentReversalReq" />
+				<element name="BillPaymentReversalRes" type="tns:BillPaymentReversalRes" />
+				<element name="Error" type="tns:Error" />
+				<element name="Transaction" type="tns:Transaction" />
+				<element name="TopupReqRetry" type="tns:TopupReqRetry"/>
+				<element name="TopupResRetry" type="tns:TopupResRetry"/>
+			</choice>
+		</sequence>
+	</complexType>
+
+ <complexType name="BankAccount">
+    	<sequence>
+    		<element name="accountHolderId" type="string"></element>
+    		<element name="accountName" type="string"></element>
+    		<element name="accountNumber" type="string"></element>
+    		<element name="ownerType">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="BANK"></enumeration>
+    					<enumeration value="BANK_BRANCH"></enumeration>
+    					<enumeration value="AGENT"></enumeration>
+    					<enumeration value="CUSTOMER"></enumeration>
+    					<enumeration value="MERCHANT"></enumeration>
+    					<enumeration value="BANK_MERCHANT"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="primaryAccount" type="boolean"></element>
+    		<element name="status">
+    		   <simpleType>
+    				<restriction base="string">
+    					<enumeration value="DRAFT"></enumeration>
+    					<enumeration value="AWAITING_APPROVAL"></enumeration>
+    					<enumeration value="ACTIVE"></enumeration>
+    					<enumeration value="INACTIVE"></enumeration>
+    					<enumeration value="SUSPENDED"></enumeration>
+    					<enumeration value="DISAPPROVED"></enumeration>
+    					<enumeration value="DELETED"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="accountType">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="E_WALLET"></enumeration>
+    					<enumeration value="POOL_CONTROL"></enumeration>
+    					<enumeration value="TARIFFS_CONTROL"></enumeration>
+    					<enumeration value="AGENT_CONTROL"></enumeration>
+    					<enumeration value="AGENT_COMMISSION_CONTROL"></enumeration>
+    					<enumeration value="PAYOUT_CONTROL"></enumeration>
+    					<enumeration
+    						value="BANK_TO_NON_MOBILE_CONTROL">
+    					</enumeration>
+    					<enumeration value="BANK_TO_MOBILE_CONTROL"></enumeration>
+    					<enumeration value="MOBILE_TO_BANK_CONTROL"></enumeration>
+    					<enumeration value="BRANCH_CASH_ACCOUNT"></enumeration>
+    					<enumeration value="BANK_SUSPENSE"></enumeration>
+    					<enumeration value="MERCHANT_SUSPENSE"></enumeration>
+    					<enumeration value="SAVINGS"></enumeration>
+    					<enumeration value="TOPUP_SUSPENSE_ACCOUNT"></enumeration>
+    					<enumeration value="CURRENT"></enumeration>
+    					<enumeration value="CHEQUE"></enumeration>
+    					<enumeration
+    						value="EWALLET_BRANCH_CASH_ACCOUNT">
+    					</enumeration>
+    					<enumeration
+    						value="EWALLET_BALANCING_SUSPENSE_ACCOUNT">
+    					</enumeration>
+    					<enumeration value="AGENT_EWALLET"></enumeration>
+    					<enumeration value="SUSPENSE"></enumeration>
+    					<enumeration value="AGENT_COMMISSION_SUSPENSE"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="accountLevel">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="CORPORATE"></enumeration>
+    					<enumeration value="INDIVIDUAL"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="accountClass">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="SYSTEM"></enumeration>
+    					<enumeration value="NONE"></enumeration>
+    					<enumeration value="BRONZE"></enumeration>
+    					<enumeration value="SILVER"></enumeration>
+    					<enumeration value="GOLD"></enumeration>
+    					<enumeration value="PLATINUM"></enumeration>
+    					<enumeration value="DIAMOND"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="bankReferenceId" type="string"></element>
+    		<element name="runningBalance" type="double"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="branchId" type="string"></element>
+    		<element name="id" type="string"></element>
+    		<element name="registrationBranchId" type="string"></element>
+    		<element name="cardNumber" type="string"></element>
+    		<element name="cardSequence" type="int"></element>
+    		<element name="accountCode" type="string"></element>
+    		<element name="bankAccountTypeId" type="string"></element>
+    	</sequence>
+ </complexType>
+
+	<complexType name="BankRegistrationMessage">
+		<sequence>
+			<choice>
+				<element name="Bank" type="tns:Bank" />
+				<element name="BankBranch" type="tns:BankBranch" />
+				<element name="Limit" type="tns:Limit" />
+				<element name="MobileProfile" type="tns:MobileProfile" />
+				<element name="BankAccount" type="tns:BankAccount" />
+				<element name="ContactDetails"
+					type="tns:ContactDetails" />
+				<element name="Customer" type="tns:Customer" />
+			</choice>
+			<element name="responseCode">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="SUCCESSFUL"></enumeration>
+						<enumeration value="FAILED"></enumeration>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="narrative" type="string"></element>
+			<element name="bankId" type="string"></element>
+			<element name="messageCommand">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="CREATE"></enumeration>
+						<enumeration value="UPDATE"></enumeration>
+						<enumeration value="DELETE"></enumeration>
+						<enumeration value="PIN_RESET"></enumeration>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="Tariff" type="tns:Tariff"></element>
+			<element name="TariffTable" type="tns:TariffTable"></element>
+			<element name="Merchant" type="tns:Merchant"></element>
+			<element name="BankMerchant" type="tns:BankMerchant"></element>
+			<element name="CustomerMerchant"
+				type="tns:CustomerMerchant">
+			</element>
+			<element name="Agent" type="tns:Agent"></element>
+		</sequence>
+	</complexType>
+	<complexType name="Limit">
+		<sequence>
+			<element name="minValue" type="double"></element>
+			<element name="maxValue" type="double"></element>
+			<element name="effectiveDate" type="dateTime"></element>
+			<element name="endDate" type="dateTime"></element>
+			<element name="dateCreated" type="dateTime"></element>
+			<element name="periodType">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="DAILY"></enumeration>
+						<enumeration value="MONTHLY"></enumeration>
+						<enumeration value="YEARLY"></enumeration>
+					</restriction>
+				</simpleType>
+			</element>
+
+			<element name="status">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="ACTIVE"></enumeration>
+						<enumeration value="INACTIVE"></enumeration>
+						<enumeration value="AWAITING_APPROVAL"></enumeration>
+						<enumeration value="DELETED"></enumeration>
+						<enumeration value="DISAPPROVED"></enumeration>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="limitValueType">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="ABSOLUTE"></enumeration>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="limitAccountClass">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="BRONZE"></enumeration>
+						<enumeration value="SILVER"></enumeration>
+						<enumeration value="GOLD"></enumeration>
+						<enumeration value="PLATINUM"></enumeration>
+						<enumeration value="NONE"></enumeration>
+						<enumeration value="DIAMOND"></enumeration>
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="limitType">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="TOPUP"></enumeration>
+						<enumeration value="WITHDRAWAL"></enumeration>
+						<enumeration value="WITHDRAWAL_NONHOLDER"></enumeration>
+						<enumeration value="BALANCE"></enumeration>
+						<enumeration
+							value="EWALLET_TO_NON_HOLDER_TRANSFER">
+						</enumeration>
+						<enumeration
+							value="BANKACCOUNT_TO_BANKACCOUNT_TRANSFER">
+						</enumeration>
+						<enumeration
+							value="BANKACCOUNT_TO_EWALLET_TRANSFER">
+						</enumeration>
+						<enumeration
+							value="BANKACCOUNT_TO_NONHOLDER_TRANSFER">
+						</enumeration>
+						<enumeration
+							value="EWALLET_TO_EWALLET_TRANSFER">
+						</enumeration>
+						<enumeration
+							value="EWALLET_TO_BANKACCOUNT_TRANSFER">
+						</enumeration>
+						<enumeration value="DEPOSIT"></enumeration>
+					</restriction>
+				</simpleType>
+			</element>
+
+			<element name="id" type="string"></element>
+			<element name="bankId" type="string"></element>
+			<element name="oldLimitId" type="string"></element>
+		</sequence>
+	</complexType>
+
+    <element name="Message" type="tns:Message"></element>
+
+    <complexType name="Tariff">
+    	<sequence>
+    		<element name="id" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="lowerLimit" type="double"></element>
+    		<element name="upperLimit" type="double"></element>
+    		<element name="valueType">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="PERCENTAGE"></enumeration>
+    					<enumeration value="ABSOLUTE"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="value" type="double"></element>
+    		<element name="tariffTableId" type="string"></element>
+    		<element name="oldTariffId" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="TariffTable">
+    	<sequence>
+    		<element name="bankId" type="string"></element>
+    		<element name="agentType">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="BANK_BRANCH"></enumeration>
+    					<enumeration value="AGENT"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="id" type="string"></element>
+
+    		<element name="customerClass">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="REGULAR"></enumeration>
+    					<enumeration value="EMPLOYEE"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="effectiveDate" type="dateTime"></element>
+    		<element name="endDate" type="dateTime"></element>
+    		<element name="status">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="DRAFT"></enumeration>
+    					<enumeration value="ACTIVE"></enumeration>
+    					<enumeration value="INACTIVE"></enumeration>
+    					<enumeration value="AWAITING_APPROVAL"></enumeration>
+    					<enumeration value="DISAPPROVED"></enumeration>
+    					<enumeration value="DELETED"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="tariffType">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="SCALED"></enumeration>
+    					<enumeration value="FIXED_AMOUNT"></enumeration>
+    					<enumeration value="FIXED_PERCENTAGE"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="transactionType">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="TOPUP"></enumeration>
+    					<enumeration value="DEPOSIT"></enumeration>
+    					<enumeration value="WITHDRAWAL"></enumeration>
+    					<enumeration value="WITHDRAWAL_NONHOLDER"></enumeration>
+    					<enumeration value="BALANCE"></enumeration>
+    					<enumeration
+    						value="EWALLET_TO_NON_HOLDER_TRANSFER">
+    					</enumeration>
+    					<enumeration
+    						value="BANKACCOUNT_TO_BANKACCOUNT_TRANSFER">
+    					</enumeration>
+    					<enumeration
+    						value="BANKACCOUNT_TO_EWALLET_TRANSFER">
+    					</enumeration>
+    					<enumeration
+    						value="BANKACCOUNT_TO_NONHOLDER_TRANSFER">
+    					</enumeration>
+    					<enumeration
+    						value="EWALLET_TO_EWALLET_TRANSFER">
+    					</enumeration>
+    					<enumeration
+    						value="EWALLET_TO_BANKACCOUNT_TRANSFER">
+    					</enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="oldTariffTableId" type="string"></element>
+    	</sequence>
+
+    </complexType>
+
+    <complexType name="Merchant">
+    	<sequence>
+    		<element name="id" type="string"></element>
+    		<element name="name" type="string"></element>
+    		<element name="shortName" type="string"></element>
+    		<element name="contactDetailsId" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="status">
+    		   <simpleType>
+    		   	<restriction base="string">
+    		   		<enumeration value="ACTIVE"></enumeration>
+    		   		<enumeration value="INACTIVE"></enumeration>
+    		   		<enumeration value="AWAITING_APPROVAL"></enumeration>
+    		   		<enumeration value="DISAPPROVED"></enumeration>
+    		   		<enumeration value="DELETED"></enumeration>
+    		   		<enumeration value="DISABLED"></enumeration>
+    		   		<enumeration value="APPROVED"></enumeration>
+    		   	</restriction>
+    		   </simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Refferal">
+    	<sequence>
+    		<element name="code" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="referredMobile" type="string"></element>
+    		<element name="referrerMobileId" type="string"></element>
+    		<element name="referalStatus">
+    		      <simpleType>
+    				<restriction base="string">
+    					<enumeration value="NEW"></enumeration>
+    					<enumeration value="REGISTERED"></enumeration>
+    					<enumeration value="DEBIT_ORDER"></enumeration>
+						<enumeration value="EXPIRED"></enumeration>
+						<enumeration value="BANK_RESP"></enumeration>
+						<enumeration value="COMMISSION_POSTED"></enumeration>
+    				</restriction>
+    			</simpleType>
+    	    </element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ReferralConfig">
+    	<sequence>
+    		<element name="amount" type="double"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="dateFrom" type="dateTime"></element>
+    		<element name="dateTo" type="dateTime"></element>
+    		<element name="id" type="string"></element>
+    		<element name="referrerRatio" type="int"></element>
+    		<element name="referredRatio" type="int"></element>
+    		<element name="maxReferrals" type="int"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ReferralState">
+    	<sequence>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="id" type="string"></element>
+    		<element name="referralId" type="string"></element>
+    		<element name="referralStatus">
+    		    <simpleType>
+    				<restriction base="string">
+    					<enumeration value="NEW"></enumeration>
+    					<enumeration value="REGISTERED"></enumeration>
+    					<enumeration value="DEBIT_ORDER"></enumeration>
+						<enumeration value="EXPIRED"></enumeration>
+						<enumeration value="BANK_RESP"></enumeration>
+						<enumeration value="COMMISSION_POSTED"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="BankAccountType">
+    	<sequence>
+    		<element name="id" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="status">
+    			<simpleType>
+    				<restriction base="string">
+    					<enumeration value="DRAFT"></enumeration>
+    					<enumeration value="AWAITING_APPROVAL"></enumeration>
+    					<enumeration value="ACTIVE"></enumeration>
+    					<enumeration value="INACTIVE"></enumeration>
+    					<enumeration value="DISABLED"></enumeration>
+    					<enumeration value="SUSPENDED"></enumeration>
+    					<enumeration value="DISAPPROVED"></enumeration>
+    					<enumeration value="DELETED"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="typeName" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="BankMerchant">
+    	<sequence>
+    		<element name="id" type="string"></element>
+    		<element name="bankId" type="string"></element>
+    		<element name="merchantId" type="string"></element>
+    		<element name="suspenseAccount" type="string"></element>
+    		<element name="enabled" type="boolean"></element>
+    		<element name="status" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="CustomerMerchant">
+    	<sequence>
+    		<element name="id" type="string"></element>
+    		<element name="bankId" type="string"></element>
+    		<element name="customerId" type="string"></element>
+    		<element name="bankMerchantId" type="string"></element>
+    		<element name="accountNumber" type="string"></element>
+    		<element name="status" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Agent">
+    	<sequence>
+    		<element name="id" type="string"></element>
+    		<element name="agentName" type="string"></element>
+    		<element name="agentNumber" type="string"></element>
+    		<element name="profileId" type="string"></element>
+    		<element name="agentType" type="string"></element>
+    		<element name="agentLevel" type="string"></element>
+    		<element name="superAgentId" type="string"></element>
+    		<element name="customerId" type="string"></element>
+    		<element name="status" type="string"></element>
+    		<element name="dateCreated" type="dateTime"></element>
+    		<element name="agentClassId" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

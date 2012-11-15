@@ -1,0 +1,4 @@
+#Created by WebSphere.  Do not modify.
+#Mon Feb 06 14:00:54 CAT 2012
+com.ibm.ws.runtime.components.ProfileServices.war=WebSphere\:specname\=WS_WebContainer
+com.ibm.ws.runtime.components.ProfileServicesEJB.jar=WebSphere\:specname\=WS_JaxWsWebService+WebSphere\:specname\=WS_WebServiceInit+WebSphere\:specname\=WS_EJBContainer

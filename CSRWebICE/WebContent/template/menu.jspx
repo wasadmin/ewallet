@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	
+	xmlns:f="http://java.sun.com/jsf/core"	xmlns:ice="http://www.icesoft.com/icefaces/component">
+<f:view>
+	<ui:composition>
+		<link href="../theme/style.css" rel="stylesheet" type="text/css"/>
+		<ice:form>
+		<h3>CSR Home :</h3>
+			<ul>
+			
+				<li><ice:commandLink value="Home Page" action="#{menuBean.csrHome }"></ice:commandLink></li>
+				<li><ice:commandLink value="Change Password" action="#{menuBean.changePassword }"></ice:commandLink></li>
+				<li><ice:commandLink value="Logout" action="#{loginBean.logout }"></ice:commandLink></li> 
+			</ul>
+			<h3>Customers :</h3>
+			<ul>
+				
+				<li><ice:commandLink value="Register Customer" action="#{menuBean.registerCustomer}" rendered="#{menuBean.renderRegisterCustomer}"></ice:commandLink></li>
+				
+				<li><ice:commandLink value="Customer Search" action="#{menuBean.customerSearch}" rendered="#{menuBean.renderCustomerSearch}"></ice:commandLink></li>
+				<li><ice:commandLink value="Approve Applicants" action="#{menuBean.approveCustomer}" rendered="#{menuBean.renderApproveCustomer}"></ice:commandLink></li>
+					<li><ice:commandLink value="Approve Mobile Profiles" action="#{menuBean.approveMobileProfile}" rendered="false"  ></ice:commandLink></li>
+					<li><ice:commandLink value="Approve Bank Account" action="#{menuBean.approveBankAccount}" rendered="#{menuBean.renderApproveBankAccount }"></ice:commandLink></li>
+					<li><ice:commandLink value="Approve Customer Merchants" action="#{menuBean.approveCustomerMerchant}" rendered="#{menuBean.renderApproveCustomerMerchant}"></ice:commandLink></li>
+					
+			</ul>	
+			<h3>Agents :</h3>
+			<ul>
+				<li><ice:commandLink action="#{menuBean.registerAgentLink}" rendered="#{menuBean.renderRegisterAgent}" value="Register New Agent"></ice:commandLink></li>
+				<li><ice:commandLink action="#{menuBean.searchAgentLink}" rendered="#{menuBean.renderSearchAgent}" value="Search Agents"></ice:commandLink></li>
+				<li><ice:commandLink action="#{menuBean.agentApprovalLink}" rendered="#{menuBean.renderAgentApproval}" value="Agent Approval"></ice:commandLink></li>
+				
+				<li><ice:commandLink action="#{menuBean.registerClassLink}" rendered="#{menuBean.renderRegisterClass}" value="Register Agent Class"></ice:commandLink></li>
+				<!--  <li><ice:commandLink action="#{menuBean.searchClassLink}" rendered="#{menuBean.renderSearchClass}"><ice:outputText value="Search Agent Classes"></ice:outputText></ice:commandLink></li>-->
+				<li><ice:commandLink action="#{menuBean.agentClassApprovalLink}" rendered="#{menuBean.renderAgentClassApproval}" value="Agent Class Approval"></ice:commandLink></li>
+			</ul> 
+			</ice:form>
+			
+	</ui:composition>
+	</f:view>
+</html>

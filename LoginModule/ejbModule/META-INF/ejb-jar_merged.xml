@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><ejb-jar id="ejb-jar_ID" metadata-complete="false" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd">
+    <enterprise-beans>
+        <session>
+            <ejb-name>LoginServiceImpl</ejb-name>
+            <business-local>zw.co.esolutions.security.loginmodule.LoginService</business-local>
+            <ejb-class>zw.co.esolutions.security.loginmodule.LoginServiceImpl</ejb-class>
+            <session-type>Stateless</session-type>
+        </session>
+    </enterprise-beans>
+    <assembly-descriptor/>
+</ejb-jar>

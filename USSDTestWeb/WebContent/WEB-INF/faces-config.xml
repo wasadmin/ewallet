@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE faces-config PUBLIC
+    "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+    "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+
+<faces-config>
+	<application>
+		<state-manager>com.ibm.faces.application.DevelopmentStateManager</state-manager>
+		<property-resolver>zw.co.faces.ussdtestweb.util.CustomComponentPropertyResolver</property-resolver>
+		<property-resolver>com.ibm.faces.databind.SelectItemsPropResolver</property-resolver>
+		<variable-resolver>zw.co.faces.ussdtestweb.util.CustomComponentVariableResolver</variable-resolver>
+		<variable-resolver>com.ibm.faces.databind.SelectItemsVarResolver</variable-resolver>
+	</application>
+	<factory>
+		<faces-context-factory>com.ibm.faces.context.AjaxFacesContextFactory</faces-context-factory>
+		<render-kit-factory>com.ibm.faces.renderkit.AjaxRenderKitFactory</render-kit-factory>
+	</factory>
+	<managed-bean>
+		<managed-bean-name>ussdBean</managed-bean-name>
+		<managed-bean-class>zw.co.esolutions.ussd.beans.UssdBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<render-kit>
+		<renderer>
+			<component-family>javax.faces.Panel</component-family>
+			<renderer-type>com.ibm.faces.Composite</renderer-type>
+			<renderer-class>zw.co.faces.ussdtestweb.util.CustomComponentRenderer</renderer-class>
+		</renderer>
+	</render-kit>
+	<lifecycle>
+		<phase-listener>com.ibm.faces.webapp.ValueResourcePhaseListener</phase-listener>
+	</lifecycle>
+
+</faces-config>

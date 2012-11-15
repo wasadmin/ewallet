@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<h:form styleClass="form" id="form1">
+				<h:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></h:messages>
+				
+					<h:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+						cellspacing="5" width="600" columns="2">
+						<h:outputLabel value="Role Name" styleClass="outputLabel" id="label2"></h:outputLabel>
+						<h:outputText styleClass="outputText" id="text1" value="#{viewRoleBean.role.roleName}"></h:outputText>
+						
+						<f:facet name="header">
+							<h:panelGroup styleClass="panelGroup" id="group1">
+								<h:outputLabel value="Role Details" styleClass="panelGridLabel"
+									id="label1"></h:outputLabel>
+							</h:panelGroup>
+						</f:facet>
+					</h:panelGrid>		
+					
+					<h:dataTable border="0" cellpadding="2" cellspacing="0"
+						columnClasses="columnClass1" headerClass="headerClass"
+						footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+						styleClass="dataTable" id="table1" width="600"
+						value="#{viewRoleBean.rarList}" var="rar">
+						<f:facet name="header">
+							
+								<h:outputLabel value="Role Access Rights"
+									styleClass="outputLabel" id="label10"></h:outputLabel>
+							
+						</f:facet>
+						<h:column id="column1">
+							<f:facet name="header">
+								<h:outputText id="text8" styleClass="outputText"
+									value="Action Name"></h:outputText>
+							</f:facet>
+							<h:outputText id="text11" styleClass="outputText"
+									value="#{rar.accessRight.actionName}"></h:outputText>
+							
+						</h:column>
+						<h:column id="column2">
+							<f:facet name="header">
+								<h:outputText value="Status" styleClass="outputText" id="text9"></h:outputText>
+							</f:facet>
+							<h:outputText styleClass="outputText" id="text12" value="#{rar.accessRight.status}"></h:outputText>
+						</h:column>
+						<h:column id="column3">
+							<f:facet name="header">
+								<h:outputText value="Can Do" styleClass="outputText" id="text10"></h:outputText>
+							</f:facet>
+							<ice:commandLink styleClass="requestLink" id="link2" action="#{viewRoleBean.changeCanDoValue}">
+								<h:outputText styleClass="outputText" id="text13" value="#{rar.canDo}"></h:outputText>
+								<f:param name="roleAccessRightId" value="#{rar.id}"></f:param>
+							</ice:commandLink>
+							
+						</h:column>
+					</h:dataTable>
+				</h:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

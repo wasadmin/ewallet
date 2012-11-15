@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="TariffServicesEAR">
+        <wb-resource deploy-path="/" source-path="/"/>
+        <dependent-module deploy-path="/" handle="module:/resource/TariffServicesEJB/TariffServicesEJB">
+            <dependent-object>Module_1309442075366</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EWalletUtils.jar" deploy-path="/" handle="module:/resource/EWalletUtils/EWalletUtils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="TariffServicesClient.jar" deploy-path="/" handle="module:/resource/TariffServicesClient/TariffServicesClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/TariffServices/TariffServices">
+            <dependent-object>Module_1309443031095</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="BankService" targetNamespace="http://service.bankservices.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.bankservices.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.bankservices.ewallet.esolutions.co.zw/" schemaLocation="BankService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getPrimaryAccountByAccountHolderIdAndOwnerTypeResponse">
+    <part element="tns:getPrimaryAccountByAccountHolderIdAndOwnerTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="rejectBankAccountResponse">
+    <part element="tns:rejectBankAccountResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankResponse">
+    <part element="tns:getBankResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByBranch">
+    <part element="tns:getBankAccountByBranch" name="parameters">
+    </part>
+  </message>
+  <message name="getBankBranchByName">
+    <part element="tns:getBankBranchByName" name="parameters">
+    </part>
+  </message>
+  <message name="createBankAccountResponse">
+    <part element="tns:createBankAccountResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankByCodeResponse">
+    <part element="tns:getBankByCodeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByAccountHolderIdAndOwnerType">
+    <part element="tns:getBankAccountByAccountHolderIdAndOwnerType" name="parameters">
+    </part>
+  </message>
+  <message name="createBankBranch">
+    <part element="tns:createBankBranch" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByAccountNumberAndOwnerTypeResponse">
+    <part element="tns:getBankAccountByAccountNumberAndOwnerTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccount">
+    <part element="tns:getBankAccount" name="parameters">
+    </part>
+  </message>
+  <message name="getBankBranchByStatusResponse">
+    <part element="tns:getBankBranchByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteBank">
+    <part element="tns:deleteBank" name="parameters">
+    </part>
+  </message>
+  <message name="findBankById">
+    <part element="tns:findBankById" name="parameters">
+    </part>
+  </message>
+  <message name="deleteBankAccountResponse">
+    <part element="tns:deleteBankAccountResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteBankBranch">
+    <part element="tns:deleteBankBranch" name="parameters">
+    </part>
+  </message>
+  <message name="editBankBranchResponse">
+    <part element="tns:editBankBranchResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findBankBranchById">
+    <part element="tns:findBankBranchById" name="parameters">
+    </part>
+  </message>
+  <message name="approveBankResponse">
+    <part element="tns:approveBankResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approveBankBranchResponse">
+    <part element="tns:approveBankBranchResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByTypeResponse">
+    <part element="tns:getBankAccountByTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByBankResponse">
+    <part element="tns:getBankAccountByBankResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deRegisterBankAccountsByOwnerIdResponse">
+    <part element="tns:deRegisterBankAccountsByOwnerIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getPrimaryAccountByAccountHolderIdAndOwnerType">
+    <part element="tns:getPrimaryAccountByAccountHolderIdAndOwnerType" name="parameters">
+    </part>
+  </message>
+  <message name="getBank">
+    <part element="tns:getBank" name="parameters">
+    </part>
+  </message>
+  <message name="rejectBankAccount">
+    <part element="tns:rejectBankAccount" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByLevelResponse">
+    <part element="tns:getBankAccountByLevelResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankByNameResponse">
+    <part element="tns:getBankByNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createBankAccount">
+    <part element="tns:createBankAccount" name="parameters">
+    </part>
+  </message>
+  <message name="getBankByCode">
+    <part element="tns:getBankByCode" name="parameters">
+    </part>
+  </message>
+  <message name="createBankResponse">
+    <part element="tns:createBankResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByAccountNumberAndOwnerType">
+    <part element="tns:getBankAccountByAccountNumberAndOwnerType" name="parameters">
+    </part>
+  </message>
+  <message name="getBankBranchByStatus">
+    <part element="tns:getBankBranchByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByAccountHolderAndTypeAndOwnerTypeResponse">
+    <part element="tns:getBankAccountByAccountHolderAndTypeAndOwnerTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountTypeResponse">
+    <part element="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approveBankAccountResponse">
+    <part element="tns:approveBankAccountResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteBankAccount">
+    <part element="tns:deleteBankAccount" name="parameters">
+    </part>
+  </message>
+  <message name="editBankBranch">
+    <part element="tns:editBankBranch" name="parameters">
+    </part>
+  </message>
+  <message name="getBankBranchByBankResponse">
+    <part element="tns:getBankBranchByBankResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approveBank">
+    <part element="tns:approveBank" name="parameters">
+    </part>
+  </message>
+  <message name="findBankAccountByIdResponse">
+    <part element="tns:findBankAccountByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approveBankBranch">
+    <part element="tns:approveBankBranch" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByType">
+    <part element="tns:getBankAccountByType" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByBank">
+    <part element="tns:getBankAccountByBank" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusResponse">
+    <part element="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="Exception">
+    <part element="tns:Exception" name="fault">
+    </part>
+  </message>
+  <message name="deRegisterBankAccountsByOwnerId">
+    <part element="tns:deRegisterBankAccountsByOwnerId" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByLevel">
+    <part element="tns:getBankAccountByLevel" name="parameters">
+    </part>
+  </message>
+  <message name="getBankByName">
+    <part element="tns:getBankByName" name="parameters">
+    </part>
+  </message>
+  <message name="getBankBranchResponse">
+    <part element="tns:getBankBranchResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByLevelAndStatusResponse">
+    <part element="tns:getBankAccountByLevelAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createBank">
+    <part element="tns:createBank" name="parameters">
+    </part>
+  </message>
+  <message name="getBankBranchByCodeResponse">
+    <part element="tns:getBankBranchByCodeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByStatusAndOwnerTypeResponse">
+    <part element="tns:getBankAccountByStatusAndOwnerTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankByStatusResponse">
+    <part element="tns:getBankByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="rejectBankBranchResponse">
+    <part element="tns:rejectBankBranchResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByAccountHolderAndTypeAndOwnerType">
+    <part element="tns:getBankAccountByAccountHolderAndTypeAndOwnerType" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountType">
+    <part element="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountType" name="parameters">
+    </part>
+  </message>
+  <message name="approveBankAccount">
+    <part element="tns:approveBankAccount" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByStatusResponse">
+    <part element="tns:getBankAccountByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editBankResponse">
+    <part element="tns:editBankResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankBranchByBank">
+    <part element="tns:getBankBranchByBank" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountsByAccountNumberResponse">
+    <part element="tns:getBankAccountsByAccountNumberResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editBankAccountResponse">
+    <part element="tns:editBankAccountResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findBankAccountById">
+    <part element="tns:findBankAccountById" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatus">
+    <part element="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getBankBranch">
+    <part element="tns:getBankBranch" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByBranchResponse">
+    <part element="tns:getBankAccountByBranchResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByLevelAndStatus">
+    <part element="tns:getBankAccountByLevelAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getBankBranchByNameResponse">
+    <part element="tns:getBankBranchByNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankBranchByCode">
+    <part element="tns:getBankBranchByCode" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByAccountHolderIdAndOwnerTypeResponse">
+    <part element="tns:getBankAccountByAccountHolderIdAndOwnerTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByStatusAndOwnerType">
+    <part element="tns:getBankAccountByStatusAndOwnerType" name="parameters">
+    </part>
+  </message>
+  <message name="getBankByStatus">
+    <part element="tns:getBankByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="createBankBranchResponse">
+    <part element="tns:createBankBranchResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountResponse">
+    <part element="tns:getBankAccountResponse" name="parameters">
+    </part>
+  </message>
+  <message name="rejectBankBranch">
+    <part element="tns:rejectBankBranch" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountByStatus">
+    <part element="tns:getBankAccountByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="editBank">
+    <part element="tns:editBank" name="parameters">
+    </part>
+  </message>
+  <message name="getBankAccountsByAccountNumber">
+    <part element="tns:getBankAccountsByAccountNumber" name="parameters">
+    </part>
+  </message>
+  <message name="editBankAccount">
+    <part element="tns:editBankAccount" name="parameters">
+    </part>
+  </message>
+  <message name="deleteBankResponse">
+    <part element="tns:deleteBankResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findBankByIdResponse">
+    <part element="tns:findBankByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteBankBranchResponse">
+    <part element="tns:deleteBankBranchResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findBankBranchByIdResponse">
+    <part element="tns:findBankBranchByIdResponse" name="parameters">
+    </part>
+  </message>
+  <portType name="BankService">
+    <operation name="createBank">
+      <input message="tns:createBank">
+    </input>
+      <output message="tns:createBankResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteBank">
+      <input message="tns:deleteBank">
+    </input>
+      <output message="tns:deleteBankResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveBank">
+      <input message="tns:approveBank">
+    </input>
+      <output message="tns:approveBankResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editBank">
+      <input message="tns:editBank">
+    </input>
+      <output message="tns:editBankResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findBankById">
+      <input message="tns:findBankById">
+    </input>
+      <output message="tns:findBankByIdResponse">
+    </output>
+    </operation>
+    <operation name="getBankByCode">
+      <input message="tns:getBankByCode">
+    </input>
+      <output message="tns:getBankByCodeResponse">
+    </output>
+    </operation>
+    <operation name="getBankByName">
+      <input message="tns:getBankByName">
+    </input>
+      <output message="tns:getBankByNameResponse">
+    </output>
+    </operation>
+    <operation name="getBank">
+      <input message="tns:getBank">
+    </input>
+      <output message="tns:getBankResponse">
+    </output>
+    </operation>
+    <operation name="getBankBranch">
+      <input message="tns:getBankBranch">
+    </input>
+      <output message="tns:getBankBranchResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccount">
+      <input message="tns:getBankAccount">
+    </input>
+      <output message="tns:getBankAccountResponse">
+    </output>
+    </operation>
+    <operation name="createBankBranch">
+      <input message="tns:createBankBranch">
+    </input>
+      <output message="tns:createBankBranchResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteBankBranch">
+      <input message="tns:deleteBankBranch">
+    </input>
+      <output message="tns:deleteBankBranchResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveBankBranch">
+      <input message="tns:approveBankBranch">
+    </input>
+      <output message="tns:approveBankBranchResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="rejectBankBranch">
+      <input message="tns:rejectBankBranch">
+    </input>
+      <output message="tns:rejectBankBranchResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editBankBranch">
+      <input message="tns:editBankBranch">
+    </input>
+      <output message="tns:editBankBranchResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findBankBranchById">
+      <input message="tns:findBankBranchById">
+    </input>
+      <output message="tns:findBankBranchByIdResponse">
+    </output>
+    </operation>
+    <operation name="getBankBranchByCode">
+      <input message="tns:getBankBranchByCode">
+    </input>
+      <output message="tns:getBankBranchByCodeResponse">
+    </output>
+    </operation>
+    <operation name="getBankBranchByName">
+      <input message="tns:getBankBranchByName">
+    </input>
+      <output message="tns:getBankBranchByNameResponse">
+    </output>
+    </operation>
+    <operation name="getBankBranchByStatus">
+      <input message="tns:getBankBranchByStatus">
+    </input>
+      <output message="tns:getBankBranchByStatusResponse">
+    </output>
+    </operation>
+    <operation name="getBankBranchByBank">
+      <input message="tns:getBankBranchByBank">
+    </input>
+      <output message="tns:getBankBranchByBankResponse">
+    </output>
+    </operation>
+    <operation name="createBankAccount">
+      <input message="tns:createBankAccount">
+    </input>
+      <output message="tns:createBankAccountResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteBankAccount">
+      <input message="tns:deleteBankAccount">
+    </input>
+      <output message="tns:deleteBankAccountResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveBankAccount">
+      <input message="tns:approveBankAccount">
+    </input>
+      <output message="tns:approveBankAccountResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="rejectBankAccount">
+      <input message="tns:rejectBankAccount">
+    </input>
+      <output message="tns:rejectBankAccountResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editBankAccount">
+      <input message="tns:editBankAccount">
+    </input>
+      <output message="tns:editBankAccountResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findBankAccountById">
+      <input message="tns:findBankAccountById">
+    </input>
+      <output message="tns:findBankAccountByIdResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccountByAccountHolderIdAndOwnerType">
+      <input message="tns:getBankAccountByAccountHolderIdAndOwnerType">
+    </input>
+      <output message="tns:getBankAccountByAccountHolderIdAndOwnerTypeResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccountByAccountNumberAndOwnerType">
+      <input message="tns:getBankAccountByAccountNumberAndOwnerType">
+    </input>
+      <output message="tns:getBankAccountByAccountNumberAndOwnerTypeResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccountsByAccountNumber">
+      <input message="tns:getBankAccountsByAccountNumber">
+    </input>
+      <output message="tns:getBankAccountsByAccountNumberResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccountByStatus">
+      <input message="tns:getBankAccountByStatus">
+    </input>
+      <output message="tns:getBankAccountByStatusResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccountByStatusAndOwnerType">
+      <input message="tns:getBankAccountByStatusAndOwnerType">
+    </input>
+      <output message="tns:getBankAccountByStatusAndOwnerTypeResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccountByType">
+      <input message="tns:getBankAccountByType">
+    </input>
+      <output message="tns:getBankAccountByTypeResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccountByLevel">
+      <input message="tns:getBankAccountByLevel">
+    </input>
+      <output message="tns:getBankAccountByLevelResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccountByBranch">
+      <input message="tns:getBankAccountByBranch">
+    </input>
+      <output message="tns:getBankAccountByBranchResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccountByBank">
+      <input message="tns:getBankAccountByBank">
+    </input>
+      <output message="tns:getBankAccountByBankResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccountByAccountHolderAndTypeAndOwnerType">
+      <input message="tns:getBankAccountByAccountHolderAndTypeAndOwnerType">
+    </input>
+      <output message="tns:getBankAccountByAccountHolderAndTypeAndOwnerTypeResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getBankAccountByLevelAndStatus">
+      <input message="tns:getBankAccountByLevelAndStatus">
+    </input>
+      <output message="tns:getBankAccountByLevelAndStatusResponse">
+    </output>
+    </operation>
+    <operation name="getPrimaryAccountByAccountHolderIdAndOwnerType">
+      <input message="tns:getPrimaryAccountByAccountHolderIdAndOwnerType">
+    </input>
+      <output message="tns:getPrimaryAccountByAccountHolderIdAndOwnerTypeResponse">
+    </output>
+    </operation>
+    <operation name="getBankByStatus">
+      <input message="tns:getBankByStatus">
+    </input>
+      <output message="tns:getBankByStatusResponse">
+    </output>
+    </operation>
+    <operation name="deRegisterBankAccountsByOwnerId">
+      <input message="tns:deRegisterBankAccountsByOwnerId">
+    </input>
+      <output message="tns:deRegisterBankAccountsByOwnerIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatus">
+      <input message="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatus">
+    </input>
+      <output message="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusResponse">
+    </output>
+    </operation>
+    <operation name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountType">
+      <input message="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountType">
+    </input>
+      <output message="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountTypeResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="BankServiceSOAPBinding" type="tns:BankService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createBank">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteBank">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveBank">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editBank">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findBankById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankByCode">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankByName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBank">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankBranch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createBankBranch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteBankBranch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveBankBranch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="rejectBankBranch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editBankBranch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findBankBranchById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankBranchByCode">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankBranchByName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankBranchByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankBranchByBank">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createBankAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteBankAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveBankAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="rejectBankAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editBankAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findBankAccountById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccountByAccountHolderIdAndOwnerType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccountByAccountNumberAndOwnerType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccountsByAccountNumber">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccountByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccountByStatusAndOwnerType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccountByType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccountByLevel">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccountByBranch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccountByBank">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccountByAccountHolderAndTypeAndOwnerType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getBankAccountByLevelAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getPrimaryAccountByAccountHolderIdAndOwnerType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="deRegisterBankAccountsByOwnerId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="BankService">
+    <port binding="tns:BankServiceSOAPBinding" name="BankServiceSOAP">
+      <soap:address location="http://localhost:9080/BankServices/BankService"/>
+    </port>
+  </service>
+</definitions>

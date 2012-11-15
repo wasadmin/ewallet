@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.contactdetailsservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.contactdetailsservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="createContactDetails" type="tns:createContactDetails"/>
+
+  <xs:element name="createContactDetailsResponse" type="tns:createContactDetailsResponse"/>
+
+  <xs:element name="deleteContactDetails" type="tns:deleteContactDetails"/>
+
+  <xs:element name="deleteContactDetailsResponse" type="tns:deleteContactDetailsResponse"/>
+
+  <xs:element name="editContactDetails" type="tns:editContactDetails"/>
+
+  <xs:element name="editContactDetailsResponse" type="tns:editContactDetailsResponse"/>
+
+  <xs:element name="findContactDetailsById" type="tns:findContactDetailsById"/>
+
+  <xs:element name="findContactDetailsByIdResponse" type="tns:findContactDetailsByIdResponse"/>
+
+  <xs:element name="updateContactDetails" type="tns:updateContactDetails"/>
+
+  <xs:element name="updateContactDetailsResponse" type="tns:updateContactDetailsResponse"/>
+
+  <xs:complexType name="editContactDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactDetails" type="tns:contactDetails"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="contactDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="city" type="xs:string"/>
+      <xs:element minOccurs="0" name="contactName" type="xs:string"/>
+      <xs:element minOccurs="0" name="country" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="fax" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="ownerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="ownerType" type="xs:string"/>
+      <xs:element minOccurs="0" name="postalAddress" type="xs:string"/>
+      <xs:element minOccurs="0" name="street" type="xs:string"/>
+      <xs:element minOccurs="0" name="suburb" type="xs:string"/>
+      <xs:element minOccurs="0" name="telephone" type="xs:string"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editContactDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:contactDetails"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findContactDetailsById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findContactDetailsByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:contactDetails"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteContactDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactDetails" type="tns:contactDetails"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteContactDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createContactDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactDetails" type="tns:contactDetails"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createContactDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:contactDetails"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateContactDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactDetails" type="tns:contactDetails"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateContactDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:contactDetails"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- jsf:pagecode language="java" location="/src/pagecode/csr/RegisterCustomer5.java" --><!-- /jsf:pagecode --><jsp:root
+	version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<hx:scriptCollector id="scriptCollector1">
+				<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+				<link href="../theme/stylesheet.css" rel="stylesheet"
+					type="text/css" />
+				<ui:define name="header">
+					<ui:include src="../template/header.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="menu">
+					<ui:include src="../template/menu.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="content">
+					<h:form styleClass="form" id="form1">
+						<h:messages styleClass="messages" id="messages1"
+							errorClass="errorMessage" infoClass="infoMessage" layout="table"></h:messages>
+						<p><h:outputText styleClass="outputText" id="text1"
+							value="Register Customer: Step 2 of 2" style="font-size: 14pt"></h:outputText></p>
+						<ice:commandLink styleClass="requestLink" id="link1"
+							action="#{registerCustomer2Bean.back}">
+							<h:outputText id="text20" styleClass="outputText"
+								value="&lt;&lt;Back"></h:outputText>
+						</ice:commandLink>
+						<br />
+
+						<h:panelGrid styleClass="panelGrid" id="grid3" cellpadding="5"
+							cellspacing="5" width="600" columns="2">
+							<h:outputLabel value="Account Type" styleClass="outputLabel"
+								id="label6"></h:outputLabel>
+							<h:selectOneMenu styleClass="selectOneMenu" id="menu8"
+								value="#{registerCustomer2Bean.selectedAccountType1}">
+								<f:selectItems value="#{registerCustomer2Bean.accountTypeList}"
+									id="selectItems1" />
+							</h:selectOneMenu>
+							<h:outputLabel value="Account Number" styleClass="outputLabel"
+								id="label1"></h:outputLabel>
+							<h:inputText styleClass="inputText" id="text2"
+								value="#{registerCustomer2Bean.account1.accountNumber}"></h:inputText>
+							<h:outputLabel value="Card Number" styleClass="outputLabel"
+								id="label2"></h:outputLabel>
+							<h:inputText styleClass="inputText" id="text3"
+								value="#{registerCustomer2Bean.account1.cardNumber}"></h:inputText>
+							<h:outputLabel value="Card Sequence" styleClass="outputLabel"
+								id="label3"></h:outputLabel>
+							<h:inputText styleClass="inputText" id="text4"
+								value="#{registerCustomer2Bean.account1.cardSequence}"></h:inputText>
+							<!--<h:outputLabel value="Account Code" styleClass="outputLabel"
+								id="label5"></h:outputLabel>
+							<h:outputText styleClass="outputText" id="text6" value="PRI"></h:outputText>-->
+							<h:outputLabel value="Account Class" styleClass="outputLabel"
+								id="label9" for="label4"></h:outputLabel>
+							<h:selectOneMenu styleClass="selectOneMenu" id="menu1"
+								value="#{registerCustomer2Bean.selectedAccountClass1}">
+								<f:selectItems value="#{registerCustomer2Bean.accountClassList}"
+									id="selectItems4" />
+							</h:selectOneMenu>
+							<h:outputLabel value="Branch" styleClass="outputLabel"
+								id="label4"></h:outputLabel>
+							<h:selectOneMenu styleClass="selectOneMenu" id="menu2" value="#{registerCustomer2Bean.selectedBranch1}">
+								<f:selectItems value="#{registerCustomer2Bean.branchList}" id="selectItems7" />
+							</h:selectOneMenu>
+							<f:facet name="header">
+								<h:panelGroup styleClass="panelGroup" id="group4">
+									<h:outputLabel value="Primary Account Details"
+										styleClass="panelGridLabel" id="label13"></h:outputLabel>
+								</h:panelGroup>
+							</f:facet>
+						</h:panelGrid>
+						<h:panelGrid styleClass="panelGrid" id="grid4" cellpadding="5"
+							cellspacing="5" width="600" columns="2">
+							<h:outputLabel value="Account Type" styleClass="outputLabel"
+								id="label15"></h:outputLabel>
+							<h:selectOneMenu styleClass="selectOneMenu" id="menu4"
+								value="#{registerCustomer2Bean.selectedAccountType2}">
+								<f:selectItems value="#{registerCustomer2Bean.accountTypeList}"
+									id="selectItems2" />
+							</h:selectOneMenu>
+							<h:outputLabel value="Account Number" styleClass="outputLabel"
+								id="label16"></h:outputLabel>
+							<h:inputText styleClass="inputText" id="text7"
+								value="#{registerCustomer2Bean.account2.accountNumber}"></h:inputText>
+							<h:outputLabel value="Card Number" styleClass="outputLabel"
+								id="label17"></h:outputLabel>
+							<h:inputText styleClass="inputText" id="text8"
+								value="#{registerCustomer2Bean.account2.cardNumber}"></h:inputText>
+							<h:outputLabel value="Card Sequence" styleClass="outputLabel"
+								id="label18"></h:outputLabel>
+							<h:inputText styleClass="inputText" id="text5"
+								value="#{registerCustomer2Bean.account2.cardSequence}"></h:inputText>
+							<h:outputLabel value="Account Code" styleClass="outputLabel"
+								id="label19"></h:outputLabel>
+							<h:inputText styleClass="inputText" id="text9"
+								value="#{registerCustomer2Bean.account2.code}"></h:inputText>
+							<h:outputLabel value="Account Class" styleClass="outputLabel"
+								id="label20"></h:outputLabel>
+							<h:selectOneMenu styleClass="selectOneMenu" id="menu5"
+								value="#{registerCustomer2Bean.selectedAccountClass2}">
+								<f:selectItems value="#{registerCustomer2Bean.accountClassList}"
+									id="selectItems5" />
+							</h:selectOneMenu>
+							<h:outputLabel value="Branch" styleClass="outputLabel"
+								id="label7"></h:outputLabel>
+							<h:selectOneMenu styleClass="selectOneMenu" id="menu3" value="#{registerCustomer2Bean.selectedBranch2}">
+								<f:selectItems value="#{registerCustomer2Bean.branchList}" id="selectItems8" />
+							</h:selectOneMenu>
+							<f:facet name="header">
+								<h:panelGroup styleClass="panelGroup" id="group5">
+									<h:outputLabel value="Second Account Details (Optional)"
+										styleClass="panelGridLabel" id="label14"></h:outputLabel>
+								</h:panelGroup>
+							</f:facet>
+						</h:panelGrid>
+						<h:panelGrid styleClass="panelGrid" id="grid5" cellpadding="5"
+							width="600" columns="2" cellspacing="5">
+							<h:outputLabel value="Account Type" styleClass="outputLabel"
+								id="label22"></h:outputLabel>
+							<h:selectOneMenu styleClass="selectOneMenu" id="menu6"
+								value="#{registerCustomer2Bean.selectedAccountType3}">
+								<f:selectItems value="#{registerCustomer2Bean.accountTypeList}"
+									id="selectItems3" />
+							</h:selectOneMenu>
+							<h:outputLabel value="Account Number" styleClass="outputLabel"
+								id="label23"></h:outputLabel>
+							<h:inputText styleClass="inputText" id="text10"
+								value="#{registerCustomer2Bean.account3.accountNumber}"></h:inputText>
+							<h:outputLabel value="Card Number" styleClass="outputLabel"
+								id="label24"></h:outputLabel>
+							<h:inputText styleClass="inputText" id="text11"
+								value="#{registerCustomer2Bean.account3.cardNumber}"></h:inputText>
+							<h:outputLabel value="Card Sequence" styleClass="outputLabel"
+								id="label25"></h:outputLabel>
+							<h:inputText styleClass="inputText" id="text12"
+								value="#{registerCustomer2Bean.account3.cardSequence}"></h:inputText>
+							<h:outputLabel value="Account Code" styleClass="outputLabel"
+								id="label26"></h:outputLabel>
+							<h:inputText styleClass="inputText" id="text13"
+								value="#{registerCustomer2Bean.account3.code}"></h:inputText>
+							<h:outputLabel value="Account Class" styleClass="outputLabel"
+								id="label27"></h:outputLabel>
+							<h:selectOneMenu styleClass="selectOneMenu" id="menu9"
+								value="#{registerCustomer2Bean.selectedAccountClass3}">
+								<f:selectItems value="#{registerCustomer2Bean.accountClassList}"
+									id="selectItems6" />
+							</h:selectOneMenu>
+							<h:outputLabel value="Branch" styleClass="outputLabel"
+								id="label8"></h:outputLabel>
+							<h:selectOneMenu styleClass="selectOneMenu" id="menu7" value="#{registerCustomer2Bean.selectedBranch3}">
+								<f:selectItems value="#{registerCustomer2Bean.branchList}" id="selectItems9" />
+							</h:selectOneMenu>
+							<f:facet name="header">
+								<h:panelGroup styleClass="panelGroup" id="group6">
+									<h:outputLabel value="Third Account Details (Optional)"
+										styleClass="panelGridLabel" id="label21"></h:outputLabel>
+								</h:panelGroup>
+							</f:facet>
+						</h:panelGrid>
+                        <h:panelGrid styleClass="panelGrid" cellpadding="5"
+							width="600" columns="2" cellspacing="5">
+							<h:outputLabel value="Primary Account : " styleClass="outputLabel"></h:outputLabel>
+							<h:selectOneRadio disabledClass="selectOneRadio_Disabled"
+				                  enabledClass="selectOneRadio_Enabled" styleClass="selectOneRadio"
+				                   value="#{registerCustomer2Bean.primaryAccountItem}">
+				                 <f:selectItems value="#{registerCustomer2Bean.primaryAccountMenu}" />
+			                </h:selectOneRadio>
+							<f:facet name="header">
+								<h:panelGroup styleClass="panelGroup">
+									<h:outputLabel value="Primary Account Selection"
+										styleClass="panelGridLabel"></h:outputLabel>
+								</h:panelGroup>
+							</f:facet>
+						</h:panelGrid>
+						<h:panelGrid styleClass="panelGrid" id="grid9" columns="3">
+							<h:commandButton type="submit" value="Submit" label="Submit"
+								styleClass="commandButton" id="button2"
+								action="#{registerCustomer2Bean.submit}"></h:commandButton>
+							<h:commandButton type="submit" value="Cancel" label="Submit"
+								styleClass="commandButton" id="button1"
+								action="#{registerCustomer2Bean.cancel}"></h:commandButton>
+						</h:panelGrid>
+					</h:form>
+				</ui:define>
+				<ui:define name="footer">
+					<ui:include src="../template/footer.jspx"></ui:include>
+				</ui:define>
+
+				<link rel="stylesheet" type="text/css" title="Style"
+					href="../theme/stylesheet.css" />
+			</hx:scriptCollector>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

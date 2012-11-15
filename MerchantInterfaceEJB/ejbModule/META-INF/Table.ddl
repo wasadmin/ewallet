@@ -1,0 +1,6 @@
+CREATE TABLE MPG.ISOMsgField (txnRef VARCHAR(254), number INTEGER, value VARCHAR(200));
+CREATE TABLE MPG.MerchantRequest (txnRef VARCHAR(40) NOT NULL, mti VARCHAR(8), narrative VARCHAR(300), retrievalReference VARCHAR(25), status VARCHAR(20), txnType VARCHAR(20), version INTEGER, postingBranch VARCHAR(20), replyQueue VARCHAR(50), requestQueue VARCHAR(50), source VARCHAR(50), PRIMARY KEY (txnRef));
+CREATE TABLE MPG.OPENJPA_SEQUENCE_TABLE (ID SMALLINT NOT NULL, SEQUENCE_VALUE BIGINT, PRIMARY KEY (ID));
+CREATE TABLE MPG.TransactionState (id BIGINT NOT NULL, narrative VARCHAR(200), status VARCHAR(20), txnStateTimestamp TIMESTAMP, version INTEGER, txnRef VARCHAR(254), PRIMARY KEY (id));
+ALTER TABLE MPG.ISOMsgField ADD FOREIGN KEY (txnRef) REFERENCES MPG.MerchantRequest (txnRef);
+ALTER TABLE MPG.TransactionState ADD FOREIGN KEY (txnRef) REFERENCES MPG.MerchantRequest (txnRef);

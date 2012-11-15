@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connections:connections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connections="http://www.ibm.com/websphere/wdo/connections">
+  <connection id="USSD">
+    <development xsi:type="connections:rsc-live-connection" id="USSD_dev" name="USSD"/>
+    <runtime xsi:type="connections:datasource-connection" auto-deploy="true" class-location="/opt/IBM/SDPShared/plugins/com.ibm.datatools.db2_2.0.103.v20090522_1813/driver/db2jcc.jar:/opt/IBM/SDPShared/plugins/com.ibm.datatools.db2_2.0.103.v20090522_1813/driver/db2jcc_license_cisuz.jar" id="USSD_runtime" classname="com.ibm.db2.jcc.DB2ConnectionPoolDataSource" database-name="USSD" jndi-name="jdbc/USSD" port-number="50004" resource-reference-name="USSD" server-name="localhost" sql-vendor-type="43" userid="db2inst2"/>
+  </connection>
+</connections:connections>

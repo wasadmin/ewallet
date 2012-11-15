@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+	
+    <jsp:directive.page contentType="text/html;charset=utf-8" />
+
+<f:view>
+    <ice:outputDeclaration doctypeRoot="HTML"
+			doctypePublic="-//W3C//DTD HTML 4.01 Transitional//EN"
+			doctypeSystem="http://www.w3.org/TR/html4/loose.dtd" />
+    <ui:composition template="../template/template.jspx">
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<ice:form styleClass="form" id="form1">
+					<ice:panelGrid styleClass="panelGrid" columns="4" cellspacing="5" width="600">
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" >
+								<ice:outputLabel value="Agent Details"
+												styleClass="panelGridLabel" ></ice:outputLabel>
+								</ice:panelGroup>
+						</f:facet>
+						
+						<ice:outputText styleClass="outputText" value="Title *"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" value="#{createAgentBean.selectedTitle}">
+							<f:selectItems value="#{createAgentBean.titleList}"/>
+						</ice:selectOneMenu>
+						<ice:outputText styleClass="outputText" value="Last Name /Company Name *"></ice:outputText>
+						<ice:inputText styleClass="inputText" value="#{createAgentBean.customer.lastName}"
+							required="true" requiredMessage="Enter last name"></ice:inputText>
+						<ice:outputText styleClass="outputText" value="First Name / Branch*"></ice:outputText>
+						<ice:inputText styleClass="inputText" value="#{createAgentBean.customer.firstNames}"
+							required="true" requiredMessage="Enter first name"></ice:inputText>
+						<ice:outputText styleClass="outputText" value="National ID/ Company ID *"></ice:outputText>
+						<ice:inputText styleClass="inputText"  value="#{createAgentBean.customer.nationalId}"
+							required="true" requiredMessage="Enter national ID"></ice:inputText>
+						<ice:outputText styleClass="outputText" value="D.O.B /Company Reg Date"></ice:outputText>
+						<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+										renderMonthAsDropdown="true" renderYearAsDropdown="true"
+										value="#{createAgentBean.dateOfBirth}" >
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</ice:selectInputDate>
+						<ice:outputText styleClass="outputText" value="Gender "></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" value="#{createAgentBean.selectedGender}" >
+							<f:selectItems value="#{createAgentBean.genderList}"/>
+						</ice:selectOneMenu>
+						<ice:outputText styleClass="outputText" value="Agent Type *"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" value="#{createAgentBean.selectedType}">
+							<f:selectItems value="#{createAgentBean.agentTypes}"/>
+						</ice:selectOneMenu>
+						<ice:outputText styleClass="outputText" value="Agent Class *"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" value="#{createAgentBean.selectedClass}">
+							<f:selectItems value="#{createAgentBean.classList}"/>
+						</ice:selectOneMenu>
+					</ice:panelGrid>
+					
+					
+					<ice:panelGrid columns="4" styleClass="panelGrid"  cellspacing="5" width="600">
+						<f:facet name="header">
+									<ice:panelGroup styleClass="panelGroup" >
+										<ice:outputLabel value="Contact Details"
+											styleClass="panelGridLabel" ></ice:outputLabel>
+									</ice:panelGroup>
+								</f:facet>
+						<ice:outputText styleClass="outputText" value="Telephone"></ice:outputText>
+						<ice:inputText styleClass="inputText" value="#{createAgentBean.contactDetails.telephone}"></ice:inputText>
+						<ice:outputText styleClass="outputText" value="Email"></ice:outputText>
+						<ice:inputText styleClass="inputText" value="#{createAgentBean.contactDetails.email}"></ice:inputText>
+						<ice:outputText styleClass="outputText" value="Street *"></ice:outputText>
+						<ice:inputText styleClass="inputText" value="#{createAgentBean.contactDetails.street }"
+							required="true" requiredMessage="Enter Street"></ice:inputText>
+						<ice:outputText styleClass="outputText" value="Suburb *"></ice:outputText>
+						<ice:inputText styleClass="inputText" value="#{createAgentBean.contactDetails.suburb}"
+							required="true" requiredMessage="Enter Suburb"></ice:inputText>
+						<ice:outputText styleClass="outputText" value="City *"></ice:outputText>
+						<ice:inputText styleClass="inputText" value="#{createAgentBean.contactDetails.city }"
+							required="true" requiredMessage="Enter City"></ice:inputText>
+						<ice:outputText styleClass="outputText" value="Country *"></ice:outputText>
+						<ice:inputText styleClass="inputText" value="#{createAgentBean.country }"
+							required="true" requiredMessage="Enter Country "></ice:inputText>
+					</ice:panelGrid>
+					
+					
+					<ice:panelGrid styleClass="panelGrid" cellspacing="5" width="600" columns="2">
+							
+					<f:facet name="header">
+									<ice:panelGroup styleClass="panelGroup" >
+										<ice:outputLabel value="Mobile Profile Details"
+											styleClass="panelGridLabel" ></ice:outputLabel>
+									</ice:panelGroup>
+								</f:facet>
+					
+					
+					<ice:outputLabel styleClass="outputLabel" value="Mobile Number"></ice:outputLabel>
+					<ice:outputLabel styleClass="outputLabel" value="Mobile Network"></ice:outputLabel>
+					
+					<ice:inputText styleClass="inputText" value="#{createAgentBean.mobileProfile1.mobileNumber }" required="true"></ice:inputText>
+					<ice:selectOneMenu styleClass="selectOneMenu" value="#{createAgentBean.selectedNetwork1}" >
+						<f:selectItems value="#{createAgentBean.networkList}"/>
+					</ice:selectOneMenu>
+					</ice:panelGrid>
+				
+					<ice:panelGrid styleClass="panelGrid" columns="2">
+						<ice:commandButton type="submit" value="Next>>" styleClass="commandButton" action="#{createAgentBean.next}" ></ice:commandButton>
+						<ice:commandButton type="submit" value="Cancel" styleClass="commandButton" action="#{createAgentBean.cancel}"></ice:commandButton>
+					</ice:panelGrid>
+					
+					<ice:messages styleClass="messages" id="messages1"
+								errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages>
+				
+				</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+</f:view>
+</jsp:root>

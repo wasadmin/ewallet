@@ -1,0 +1,2156 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="ProcessService" targetNamespace="http://process.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://process.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://process.ewallet.esolutions.co.zw/" schemaLocation="ProcessService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="saveTxnReversalConfigDataResponse">
+    <part element="tns:saveTxnReversalConfigDataResponse" name="parameters">
+    </part>
+  </message>
+  <message name="cancellCommissionTimerResponse">
+    <part element="tns:cancellCommissionTimerResponse" name="parameters">
+    </part>
+  </message>
+  <message name="runTellerDayEndResponse">
+    <part element="tns:runTellerDayEndResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByBranchAndDateRangeAndStatusResponse">
+    <part element="tns:getProcessTransactionsByBranchAndDateRangeAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="checkTellerDayEndsPendingApprovalResponse">
+    <part element="tns:checkTellerDayEndsPendingApprovalResponse" name="parameters">
+    </part>
+  </message>
+  <message name="scheduleTimer">
+    <part element="tns:scheduleTimer" name="parameters">
+    </part>
+  </message>
+  <message name="approveTellerDailyFloat">
+    <part element="tns:approveTellerDailyFloat" name="parameters">
+    </part>
+  </message>
+  <message name="confirmNonHolderWithdrawalResponse">
+    <part element="tns:confirmNonHolderWithdrawalResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getStartDayTxnsByTellerAndDateRangeAndStatus">
+    <part element="tns:getStartDayTxnsByTellerAndDateRangeAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="scheduleCommissionTimerResponse">
+    <part element="tns:scheduleCommissionTimerResponse" name="parameters">
+    </part>
+  </message>
+  <message name="completeTransaction">
+    <part element="tns:completeTransaction" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransaction">
+    <part element="tns:getProcessTransaction" name="parameters">
+    </part>
+  </message>
+  <message name="processAlertRegistrationResponse">
+    <part element="tns:processAlertRegistrationResponse" name="parameters">
+    </part>
+  </message>
+  <message name="processEquationPosting">
+    <part element="tns:processEquationPosting" name="parameters">
+    </part>
+  </message>
+  <message name="processDayEndBookEntriesResponse">
+    <part element="tns:processDayEndBookEntriesResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTransactionChargeByProcessTransactionId">
+    <part element="tns:getTransactionChargeByProcessTransactionId" name="parameters">
+    </part>
+  </message>
+  <message name="reverseTransactionResponse">
+    <part element="tns:reverseTransactionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByTellerID">
+    <part element="tns:getProcessTransactionsByTellerID" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRangeByBankIdAndBranchId">
+    <part element="tns:getProcessTransactionsWithinDateRangeByBankIdAndBranchId" name="parameters">
+    </part>
+  </message>
+  <message name="depositCash">
+    <part element="tns:depositCash" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRange">
+    <part element="tns:getProcessTransactionsWithinDateRange" name="parameters">
+    </part>
+  </message>
+  <message name="updateDayEnd">
+    <part element="tns:updateDayEnd" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByTransactionStatus">
+    <part element="tns:getProcessTransactionsByTransactionStatus" name="parameters">
+    </part>
+  </message>
+  <message name="createDayEndSummaryResponse">
+    <part element="tns:createDayEndSummaryResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findDayEndSummary">
+    <part element="tns:findDayEndSummary" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByDayEndIdResponse">
+    <part element="tns:getProcessTransactionsByDayEndIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndByTellerIdAndDateCreatedAndStatusResponse">
+    <part element="tns:getDayEndByTellerIdAndDateCreatedAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndSummaryByDayEndId">
+    <part element="tns:getDayEndSummaryByDayEndId" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRangeByBankId">
+    <part element="tns:getProcessTransactionsWithinDateRangeByBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionByMessageId">
+    <part element="tns:getProcessTransactionByMessageId" name="parameters">
+    </part>
+  </message>
+  <message name="confirmManualResolveResponse">
+    <part element="tns:confirmManualResolveResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getDailyAmountByCustomerIdAndTxnType">
+    <part element="tns:getDailyAmountByCustomerIdAndTxnType" name="parameters">
+    </part>
+  </message>
+  <message name="depositAgentCash">
+    <part element="tns:depositAgentCash" name="parameters">
+    </part>
+  </message>
+  <message name="findProcessTransactionByIdResponse">
+    <part element="tns:findProcessTransactionByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getStartOfDayTxnByProfileIdAndDayEndSummaryAndStatus">
+    <part element="tns:getStartOfDayTxnByProfileIdAndDayEndSummaryAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRangeByMsgTypeByBankIdResponse">
+    <part element="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndByDayEndStatusAndBranchResponse">
+    <part element="tns:getDayEndByDayEndStatusAndBranchResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveDayEndResponse">
+    <part element="tns:disapproveDayEndResponse" name="parameters">
+    </part>
+  </message>
+  <message name="checkIfThereAreTrxnTomarkResponse">
+    <part element="tns:checkIfThereAreTrxnTomarkResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTellerDayEnd">
+    <part element="tns:getTellerDayEnd" name="parameters">
+    </part>
+  </message>
+  <message name="saveCommissionConfigDataResponse">
+    <part element="tns:saveCommissionConfigDataResponse" name="parameters">
+    </part>
+  </message>
+  <message name="validateDeposit">
+    <part element="tns:validateDeposit" name="parameters">
+    </part>
+  </message>
+  <message name="validateEwalletHolderWithdrawalResponse">
+    <part element="tns:validateEwalletHolderWithdrawalResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editDayEndResponse">
+    <part element="tns:editDayEndResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findDayEndById">
+    <part element="tns:findDayEndById" name="parameters">
+    </part>
+  </message>
+  <message name="getStartOfDayTransactionByTransactionTypeAndBranchAndStatus">
+    <part element="tns:getStartOfDayTransactionByTransactionTypeAndBranchAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="approveDayEndResponse">
+    <part element="tns:approveDayEndResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByTellerIdAndDayEndSummary">
+    <part element="tns:getProcessTransactionsByTellerIdAndDayEndSummary" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRangeByMsgType">
+    <part element="tns:getProcessTransactionsWithinDateRangeByMsgType" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByApplicableParameters">
+    <part element="tns:getProcessTransactionsByApplicableParameters" name="parameters">
+    </part>
+  </message>
+  <message name="deleteProcessTransactionsByDayEnd">
+    <part element="tns:deleteProcessTransactionsByDayEnd" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveTellerDailyFloat">
+    <part element="tns:disapproveTellerDailyFloat" name="parameters">
+    </part>
+  </message>
+  <message name="createStartOfDayTransactionResponse">
+    <part element="tns:createStartOfDayTransactionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="processEwalletWithdrawalResponse">
+    <part element="tns:processEwalletWithdrawalResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndSummariesByDayEnd">
+    <part element="tns:getDayEndSummariesByDayEnd" name="parameters">
+    </part>
+  </message>
+  <message name="approveMarkedTransactionResponse">
+    <part element="tns:approveMarkedTransactionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="manualResolveResponse">
+    <part element="tns:manualResolveResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createDayEnd">
+    <part element="tns:createDayEnd" name="parameters">
+    </part>
+  </message>
+  <message name="getPocessTransactionsByDateRangeAndStatus">
+    <part element="tns:getPocessTransactionsByDateRangeAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionByTellerIdAndDateRangeAndStatusResponse">
+    <part element="tns:getProcessTransactionByTellerIdAndDateRangeAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndByDayEndStatusResponse">
+    <part element="tns:getDayEndByDayEndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="scheduleCollectionTimer">
+    <part element="tns:scheduleCollectionTimer" name="parameters">
+    </part>
+  </message>
+  <message name="isTodaysDayEndRun">
+    <part element="tns:isTodaysDayEndRun" name="parameters">
+    </part>
+  </message>
+  <message name="getStartOfDayTransactionByTransactionTypeAndTellerAndDateRange">
+    <part element="tns:getStartOfDayTransactionByTransactionTypeAndTellerAndDateRange" name="parameters">
+    </part>
+  </message>
+  <message name="processDayEndApprovalResponse">
+    <part element="tns:processDayEndApprovalResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByAllAttributes">
+    <part element="tns:getProcessTransactionsByAllAttributes" name="parameters">
+    </part>
+  </message>
+  <message name="cancellCollectionTimer">
+    <part element="tns:cancellCollectionTimer" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByTellerIdAndDateRangeResponse">
+    <part element="tns:getProcessTransactionsByTellerIdAndDateRangeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndsByDayEndStatusAndDateRangeAndTeller">
+    <part element="tns:getDayEndsByDayEndStatusAndDateRangeAndTeller" name="parameters">
+    </part>
+  </message>
+  <message name="cancellCommissionTimer">
+    <part element="tns:cancellCommissionTimer" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByBranchResponse">
+    <part element="tns:getProcessTransactionsByBranchResponse" name="parameters">
+    </part>
+  </message>
+  <message name="runTellerDayEnd">
+    <part element="tns:runTellerDayEnd" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByBranchAndDateRangeAndStatus">
+    <part element="tns:getProcessTransactionsByBranchAndDateRangeAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="checkTellerDayEndsPendingApproval">
+    <part element="tns:checkTellerDayEndsPendingApproval" name="parameters">
+    </part>
+  </message>
+  <message name="isPreviousDayEndRunResponse">
+    <part element="tns:isPreviousDayEndRunResponse" name="parameters">
+    </part>
+  </message>
+  <message name="confirmNonHolderWithdrawal">
+    <part element="tns:confirmNonHolderWithdrawal" name="parameters">
+    </part>
+  </message>
+  <message name="scheduleCommissionTimer">
+    <part element="tns:scheduleCommissionTimer" name="parameters">
+    </part>
+  </message>
+  <message name="updateProcessTxnResponse">
+    <part element="tns:updateProcessTxnResponse" name="parameters">
+    </part>
+  </message>
+  <message name="processAlertRegistration">
+    <part element="tns:processAlertRegistration" name="parameters">
+    </part>
+  </message>
+  <message name="saveTxnReversalConfigData">
+    <part element="tns:saveTxnReversalConfigData" name="parameters">
+    </part>
+  </message>
+  <message name="canTellerMakeTransactResponse">
+    <part element="tns:canTellerMakeTransactResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchIdResponse">
+    <part element="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="processDayEndBookEntries">
+    <part element="tns:processDayEndBookEntries" name="parameters">
+    </part>
+  </message>
+  <message name="reverseTransaction">
+    <part element="tns:reverseTransaction" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndsByDayEndStatusAndDateRangeAndBranchResponse">
+    <part element="tns:getDayEndsByDayEndStatusAndDateRangeAndBranchResponse" name="parameters">
+    </part>
+  </message>
+  <message name="checkIfAnyFloatsPendingApprovalResponse">
+    <part element="tns:checkIfAnyFloatsPendingApprovalResponse" name="parameters">
+    </part>
+  </message>
+  <message name="cancellTxnReversalTimer">
+    <part element="tns:cancellTxnReversalTimer" name="parameters">
+    </part>
+  </message>
+  <message name="getTellerDayEndTotalResponse">
+    <part element="tns:getTellerDayEndTotalResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createDayEndSummary">
+    <part element="tns:createDayEndSummary" name="parameters">
+    </part>
+  </message>
+  <message name="createProcessTransactionResponse">
+    <part element="tns:createProcessTransactionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndByTellerIdAndDateCreatedAndStatus">
+    <part element="tns:getDayEndByTellerIdAndDateCreatedAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="scheduleTxnReversalTimerResponse">
+    <part element="tns:scheduleTxnReversalTimerResponse" name="parameters">
+    </part>
+  </message>
+  <message name="saveCollectionConfigurationDataResponse">
+    <part element="tns:saveCollectionConfigurationDataResponse" name="parameters">
+    </part>
+  </message>
+  <message name="confirmManualResolve">
+    <part element="tns:confirmManualResolve" name="parameters">
+    </part>
+  </message>
+  <message name="getTellerNetCashPositionResponse">
+    <part element="tns:getTellerNetCashPositionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTotalAmountByApplicableParametersResponse">
+    <part element="tns:getTotalAmountByApplicableParametersResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findProcessTransactionById">
+    <part element="tns:findProcessTransactionById" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRangeByMsgTypeByBankId">
+    <part element="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndByDayEndStatusAndBranch">
+    <part element="tns:getDayEndByDayEndStatusAndBranch" name="parameters">
+    </part>
+  </message>
+  <message name="editDayEndSummaryResponse">
+    <part element="tns:editDayEndSummaryResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveDayEnd">
+    <part element="tns:disapproveDayEnd" name="parameters">
+    </part>
+  </message>
+  <message name="validateAgentDepositResponse">
+    <part element="tns:validateAgentDepositResponse" name="parameters">
+    </part>
+  </message>
+  <message name="checkIfThereAreTrxnTomark">
+    <part element="tns:checkIfThereAreTrxnTomark" name="parameters">
+    </part>
+  </message>
+  <message name="saveCommissionConfigData">
+    <part element="tns:saveCommissionConfigData" name="parameters">
+    </part>
+  </message>
+  <message name="processEquationPostingResponse">
+    <part element="tns:processEquationPostingResponse" name="parameters">
+    </part>
+  </message>
+  <message name="validateEwalletHolderWithdrawal">
+    <part element="tns:validateEwalletHolderWithdrawal" name="parameters">
+    </part>
+  </message>
+  <message name="editDayEnd">
+    <part element="tns:editDayEnd" name="parameters">
+    </part>
+  </message>
+  <message name="approveDayEnd">
+    <part element="tns:approveDayEnd" name="parameters">
+    </part>
+  </message>
+  <message name="scheduleTimerResponse">
+    <part element="tns:scheduleTimerResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approveTellerDailyFloatResponse">
+    <part element="tns:approveTellerDailyFloatResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getStartDayTxnsByTellerAndDateRangeAndStatusResponse">
+    <part element="tns:getStartDayTxnsByTellerAndDateRangeAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="processEwalletWithdrawal">
+    <part element="tns:processEwalletWithdrawal" name="parameters">
+    </part>
+  </message>
+  <message name="approveMarkedTransaction">
+    <part element="tns:approveMarkedTransaction" name="parameters">
+    </part>
+  </message>
+  <message name="manualResolve">
+    <part element="tns:manualResolve" name="parameters">
+    </part>
+  </message>
+  <message name="completeTransactionResponse">
+    <part element="tns:completeTransactionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionResponse">
+    <part element="tns:getProcessTransactionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionByTellerIdAndDateRangeAndStatus">
+    <part element="tns:getProcessTransactionByTellerIdAndDateRangeAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndByDayEndStatus">
+    <part element="tns:getDayEndByDayEndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getTransactionChargeByProcessTransactionIdResponse">
+    <part element="tns:getTransactionChargeByProcessTransactionIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByTellerIDResponse">
+    <part element="tns:getProcessTransactionsByTellerIDResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByDayEndId">
+    <part element="tns:getProcessTransactionsByDayEndId" name="parameters">
+    </part>
+  </message>
+  <message name="processDayEndApproval">
+    <part element="tns:processDayEndApproval" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRangeByBankIdAndBranchIdResponse">
+    <part element="tns:getProcessTransactionsWithinDateRangeByBankIdAndBranchIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="depositCashResponse">
+    <part element="tns:depositCashResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByTellerIdAndDateRange">
+    <part element="tns:getProcessTransactionsByTellerIdAndDateRange" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRangeResponse">
+    <part element="tns:getProcessTransactionsWithinDateRangeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateDayEndResponse">
+    <part element="tns:updateDayEndResponse" name="parameters">
+    </part>
+  </message>
+  <message name="isPreviousDayEndRun">
+    <part element="tns:isPreviousDayEndRun" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByTransactionStatusResponse">
+    <part element="tns:getProcessTransactionsByTransactionStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="Exception">
+    <part element="tns:Exception" name="fault">
+    </part>
+  </message>
+  <message name="findDayEndSummaryResponse">
+    <part element="tns:findDayEndSummaryResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndSummaryByDayEndIdResponse">
+    <part element="tns:getDayEndSummaryByDayEndIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateProcessTxn">
+    <part element="tns:updateProcessTxn" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRangeByBankIdResponse">
+    <part element="tns:getProcessTransactionsWithinDateRangeByBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="canTellerMakeTransact">
+    <part element="tns:canTellerMakeTransact" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByBranch">
+    <part element="tns:getProcessTransactionsByBranch" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionByMessageIdResponse">
+    <part element="tns:getProcessTransactionByMessageIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchId">
+    <part element="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchId" name="parameters">
+    </part>
+  </message>
+  <message name="getDailyAmountByCustomerIdAndTxnTypeResponse">
+    <part element="tns:getDailyAmountByCustomerIdAndTxnTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="depositAgentCashResponse">
+    <part element="tns:depositAgentCashResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndsByDayEndStatusAndDateRangeAndBranch">
+    <part element="tns:getDayEndsByDayEndStatusAndDateRangeAndBranch" name="parameters">
+    </part>
+  </message>
+  <message name="checkIfAnyFloatsPendingApproval">
+    <part element="tns:checkIfAnyFloatsPendingApproval" name="parameters">
+    </part>
+  </message>
+  <message name="getStartOfDayTxnByProfileIdAndDayEndSummaryAndStatusResponse">
+    <part element="tns:getStartOfDayTxnByProfileIdAndDayEndSummaryAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createStartOfDayTransaction">
+    <part element="tns:createStartOfDayTransaction" name="parameters">
+    </part>
+  </message>
+  <message name="getTellerDayEndTotal">
+    <part element="tns:getTellerDayEndTotal" name="parameters">
+    </part>
+  </message>
+  <message name="getTellerDayEndResponse">
+    <part element="tns:getTellerDayEndResponse" name="parameters">
+    </part>
+  </message>
+  <message name="validateDepositResponse">
+    <part element="tns:validateDepositResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findDayEndByIdResponse">
+    <part element="tns:findDayEndByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createProcessTransaction">
+    <part element="tns:createProcessTransaction" name="parameters">
+    </part>
+  </message>
+  <message name="getStartOfDayTransactionByTransactionTypeAndBranchAndStatusResponse">
+    <part element="tns:getStartOfDayTransactionByTransactionTypeAndBranchAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="validateAgentDeposit">
+    <part element="tns:validateAgentDeposit" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByTellerIdAndDayEndSummaryResponse">
+    <part element="tns:getProcessTransactionsByTellerIdAndDayEndSummaryResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsWithinDateRangeByMsgTypeResponse">
+    <part element="tns:getProcessTransactionsWithinDateRangeByMsgTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByApplicableParametersResponse">
+    <part element="tns:getProcessTransactionsByApplicableParametersResponse" name="parameters">
+    </part>
+  </message>
+  <message name="cancellTxnReversalTimerResponse">
+    <part element="tns:cancellTxnReversalTimerResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveTellerDailyFloatResponse">
+    <part element="tns:disapproveTellerDailyFloatResponse" name="parameters">
+    </part>
+  </message>
+  <message name="scheduleTxnReversalTimer">
+    <part element="tns:scheduleTxnReversalTimer" name="parameters">
+    </part>
+  </message>
+  <message name="saveCollectionConfigurationData">
+    <part element="tns:saveCollectionConfigurationData" name="parameters">
+    </part>
+  </message>
+  <message name="getTellerNetCashPosition">
+    <part element="tns:getTellerNetCashPosition" name="parameters">
+    </part>
+  </message>
+  <message name="getTotalAmountByApplicableParameters">
+    <part element="tns:getTotalAmountByApplicableParameters" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndSummariesByDayEndResponse">
+    <part element="tns:getDayEndSummariesByDayEndResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getDayEndsByDayEndStatusAndDateRangeAndTellerResponse">
+    <part element="tns:getDayEndsByDayEndStatusAndDateRangeAndTellerResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createDayEndResponse">
+    <part element="tns:createDayEndResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editDayEndSummary">
+    <part element="tns:editDayEndSummary" name="parameters">
+    </part>
+  </message>
+  <message name="getPocessTransactionsByDateRangeAndStatusResponse">
+    <part element="tns:getPocessTransactionsByDateRangeAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteProcessTransactionsByDayEndResponse">
+    <part element="tns:deleteProcessTransactionsByDayEndResponse" name="parameters">
+    </part>
+  </message>
+  <message name="scheduleCollectionTimerResponse">
+    <part element="tns:scheduleCollectionTimerResponse" name="parameters">
+    </part>
+  </message>
+  <message name="isTodaysDayEndRunResponse">
+    <part element="tns:isTodaysDayEndRunResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getStartOfDayTransactionByTransactionTypeAndTellerAndDateRangeResponse">
+    <part element="tns:getStartOfDayTransactionByTransactionTypeAndTellerAndDateRangeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProcessTransactionsByAllAttributesResponse">
+    <part element="tns:getProcessTransactionsByAllAttributesResponse" name="parameters">
+    </part>
+  </message>
+  <message name="cancellCollectionTimerResponse">
+    <part element="tns:cancellCollectionTimerResponse" name="parameters">
+    </part>
+  </message>
+  <portType name="ProcessService">
+    <operation name="depositCash">
+      <input message="tns:depositCash">
+    </input>
+      <output message="tns:depositCashResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransaction">
+      <input message="tns:getProcessTransaction">
+    </input>
+      <output message="tns:getProcessTransactionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="confirmNonHolderWithdrawal">
+      <input message="tns:confirmNonHolderWithdrawal">
+    </input>
+      <output message="tns:confirmNonHolderWithdrawalResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRange">
+      <input message="tns:getProcessTransactionsWithinDateRange">
+    </input>
+      <output message="tns:getProcessTransactionsWithinDateRangeResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRangeByMsgType">
+      <input message="tns:getProcessTransactionsWithinDateRangeByMsgType">
+    </input>
+      <output message="tns:getProcessTransactionsWithinDateRangeByMsgTypeResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRangeByBankId">
+      <input message="tns:getProcessTransactionsWithinDateRangeByBankId">
+    </input>
+      <output message="tns:getProcessTransactionsWithinDateRangeByBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRangeByMsgTypeByBankId">
+      <input message="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankId">
+    </input>
+      <output message="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRangeByBankIdAndBranchId">
+      <input message="tns:getProcessTransactionsWithinDateRangeByBankIdAndBranchId">
+    </input>
+      <output message="tns:getProcessTransactionsWithinDateRangeByBankIdAndBranchIdResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchId">
+      <input message="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchId">
+    </input>
+      <output message="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchIdResponse">
+    </output>
+    </operation>
+    <operation name="runTellerDayEnd">
+      <input message="tns:runTellerDayEnd">
+    </input>
+      <output message="tns:runTellerDayEndResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getTellerDayEnd">
+      <input message="tns:getTellerDayEnd">
+    </input>
+      <output message="tns:getTellerDayEndResponse">
+    </output>
+    </operation>
+    <operation name="getTellerDayEndTotal">
+      <input message="tns:getTellerDayEndTotal">
+    </input>
+      <output message="tns:getTellerDayEndTotalResponse">
+    </output>
+    </operation>
+    <operation name="validateEwalletHolderWithdrawal">
+      <input message="tns:validateEwalletHolderWithdrawal">
+    </input>
+      <output message="tns:validateEwalletHolderWithdrawalResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="processEwalletWithdrawal">
+      <input message="tns:processEwalletWithdrawal">
+    </input>
+      <output message="tns:processEwalletWithdrawalResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionByMessageId">
+      <input message="tns:getProcessTransactionByMessageId">
+    </input>
+      <output message="tns:getProcessTransactionByMessageIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getProcessTransactionsByTellerID">
+      <input message="tns:getProcessTransactionsByTellerID">
+    </input>
+      <output message="tns:getProcessTransactionsByTellerIDResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsByTellerIdAndDateRange">
+      <input message="tns:getProcessTransactionsByTellerIdAndDateRange">
+    </input>
+      <output message="tns:getProcessTransactionsByTellerIdAndDateRangeResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsByTransactionStatus">
+      <input message="tns:getProcessTransactionsByTransactionStatus">
+    </input>
+      <output message="tns:getProcessTransactionsByTransactionStatusResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionByTellerIdAndDateRangeAndStatus">
+      <input message="tns:getProcessTransactionByTellerIdAndDateRangeAndStatus">
+    </input>
+      <output message="tns:getProcessTransactionByTellerIdAndDateRangeAndStatusResponse">
+    </output>
+    </operation>
+    <operation name="getPocessTransactionsByDateRangeAndStatus">
+      <input message="tns:getPocessTransactionsByDateRangeAndStatus">
+    </input>
+      <output message="tns:getPocessTransactionsByDateRangeAndStatusResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsByBranch">
+      <input message="tns:getProcessTransactionsByBranch">
+    </input>
+      <output message="tns:getProcessTransactionsByBranchResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsByBranchAndDateRangeAndStatus">
+      <input message="tns:getProcessTransactionsByBranchAndDateRangeAndStatus">
+    </input>
+      <output message="tns:getProcessTransactionsByBranchAndDateRangeAndStatusResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsByTellerIdAndDayEndSummary">
+      <input message="tns:getProcessTransactionsByTellerIdAndDayEndSummary">
+    </input>
+      <output message="tns:getProcessTransactionsByTellerIdAndDayEndSummaryResponse">
+    </output>
+    </operation>
+    <operation name="getDayEndByTellerIdAndDateCreatedAndStatus">
+      <input message="tns:getDayEndByTellerIdAndDateCreatedAndStatus">
+    </input>
+      <output message="tns:getDayEndByTellerIdAndDateCreatedAndStatusResponse">
+    </output>
+    </operation>
+    <operation name="createDayEnd">
+      <input message="tns:createDayEnd">
+    </input>
+      <output message="tns:createDayEndResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editDayEnd">
+      <input message="tns:editDayEnd">
+    </input>
+      <output message="tns:editDayEndResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="createDayEndSummary">
+      <input message="tns:createDayEndSummary">
+    </input>
+      <output message="tns:createDayEndSummaryResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findDayEndById">
+      <input message="tns:findDayEndById">
+    </input>
+      <output message="tns:findDayEndByIdResponse">
+    </output>
+    </operation>
+    <operation name="editDayEndSummary">
+      <input message="tns:editDayEndSummary">
+    </input>
+      <output message="tns:editDayEndSummaryResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findDayEndSummary">
+      <input message="tns:findDayEndSummary">
+    </input>
+      <output message="tns:findDayEndSummaryResponse">
+    </output>
+    </operation>
+    <operation name="approveDayEnd">
+      <input message="tns:approveDayEnd">
+    </input>
+      <output message="tns:approveDayEndResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="disapproveDayEnd">
+      <input message="tns:disapproveDayEnd">
+    </input>
+      <output message="tns:disapproveDayEndResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getDayEndByDayEndStatus">
+      <input message="tns:getDayEndByDayEndStatus">
+    </input>
+      <output message="tns:getDayEndByDayEndStatusResponse">
+    </output>
+    </operation>
+    <operation name="getDayEndsByDayEndStatusAndDateRangeAndBranch">
+      <input message="tns:getDayEndsByDayEndStatusAndDateRangeAndBranch">
+    </input>
+      <output message="tns:getDayEndsByDayEndStatusAndDateRangeAndBranchResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getDayEndsByDayEndStatusAndDateRangeAndTeller">
+      <input message="tns:getDayEndsByDayEndStatusAndDateRangeAndTeller">
+    </input>
+      <output message="tns:getDayEndsByDayEndStatusAndDateRangeAndTellerResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getDayEndSummaryByDayEndId">
+      <input message="tns:getDayEndSummaryByDayEndId">
+    </input>
+      <output message="tns:getDayEndSummaryByDayEndIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="isTodaysDayEndRun">
+      <input message="tns:isTodaysDayEndRun">
+    </input>
+      <output message="tns:isTodaysDayEndRunResponse">
+    </output>
+    </operation>
+    <operation name="isPreviousDayEndRun">
+      <input message="tns:isPreviousDayEndRun">
+    </input>
+      <output message="tns:isPreviousDayEndRunResponse">
+    </output>
+    </operation>
+    <operation name="getDayEndByDayEndStatusAndBranch">
+      <input message="tns:getDayEndByDayEndStatusAndBranch">
+    </input>
+      <output message="tns:getDayEndByDayEndStatusAndBranchResponse">
+    </output>
+    </operation>
+    <operation name="checkIfThereAreTrxnTomark">
+      <input message="tns:checkIfThereAreTrxnTomark">
+    </input>
+      <output message="tns:checkIfThereAreTrxnTomarkResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getDayEndSummariesByDayEnd">
+      <input message="tns:getDayEndSummariesByDayEnd">
+    </input>
+      <output message="tns:getDayEndSummariesByDayEndResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="processEquationPosting">
+      <input message="tns:processEquationPosting">
+    </input>
+      <output message="tns:processEquationPostingResponse">
+    </output>
+    </operation>
+    <operation name="processDayEndBookEntries">
+      <input message="tns:processDayEndBookEntries">
+    </input>
+      <output message="tns:processDayEndBookEntriesResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="createProcessTransaction">
+      <input message="tns:createProcessTransaction">
+    </input>
+      <output message="tns:createProcessTransactionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="updateProcessTxn">
+      <input message="tns:updateProcessTxn">
+    </input>
+      <output message="tns:updateProcessTxnResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getProcessTransactionsByDayEndId">
+      <input message="tns:getProcessTransactionsByDayEndId">
+    </input>
+      <output message="tns:getProcessTransactionsByDayEndIdResponse">
+    </output>
+    </operation>
+    <operation name="deleteProcessTransactionsByDayEnd">
+      <input message="tns:deleteProcessTransactionsByDayEnd">
+    </input>
+      <output message="tns:deleteProcessTransactionsByDayEndResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getProcessTransactionsByApplicableParameters">
+      <input message="tns:getProcessTransactionsByApplicableParameters">
+    </input>
+      <output message="tns:getProcessTransactionsByApplicableParametersResponse">
+    </output>
+    </operation>
+    <operation name="getTotalAmountByApplicableParameters">
+      <input message="tns:getTotalAmountByApplicableParameters">
+    </input>
+      <output message="tns:getTotalAmountByApplicableParametersResponse">
+    </output>
+    </operation>
+    <operation name="validateDeposit">
+      <input message="tns:validateDeposit">
+    </input>
+      <output message="tns:validateDepositResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getDailyAmountByCustomerIdAndTxnType">
+      <input message="tns:getDailyAmountByCustomerIdAndTxnType">
+    </input>
+      <output message="tns:getDailyAmountByCustomerIdAndTxnTypeResponse">
+    </output>
+    </operation>
+    <operation name="createStartOfDayTransaction">
+      <input message="tns:createStartOfDayTransaction">
+    </input>
+      <output message="tns:createStartOfDayTransactionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getTellerNetCashPosition">
+      <input message="tns:getTellerNetCashPosition">
+    </input>
+      <output message="tns:getTellerNetCashPositionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findProcessTransactionById">
+      <input message="tns:findProcessTransactionById">
+    </input>
+      <output message="tns:findProcessTransactionByIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getStartOfDayTransactionByTransactionTypeAndBranchAndStatus">
+      <input message="tns:getStartOfDayTransactionByTransactionTypeAndBranchAndStatus">
+    </input>
+      <output message="tns:getStartOfDayTransactionByTransactionTypeAndBranchAndStatusResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveTellerDailyFloat">
+      <input message="tns:approveTellerDailyFloat">
+    </input>
+      <output message="tns:approveTellerDailyFloatResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="disapproveTellerDailyFloat">
+      <input message="tns:disapproveTellerDailyFloat">
+    </input>
+      <output message="tns:disapproveTellerDailyFloatResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getStartOfDayTransactionByTransactionTypeAndTellerAndDateRange">
+      <input message="tns:getStartOfDayTransactionByTransactionTypeAndTellerAndDateRange">
+    </input>
+      <output message="tns:getStartOfDayTransactionByTransactionTypeAndTellerAndDateRangeResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getStartDayTxnsByTellerAndDateRangeAndStatus">
+      <input message="tns:getStartDayTxnsByTellerAndDateRangeAndStatus">
+    </input>
+      <output message="tns:getStartDayTxnsByTellerAndDateRangeAndStatusResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="canTellerMakeTransact">
+      <input message="tns:canTellerMakeTransact">
+    </input>
+      <output message="tns:canTellerMakeTransactResponse">
+    </output>
+    </operation>
+    <operation name="getStartOfDayTxnByProfileIdAndDayEndSummaryAndStatus">
+      <input message="tns:getStartOfDayTxnByProfileIdAndDayEndSummaryAndStatus">
+    </input>
+      <output message="tns:getStartOfDayTxnByProfileIdAndDayEndSummaryAndStatusResponse">
+    </output>
+    </operation>
+    <operation name="checkIfAnyFloatsPendingApproval">
+      <input message="tns:checkIfAnyFloatsPendingApproval">
+    </input>
+      <output message="tns:checkIfAnyFloatsPendingApprovalResponse">
+    </output>
+    </operation>
+    <operation name="checkTellerDayEndsPendingApproval">
+      <input message="tns:checkTellerDayEndsPendingApproval">
+    </input>
+      <output message="tns:checkTellerDayEndsPendingApprovalResponse">
+    </output>
+    </operation>
+    <operation name="getProcessTransactionsByAllAttributes">
+      <input message="tns:getProcessTransactionsByAllAttributes">
+    </input>
+      <output message="tns:getProcessTransactionsByAllAttributesResponse">
+    </output>
+    </operation>
+    <operation name="reverseTransaction">
+      <input message="tns:reverseTransaction">
+    </input>
+      <output message="tns:reverseTransactionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="completeTransaction">
+      <input message="tns:completeTransaction">
+    </input>
+      <output message="tns:completeTransactionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="manualResolve">
+      <input message="tns:manualResolve">
+    </input>
+      <output message="tns:manualResolveResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="confirmManualResolve">
+      <input message="tns:confirmManualResolve">
+    </input>
+      <output message="tns:confirmManualResolveResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getTransactionChargeByProcessTransactionId">
+      <input message="tns:getTransactionChargeByProcessTransactionId">
+    </input>
+      <output message="tns:getTransactionChargeByProcessTransactionIdResponse">
+    </output>
+    </operation>
+    <operation name="scheduleTimer">
+      <input message="tns:scheduleTimer">
+    </input>
+      <output message="tns:scheduleTimerResponse">
+    </output>
+    </operation>
+    <operation name="processDayEndApproval">
+      <input message="tns:processDayEndApproval">
+    </input>
+      <output message="tns:processDayEndApprovalResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveMarkedTransaction">
+      <input message="tns:approveMarkedTransaction">
+    </input>
+      <output message="tns:approveMarkedTransactionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="updateDayEnd">
+      <input message="tns:updateDayEnd">
+    </input>
+      <output message="tns:updateDayEndResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="scheduleCollectionTimer">
+      <input message="tns:scheduleCollectionTimer">
+    </input>
+      <output message="tns:scheduleCollectionTimerResponse">
+    </output>
+    </operation>
+    <operation name="cancellCollectionTimer">
+      <input message="tns:cancellCollectionTimer">
+    </input>
+      <output message="tns:cancellCollectionTimerResponse">
+    </output>
+    </operation>
+    <operation name="saveCollectionConfigurationData">
+      <input message="tns:saveCollectionConfigurationData">
+    </input>
+      <output message="tns:saveCollectionConfigurationDataResponse">
+    </output>
+    </operation>
+    <operation name="saveTxnReversalConfigData">
+      <input message="tns:saveTxnReversalConfigData">
+    </input>
+      <output message="tns:saveTxnReversalConfigDataResponse">
+    </output>
+    </operation>
+    <operation name="scheduleTxnReversalTimer">
+      <input message="tns:scheduleTxnReversalTimer">
+    </input>
+      <output message="tns:scheduleTxnReversalTimerResponse">
+    </output>
+    </operation>
+    <operation name="cancellTxnReversalTimer">
+      <input message="tns:cancellTxnReversalTimer">
+    </input>
+      <output message="tns:cancellTxnReversalTimerResponse">
+    </output>
+    </operation>
+    <operation name="validateAgentDeposit">
+      <input message="tns:validateAgentDeposit">
+    </input>
+      <output message="tns:validateAgentDepositResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="depositAgentCash">
+      <input message="tns:depositAgentCash">
+    </input>
+      <output message="tns:depositAgentCashResponse">
+    </output>
+    </operation>
+    <operation name="cancellCommissionTimer">
+      <input message="tns:cancellCommissionTimer">
+    </input>
+      <output message="tns:cancellCommissionTimerResponse">
+    </output>
+    </operation>
+    <operation name="saveCommissionConfigData">
+      <input message="tns:saveCommissionConfigData">
+    </input>
+      <output message="tns:saveCommissionConfigDataResponse">
+    </output>
+    </operation>
+    <operation name="scheduleCommissionTimer">
+      <input message="tns:scheduleCommissionTimer">
+    </input>
+      <output message="tns:scheduleCommissionTimerResponse">
+    </output>
+    </operation>
+    <operation name="processAlertRegistration">
+      <input message="tns:processAlertRegistration">
+    </input>
+      <output message="tns:processAlertRegistrationResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="ProcessServiceSOAPBinding" type="tns:ProcessService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="depositCash">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="confirmNonHolderWithdrawal">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRange">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRangeByMsgType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRangeByBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRangeByMsgTypeByBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRangeByBankIdAndBranchId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="runTellerDayEnd">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getTellerDayEnd">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTellerDayEndTotal">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="validateEwalletHolderWithdrawal">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="processEwalletWithdrawal">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionByMessageId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getProcessTransactionsByTellerID">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsByTellerIdAndDateRange">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsByTransactionStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionByTellerIdAndDateRangeAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getPocessTransactionsByDateRangeAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsByBranch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsByBranchAndDateRangeAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsByTellerIdAndDayEndSummary">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getDayEndByTellerIdAndDateCreatedAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createDayEnd">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editDayEnd">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createDayEndSummary">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findDayEndById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="editDayEndSummary">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findDayEndSummary">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="approveDayEnd">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="disapproveDayEnd">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getDayEndByDayEndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getDayEndsByDayEndStatusAndDateRangeAndBranch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getDayEndsByDayEndStatusAndDateRangeAndTeller">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getDayEndSummaryByDayEndId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="isTodaysDayEndRun">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="isPreviousDayEndRun">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getDayEndByDayEndStatusAndBranch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="checkIfThereAreTrxnTomark">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getDayEndSummariesByDayEnd">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="processEquationPosting">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="processDayEndBookEntries">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createProcessTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateProcessTxn">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getProcessTransactionsByDayEndId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="deleteProcessTransactionsByDayEnd">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getProcessTransactionsByApplicableParameters">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTotalAmountByApplicableParameters">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="validateDeposit">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getDailyAmountByCustomerIdAndTxnType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createStartOfDayTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getTellerNetCashPosition">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findProcessTransactionById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getStartOfDayTransactionByTransactionTypeAndBranchAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveTellerDailyFloat">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="disapproveTellerDailyFloat">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getStartOfDayTransactionByTransactionTypeAndTellerAndDateRange">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getStartDayTxnsByTellerAndDateRangeAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="canTellerMakeTransact">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getStartOfDayTxnByProfileIdAndDayEndSummaryAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="checkIfAnyFloatsPendingApproval">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="checkTellerDayEndsPendingApproval">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProcessTransactionsByAllAttributes">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="reverseTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="completeTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="manualResolve">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="confirmManualResolve">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getTransactionChargeByProcessTransactionId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="scheduleTimer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="processDayEndApproval">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveMarkedTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateDayEnd">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="scheduleCollectionTimer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="cancellCollectionTimer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="saveCollectionConfigurationData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="saveTxnReversalConfigData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="scheduleTxnReversalTimer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="cancellTxnReversalTimer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="validateAgentDeposit">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="depositAgentCash">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="cancellCommissionTimer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="saveCommissionConfigData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="scheduleCommissionTimer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="processAlertRegistration">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ProcessService">
+    <port binding="tns:ProcessServiceSOAPBinding" name="ProcessServiceSOAP">
+      <soap:address location="http://localhost:9081/EWalletProcessModule/ProcessService"/>
+    </port>
+  </service>
+</definitions>

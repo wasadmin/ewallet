@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="econetvas" targetNamespace="http://econetvas.econet.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://econetvas.econet.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://econetvas.econet.co.zw/" schemaLocation="Econetvas_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="billPayReversal">
+    <part element="tns:billPayReversal" name="parameters">
+    </part>
+  </message>
+  <message name="txtCreditResponse">
+    <part element="tns:txtCreditResponse" name="parameters">
+    </part>
+  </message>
+  <message name="creditReversalResponse">
+    <part element="tns:creditReversalResponse" name="parameters">
+    </part>
+  </message>
+  <message name="balanceEnquiryResponse">
+    <part element="tns:balanceEnquiryResponse" name="parameters">
+    </part>
+  </message>
+  <message name="txtCredit">
+    <part element="tns:txtCredit" name="parameters">
+    </part>
+  </message>
+  <message name="creditReversal">
+    <part element="tns:creditReversal" name="parameters">
+    </part>
+  </message>
+  <message name="balanceEnquiry">
+    <part element="tns:balanceEnquiry" name="parameters">
+    </part>
+  </message>
+  <message name="billPayResponse">
+    <part element="tns:billPayResponse" name="parameters">
+    </part>
+  </message>
+  <message name="creditSubscriberResponse">
+    <part element="tns:creditSubscriberResponse" name="parameters">
+    </part>
+  </message>
+  <message name="billPay">
+    <part element="tns:billPay" name="parameters">
+    </part>
+  </message>
+  <message name="creditSubscriber">
+    <part element="tns:creditSubscriber" name="parameters">
+    </part>
+  </message>
+  <message name="debitSubscriber">
+    <part element="tns:debitSubscriber" name="parameters">
+    </part>
+  </message>
+  <message name="debitSubscriberResponse">
+    <part element="tns:debitSubscriberResponse" name="parameters">
+    </part>
+  </message>
+  <message name="billPayReversalResponse">
+    <part element="tns:billPayReversalResponse" name="parameters">
+    </part>
+  </message>
+  <portType name="econetvas">
+    <operation name="balanceEnquiry">
+      <input message="tns:balanceEnquiry">
+    </input>
+      <output message="tns:balanceEnquiryResponse">
+    </output>
+    </operation>
+    <operation name="billPay">
+      <input message="tns:billPay">
+    </input>
+      <output message="tns:billPayResponse">
+    </output>
+    </operation>
+    <operation name="billPayReversal">
+      <input message="tns:billPayReversal">
+    </input>
+      <output message="tns:billPayReversalResponse">
+    </output>
+    </operation>
+    <operation name="creditSubscriber">
+      <input message="tns:creditSubscriber">
+    </input>
+      <output message="tns:creditSubscriberResponse">
+    </output>
+    </operation>
+    <operation name="debitSubscriber">
+      <input message="tns:debitSubscriber">
+    </input>
+      <output message="tns:debitSubscriberResponse">
+    </output>
+    </operation>
+    <operation name="txtCredit">
+      <input message="tns:txtCredit">
+    </input>
+      <output message="tns:txtCreditResponse">
+    </output>
+    </operation>
+    <operation name="creditReversal">
+      <input message="tns:creditReversal">
+    </input>
+      <output message="tns:creditReversalResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="econetvasSOAPBinding" type="tns:econetvas">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="balanceEnquiry">
+      <soap:operation soapAction="http://econetvas.econet.co.zw/balanceEnquiry"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="billPay">
+      <soap:operation soapAction="http://econetvas.econet.co.zw/billPay"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="billPayReversal">
+      <soap:operation soapAction="http://econetvas.econet.co.zw/billPayReversal"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="creditSubscriber">
+      <soap:operation soapAction="http://econetvas.econet.co.zw/creditSubscriber"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="debitSubscriber">
+      <soap:operation soapAction="http://econetvas.econet.co.zw/debitSubscriber"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="txtCredit">
+      <soap:operation soapAction="http://econetvas.econet.co.zw/txtCredit"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="creditReversal">
+      <soap:operation soapAction="http://econetvas.econet.co.zw/creditReversal"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="econetvas">
+    <port binding="tns:econetvasSOAPBinding" name="econetvasSOAP">
+      <soap:address location="http://192.168.100.67:9081/EconetVasWeb/econetvas"/>
+    </port>
+  </service>
+</definitions>

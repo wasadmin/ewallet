@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><ejb-jar id="ejb-jar_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd">
+    <display-name>ProfileServicesEJB</display-name>
+    <enterprise-beans>
+        <session>
+            <ejb-name>ProfileServiceImpl</ejb-name>
+            <business-local>zw.co.esolutions.ewallet.profileservices.service.ProfileService</business-local>
+            <ejb-class>zw.co.esolutions.ewallet.profileservices.service.ProfileServiceImpl</ejb-class>
+            <session-type>Stateless</session-type>
+            <persistence-context-ref>
+                <persistence-context-ref-name>zw.co.esolutions.ewallet.profileservices.service.ProfileServiceImpl/em</persistence-context-ref-name>
+                <persistence-unit-name/>
+                <persistence-context-type>Transaction</persistence-context-type>
+                <injection-target>
+                    <injection-target-class>zw.co.esolutions.ewallet.profileservices.service.ProfileServiceImpl</injection-target-class>
+                    <injection-target-name>em</injection-target-name>
+                </injection-target>
+            </persistence-context-ref>
+        </session>
+    </enterprise-beans>
+    <assembly-descriptor/>
+</ejb-jar>

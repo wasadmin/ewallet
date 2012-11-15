@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="AuditTrailService" targetNamespace="http://service.audittrailservices.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.audittrailservices.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.audittrailservices.ewallet.esolutions.co.zw/" schemaLocation="AuditTrailService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getByEntityNameAndInstanceNameResponse">
+    <part element="tns:getByEntityNameAndInstanceNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getByTimePeriod">
+    <part element="tns:getByTimePeriod" name="parameters">
+    </part>
+  </message>
+  <message name="getByEntityNameAndEntityId">
+    <part element="tns:getByEntityNameAndEntityId" name="parameters">
+    </part>
+  </message>
+  <message name="findActivityById">
+    <part element="tns:findActivityById" name="parameters">
+    </part>
+  </message>
+  <message name="editActivityResponse">
+    <part element="tns:editActivityResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllActivitiesResponse">
+    <part element="tns:getAllActivitiesResponse" name="parameters">
+    </part>
+  </message>
+  <message name="logActivityWithNarrative">
+    <part element="tns:logActivityWithNarrative" name="parameters">
+    </part>
+  </message>
+  <message name="logActivityResponse">
+    <part element="tns:logActivityResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getByEntityNameAndInstanceNameAndTimePeriod">
+    <part element="tns:getByEntityNameAndInstanceNameAndTimePeriod" name="parameters">
+    </part>
+  </message>
+  <message name="getByActivityAndTimePeriod">
+    <part element="tns:getByActivityAndTimePeriod" name="parameters">
+    </part>
+  </message>
+  <message name="getByUsername">
+    <part element="tns:getByUsername" name="parameters">
+    </part>
+  </message>
+  <message name="getByUsernameAndTimePeriodResponse">
+    <part element="tns:getByUsernameAndTimePeriodResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getByEntityNameAndInstanceName">
+    <part element="tns:getByEntityNameAndInstanceName" name="parameters">
+    </part>
+  </message>
+  <message name="getByTimePeriodResponse">
+    <part element="tns:getByTimePeriodResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getByEntityNameAndEntityIdResponse">
+    <part element="tns:getByEntityNameAndEntityIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findActivityByIdResponse">
+    <part element="tns:findActivityByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="logActivityWithNarrativeResponse">
+    <part element="tns:logActivityWithNarrativeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editActivity">
+    <part element="tns:editActivity" name="parameters">
+    </part>
+  </message>
+  <message name="getAllActivities">
+    <part element="tns:getAllActivities" name="parameters">
+    </part>
+  </message>
+  <message name="logActivity">
+    <part element="tns:logActivity" name="parameters">
+    </part>
+  </message>
+  <message name="Exception">
+    <part element="tns:Exception" name="fault">
+    </part>
+  </message>
+  <message name="getByEntityNameAndInstanceNameAndTimePeriodResponse">
+    <part element="tns:getByEntityNameAndInstanceNameAndTimePeriodResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getByActivityAndTimePeriodResponse">
+    <part element="tns:getByActivityAndTimePeriodResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getByUsernameResponse">
+    <part element="tns:getByUsernameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getByUsernameAndTimePeriod">
+    <part element="tns:getByUsernameAndTimePeriod" name="parameters">
+    </part>
+  </message>
+  <portType name="AuditTrailService">
+    <operation name="logActivity">
+      <input message="tns:logActivity">
+    </input>
+      <output message="tns:logActivityResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="logActivityWithNarrative">
+      <input message="tns:logActivityWithNarrative">
+    </input>
+      <output message="tns:logActivityWithNarrativeResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getByEntityNameAndInstanceName">
+      <input message="tns:getByEntityNameAndInstanceName">
+    </input>
+      <output message="tns:getByEntityNameAndInstanceNameResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getByEntityNameAndEntityId">
+      <input message="tns:getByEntityNameAndEntityId">
+    </input>
+      <output message="tns:getByEntityNameAndEntityIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getByEntityNameAndInstanceNameAndTimePeriod">
+      <input message="tns:getByEntityNameAndInstanceNameAndTimePeriod">
+    </input>
+      <output message="tns:getByEntityNameAndInstanceNameAndTimePeriodResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getByUsername">
+      <input message="tns:getByUsername">
+    </input>
+      <output message="tns:getByUsernameResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getByUsernameAndTimePeriod">
+      <input message="tns:getByUsernameAndTimePeriod">
+    </input>
+      <output message="tns:getByUsernameAndTimePeriodResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getByActivityAndTimePeriod">
+      <input message="tns:getByActivityAndTimePeriod">
+    </input>
+      <output message="tns:getByActivityAndTimePeriodResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getByTimePeriod">
+      <input message="tns:getByTimePeriod">
+    </input>
+      <output message="tns:getByTimePeriodResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findActivityById">
+      <input message="tns:findActivityById">
+    </input>
+      <output message="tns:findActivityByIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editActivity">
+      <input message="tns:editActivity">
+    </input>
+      <output message="tns:editActivityResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getAllActivities">
+      <input message="tns:getAllActivities">
+    </input>
+      <output message="tns:getAllActivitiesResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+  </portType>
+  <binding name="AuditTrailServiceSOAPBinding" type="tns:AuditTrailService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="logActivity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="logActivityWithNarrative">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getByEntityNameAndInstanceName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getByEntityNameAndEntityId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getByEntityNameAndInstanceNameAndTimePeriod">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getByUsername">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getByUsernameAndTimePeriod">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getByActivityAndTimePeriod">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getByTimePeriod">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findActivityById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editActivity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getAllActivities">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="AuditTrailService">
+    <port binding="tns:AuditTrailServiceSOAPBinding" name="AuditTrailServiceSOAP">
+      <soap:address location="http://localhost:9080/AuditTrailServices/AuditTrailService"/>
+    </port>
+  </service>
+</definitions>

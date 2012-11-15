@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SwitchConfigurationEAR">
+        <wb-resource deploy-path="/" source-path="/"/>
+        <dependent-module deploy-path="/" handle="module:/resource/SwitchConfigurationEJB/SwitchConfigurationEJB">
+            <dependent-object>Module_1309789809595</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="SwitchConfigurationClient.jar" deploy-path="/" handle="module:/resource/SwitchConfigurationClient/SwitchConfigurationClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EWalletUtils.jar" deploy-path="/" handle="module:/resource/EWalletUtils/EWalletUtils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/SwitchConfigurationServices/SwitchConfigurationServices">
+            <dependent-object>Module_1309790661561</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

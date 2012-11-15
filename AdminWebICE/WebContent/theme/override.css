@@ -1,0 +1,565 @@
+/* tabOn style classes */
+.iceTabSetTabOn {
+}
+
+.iceTabSetTabOn .LeftTop{
+    background-color:transparent;
+    background-image: url("./css-images/on-left-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOn .MiddleTop{
+    background-color:#0000FF;
+    /*background-image: url("./css-images/on-mid-top.gif");*/
+    background-repeat:repeat-x;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOn .RightTop{
+    background-color:transparent;
+    background-image: url("./css-images/on-right-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOn .LeftMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/on-left-mid.gif");
+    background-repeat:repeat-y;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOn .MiddleMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/on-mid-mid.gif");
+    background-repeat:repeat;
+    text-align:center;
+    padding-top:5px;
+    padding-right:15px;
+    padding-left:15px;
+    border:none;
+    white-space: nowrap;
+}
+
+.iceTabSetTabOn .MiddleMiddle a{
+    text-decoration:none;
+    color:#000000;
+    cursor: pointer;
+}
+
+.iceTabSetTabOn .RightMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/on-right-mid.gif");
+    background-repeat:repeat-y;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOn .LeftBottom{
+    background-color:transparent;
+    background-image: url("./css-images/on-left-bot.gif");
+    background-repeat:no-repeat;
+    border:none;
+}
+
+.iceTabSetTabOn .MiddleBottom{
+    background-color:transparent;
+    background-image: url("./css-images/on-mid-bot.gif");
+    background-repeat:repeat-x;
+    border:none;
+}
+
+.iceTabSetTabOn .RightBottom{
+    background-color:transparent;
+    background-image: url("./css-images/on-right-bot.gif");
+    background-repeat:no-repeat;
+    border:none;
+}
+
+/* tabOff style classes */
+.iceTabSetTabOff {
+}
+
+.iceTabSetTabOff .LeftTop{
+    background-color:transparent;
+    background-image: url("./css-images/off-left-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOff .MiddleTop{
+    background-color:#00FF00;
+    background-repeat:repeat-x;
+    /*background-image: url("./css-images/off-mid-top.gif");*/
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOff .RightTop{
+    background-color:transparent;
+    background-image: url("./css-images/off-right-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOff .LeftMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/off-left-mid.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOff .MiddleMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/off-mid-mid.gif");
+    background-repeat:repeat-x;
+    text-align:center;
+    padding-top:5px;
+    padding-right:15px;
+    padding-left:15px;
+    border:none;
+    white-space: nowrap;
+}
+
+.iceTabSetTabOff .MiddleMiddle a{
+    text-decoration:none;
+    color:#000000;
+    cursor: pointer;
+}
+
+.iceTabSetTabOff .RightMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/off-right-mid.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOff .LeftBottom{
+    background-color:transparent;
+    background-image: url("./css-images/off-left-bot.gif");
+    background-repeat:no-repeat;
+    border:none;
+}
+
+.iceTabSetTabOff .MiddleBottom{
+    background-color:transparent;
+    background-image: url("./css-images/off-mid-bot.gif");
+    background-repeat:repeat-x;
+    border:none;
+}
+
+.iceTabSetTabOff .RightBottom{
+    background-color:transparent;
+    background-image: url("./css-images/off-right-bot.gif");
+    background-repeat:no-repeat;
+    border:none;
+}
+
+/* tabOver style classes */
+.iceTabSetTabOver {
+}
+
+.iceTabSetTabOver .LeftTop{
+    background-color:transparent;
+    background-image: url("./css-images/over-left-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOver .MiddleTop{
+    background-color:#FF0000;
+    /*background-image: url("./css-images/over-mid-top.gif");*/
+    background-repeat:repeat-x;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOver .RightTop{
+    background-color:transparent;
+    background-image: url("./css-images/over-right-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOver .LeftMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/over-left-mid.gif");
+    background-repeat:repeat-y;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOver .MiddleMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/over-mid-mid.gif");
+    background-repeat:repeat;
+    text-align:center;
+    padding-top:5px;
+    padding-right:15px;
+    padding-left:15px;
+    border:none;
+    white-space: nowrap;
+}
+
+.iceTabSetTabOver .MiddleMiddle a{
+    text-decoration:none;
+    color:#000000;
+    cursor: pointer;
+}
+
+.iceTabSetTabOver .RightMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/over-right-mid.gif");
+    background-repeat:repeat-y;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOver .LeftBottom{
+    background-color:transparent;
+    background-image: url("./css-images/over-left-bot.gif");
+    background-repeat:no-repeat;
+    border:none;
+}
+
+.iceTabSetTabOver .MiddleBottom{
+    background-color:transparent;
+    background-image: url("./css-images/over-mid-bot.gif");
+    background-repeat:repeat-x;
+    border:none;
+}
+
+.iceTabSetTabOver .RightBottom{
+    background-color:transparent;
+    background-image: url("./css-images/over-right-bot.gif");
+    background-repeat:no-repeat;
+    border:none;
+}
+
+/* tabSpacer */
+.iceTabSetTabSpacer{
+    width: 100%;
+    border-bottom:1px solid #ABABAB;
+}
+
+/* tabPanel */
+.iceTabSet{
+    padding-top:10px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:10px;
+    border-right:1px solid #ABABAB;
+    border-bottom:1px solid #ABABAB;
+    border-left:1px solid #ABABAB;
+    background-color:#FFFFFF;
+}
+
+/* TABS ON BOTTOM STYLE CLASSES */
+/* tabOn style classes */
+.iceTabSetTabOnBottom {
+}
+
+.iceTabSetTabOnBottom .LeftTop{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-on-left-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    border:none;
+}
+
+.iceTabSetTabOnBottom .MiddleTop{
+    background-color:transparent;
+    /*background-image: url("./css-images/tbot-on-mid-top.gif");*/
+    background-repeat:repeat-x;
+    text-align:center;
+    border:none;
+}
+
+.iceTabSetTabOnBottom .RightTop{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-on-right-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    border:none;
+}
+
+.iceTabSetTabOnBottom .LeftMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/on-left-mid.gif");
+    background-repeat:repeat-y;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOnBottom .MiddleMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/on-mid-mid.gif");
+    background-repeat:repeat;
+    text-align:center;
+    padding-top:5px;
+    padding-right:15px;
+    padding-left:15px;
+    border:none;
+    white-space: nowrap;
+}
+
+.iceTabSetTabOnBottom .MiddleMiddle a{
+    text-decoration:none;
+    color:#000000;
+    cursor: pointer;
+}
+
+.iceTabSetTabOnBottom .RightMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/on-right-mid.gif");
+    background-repeat:repeat-y;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOnBottom .LeftBottom{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-on-left-bot.gif");
+    background-repeat:no-repeat;
+    padding-bottom:5px;
+    border:none;
+}
+
+.iceTabSetTabOnBottom .MiddleBottom{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-on-mid-bot.gif");
+    background-repeat:repeat-x;
+    padding-bottom:5px;
+    border:none;
+}
+
+.iceTabSetTabOnBottom .RightBottom{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-on-right-bot.gif");
+    background-repeat:no-repeat;
+    padding-bottom:5px;
+    border:none;
+}
+
+/* tabOff style classes */
+.iceTabSetTabOffBottom {
+}
+
+.iceTabSetTabOffBottom .LeftTop{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-off-left-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    border:none;
+}
+
+.iceTabSetTabOffBottom .MiddleTop{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-off-mid-top.gif");
+    background-repeat:repeat-x;
+    text-align:center;
+    border:none;
+}
+
+.iceTabSetTabOffBottom .RightTop{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-off-right-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    border:none;
+}
+
+.iceTabSetTabOffBottom .LeftMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/off-left-mid.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOffBottom .MiddleMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/off-mid-mid.gif");
+    background-repeat:repeat-x;
+    text-align:center;
+    padding-top:5px;
+    padding-right:15px;
+    padding-left:15px;
+    border:none;
+    white-space: nowrap;
+}
+
+.iceTabSetTabOffBottom .MiddleMiddle a{
+    text-decoration:none;
+    color:#000000;
+    cursor: pointer;
+}
+
+.iceTabSetTabOffBottom .RightMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/off-right-mid.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOffBottom .LeftBottom{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-off-left-bot.gif");
+    background-repeat:no-repeat;
+    padding-bottom:5px;
+    border:none;
+}
+
+.iceTabSetTabOffBottom .MiddleBottom{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-off-mid-bot.gif");
+    background-repeat:repeat-x;
+    padding-bottom:5px;
+    border:none;
+}
+
+.iceTabSetTabOffBottom .RightBottom{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-off-right-bot.gif");
+    background-repeat:no-repeat;
+    padding-bottom:5px;
+    border:none;
+}
+
+/* tabOver style classes */
+.iceTabSetTabOverBottom {
+}
+
+.iceTabSetTabOverBottom .LeftTop{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-over-left-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    border:none;
+}
+
+.iceTabSetTabOverBottom .MiddleTop{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-over-mid-top.gif");
+    background-repeat:repeat-x;
+    text-align:center;
+    border:none;
+}
+
+.iceTabSetTabOverBottom .RightTop{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-over-right-top.gif");
+    background-repeat:no-repeat;
+    text-align:center;
+    border:none;
+}
+
+.iceTabSetTabOverBottom .LeftMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/over-left-mid.gif");
+    background-repeat:repeat-y;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOverBottom .MiddleMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/over-mid-mid.gif");
+    background-repeat:repeat;
+    text-align:center;
+    padding-top:5px;
+    padding-right:15px;
+    padding-left:15px;
+    border:none;
+    white-space: nowrap;
+}
+
+.iceTabSetTabOverBottom .MiddleMiddle a{
+    text-decoration:none;
+    color:#000000;
+    cursor: pointer;
+}
+
+.iceTabSetTabOverBottom .RightMiddle{
+    background-color:transparent;
+    background-image: url("./css-images/over-right-mid.gif");
+    background-repeat:repeat-y;
+    text-align:center;
+    padding-top:5px;
+    border:none;
+}
+
+.iceTabSetTabOverBottom .LeftBottom{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-over-left-bot.gif");
+    background-repeat:no-repeat;
+    padding-bottom:5px;
+    border:none;
+}
+
+.iceTabSetTabOverBottom .MiddleBottom{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-over-mid-bot.gif");
+    background-repeat:repeat-x;
+    padding-bottom:5px;
+    border:none;
+}
+
+.iceTabSetTabOverBottom .RightBottom{
+    background-color:transparent;
+    background-image: url("./css-images/tbot-over-right-bot.gif");
+    background-repeat:no-repeat;
+    padding-bottom:5px;
+    border:none;
+}
+
+/* tabSpacer */
+.iceTabSetTabSpacerBottom{
+    width: 100%;
+    border-top:1px solid #ABABAB;
+}
+
+/* tabPanel */
+.iceTabSetBottom{
+    padding-top:10px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:10px;
+    border-right:1px solid #ABABAB;
+    border-top:1px solid #ABABAB;
+    border-left:1px solid #ABABAB;
+    background-color:#FFFFFF;
+}
+

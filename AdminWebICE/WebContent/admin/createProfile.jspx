@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<ice:form styleClass="form" id="form1">
+				<ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" globalOnly="true"></ice:messages>
+				<ice:outputText value="All fields marked with a * are required"></ice:outputText>
+					<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+						cellspacing="5" width="600" columns="3">
+						<ice:outputLabel value="Lastname*" styleClass="outputLabel" id="label2"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="lastName" value="#{createProfileBean.profile.lastName}" required="true" requiredMessage="Please enter the last name"></ice:inputText>
+						<ice:message styleClass="messages" for="lastName" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Firstnames*" styleClass="outputLabel"
+							id="label3"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="firstNames" value="#{createProfileBean.profile.firstNames}" required="true" requiredMessage="Please enter the first name"></ice:inputText>
+						<ice:message styleClass="messages" for="firstNames" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Username*" styleClass="outputLabel" id="label4"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="userName" value="#{createProfileBean.profile.userName}" required="true" requiredMessage="Please enter the Username"></ice:inputText>
+						<ice:message styleClass="messages" for="userName" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="IP Address*" styleClass="outputLabel"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="ipAddress" value="#{createProfileBean.profile.ipAddress}" required="true" requiredMessage="Please enter IP Address"></ice:inputText>
+						<ice:message styleClass="messages" for="ipAddress" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Profile Expiry Date (dd/mm/yyyy)" styleClass="outputLabel"></ice:outputLabel>
+						<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+									renderMonthAsDropdown="true" renderYearAsDropdown="true" value="#{createProfileBean.expirationDate}">
+							
+									<f:convertDateTime pattern="dd/MM/yyyy" />
+						</ice:selectInputDate>
+						<ice:message styleClass="messages" for="role" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="User Role*" styleClass="outputLabel"
+							id="label8"></ice:outputLabel>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="role" value="#{createProfileBean.selectedRole}" required="true" requiredMessage="Please select a role">
+							<f:selectItems id="selectItems3"
+								value="#{createProfileBean.roleList}" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="role" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Email*" styleClass="outputLabel" ></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="email" value="#{createProfileBean.profile.email}" required="true" requiredMessage="Please enter the email"></ice:inputText>
+						<ice:message styleClass="messages" for="email" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Mobile Number" styleClass="outputLabel" ></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="mobileNumber" value="#{createProfileBean.profile.mobileNumber}" ></ice:inputText>
+						<ice:message styleClass="messages" for="mobileNumber" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Branch Phone Number*" styleClass="outputLabel" ></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="phoneNumber" value="#{createProfileBean.profile.phoneNumber}" required="true" requiredMessage="Please enter the branch phone number"></ice:inputText>
+						<ice:message styleClass="messages" for="phoneNumber" errorClass="errorMsg"></ice:message>
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group1">
+								<ice:outputLabel value="Enter Profile Details Below:"
+									styleClass="panelGridLabel" id="label1"></ice:outputLabel>
+							</ice:panelGroup>
+						</f:facet>
+		
+					</ice:panelGrid>
+					<ice:panelGrid styleClass="panelGrid" id="grid2" cellpadding="5"
+						cellspacing="5" width="600" columns="3">
+						<ice:outputLabel value="Bank Name*" styleClass="outputLabel"
+							id="label6"></ice:outputLabel>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="bank"
+							value="#{createProfileBean.selectedBank}"
+							valueChangeListener="#{createProfileBean.processBankValueChange}"
+							partialSubmit="true" required="true" requiredMessage="Please select the bank">
+							<f:selectItems id="selectItems1"
+								value="#{createProfileBean.bankList}" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="bank" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Branch*" styleClass="outputLabel" id="label7"></ice:outputLabel>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="bankBranch" value="#{createProfileBean.selectedBranch}" required="true" requiredMessage="Please select the bank branch">
+							<f:selectItems id="selectItems2"
+								value="#{createProfileBean.branchList}" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="bankBranch" errorClass="errorMsg"></ice:message>
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group2">
+								<ice:outputLabel value="Bank Details" styleClass="panelGridLabel"
+									id="label5"></ice:outputLabel>
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelGrid>
+					<ice:panelGrid styleClass="panelGrid" id="grid3" columns="2">
+						<ice:commandButton type="submit" value="Submit"
+							styleClass="commandButton" id="button1" action="#{createProfileBean.submit}"></ice:commandButton>
+						<ice:commandButton type="submit" value="Cancel"
+							styleClass="commandButton" id="button2" action="#{createProfileBean.cancel}" partialSubmit="true"></ice:commandButton>
+					</ice:panelGrid>
+				</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

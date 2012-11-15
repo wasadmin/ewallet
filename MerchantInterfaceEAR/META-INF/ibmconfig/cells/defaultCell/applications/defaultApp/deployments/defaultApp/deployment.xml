@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appdeployment:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:appdeployment="http://www.ibm.com/websphere/appserver/schemas/5.0/appdeployment.xmi" xmi:id="Deployment_1335187450209">
+  <deployedObject xmi:type="appdeployment:ApplicationDeployment" xmi:id="ApplicationDeployment_1335187450209" startingWeight="10" binariesURL="$(APP_INSTALL_ROOT)/mpghostNode01Cell/MerchantInterfaceEAR.ear" useMetadataFromBinaries="false" enableDistribution="true" createMBeansForResources="true" reloadEnabled="false" appContextIDForSecurity="href:mpghostNode01Cell/MerchantInterfaceEAR" filePermission=".*\.dll=755#.*\.so=755#.*\.a=755#.*\.sl=755" allowDispatchRemoteInclude="false" allowServiceRemoteInclude="false" asyncRequestDispatchType="DISABLED" standaloneModule="false" enableClientModule="false">
+    <targetMappings xmi:id="DeploymentTargetMapping_1340971667754" enable="true" target="ServerTarget_1340971667754"/>
+    <classloader xmi:id="Classloader_1335187450209" mode="PARENT_FIRST">
+      <libraries xmi:id="LibraryRef_1340971667754" libraryName="&quot;Driver Driver Jars&quot;" sharedClassloader="true"/>
+      <libraries xmi:id="LibraryRef_1342087272310" libraryName="&quot;\&quot;Driver Driver Jars\&quot;&quot;" sharedClassloader="true"/>
+    </classloader>
+    <modules xmi:type="appdeployment:EJBModuleDeployment" xmi:id="EJBModuleDeployment_1335187450209" startingWeight="5000" uri="MerchantInterfaceEJB.jar">
+      <targetMappings xmi:id="DeploymentTargetMapping_1340971667755" target="ServerTarget_1340971667754"/>
+    </modules>
+    <properties xmi:id="Property_1340971667754" name="metadata.complete" value="false"/>
+  </deployedObject>
+  <deploymentTargets xmi:type="appdeployment:ServerTarget" xmi:id="ServerTarget_1340971667754" name="server1" nodeName="mpghostNode01"/>
+</appdeployment:Deployment>

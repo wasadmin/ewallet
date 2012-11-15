@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="CustomerService" targetNamespace="http://service.customerservices.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.customerservices.ewallet.esolutions.co.zw/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.customerservices.ewallet.esolutions.co.zw/" schemaLocation="CustomerService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="authenticateMobileProfileResponse">
+    <part name="parameters" element="tns:authenticateMobileProfileResponse">
+    </part>
+  </message>
+  <message name="getCustomerByDateOfBirthResponse">
+    <part name="parameters" element="tns:getCustomerByDateOfBirthResponse">
+    </part>
+  </message>
+  <message name="getMobileProfileByMobileNumberResponse">
+    <part name="parameters" element="tns:getMobileProfileByMobileNumberResponse">
+    </part>
+  </message>
+  <message name="suspendCustomer">
+    <part name="parameters" element="tns:suspendCustomer">
+    </part>
+  </message>
+  <message name="getMobileProfileByStatus">
+    <part name="parameters" element="tns:getMobileProfileByStatus">
+    </part>
+  </message>
+  <message name="resetMobileProfilePinResponse">
+    <part name="parameters" element="tns:resetMobileProfilePinResponse">
+    </part>
+  </message>
+  <message name="getCustomersByWrapperResponse">
+    <part name="parameters" element="tns:getCustomersByWrapperResponse">
+    </part>
+  </message>
+  <message name="updateMobileProfileResponse">
+    <part name="parameters" element="tns:updateMobileProfileResponse">
+    </part>
+  </message>
+  <message name="getMobileProfileByBankAndMobileNumberResponse">
+    <part name="parameters" element="tns:getMobileProfileByBankAndMobileNumberResponse">
+    </part>
+  </message>
+  <message name="deleteMobileProfile">
+    <part name="parameters" element="tns:deleteMobileProfile">
+    </part>
+  </message>
+  <message name="deregisterCustomer">
+    <part name="parameters" element="tns:deregisterCustomer">
+    </part>
+  </message>
+  <message name="unLockMobileProfile">
+    <part name="parameters" element="tns:unLockMobileProfile">
+    </part>
+  </message>
+  <message name="getMobileProfileByCustomer">
+    <part name="parameters" element="tns:getMobileProfileByCustomer">
+    </part>
+  </message>
+  <message name="deRegisterMobileProfileResponse">
+    <part name="parameters" element="tns:deRegisterMobileProfileResponse">
+    </part>
+  </message>
+  <message name="txnPassCodeIsValid">
+    <part name="parameters" element="tns:txnPassCodeIsValid">
+    </part>
+  </message>
+  <message name="rejectMobileNumberResponse">
+    <part name="parameters" element="tns:rejectMobileNumberResponse">
+    </part>
+  </message>
+  <message name="updateCustomerResponse">
+    <part name="parameters" element="tns:updateCustomerResponse">
+    </part>
+  </message>
+  <message name="deleteCustomer">
+    <part name="parameters" element="tns:deleteCustomer">
+    </part>
+  </message>
+  <message name="findCustomerById">
+    <part name="parameters" element="tns:findCustomerById">
+    </part>
+  </message>
+  <message name="getCustomerByBranchIdResponse">
+    <part name="parameters" element="tns:getCustomerByBranchIdResponse">
+    </part>
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception">
+    </part>
+  </message>
+  <message name="approveCustomerResponse">
+    <part name="parameters" element="tns:approveCustomerResponse">
+    </part>
+  </message>
+  <message name="getCustomerByLastName">
+    <part name="parameters" element="tns:getCustomerByLastName">
+    </part>
+  </message>
+  <message name="getMobileProfileListByMobileNumber">
+    <part name="parameters" element="tns:getMobileProfileListByMobileNumber">
+    </part>
+  </message>
+  <message name="mobileProfileIsActive">
+    <part name="parameters" element="tns:mobileProfileIsActive">
+    </part>
+  </message>
+  <message name="suspendCustomerResponse">
+    <part name="parameters" element="tns:suspendCustomerResponse">
+    </part>
+  </message>
+  <message name="getMobileProfileByStatusResponse">
+    <part name="parameters" element="tns:getMobileProfileByStatusResponse">
+    </part>
+  </message>
+  <message name="getCustomerByNationalId">
+    <part name="parameters" element="tns:getCustomerByNationalId">
+    </part>
+  </message>
+  <message name="rejectCustomer">
+    <part name="parameters" element="tns:rejectCustomer">
+    </part>
+  </message>
+  <message name="deleteMobileProfileResponse">
+    <part name="parameters" element="tns:deleteMobileProfileResponse">
+    </part>
+  </message>
+  <message name="getCustomerByStatus">
+    <part name="parameters" element="tns:getCustomerByStatus">
+    </part>
+  </message>
+  <message name="deregisterCustomerResponse">
+    <part name="parameters" element="tns:deregisterCustomerResponse">
+    </part>
+  </message>
+  <message name="getMobileProfileByCustomerResponse">
+    <part name="parameters" element="tns:getMobileProfileByCustomerResponse">
+    </part>
+  </message>
+  <message name="unLockMobileProfileResponse">
+    <part name="parameters" element="tns:unLockMobileProfileResponse">
+    </part>
+  </message>
+  <message name="deleteCustomerResponse">
+    <part name="parameters" element="tns:deleteCustomerResponse">
+    </part>
+  </message>
+  <message name="findCustomerByIdResponse">
+    <part name="parameters" element="tns:findCustomerByIdResponse">
+    </part>
+  </message>
+  <message name="createMobileProfile">
+    <part name="parameters" element="tns:createMobileProfile">
+    </part>
+  </message>
+  <message name="txnPassCodeIsValidResponse">
+    <part name="parameters" element="tns:txnPassCodeIsValidResponse">
+    </part>
+  </message>
+  <message name="coldMobileNumber">
+    <part name="parameters" element="tns:coldMobileNumber">
+    </part>
+  </message>
+  <message name="getCustomerByLastNameResponse">
+    <part name="parameters" element="tns:getCustomerByLastNameResponse">
+    </part>
+  </message>
+  <message name="getCustomerByStatusAndLastBranch">
+    <part name="parameters" element="tns:getCustomerByStatusAndLastBranch">
+    </part>
+  </message>
+  <message name="getMobileProfileListByMobileNumberResponse">
+    <part name="parameters" element="tns:getMobileProfileListByMobileNumberResponse">
+    </part>
+  </message>
+  <message name="generateTxnPassCode">
+    <part name="parameters" element="tns:generateTxnPassCode">
+    </part>
+  </message>
+  <message name="coldMobileNumberResponse">
+    <part name="parameters" element="tns:coldMobileNumberResponse">
+    </part>
+  </message>
+  <message name="activateCustomer">
+    <part name="parameters" element="tns:activateCustomer">
+    </part>
+  </message>
+  <message name="createCustomer">
+    <part name="parameters" element="tns:createCustomer">
+    </part>
+  </message>
+  <message name="approveMobileNumber">
+    <part name="parameters" element="tns:approveMobileNumber">
+    </part>
+  </message>
+  <message name="hotMobileNumber">
+    <part name="parameters" element="tns:hotMobileNumber">
+    </part>
+  </message>
+  <message name="mobileProfileIsActiveResponse">
+    <part name="parameters" element="tns:mobileProfileIsActiveResponse">
+    </part>
+  </message>
+  <message name="getCustomerByNationalIdResponse">
+    <part name="parameters" element="tns:getCustomerByNationalIdResponse">
+    </part>
+  </message>
+  <message name="rejectCustomerResponse">
+    <part name="parameters" element="tns:rejectCustomerResponse">
+    </part>
+  </message>
+  <message name="getCustomerByStatusResponse">
+    <part name="parameters" element="tns:getCustomerByStatusResponse">
+    </part>
+  </message>
+  <message name="findMobileProfileById">
+    <part name="parameters" element="tns:findMobileProfileById">
+    </part>
+  </message>
+  <message name="createMobileProfileResponse">
+    <part name="parameters" element="tns:createMobileProfileResponse">
+    </part>
+  </message>
+  <message name="getCustomerByGender">
+    <part name="parameters" element="tns:getCustomerByGender">
+    </part>
+  </message>
+  <message name="authenticateMobileProfile">
+    <part name="parameters" element="tns:authenticateMobileProfile">
+    </part>
+  </message>
+  <message name="activateCustomerResponse">
+    <part name="parameters" element="tns:activateCustomerResponse">
+    </part>
+  </message>
+  <message name="getCustomerByStatusAndLastBranchResponse">
+    <part name="parameters" element="tns:getCustomerByStatusAndLastBranchResponse">
+    </part>
+  </message>
+  <message name="getMobileProfileByMobileNumber">
+    <part name="parameters" element="tns:getMobileProfileByMobileNumber">
+    </part>
+  </message>
+  <message name="generateTxnPassCodeResponse">
+    <part name="parameters" element="tns:generateTxnPassCodeResponse">
+    </part>
+  </message>
+  <message name="createCustomerResponse">
+    <part name="parameters" element="tns:createCustomerResponse">
+    </part>
+  </message>
+  <message name="approveMobileNumberResponse">
+    <part name="parameters" element="tns:approveMobileNumberResponse">
+    </part>
+  </message>
+  <message name="hotMobileNumberResponse">
+    <part name="parameters" element="tns:hotMobileNumberResponse">
+    </part>
+  </message>
+  <message name="updateMobileProfile">
+    <part name="parameters" element="tns:updateMobileProfile">
+    </part>
+  </message>
+  <message name="getMobileProfileByBankAndMobileNumber">
+    <part name="parameters" element="tns:getMobileProfileByBankAndMobileNumber">
+    </part>
+  </message>
+  <message name="getMobileProfileByBankIdMobileNumberAndStatus">
+    <part name="parameters" element="tns:getMobileProfileByBankIdMobileNumberAndStatus">
+    </part>
+  </message>
+  <message name="resetMobileProfilePin">
+    <part name="parameters" element="tns:resetMobileProfilePin">
+    </part>
+  </message>
+  <message name="getCustomersByWrapper">
+    <part name="parameters" element="tns:getCustomersByWrapper">
+    </part>
+  </message>
+  <message name="deRegisterMobileProfile">
+    <part name="parameters" element="tns:deRegisterMobileProfile">
+    </part>
+  </message>
+  <message name="getMobileProfileByBankIdMobileNumberAndStatusResponse">
+    <part name="parameters" element="tns:getMobileProfileByBankIdMobileNumberAndStatusResponse">
+    </part>
+  </message>
+  <message name="findMobileProfileByIdResponse">
+    <part name="parameters" element="tns:findMobileProfileByIdResponse">
+    </part>
+  </message>
+  <message name="updateCustomer">
+    <part name="parameters" element="tns:updateCustomer">
+    </part>
+  </message>
+  <message name="rejectMobileNumber">
+    <part name="parameters" element="tns:rejectMobileNumber">
+    </part>
+  </message>
+  <message name="approveCustomer">
+    <part name="parameters" element="tns:approveCustomer">
+    </part>
+  </message>
+  <message name="getCustomerByBranchId">
+    <part name="parameters" element="tns:getCustomerByBranchId">
+    </part>
+  </message>
+  <message name="getCustomerByDateOfBirth">
+    <part name="parameters" element="tns:getCustomerByDateOfBirth">
+    </part>
+  </message>
+  <message name="getCustomerByGenderResponse">
+    <part name="parameters" element="tns:getCustomerByGenderResponse">
+    </part>
+  </message>
+  <portType name="CustomerService">
+    <operation name="createCustomer">
+      <input message="tns:createCustomer">
+    </input>
+      <output message="tns:createCustomerResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="deleteCustomer">
+      <input message="tns:deleteCustomer">
+    </input>
+      <output message="tns:deleteCustomerResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="updateCustomer">
+      <input message="tns:updateCustomer">
+    </input>
+      <output message="tns:updateCustomerResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="findCustomerById">
+      <input message="tns:findCustomerById">
+    </input>
+      <output message="tns:findCustomerByIdResponse">
+    </output>
+    </operation>
+    <operation name="getCustomerByLastName">
+      <input message="tns:getCustomerByLastName">
+    </input>
+      <output message="tns:getCustomerByLastNameResponse">
+    </output>
+    </operation>
+    <operation name="getCustomerByNationalId">
+      <input message="tns:getCustomerByNationalId">
+    </input>
+      <output message="tns:getCustomerByNationalIdResponse">
+    </output>
+    </operation>
+    <operation name="getCustomerByDateOfBirth">
+      <input message="tns:getCustomerByDateOfBirth">
+    </input>
+      <output message="tns:getCustomerByDateOfBirthResponse">
+    </output>
+    </operation>
+    <operation name="getCustomerByGender">
+      <input message="tns:getCustomerByGender">
+    </input>
+      <output message="tns:getCustomerByGenderResponse">
+    </output>
+    </operation>
+    <operation name="createMobileProfile">
+      <input message="tns:createMobileProfile">
+    </input>
+      <output message="tns:createMobileProfileResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="resetMobileProfilePin">
+      <input message="tns:resetMobileProfilePin">
+    </input>
+      <output message="tns:resetMobileProfilePinResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="deleteMobileProfile">
+      <input message="tns:deleteMobileProfile">
+    </input>
+      <output message="tns:deleteMobileProfileResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="updateMobileProfile">
+      <input message="tns:updateMobileProfile">
+    </input>
+      <output message="tns:updateMobileProfileResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="findMobileProfileById">
+      <input message="tns:findMobileProfileById">
+    </input>
+      <output message="tns:findMobileProfileByIdResponse">
+    </output>
+    </operation>
+    <operation name="getMobileProfileByMobileNumber">
+      <input message="tns:getMobileProfileByMobileNumber">
+    </input>
+      <output message="tns:getMobileProfileByMobileNumberResponse">
+    </output>
+    </operation>
+    <operation name="getMobileProfileByStatus">
+      <input message="tns:getMobileProfileByStatus">
+    </input>
+      <output message="tns:getMobileProfileByStatusResponse">
+    </output>
+    </operation>
+    <operation name="getMobileProfileByCustomer">
+      <input message="tns:getMobileProfileByCustomer">
+    </input>
+      <output message="tns:getMobileProfileByCustomerResponse">
+    </output>
+    </operation>
+    <operation name="getCustomerByBranchId">
+      <input message="tns:getCustomerByBranchId">
+    </input>
+      <output message="tns:getCustomerByBranchIdResponse">
+    </output>
+    </operation>
+    <operation name="generateTxnPassCode">
+      <input message="tns:generateTxnPassCode">
+    </input>
+      <output message="tns:generateTxnPassCodeResponse">
+    </output>
+    </operation>
+    <operation name="txnPassCodeIsValid">
+      <input message="tns:txnPassCodeIsValid">
+    </input>
+      <output message="tns:txnPassCodeIsValidResponse">
+    </output>
+    </operation>
+    <operation name="mobileProfileIsActive">
+      <input message="tns:mobileProfileIsActive">
+    </input>
+      <output message="tns:mobileProfileIsActiveResponse">
+    </output>
+    </operation>
+    <operation name="getCustomerByStatus">
+      <input message="tns:getCustomerByStatus">
+    </input>
+      <output message="tns:getCustomerByStatusResponse">
+    </output>
+    </operation>
+    <operation name="getMobileProfileByBankAndMobileNumber">
+      <input message="tns:getMobileProfileByBankAndMobileNumber">
+    </input>
+      <output message="tns:getMobileProfileByBankAndMobileNumberResponse">
+    </output>
+    </operation>
+    <operation name="getMobileProfileListByMobileNumber">
+      <input message="tns:getMobileProfileListByMobileNumber">
+    </input>
+      <output message="tns:getMobileProfileListByMobileNumberResponse">
+    </output>
+    </operation>
+    <operation name="getCustomersByWrapper">
+      <input message="tns:getCustomersByWrapper">
+    </input>
+      <output message="tns:getCustomersByWrapperResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="hotMobileNumber">
+      <input message="tns:hotMobileNumber">
+    </input>
+      <output message="tns:hotMobileNumberResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="coldMobileNumber">
+      <input message="tns:coldMobileNumber">
+    </input>
+      <output message="tns:coldMobileNumberResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="deregisterCustomer">
+      <input message="tns:deregisterCustomer">
+    </input>
+      <output message="tns:deregisterCustomerResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="suspendCustomer">
+      <input message="tns:suspendCustomer">
+    </input>
+      <output message="tns:suspendCustomerResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="activateCustomer">
+      <input message="tns:activateCustomer">
+    </input>
+      <output message="tns:activateCustomerResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="getMobileProfileByBankIdMobileNumberAndStatus">
+      <input message="tns:getMobileProfileByBankIdMobileNumberAndStatus">
+    </input>
+      <output message="tns:getMobileProfileByBankIdMobileNumberAndStatusResponse">
+    </output>
+    </operation>
+    <operation name="authenticateMobileProfile">
+      <input message="tns:authenticateMobileProfile">
+    </input>
+      <output message="tns:authenticateMobileProfileResponse">
+    </output>
+    </operation>
+    <operation name="approveCustomer">
+      <input message="tns:approveCustomer">
+    </input>
+      <output message="tns:approveCustomerResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="rejectCustomer">
+      <input message="tns:rejectCustomer">
+    </input>
+      <output message="tns:rejectCustomerResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="approveMobileNumber">
+      <input message="tns:approveMobileNumber">
+    </input>
+      <output message="tns:approveMobileNumberResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="rejectMobileNumber">
+      <input message="tns:rejectMobileNumber">
+    </input>
+      <output message="tns:rejectMobileNumberResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="getCustomerByStatusAndLastBranch">
+      <input message="tns:getCustomerByStatusAndLastBranch">
+    </input>
+      <output message="tns:getCustomerByStatusAndLastBranchResponse">
+    </output>
+    </operation>
+    <operation name="deRegisterMobileProfile">
+      <input message="tns:deRegisterMobileProfile">
+    </input>
+      <output message="tns:deRegisterMobileProfileResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="unLockMobileProfile">
+      <input message="tns:unLockMobileProfile">
+    </input>
+      <output message="tns:unLockMobileProfileResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+  </portType>
+  <binding name="CustomerServiceSOAPBinding" type="tns:CustomerService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findCustomerById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCustomerByLastName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCustomerByNationalId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCustomerByDateOfBirth">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCustomerByGender">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createMobileProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="resetMobileProfilePin">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteMobileProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateMobileProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findMobileProfileById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getMobileProfileByMobileNumber">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getMobileProfileByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getMobileProfileByCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCustomerByBranchId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="generateTxnPassCode">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="txnPassCodeIsValid">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="mobileProfileIsActive">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCustomerByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getMobileProfileByBankAndMobileNumber">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getMobileProfileListByMobileNumber">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCustomersByWrapper">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="hotMobileNumber">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="coldMobileNumber">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deregisterCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="suspendCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="activateCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getMobileProfileByBankIdMobileNumberAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="authenticateMobileProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="approveCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="rejectCustomer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveMobileNumber">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="rejectMobileNumber">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCustomerByStatusAndLastBranch">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="deRegisterMobileProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="unLockMobileProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="CustomerService">
+    <port name="CustomerServiceSOAP" binding="tns:CustomerServiceSOAPBinding">
+      <soap:address location="http://localhost:9081/CustomerServices/CustomerService"/>
+    </port>
+  </service>
+</definitions>

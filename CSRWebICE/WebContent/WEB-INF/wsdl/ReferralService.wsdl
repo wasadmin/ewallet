@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="ReferralService" targetNamespace="http://service.referralservices.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.referralservices.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.referralservices.ewallet.esolutions.co.zw/" schemaLocation="ReferralService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getReferralByDateCreated">
+    <part element="tns:getReferralByDateCreated" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralConfigBetweenDates">
+    <part element="tns:getReferralConfigBetweenDates" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralConfig">
+    <part element="tns:getReferralConfig" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralConfigByDateToResponse">
+    <part element="tns:getReferralConfigByDateToResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createReferral">
+    <part element="tns:createReferral" name="parameters">
+    </part>
+  </message>
+  <message name="createReferralStateResponse">
+    <part element="tns:createReferralStateResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByCodeResponse">
+    <part element="tns:getReferralByCodeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByStatusResponse">
+    <part element="tns:getReferralByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getActiveReferralConfigResponse">
+    <part element="tns:getActiveReferralConfigResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createReferralConfigResponse">
+    <part element="tns:createReferralConfigResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralState">
+    <part element="tns:getReferralState" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByReferredMobileAndCode">
+    <part element="tns:getReferralByReferredMobileAndCode" name="parameters">
+    </part>
+  </message>
+  <message name="findReferralConfigByIdResponse">
+    <part element="tns:findReferralConfigByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateReferralState">
+    <part element="tns:updateReferralState" name="parameters">
+    </part>
+  </message>
+  <message name="deleteReferralConfigResponse">
+    <part element="tns:deleteReferralConfigResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findReferralStateById">
+    <part element="tns:findReferralStateById" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByReferredMobileAndStatus">
+    <part element="tns:getReferralByReferredMobileAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="Exception">
+    <part element="tns:Exception" name="fault">
+    </part>
+  </message>
+  <message name="getReferralByDateCreatedResponse">
+    <part element="tns:getReferralByDateCreatedResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralConfigBetweenDatesResponse">
+    <part element="tns:getReferralConfigBetweenDatesResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferral">
+    <part element="tns:getReferral" name="parameters">
+    </part>
+  </message>
+  <message name="promoteReferralState">
+    <part element="tns:promoteReferralState" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralConfigResponse">
+    <part element="tns:getReferralConfigResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createReferralResponse">
+    <part element="tns:createReferralResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralStateResponse">
+    <part element="tns:getReferralStateResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralConfigByDateFrom">
+    <part element="tns:getReferralConfigByDateFrom" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralStateByStatus">
+    <part element="tns:getReferralStateByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="updateReferral">
+    <part element="tns:updateReferral" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByReferrerMobileId">
+    <part element="tns:getReferralByReferrerMobileId" name="parameters">
+    </part>
+  </message>
+  <message name="deleteReferralState">
+    <part element="tns:deleteReferralState" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByReferredMobileAndCodeResponse">
+    <part element="tns:getReferralByReferredMobileAndCodeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByReferredMobileAndStatusResponse">
+    <part element="tns:getReferralByReferredMobileAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateReferralStateResponse">
+    <part element="tns:updateReferralStateResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findReferralStateByIdResponse">
+    <part element="tns:findReferralStateByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralStateByReferral">
+    <part element="tns:getReferralStateByReferral" name="parameters">
+    </part>
+  </message>
+  <message name="promoteReferralStateResponse">
+    <part element="tns:promoteReferralStateResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralResponse">
+    <part element="tns:getReferralResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByReferredMobile">
+    <part element="tns:getReferralByReferredMobile" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralConfigByDateFromResponse">
+    <part element="tns:getReferralConfigByDateFromResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralStateByDateCreated">
+    <part element="tns:getReferralStateByDateCreated" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByReferrerMobileIdResponse">
+    <part element="tns:getReferralByReferrerMobileIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateReferralResponse">
+    <part element="tns:updateReferralResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteReferral">
+    <part element="tns:deleteReferral" name="parameters">
+    </part>
+  </message>
+  <message name="findReferralById">
+    <part element="tns:findReferralById" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralStateByStatusResponse">
+    <part element="tns:getReferralStateByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateReferralConfig">
+    <part element="tns:updateReferralConfig" name="parameters">
+    </part>
+  </message>
+  <message name="deleteReferralStateResponse">
+    <part element="tns:deleteReferralStateResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralStateByReferralResponse">
+    <part element="tns:getReferralStateByReferralResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralConfigByDateTo">
+    <part element="tns:getReferralConfigByDateTo" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByCode">
+    <part element="tns:getReferralByCode" name="parameters">
+    </part>
+  </message>
+  <message name="createReferralState">
+    <part element="tns:createReferralState" name="parameters">
+    </part>
+  </message>
+  <message name="getActiveReferralConfig">
+    <part element="tns:getActiveReferralConfig" name="parameters">
+    </part>
+  </message>
+  <message name="createReferralConfig">
+    <part element="tns:createReferralConfig" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByStatus">
+    <part element="tns:getReferralByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralByReferredMobileResponse">
+    <part element="tns:getReferralByReferredMobileResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getReferralStateByDateCreatedResponse">
+    <part element="tns:getReferralStateByDateCreatedResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateReferralConfigResponse">
+    <part element="tns:updateReferralConfigResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteReferralResponse">
+    <part element="tns:deleteReferralResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findReferralByIdResponse">
+    <part element="tns:findReferralByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findReferralConfigById">
+    <part element="tns:findReferralConfigById" name="parameters">
+    </part>
+  </message>
+  <message name="deleteReferralConfig">
+    <part element="tns:deleteReferralConfig" name="parameters">
+    </part>
+  </message>
+  <portType name="ReferralService">
+    <operation name="createReferral">
+      <input message="tns:createReferral">
+    </input>
+      <output message="tns:createReferralResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteReferral">
+      <input message="tns:deleteReferral">
+    </input>
+      <output message="tns:deleteReferralResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="updateReferral">
+      <input message="tns:updateReferral">
+    </input>
+      <output message="tns:updateReferralResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findReferralById">
+      <input message="tns:findReferralById">
+    </input>
+      <output message="tns:findReferralByIdResponse">
+    </output>
+    </operation>
+    <operation name="getReferral">
+      <input message="tns:getReferral">
+    </input>
+      <output message="tns:getReferralResponse">
+    </output>
+    </operation>
+    <operation name="getReferralByReferrerMobileId">
+      <input message="tns:getReferralByReferrerMobileId">
+    </input>
+      <output message="tns:getReferralByReferrerMobileIdResponse">
+    </output>
+    </operation>
+    <operation name="getReferralByReferredMobile">
+      <input message="tns:getReferralByReferredMobile">
+    </input>
+      <output message="tns:getReferralByReferredMobileResponse">
+    </output>
+    </operation>
+    <operation name="getReferralByCode">
+      <input message="tns:getReferralByCode">
+    </input>
+      <output message="tns:getReferralByCodeResponse">
+    </output>
+    </operation>
+    <operation name="getReferralByStatus">
+      <input message="tns:getReferralByStatus">
+    </input>
+      <output message="tns:getReferralByStatusResponse">
+    </output>
+    </operation>
+    <operation name="getReferralByDateCreated">
+      <input message="tns:getReferralByDateCreated">
+    </input>
+      <output message="tns:getReferralByDateCreatedResponse">
+    </output>
+    </operation>
+    <operation name="getReferralByReferredMobileAndCode">
+      <input message="tns:getReferralByReferredMobileAndCode">
+    </input>
+      <output message="tns:getReferralByReferredMobileAndCodeResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getReferralByReferredMobileAndStatus">
+      <input message="tns:getReferralByReferredMobileAndStatus">
+    </input>
+      <output message="tns:getReferralByReferredMobileAndStatusResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="createReferralState">
+      <input message="tns:createReferralState">
+    </input>
+      <output message="tns:createReferralStateResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteReferralState">
+      <input message="tns:deleteReferralState">
+    </input>
+      <output message="tns:deleteReferralStateResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="updateReferralState">
+      <input message="tns:updateReferralState">
+    </input>
+      <output message="tns:updateReferralStateResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findReferralStateById">
+      <input message="tns:findReferralStateById">
+    </input>
+      <output message="tns:findReferralStateByIdResponse">
+    </output>
+    </operation>
+    <operation name="getReferralState">
+      <input message="tns:getReferralState">
+    </input>
+      <output message="tns:getReferralStateResponse">
+    </output>
+    </operation>
+    <operation name="getReferralStateByReferral">
+      <input message="tns:getReferralStateByReferral">
+    </input>
+      <output message="tns:getReferralStateByReferralResponse">
+    </output>
+    </operation>
+    <operation name="getReferralStateByStatus">
+      <input message="tns:getReferralStateByStatus">
+    </input>
+      <output message="tns:getReferralStateByStatusResponse">
+    </output>
+    </operation>
+    <operation name="getReferralStateByDateCreated">
+      <input message="tns:getReferralStateByDateCreated">
+    </input>
+      <output message="tns:getReferralStateByDateCreatedResponse">
+    </output>
+    </operation>
+    <operation name="promoteReferralState">
+      <input message="tns:promoteReferralState">
+    </input>
+      <output message="tns:promoteReferralStateResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="createReferralConfig">
+      <input message="tns:createReferralConfig">
+    </input>
+      <output message="tns:createReferralConfigResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteReferralConfig">
+      <input message="tns:deleteReferralConfig">
+    </input>
+      <output message="tns:deleteReferralConfigResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="updateReferralConfig">
+      <input message="tns:updateReferralConfig">
+    </input>
+      <output message="tns:updateReferralConfigResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findReferralConfigById">
+      <input message="tns:findReferralConfigById">
+    </input>
+      <output message="tns:findReferralConfigByIdResponse">
+    </output>
+    </operation>
+    <operation name="getReferralConfig">
+      <input message="tns:getReferralConfig">
+    </input>
+      <output message="tns:getReferralConfigResponse">
+    </output>
+    </operation>
+    <operation name="getReferralConfigByDateFrom">
+      <input message="tns:getReferralConfigByDateFrom">
+    </input>
+      <output message="tns:getReferralConfigByDateFromResponse">
+    </output>
+    </operation>
+    <operation name="getReferralConfigByDateTo">
+      <input message="tns:getReferralConfigByDateTo">
+    </input>
+      <output message="tns:getReferralConfigByDateToResponse">
+    </output>
+    </operation>
+    <operation name="getActiveReferralConfig">
+      <input message="tns:getActiveReferralConfig">
+    </input>
+      <output message="tns:getActiveReferralConfigResponse">
+    </output>
+    </operation>
+    <operation name="getReferralConfigBetweenDates">
+      <input message="tns:getReferralConfigBetweenDates">
+    </input>
+      <output message="tns:getReferralConfigBetweenDatesResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="ReferralServiceSOAPBinding" type="tns:ReferralService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createReferral">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteReferral">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateReferral">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findReferralById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferral">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralByReferrerMobileId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralByReferredMobile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralByCode">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralByDateCreated">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralByReferredMobileAndCode">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getReferralByReferredMobileAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createReferralState">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteReferralState">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateReferralState">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findReferralStateById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralState">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralStateByReferral">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralStateByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralStateByDateCreated">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="promoteReferralState">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createReferralConfig">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteReferralConfig">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateReferralConfig">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findReferralConfigById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralConfig">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralConfigByDateFrom">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralConfigByDateTo">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getActiveReferralConfig">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getReferralConfigBetweenDates">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ReferralService">
+    <port binding="tns:ReferralServiceSOAPBinding" name="ReferralServiceSOAP">
+      <soap:address location="http://10.136.192.70/ReferralServices/ReferralService"/>
+    </port>
+  </service>
+</definitions>

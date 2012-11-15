@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://services.banking.mobile.esolutions.co.zw/" xmlns:tns="http://services.banking.mobile.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getBanks" type="tns:getBanks"/>
+
+  <xs:element name="getBanksResponse" type="tns:getBanksResponse"/>
+
+  <xs:element name="getMerchants" type="tns:getMerchants"/>
+
+  <xs:element name="getMerchantsResponse" type="tns:getMerchantsResponse"/>
+
+  <xs:element name="submitTransaction" type="tns:submitTransaction"/>
+
+  <xs:element name="submitTransactionResponse" type="tns:submitTransactionResponse"/>
+
+  <xs:element name="verifyEnrolment" type="tns:verifyEnrolment"/>
+
+  <xs:element name="verifyEnrolmentResponse" type="tns:verifyEnrolmentResponse"/>
+
+  <xs:element name="verifyPassword" type="tns:verifyPassword"/>
+
+  <xs:element name="verifyPasswordResponse" type="tns:verifyPasswordResponse"/>
+
+  <xs:complexType name="getMerchants">
+    <xs:sequence>
+      <xs:element name="merchantRequest" type="tns:merchantRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="merchantRequest">
+    <xs:sequence>
+      <xs:element name="thirdParty" type="xs:boolean"/>
+      <xs:element name="transactionTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ussdSessionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMerchantsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:merchantResponse" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="merchantResponse">
+    <xs:sequence>
+      <xs:element name="merchants" type="tns:merchantInfo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="transactionTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ussdSessionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="merchantInfo">
+    <xs:sequence>
+      <xs:element name="merchantName" type="xs:string" minOccurs="0"/>
+      <xs:element name="utilityAccount" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="verifyPassword">
+    <xs:sequence>
+      <xs:element name="pareq" type="tns:pareq" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pareq">
+    <xs:sequence>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="transactionTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ussdSessionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="verifyPasswordResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:pares" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pares">
+    <xs:sequence>
+      <xs:element name="agent" type="xs:boolean"/>
+      <xs:element name="autoPinChange" type="xs:boolean"/>
+      <xs:element name="bankAccounts" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="narrative" type="xs:string" minOccurs="0"/>
+      <xs:element name="transactionTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ussdSessionId" type="xs:string" minOccurs="0"/>
+      <xs:element name="verificationResult" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="submitTransaction">
+    <xs:sequence>
+      <xs:element name="transactionRequest" type="tns:transactionRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="transactionRequest">
+    <xs:sequence>
+      <xs:element name="agentNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="beneficiaryName" type="xs:string" minOccurs="0"/>
+      <xs:element name="newPassword" type="xs:string" minOccurs="0"/>
+      <xs:element name="paymentReference" type="xs:string" minOccurs="0"/>
+      <xs:element name="sourceAccountNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="targetAccountNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="targetBankCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="targetCustomerMerchantAccount" type="xs:string" minOccurs="0"/>
+      <xs:element name="targetMerchant" type="xs:string" minOccurs="0"/>
+      <xs:element name="targetMobileNetworkOperator" type="tns:mobileNetworkOperator" minOccurs="0"/>
+      <xs:element name="targetMobileNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="transactionAmount" type="xs:long"/>
+      <xs:element name="transactionTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="transactionType" type="tns:transactionType" minOccurs="0"/>
+      <xs:element name="ussdSessionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="submitTransactionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:transactionResponse" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="transactionResponse">
+    <xs:sequence>
+      <xs:element name="narrative" type="xs:string" minOccurs="0"/>
+      <xs:element name="transactionTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ussdSessionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBanks">
+    <xs:sequence>
+      <xs:element name="bankRequest" type="tns:bankRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bankRequest">
+    <xs:sequence>
+      <xs:element name="transactionTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ussdSessionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBanksResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:bankResponse" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bankResponse">
+    <xs:sequence>
+      <xs:element name="banks" type="tns:bankInfo" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="transactionTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ussdSessionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bankInfo">
+    <xs:sequence>
+      <xs:element name="bankCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="bankName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="verifyEnrolment">
+    <xs:sequence>
+      <xs:element name="vereq" type="tns:vereq" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="vereq">
+    <xs:sequence>
+      <xs:element name="acquirerId" type="xs:string" minOccurs="0"/>
+      <xs:element name="bankCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="mobileNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="sourceMobileNetworkOperator" type="tns:mobileNetworkOperator" minOccurs="0"/>
+      <xs:element name="transactionTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ussdSessionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="verifyEnrolmentResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:veres" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="veres">
+    <xs:sequence>
+      <xs:element name="enrolmentResult" type="xs:boolean"/>
+      <xs:element name="transactionTimestamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element name="ussdSessionId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="mobileNetworkOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ECONET"/>
+      <xs:enumeration value="NETONE"/>
+      <xs:enumeration value="TELECEL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="transactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MINISTATEMENT"/>
+      <xs:enumeration value="BALANCE"/>
+      <xs:enumeration value="BILLPAY"/>
+      <xs:enumeration value="TOPUP"/>
+      <xs:enumeration value="TRANSFER"/>
+      <xs:enumeration value="RTGS"/>
+      <xs:enumeration value="PASSWORD_CHANGE"/>
+      <xs:enumeration value="MERCHANT_REG"/>
+      <xs:enumeration value="DEPOSIT"/>
+      <xs:enumeration value="CASH_WITHDRAWAL"/>
+      <xs:enumeration value="CASHOUT"/>
+      <xs:enumeration value="AGENT_SUMMARY"/>
+      <xs:enumeration value="AGENT_TRANSFER"/>
+      <xs:enumeration value="TOPUP_TXT"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

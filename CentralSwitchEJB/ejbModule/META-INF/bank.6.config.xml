@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:bankInfo xmlns:tns="http://bank.config.esolutions.co.zw" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bank.config.esolutions.co.zw BankInfoSchema.xsd ">
+  <tns:requestQueueName>ZB.IN.QUEUE</tns:requestQueueName>
+  <tns:replyQueueName>BANKS.REPLY.QUEUE</tns:replyQueueName>
+  <tns:bankName>ZB Bank</tns:bankName>
+  <tns:zswCode>589003</tns:zswCode>
+  <tns:zesaPayCode>14</tns:zesaPayCode>
+  <tns:zesaPayBranch>4131</tns:zesaPayBranch>
+  <tns:bankId>589003</tns:bankId>
+  <tns:online>true</tns:online>
+  <tns:signature>ZB e-Wallet</tns:signature>
+  <tns:applySignature>true</tns:applySignature>
+  <tns:smsCode>6</tns:smsCode>
+  <tns:ussdCode>600</tns:ussdCode>
+  <tns:applyVendorSignature>true</tns:applyVendorSignature>
+  <tns:serviceId>67</tns:serviceId>
+  <tns:serviceProviderId>tns:serviceProviderId</tns:serviceProviderId>
+  <tns:alternateBankId>1299679872970688</tns:alternateBankId>
+</tns:bankInfo>

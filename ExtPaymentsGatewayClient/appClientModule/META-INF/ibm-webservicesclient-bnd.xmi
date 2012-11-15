@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.etools.webservice.wscbnd:ClientBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.etools.webservice.wscbnd="http://www.ibm.com/websphere/appserver/schemas/5.0.2/wscbnd.xmi" xmi:id="ClientBinding_1348066943928">
+  <serviceRefs xmi:id="ServiceRef_1348066943928" serviceRefLink="service/EWalletPaymentsService">
+    <portQnameBindings xmi:id="PortQnameBinding_1348066943928" portQnameNamespaceLink="http://ws.extpayments.ewallet.esolutions.co.zw/" portQnameLocalNameLink="EWalletPaymentsServiceSOAP" overriddenEndpointURI="http://localhost:9080/ExtPaymentsGateway/EWalletPaymentsService"/>
+  </serviceRefs>
+</com.ibm.etools.webservice.wscbnd:ClientBinding>

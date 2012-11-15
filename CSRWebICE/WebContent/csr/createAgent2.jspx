@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root
+	version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<hx:scriptCollector id="scriptCollector1">
+				<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+				<link href="../theme/stylesheet.css" rel="stylesheet"
+					type="text/css" />
+				<ui:define name="header">
+					<ui:include src="../template/header.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="menu">
+					<ui:include src="../template/menu.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="content">
+					<ice:form styleClass="form" id="form1">
+						<ice:messages styleClass="messages" id="messages1"
+							errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages>
+						<p><ice:outputText styleClass="outputText" id="text1"
+							value="Register Agent: Step 2 of 2" style="font-size: 14pt"></ice:outputText></p>
+						<ice:commandLink styleClass="requestLink" id="link1" immediate="true" partialSubmit="true"
+							style="color:green" action="#{createAgent2Bean.back}">
+							<ice:outputText id="text20" styleClass="outputText"
+								value="&lt;&lt;Back"></ice:outputText>
+						</ice:commandLink>
+						<br />
+
+						<ice:panelGrid styleClass="panelGrid" id="grid3" cellpadding="5"
+							cellspacing="5" width="600" columns="2">
+							<ice:outputLabel value="Primary Account" styleClass="outputLabel"></ice:outputLabel>
+							<h:inputText styleClass="inputText" 
+								value="TRUE" disabled="true"></h:inputText>
+							<ice:outputLabel value="Account Name" styleClass="outputLabel"></ice:outputLabel>
+							<h:inputText styleClass="inputText" id="text3"
+								value="#{createAgent2Bean.transactionAccount.accountName}" disabled="true"></h:inputText>
+							<ice:outputLabel value="Account Type" styleClass="outputLabel"
+								></ice:outputLabel>
+							<h:inputText styleClass="inputText" 
+								value="#{createAgent2Bean.transactionAccount.type}" disabled="true"></h:inputText>
+							<ice:outputLabel value="Account Number " styleClass="outputLabel"></ice:outputLabel>
+							<h:inputText styleClass="inputText" id="text3"
+								value="#{createAgent2Bean.transactionAccount.accountNumber}" disabled="true"></h:inputText>
+							<ice:outputLabel value="Branch" styleClass="outputLabel"
+								id="label4"></ice:outputLabel>
+							<h:inputText styleClass="inputText"  value="#{createAgent2Bean.branchName}" disabled="true"></h:inputText>
+							<f:facet name="header">
+								<ice:panelGroup styleClass="panelGroup" >
+									<ice:outputLabel value="Primary Account Details"
+										styleClass="panelGridLabel"></ice:outputLabel>
+								</ice:panelGroup>
+							</f:facet>
+						</ice:panelGrid>
+						
+						<ice:panelGrid styleClass="panelGrid" id="grid5" cellpadding="5"
+							cellspacing="5" width="600" columns="2">
+							<ice:outputLabel value="Account Name" styleClass="outputLabel"></ice:outputLabel>
+							<h:inputText styleClass="inputText" 
+								value="#{createAgent2Bean.commisionAccount.accountName}" disabled="true"></h:inputText>
+							<ice:outputLabel value="Account Type" styleClass="outputLabel"
+								id="label6"></ice:outputLabel>
+							<h:inputText styleClass="inputText" 
+								value="#{createAgent2Bean.commisionAccount.type}" disabled="true"></h:inputText>
+							<ice:outputLabel value="Branch" styleClass="outputLabel"></ice:outputLabel>
+							<h:inputText styleClass="inputText" 
+								value="#{createAgent2Bean.branchName}" disabled="true"></h:inputText>
+							<ice:outputLabel value="Account Number *" styleClass="outputLabel"
+								></ice:outputLabel>
+							<ice:inputText styleClass="inputText" required="true" requiredMessage="Account number must be entered"
+								value="#{createAgent2Bean.commisionAccount.accountNumber}"></ice:inputText>
+							
+							<f:facet name="header">
+								<ice:panelGroup styleClass="panelGroup" >
+									<ice:outputLabel value="Commission Account Details"
+										styleClass="panelGridLabel" ></ice:outputLabel>
+								</ice:panelGroup>
+							</f:facet>
+						</ice:panelGrid>
+						<h:panelGrid styleClass="panelGrid" id="grid4" cellpadding="5"
+							cellspacing="5" width="600" columns="2">
+							<ice:outputLabel styleClass="outputLabel" value="Account Name" ></ice:outputLabel>
+							<h:inputText styleClass="inputText" 
+								value="#{createAgent2Bean.account.accountName}" disabled="true"></h:inputText>
+							<ice:outputLabel styleClass="outputLabel" value="Account Type" 
+								></ice:outputLabel>
+							<h:selectOneMenu styleClass="selectOneMenu" id="menu4"
+								value="#{createAgent2Bean.selectedAccountType}">
+								<f:selectItems value="#{createAgent2Bean.accountTypeList}"
+									id="selectItems2" />
+							</h:selectOneMenu>
+							<ice:outputLabel styleClass="outputLabel" value="Account Number*" 
+								 ></ice:outputLabel>
+							<h:inputText styleClass="inputText" id="text7"
+								value="#{createAgent2Bean.account.accountNumber}" ></h:inputText>
+							<ice:outputLabel styleClass="outputLabel" value="Card Number" 
+								></ice:outputLabel>
+							<h:inputText styleClass="inputText" id="text8"
+								value="#{createAgent2Bean.account.cardNumber}"></h:inputText>
+							<ice:outputLabel styleClass="outputLabel" value="Branch*" 
+								></ice:outputLabel>
+							<h:selectOneMenu styleClass="selectOneMenu" id="menu2" value="#{createAgent2Bean.selectedBranch1}">
+								<f:selectItems value="#{createAgent2Bean.branchList}" id="selectItems7" />
+							</h:selectOneMenu>
+							<f:facet name="header">
+								<h:panelGroup styleClass="panelGroup" id="group5">
+									<h:outputLabel value="Bank Account Details"
+										styleClass="panelGridLabel" id="label14"></h:outputLabel>
+								</h:panelGroup>
+							</f:facet>
+						</h:panelGrid>
+						<ice:panelGrid styleClass="panelGrid" id="grid9" columns="3">
+							<ice:commandButton type="submit" value="Submit" 
+								styleClass="commandButton" id="button2"
+								action="#{createAgent2Bean.submit}">
+								</ice:commandButton>
+							<ice:commandButton type="submit" value="Cancel"
+								styleClass="commandButton" id="button1"
+								action="#{createAgent2Bean.cancel}"></ice:commandButton>
+						</ice:panelGrid>
+					</ice:form>
+				</ui:define>
+				<ui:define name="footer">
+					<ui:include src="../template/footer.jspx"></ui:include>
+				</ui:define>
+
+				<link rel="stylesheet" type="text/css" title="Style"
+					href="../theme/stylesheet.css" />
+			</hx:scriptCollector>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.profileservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.profileservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="approveBulletin" type="tns:approveBulletin"/>
+
+  <xs:element name="approveBulletinResponse" type="tns:approveBulletinResponse"/>
+
+  <xs:element name="approveProfile" type="tns:approveProfile"/>
+
+  <xs:element name="approveProfileResponse" type="tns:approveProfileResponse"/>
+
+  <xs:element name="approveRole" type="tns:approveRole"/>
+
+  <xs:element name="approveRoleResponse" type="tns:approveRoleResponse"/>
+
+  <xs:element name="authenticateUser" type="tns:authenticateUser"/>
+
+  <xs:element name="authenticateUserResponse" type="tns:authenticateUserResponse"/>
+
+  <xs:element name="canDo" type="tns:canDo"/>
+
+  <xs:element name="canDoResponse" type="tns:canDoResponse"/>
+
+  <xs:element name="changeProfilePassword" type="tns:changeProfilePassword"/>
+
+  <xs:element name="changeProfilePasswordResponse" type="tns:changeProfilePasswordResponse"/>
+
+  <xs:element name="createAccessRight" type="tns:createAccessRight"/>
+
+  <xs:element name="createAccessRightResponse" type="tns:createAccessRightResponse"/>
+
+  <xs:element name="createBulletin" type="tns:createBulletin"/>
+
+  <xs:element name="createBulletinResponse" type="tns:createBulletinResponse"/>
+
+  <xs:element name="createProfile" type="tns:createProfile"/>
+
+  <xs:element name="createProfileResponse" type="tns:createProfileResponse"/>
+
+  <xs:element name="createRole" type="tns:createRole"/>
+
+  <xs:element name="createRoleResponse" type="tns:createRoleResponse"/>
+
+  <xs:element name="deactivateBulletin" type="tns:deactivateBulletin"/>
+
+  <xs:element name="deactivateBulletinResponse" type="tns:deactivateBulletinResponse"/>
+
+  <xs:element name="deleteAccessRight" type="tns:deleteAccessRight"/>
+
+  <xs:element name="deleteAccessRightResponse" type="tns:deleteAccessRightResponse"/>
+
+  <xs:element name="deleteProfile" type="tns:deleteProfile"/>
+
+  <xs:element name="deleteProfileResponse" type="tns:deleteProfileResponse"/>
+
+  <xs:element name="deleteRole" type="tns:deleteRole"/>
+
+  <xs:element name="deleteRoleResponse" type="tns:deleteRoleResponse"/>
+
+  <xs:element name="disapproveBulletin" type="tns:disapproveBulletin"/>
+
+  <xs:element name="disapproveBulletinResponse" type="tns:disapproveBulletinResponse"/>
+
+  <xs:element name="editAccessRight" type="tns:editAccessRight"/>
+
+  <xs:element name="editAccessRightResponse" type="tns:editAccessRightResponse"/>
+
+  <xs:element name="editProfile" type="tns:editProfile"/>
+
+  <xs:element name="editProfileResponse" type="tns:editProfileResponse"/>
+
+  <xs:element name="editRole" type="tns:editRole"/>
+
+  <xs:element name="editRoleResponse" type="tns:editRoleResponse"/>
+
+  <xs:element name="findAccessRightById" type="tns:findAccessRightById"/>
+
+  <xs:element name="findAccessRightByIdResponse" type="tns:findAccessRightByIdResponse"/>
+
+  <xs:element name="findBulletinById" type="tns:findBulletinById"/>
+
+  <xs:element name="findBulletinByIdResponse" type="tns:findBulletinByIdResponse"/>
+
+  <xs:element name="findProfileById" type="tns:findProfileById"/>
+
+  <xs:element name="findProfileByIdResponse" type="tns:findProfileByIdResponse"/>
+
+  <xs:element name="findRoleAccessRightById" type="tns:findRoleAccessRightById"/>
+
+  <xs:element name="findRoleAccessRightByIdResponse" type="tns:findRoleAccessRightByIdResponse"/>
+
+  <xs:element name="findRoleByRoleId" type="tns:findRoleByRoleId"/>
+
+  <xs:element name="findRoleByRoleIdResponse" type="tns:findRoleByRoleIdResponse"/>
+
+  <xs:element name="getAccessRight" type="tns:getAccessRight"/>
+
+  <xs:element name="getAccessRightByActionName" type="tns:getAccessRightByActionName"/>
+
+  <xs:element name="getAccessRightByActionNameResponse" type="tns:getAccessRightByActionNameResponse"/>
+
+  <xs:element name="getAccessRightResponse" type="tns:getAccessRightResponse"/>
+
+  <xs:element name="getActiveRoles" type="tns:getActiveRoles"/>
+
+  <xs:element name="getActiveRolesResponse" type="tns:getActiveRolesResponse"/>
+
+  <xs:element name="getAllLoggedOnUsers" type="tns:getAllLoggedOnUsers"/>
+
+  <xs:element name="getAllLoggedOnUsersResponse" type="tns:getAllLoggedOnUsersResponse"/>
+
+  <xs:element name="getAllProfiles" type="tns:getAllProfiles"/>
+
+  <xs:element name="getAllProfilesResponse" type="tns:getAllProfilesResponse"/>
+
+  <xs:element name="getBulletinByAllFields" type="tns:getBulletinByAllFields"/>
+
+  <xs:element name="getBulletinByAllFieldsResponse" type="tns:getBulletinByAllFieldsResponse"/>
+
+  <xs:element name="getBulletinByApprover" type="tns:getBulletinByApprover"/>
+
+  <xs:element name="getBulletinByApproverResponse" type="tns:getBulletinByApproverResponse"/>
+
+  <xs:element name="getBulletinByInitiator" type="tns:getBulletinByInitiator"/>
+
+  <xs:element name="getBulletinByInitiatorResponse" type="tns:getBulletinByInitiatorResponse"/>
+
+  <xs:element name="getBulletinByStatus" type="tns:getBulletinByStatus"/>
+
+  <xs:element name="getBulletinByStatusResponse" type="tns:getBulletinByStatusResponse"/>
+
+  <xs:element name="getCurrentBulletin" type="tns:getCurrentBulletin"/>
+
+  <xs:element name="getCurrentBulletinResponse" type="tns:getCurrentBulletinResponse"/>
+
+  <xs:element name="getProfileByBranchId" type="tns:getProfileByBranchId"/>
+
+  <xs:element name="getProfileByBranchIdAndAccessRight" type="tns:getProfileByBranchIdAndAccessRight"/>
+
+  <xs:element name="getProfileByBranchIdAndAccessRightResponse" type="tns:getProfileByBranchIdAndAccessRightResponse"/>
+
+  <xs:element name="getProfileByBranchIdResponse" type="tns:getProfileByBranchIdResponse"/>
+
+  <xs:element name="getProfileByIP" type="tns:getProfileByIP"/>
+
+  <xs:element name="getProfileByIPResponse" type="tns:getProfileByIPResponse"/>
+
+  <xs:element name="getProfileByLastName" type="tns:getProfileByLastName"/>
+
+  <xs:element name="getProfileByLastNameResponse" type="tns:getProfileByLastNameResponse"/>
+
+  <xs:element name="getProfileByStatus" type="tns:getProfileByStatus"/>
+
+  <xs:element name="getProfileByStatusResponse" type="tns:getProfileByStatusResponse"/>
+
+  <xs:element name="getProfileByUserName" type="tns:getProfileByUserName"/>
+
+  <xs:element name="getProfileByUserNameAndStatus" type="tns:getProfileByUserNameAndStatus"/>
+
+  <xs:element name="getProfileByUserNameAndStatusResponse" type="tns:getProfileByUserNameAndStatusResponse"/>
+
+  <xs:element name="getProfileByUserNameResponse" type="tns:getProfileByUserNameResponse"/>
+
+  <xs:element name="getProfileByUserRole" type="tns:getProfileByUserRole"/>
+
+  <xs:element name="getProfileByUserRoleResponse" type="tns:getProfileByUserRoleResponse"/>
+
+  <xs:element name="getRoleAccessRightByRole" type="tns:getRoleAccessRightByRole"/>
+
+  <xs:element name="getRoleAccessRightByRoleActionNameAndStatus" type="tns:getRoleAccessRightByRoleActionNameAndStatus"/>
+
+  <xs:element name="getRoleAccessRightByRoleActionNameAndStatusResponse" type="tns:getRoleAccessRightByRoleActionNameAndStatusResponse"/>
+
+  <xs:element name="getRoleAccessRightByRoleResponse" type="tns:getRoleAccessRightByRoleResponse"/>
+
+  <xs:element name="getRoleByRoleName" type="tns:getRoleByRoleName"/>
+
+  <xs:element name="getRoleByRoleNameResponse" type="tns:getRoleByRoleNameResponse"/>
+
+  <xs:element name="getRoleByStatus" type="tns:getRoleByStatus"/>
+
+  <xs:element name="getRoleByStatusResponse" type="tns:getRoleByStatusResponse"/>
+
+  <xs:element name="rejectProfile" type="tns:rejectProfile"/>
+
+  <xs:element name="rejectProfileResponse" type="tns:rejectProfileResponse"/>
+
+  <xs:element name="rejectRole" type="tns:rejectRole"/>
+
+  <xs:element name="rejectRoleResponse" type="tns:rejectRoleResponse"/>
+
+  <xs:element name="resetProfileIP" type="tns:resetProfileIP"/>
+
+  <xs:element name="resetProfileIPResponse" type="tns:resetProfileIPResponse"/>
+
+  <xs:element name="resetProfilePassword" type="tns:resetProfilePassword"/>
+
+  <xs:element name="resetProfilePasswordResponse" type="tns:resetProfilePasswordResponse"/>
+
+  <xs:element name="updateProfile" type="tns:updateProfile"/>
+
+  <xs:element name="updateProfileResponse" type="tns:updateProfileResponse"/>
+
+  <xs:element name="updateRoleAccessRight" type="tns:updateRoleAccessRight"/>
+
+  <xs:element name="updateRoleAccessRightResponse" type="tns:updateRoleAccessRightResponse"/>
+
+  <xs:element name="validateHost" type="tns:validateHost"/>
+
+  <xs:element name="validateHostResponse" type="tns:validateHostResponse"/>
+
+  <xs:complexType name="getBulletinByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBulletinByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bulletin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bulletin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="approverId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="expirationDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="initiatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="subject" type="xs:string"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAccessRight">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAccessRightResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:accessRight"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="accessRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actionName" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:accessRightStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="role" type="tns:role"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="role">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="profiles" nillable="true" type="tns:profile"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="roleAccessRights" nillable="true" type="tns:roleAccessRight"/>
+      <xs:element minOccurs="0" name="roleName" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:roleStatus"/>
+      <xs:element name="version" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="profile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+      <xs:element name="changePassword" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="firstNames" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="ipAddress" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastLoginDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+      <xs:element name="loggedIn" type="xs:boolean"/>
+      <xs:element name="loginAttempts" type="xs:int"/>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="passwordExpiryDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="role" type="tns:role"/>
+      <xs:element minOccurs="0" name="status" type="tns:profileStatus"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+      <xs:element minOccurs="0" name="userPassword" type="xs:string"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="roleAccessRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accessRight" type="tns:accessRight"/>
+      <xs:element name="canDo" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="role" type="tns:role"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveRoleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:role"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteAccessRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accessRight" type="tns:accessRight"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteAccessRightResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getRoleAccessRightByRoleActionNameAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="roleId" type="xs:string"/>
+      <xs:element minOccurs="0" name="actionName" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:accessRightStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getRoleAccessRightByRoleActionNameAndStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:roleAccessRight"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllProfiles">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllProfilesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findBulletinById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findBulletinByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bulletin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createAccessRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accessRight" type="tns:accessRight"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createAccessRightResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:accessRight"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="profile" type="tns:profile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="canDo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="accessRightName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="canDoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBulletinByAllFields">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="approverId" type="xs:string"/>
+      <xs:element minOccurs="0" name="initiatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="expirationDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBulletinByAllFieldsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bulletin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveBulletin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bulletin" type="tns:bulletin"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveBulletinResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bulletin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByUserName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByUserNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="authenticateUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="authenticateUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="role" type="tns:role"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteRoleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:role"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createBulletin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bulletin" type="tns:bulletin"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createBulletinResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bulletin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByBranchIdAndAccessRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+      <xs:element minOccurs="0" name="accessRightName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByBranchIdAndAccessRightResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByUserNameAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:profileStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByUserNameAndStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findRoleByRoleId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="roleId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findRoleByRoleIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:role"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByIP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ip" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByIPResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllLoggedOnUsers">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllLoggedOnUsersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateHost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="profile" type="tns:profile"/>
+      <xs:element minOccurs="0" name="ip" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateHostResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getRoleByRoleName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="roleName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getRoleByRoleNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:role"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByBranchId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByBranchIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="role" type="tns:role"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editRoleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:role"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="profile" type="tns:profile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getActiveRoles">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getActiveRolesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:role"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findProfileById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findProfileByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editAccessRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accessRight" type="tns:accessRight"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editAccessRightResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:accessRight"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByUserRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="roleName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByUserRoleResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="role" type="tns:role"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectRoleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:role"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getRoleByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="roleStatus" type="tns:roleStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getRoleByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:role"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:profileStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="profile" type="tns:profile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBulletinByApprover">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="approverId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBulletinByApproverResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bulletin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateRoleAccessRight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="roleAccessRight" type="tns:roleAccessRight"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateRoleAccessRightResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:roleAccessRight"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBulletinByInitiator">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="initiatorId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBulletinByInitiatorResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bulletin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findRoleAccessRightById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findRoleAccessRightByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:roleAccessRight"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deactivateBulletin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bulletin" type="tns:bulletin"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deactivateBulletinResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bulletin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resetProfileIP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="profile" type="tns:profile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resetProfileIPResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="profile" type="tns:profile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="profile" type="tns:profile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCurrentBulletin">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getCurrentBulletinResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bulletin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByLastName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProfileByLastNameResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="changeProfilePassword">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="profile" type="tns:profile"/>
+      <xs:element minOccurs="0" name="oldPassword" type="xs:string"/>
+      <xs:element minOccurs="0" name="newPassword" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="changeProfilePasswordResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveBulletin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bulletin" type="tns:bulletin"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveBulletinResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bulletin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resetProfilePassword">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="profile" type="tns:profile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resetProfilePasswordResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAccessRightById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAccessRightByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:accessRight"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="role" type="tns:role"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createRoleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:role"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="profile" type="tns:profile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:profile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getRoleAccessRightByRole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="roleId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getRoleAccessRightByRoleResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:roleAccessRight"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAccessRightByActionName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAccessRightByActionNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:accessRight"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="accessRightStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ENABLED"/>
+      <xs:enumeration value="DISABLED"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="profileStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="DISABLED"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="AWAITING_EDIT_APPROVAL"/>
+      <xs:enumeration value="APPROVED"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="roleStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="DISABLED"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="APPROVED"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

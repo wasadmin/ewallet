@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1">
+		   <h2>MARK TRANSACTION STATUS</h2>
+			<p><ice:messages styleClass="messages" id="messages1"
+							errorClass="errorMessage" infoClass="infoMessage" layout="table" globalOnly="true"></ice:messages></p>
+			<ice:inputHidden value="#{transactionActionsBean.messageId}"
+				id="Id0"></ice:inputHidden>
+		
+			<ice:panelGrid styleClass="panelGrid" id="grid4" cellpadding="5"
+							cellspacing="5" width="700" columns="4" >
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" id="group4">
+						<ice:outputText styleClass="panelGridLabel"
+							value="Transaction Details"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+				
+					<ice:outputText styleClass="outputLabel" id="text8"
+						value="Transaction :"></ice:outputText>
+					<ice:outputText styleClass="outputText"  style="font-weight : bold" id="text4" value="#{transactionActionsBean.processTxn.transactionType}">
+					<f:converter converterId="replaceUnderscoreConverter"/>
+					</ice:outputText>
+					<ice:outputText styleClass="outputLabel" value="Reference Number :"></ice:outputText>
+					<ice:outputText styleClass="outputText"  style="font-weight : bold" value="#{transactionActionsBean.processTxn.messageId}"/>
+										
+					<ice:outputText styleClass="outputLabel"  value="Date Received :"></ice:outputText>
+					<ice:outputText styleClass="outputText" value="#{transactionActionsBean.processTxn.dateCreated}">
+						<f:converter converterId="dateTimeFormatConverter" />
+					</ice:outputText>
+					<ice:outputText styleClass="outputLabel"  value="Date Processed :"></ice:outputText>
+					<ice:outputText styleClass="outputText" value="#{transactionActionsBean.processTxn.valueDate}">
+						<f:converter converterId="dateTimeFormatConverter" />
+					</ice:outputText>
+					
+					<ice:outputText styleClass="outputLabel" id="text12" value="Customer's Bank :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text5"
+						value="#{transactionActionsBean.processTxn.branchId}">
+					    <f:converter converterId="bankBranchDetailsConverter"/>
+					</ice:outputText>
+					<ice:outputText styleClass="outputLabel" value="Transaction Status :"></ice:outputText>
+					<ice:outputText styleClass="outputText" value="#{transactionActionsBean.processTxn.status}"/>
+					
+					<ice:outputText styleClass="outputLabel"
+						value="Capturer Username :"></ice:outputText>
+					<ice:outputText styleClass="outputText" value="#{transactionActionsBean.profile.userName}"/>
+					<ice:outputText styleClass="outputLabel"  value="Point of Capture Name :"></ice:outputText>
+					<ice:outputText styleClass="outputText" value="#{transactionActionsBean.processTxn.transactionLocationId}">
+					    <f:converter converterId="transactionLocationDetailsConverter"/>
+					</ice:outputText>
+					
+					
+				</ice:panelGrid>
+				<br></br>
+				
+				<ice:dataTable border="0" cellpadding="2" cellspacing="0"  width="700"
+				columnClasses="columnClass1" headerClass="headerClass"
+				footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+				styleClass="dataTable" id="tableEx1" value="#{transactionActionsBean.txns}" var="txn">
+				<f:facet name="header">
+						<ice:outputText styleClass="outputLabel" id="text13"
+							value="#{transactionActionsBean.tableHeader}"></ice:outputText>
+					
+				</f:facet>
+				<ice:column id="column9">
+					<f:facet name="header">
+						<ice:outputText value="Date" styleClass="outputText" id="text34"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text35" value="#{txn.dateCreated}">
+						<f:converter converterId="dateTimeFormatConverter" />
+					</ice:outputText>
+				</ice:column>
+				<ice:column >
+					<f:facet name="header">
+						<ice:outputText value="Posting " styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{txn.narrative}">
+						<f:converter converterId="replaceUnderscoreConverter" />
+					</ice:outputText>
+					
+				</ice:column>
+				<ice:column id="column6">
+					<f:facet name="header">
+						<ice:outputText value="Amount Posted" styleClass="outputText" id="text19"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text31" value="#{txn.amount}">
+					<f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<!--<ice:column id="column7">
+					<f:facet name="header">
+						<ice:outputText value="Account" styleClass="outputText" id="text21"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text32" value="#{txn.accountId}">
+					<f:converter converterId="bankAccountConverter"/>
+					</ice:outputText>
+				</ice:column>-->
+				
+			</ice:dataTable>
+			<p><ice:messages styleClass="messages" id="messages1"
+							errorClass="errorMessage" infoClass="infoMessage" layout="table" globalOnly="true" rendered="#{transactionActionsBean.renderManualResolveMsg}"></ice:messages></p>
+			<ice:dataTable border="0" cellpadding="2" cellspacing="0"  width="700"
+				columnClasses="columnClass1" headerClass="headerClass"
+				footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+				styleClass="dataTable" id="table2" value="#{transactionActionsBean.transactions}" var="transaction">
+				<f:facet name="header">
+						<ice:outputText styleClass="outputLabel"  style="font-weight : bold"
+							value="#{transactionActionsBean.tableHeader1}"></ice:outputText>
+					
+				</f:facet>
+				<ice:column id="column19">
+					<f:facet name="header">
+						<ice:outputText value="Date" styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{transaction.dateCreated}">
+						<f:converter converterId="dateTimeFormatConverter" />
+					</ice:outputText>
+				</ice:column>
+				<ice:column >
+					<f:facet name="header">
+						<ice:outputText value="Transaction " styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{transaction.processTxnReference}">
+						<f:converter converterId="referenceToTxnTypeConverter" />
+					</ice:outputText>
+					
+				</ice:column>
+				<ice:column >
+					<f:facet name="header">
+						<ice:outputText value="Posting " styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{transaction.narrative}">
+						<f:converter converterId="replaceUnderscoreConverter" />
+					</ice:outputText>
+					
+				</ice:column>
+				<ice:column id="column16">
+					<f:facet name="header">
+						<ice:outputText value="Amount Posted" styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{transaction.amount}">
+					<f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="column17">
+					<f:facet name="header">
+						<ice:outputText value="Reference" styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{txn.processTxnReference}">
+					</ice:outputText>
+				</ice:column>
+				
+			</ice:dataTable>
+			
+			<ice:dataTable border="0" cellpadding="2" cellspacing="0"  width="700"
+				columnClasses="columnClass1" headerClass="headerClass"
+				footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+				styleClass="dataTable" id="table2" value="#{transactionActionsBean.latestTxns}" var="ptxn">
+				<f:facet name="header">
+						<ice:outputText styleClass="outputLabel"  style="font-weight : bold"
+							value="#{transactionActionsBean.header2}"></ice:outputText>
+					
+				</f:facet>
+				<ice:column>
+					<f:facet name="header">
+						<ice:outputText value="Reference" styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{ptxn.id}">
+					</ice:outputText>
+				</ice:column>
+				
+				<ice:column>
+					<f:facet name="header">
+						<ice:outputText value="Debit Account" styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{ptxn.sourceAccountNumber}">
+					</ice:outputText>
+				</ice:column>
+				<ice:column >
+					<f:facet name="header">
+						<ice:outputText value="Credit Account " styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{ptxn.destinationAccountNumber}"/>
+						
+				</ice:column>
+				<ice:column id="column16">
+					<f:facet name="header">
+						<ice:outputText value="Amount Posted" styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{ptxn.amount}">
+					<f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column >
+					<f:facet name="header">
+						<ice:outputText value="Reason " styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{ptxn.narrative}">
+						<f:converter converterId="replaceUnderscoreConverter" />
+					</ice:outputText>
+					
+				</ice:column>
+				<ice:column >
+					<f:facet name="header">
+						<ice:outputText value="Status " styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{ptxn.status}">
+						<f:converter converterId="replaceUnderscoreConverter" />
+					</ice:outputText>
+					
+				</ice:column>				
+				
+			</ice:dataTable>
+			
+			 <ice:panelGrid styleClass="panelGrid" cellpadding="5" 
+							cellspacing="5" width="700" columns="4"  rendered="#{transactionActionsBean.renderManualResolve}">
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" >
+						<ice:outputText styleClass="panelGridLabel"
+							value="Manually Resolve Transaction"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+				
+				<ice:outputText styleClass="outputLabel" value="Transaction :"></ice:outputText>
+				<ice:selectOneMenu styleClass="selectOneMenu" id = "txnItem1" value="#{transactionActionsBean.txnTypeItem}" required="true" requiredMessage="No Transaction">
+					<f:selectItems value="#{transactionActionsBean.txnTypeMenu}" />
+				</ice:selectOneMenu>
+				<ice:message style="messages" errorClass="errorMessage2" id="txnI1" for="txnItem1"/>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+					<ice:outputText styleClass="outputLabel"
+						value="Dr Account : "></ice:outputText>
+					<ice:inputText styleClass="inputText" id ="account1" value= "#{transactionActionsBean.debitAccount}" required="true" requiredMessage="No Dr Account"></ice:inputText>
+					<ice:message style="messages" errorClass="errorMessage2" id="acc1" for="account1"/>
+					<ice:outputText styleClass="outputLabel" value=""></ice:outputText>
+					
+					<ice:outputText styleClass="outputLabel"
+						value="Cr Account : "></ice:outputText>
+					<ice:inputText styleClass="inputText" id = "account2" value= "#{transactionActionsBean.creditAccount}" required="true" requiredMessage="No Cr Account" ></ice:inputText>
+					<ice:message style="messages" errorClass="errorMessage2" id="acc2" for="account2"/>
+					<ice:outputText styleClass="outputLabel" value=""></ice:outputText>
+					
+					<ice:outputText styleClass="outputLabel"
+						value="Amount :"></ice:outputText>
+					<ice:inputText styleClass="inputText" id = "amount" value= "#{transactionActionsBean.amount}" required="true" requiredMessage="No Amount">
+						<f:converter converterId="tellerMoneyConverter"/>
+						<f:validator validatorId="moneyValidator"/>
+				    </ice:inputText>
+				    <ice:message style="messages" errorClass="errorMessage2" id="amt" for="amount"/>
+				     <ice:panelGrid styleClass="panelGrid" cellpadding="5" columns="2" >
+							<f:facet name="header">
+								<ice:panelGroup styleClass="panelGroup" id="group1">
+									<ice:outputText styleClass="panelGridLabel" value="Apply To "></ice:outputText>
+								</ice:panelGroup>
+							</f:facet>
+							<ice:selectOneRadio disabledClass="selectOneRadio_Disabled" 
+									enabledClass="selectOneRadio_Enabled" styleClass="selectOneRadio"
+									id="radio1" value = "#{transactionActionsBean.applyItem}"  required="true" requiredMessage="No Apply To Value">
+								<f:selectItems value="#{transactionActionsBean.applyMenu}" />
+							</ice:selectOneRadio>
+							<ice:message style="messages" errorClass="errorMessage2" id="rad1" for="radio1"/>
+					</ice:panelGrid>
+					
+					<ice:outputText styleClass="outputLabel"  value="Reason for Posting : "></ice:outputText>
+					<ice:inputTextarea styleClass="inputTextarea" id = "narrative" value= "#{transactionActionsBean.narrative}"  required="true" requiredMessage="No Reason for Posting"></ice:inputTextarea>
+					<ice:message style="messages" errorClass="errorMessage2" id="narrative1" for="narrative"/>
+					<ice:outputText styleClass="outputLabel" value=""></ice:outputText>
+					
+					<ice:commandButton type="submit" value="Submit"
+						styleClass="commandButton"
+						action="#{transactionActionsBean.submit}" partialSubmit="true">
+					</ice:commandButton>
+					<ice:commandButton type="submit" value="Cancel"
+						styleClass="commandButton" 
+						action="#{transactionActionsBean.cancel}" immediate = "true" partialSubmit="true">
+					</ice:commandButton>
+					<ice:outputText styleClass="outputLabel" value=""></ice:outputText>
+					<ice:outputText styleClass="outputLabel" value=""></ice:outputText>
+					
+				</ice:panelGrid>
+				<ice:panelGrid styleClass="panelGrid" id="grid3" cellpadding="5"
+							cellspacing="5" width="700" columns="6" rendered="#{transactionActionsBean.renderButtonsSet}">
+					
+					
+					<ice:commandButton type="submit" value="Mark As Completed"
+						styleClass="commandButton"
+						action="#{transactionActionsBean.completeTransaction}" 
+						></ice:commandButton>
+						
+					<ice:commandButton type="submit" value="Mark As Failed"
+						styleClass="commandButton"
+						action="#{transactionActionsBean.failTransaction}" 
+						></ice:commandButton>
+						
+					<ice:commandButton type="submit" value="Back"
+						styleClass="commandButton" id="button1"
+						action="#{transactionActionsBean.back}" rendered="#{transactionActionsBean.renderBack}"
+						></ice:commandButton>
+					<ice:commandButton type="submit" value="Home"
+						styleClass="commandButton" id="button2"
+						action="#{transactionActionsBean.home}"
+						></ice:commandButton>
+				</ice:panelGrid>
+				<br></br>
+			</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.refgen.mcommerce.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.refgen.mcommerce.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="generateUUID" type="tns:generateUUID"/>
+
+  <xs:element name="generateUUIDResponse" type="tns:generateUUIDResponse"/>
+
+  <xs:element name="getNextNumberInSequence" type="tns:getNextNumberInSequence"/>
+
+  <xs:element name="getNextNumberInSequenceResponse" type="tns:getNextNumberInSequenceResponse"/>
+
+  <xs:complexType name="generateUUID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sequenceName" type="xs:string"/>
+      <xs:element minOccurs="0" name="prefix" type="xs:string"/>
+      <xs:element minOccurs="0" name="year" type="xs:string"/>
+      <xs:element name="minValue" type="xs:long"/>
+      <xs:element name="maxValue" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="generateUUIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getNextNumberInSequence">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sequenceName" type="xs:string"/>
+      <xs:element minOccurs="0" name="year" type="xs:string"/>
+      <xs:element name="minValue" type="xs:long"/>
+      <xs:element name="maxValue" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getNextNumberInSequenceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

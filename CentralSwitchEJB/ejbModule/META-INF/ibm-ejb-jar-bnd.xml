@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar-bnd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://websphere.ibm.com/xml/ns/javaee"
+    xsi:schemaLocation="http://websphere.ibm.com/xml/ns/javaee http://websphere.ibm.com/xml/ns/javaee/ibm-ejb-jar-bnd_1_0.xsd" version="1.0">
+  <message-driven name="HandleBankRegistration">
+    <jca-adapter activation-spec-binding-name="jms/HandleBankRegistration" destination-binding-name="jms/REG.IN.QUEUE"/>
+    <resource-ref name="zw.co.esolutions.mcommerce.centralswitch.mdb.HandleBankRegistration/queueConnectionFactory"
+        binding-name="jms/EWalletQCF"/>
+    <message-destination-ref binding-name="jms/REG.IN.QUEUE" name="zw.co.esolutions.mcommerce.centralswitch.mdb.HandleBankRegistration/regInQueue"/>
+  </message-driven>
+
+  <message-driven name="HandleSMPPIncomingRequest">
+    <jca-adapter activation-spec-binding-name="jms/HandleSMPPIncomingRequest" destination-binding-name="jms/ECONET.SMPP.IN.QUEUE"/>
+    <resource-ref name="zw.co.esolutions.mcommerce.centralswitch.mdb.HandleSMPPIncomingRequest/jmsQueueConnectionFactory"
+        binding-name="jms/EWalletQCF"/>
+    <message-destination-ref binding-name="jms/ECONET.SMPP.OUT.QUEUE" name="zw.co.esolutions.mcommerce.centralswitch.mdb.HandleSMPPIncomingRequest/notificationsQueue"/>
+  </message-driven>
+
+  <message-driven name="HandleUSSDRequest">
+    <jca-adapter activation-spec-binding-name="jms/HandleUSSDRequest" destination-binding-name="jms/ECONET.USSD.REQ.Q"/>
+    <resource-ref name="zw.co.esolutions.mcommerce.centralswitch.mdb.HandleUSSDRequest/jmsQueueConnectionFactory"
+        binding-name="jms/EWalletQCF"/>
+    <message-destination-ref binding-name="jms/ECONET.SMPP.OUT.QUEUE" name="zw.co.esolutions.mcommerce.centralswitch.mdb.HandleUSSDRequest/smsReplyQueue"/>
+  </message-driven>
+
+  <message-driven name="HandleBankResponse">
+    <jca-adapter activation-spec-binding-name="jms/HandleBankResponse" destination-binding-name="jms/SWITCH.IN.QUEUE"/>
+    <resource-ref name="zw.co.esolutions.mcommerce.centralswitch.mdb.HandleBankResponse/jmsQueueConnectionFactory"
+        binding-name="jms/EWalletQCF"/>
+    <message-destination-ref binding-name="jms/ECONET.SMPP.OUT.QUEUE" name="zw.co.esolutions.mcommerce.centralswitch.mdb.HandleBankResponse/notificationsQueue"/>
+    <message-destination-ref binding-name="jms/ZB.IN.QUEUE" name="zw.co.esolutions.mcommerce.centralswitch.mdb.HandleBankResponse/transactionsQueue"/>
+  </message-driven>
+
+  <message-driven name="HandleMerchantResponse">
+    <jca-adapter activation-spec-binding-name="jms/HandleMerchantResponse" destination-binding-name="jms/MERCHANT.REPLY.Q"/>
+    <resource-ref name="zw.co.esolutions.mcommerce.centralswitch.mdb.HandleMerchantResponse/jmsQueueConnectionFactory"
+        binding-name="jms/EWalletQCF"/>
+    <message-destination-ref binding-name="jms/ECONET.SMPP.OUT.QUEUE" name="zw.co.esolutions.mcommerce.centralswitch.mdb.HandleMerchantResponse/deadLetterQueue"/>
+  </message-driven>
+
+  <session name="ProcessUtilImpl">
+    <resource-ref name="zw.co.esolutions.mcommerce.centralswitch.processes.ProcessUtilImpl/jmsQueueConnectionFactory"
+        binding-name="jms/EWalletQCF"/>
+    <message-destination-ref binding-name="jms/ECONET.SMPP.OUT.QUEUE" name="zw.co.esolutions.mcommerce.centralswitch.processes.ProcessUtilImpl/smsReplyQueue"/>
+  </session>
+
+</ejb-jar-bnd>
+

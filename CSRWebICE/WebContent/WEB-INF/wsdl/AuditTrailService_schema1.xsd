@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.audittrailservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.audittrailservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="editActivity" type="tns:editActivity"/>
+
+  <xs:element name="editActivityResponse" type="tns:editActivityResponse"/>
+
+  <xs:element name="findActivityById" type="tns:findActivityById"/>
+
+  <xs:element name="findActivityByIdResponse" type="tns:findActivityByIdResponse"/>
+
+  <xs:element name="getAllActivities" type="tns:getAllActivities"/>
+
+  <xs:element name="getAllActivitiesResponse" type="tns:getAllActivitiesResponse"/>
+
+  <xs:element name="getByActivityAndTimePeriod" type="tns:getByActivityAndTimePeriod"/>
+
+  <xs:element name="getByActivityAndTimePeriodResponse" type="tns:getByActivityAndTimePeriodResponse"/>
+
+  <xs:element name="getByEntityNameAndEntityId" type="tns:getByEntityNameAndEntityId"/>
+
+  <xs:element name="getByEntityNameAndEntityIdResponse" type="tns:getByEntityNameAndEntityIdResponse"/>
+
+  <xs:element name="getByEntityNameAndInstanceName" type="tns:getByEntityNameAndInstanceName"/>
+
+  <xs:element name="getByEntityNameAndInstanceNameAndTimePeriod" type="tns:getByEntityNameAndInstanceNameAndTimePeriod"/>
+
+  <xs:element name="getByEntityNameAndInstanceNameAndTimePeriodResponse" type="tns:getByEntityNameAndInstanceNameAndTimePeriodResponse"/>
+
+  <xs:element name="getByEntityNameAndInstanceNameResponse" type="tns:getByEntityNameAndInstanceNameResponse"/>
+
+  <xs:element name="getByTimePeriod" type="tns:getByTimePeriod"/>
+
+  <xs:element name="getByTimePeriodResponse" type="tns:getByTimePeriodResponse"/>
+
+  <xs:element name="getByUsername" type="tns:getByUsername"/>
+
+  <xs:element name="getByUsernameAndTimePeriod" type="tns:getByUsernameAndTimePeriod"/>
+
+  <xs:element name="getByUsernameAndTimePeriodResponse" type="tns:getByUsernameAndTimePeriodResponse"/>
+
+  <xs:element name="getByUsernameResponse" type="tns:getByUsernameResponse"/>
+
+  <xs:element name="logActivity" type="tns:logActivity"/>
+
+  <xs:element name="logActivityResponse" type="tns:logActivityResponse"/>
+
+  <xs:element name="logActivityWithNarrative" type="tns:logActivityWithNarrative"/>
+
+  <xs:element name="logActivityWithNarrativeResponse" type="tns:logActivityWithNarrativeResponse"/>
+
+  <xs:complexType name="getAllActivities">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllActivitiesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activity">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="auditTrails" nillable="true" type="tns:auditTrail"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element name="logged" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="auditTrail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activity" type="tns:activity"/>
+      <xs:element minOccurs="0" name="auditTrailID" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityID" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="instanceName" type="xs:string"/>
+      <xs:element minOccurs="0" name="narrative" type="xs:string"/>
+      <xs:element minOccurs="0" name="time" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activity" type="tns:activity"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editActivityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByActivityAndTimePeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activityId" type="xs:string"/>
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByActivityAndTimePeriodResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:auditTrail"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByEntityNameAndInstanceNameAndTimePeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="instanceName" type="xs:string"/>
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByEntityNameAndInstanceNameAndTimePeriodResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:auditTrail"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="logActivityWithNarrative">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="activityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="narrative" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="logActivityWithNarrativeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:auditTrail"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findActivityById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findActivityByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByEntityNameAndEntityId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByEntityNameAndEntityIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:auditTrail"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByTimePeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByTimePeriodResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:auditTrail"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByEntityNameAndInstanceName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="instanceName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByEntityNameAndInstanceNameResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:auditTrail"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByUsernameAndTimePeriod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByUsernameAndTimePeriodResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:auditTrail"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByUsername">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getByUsernameResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:auditTrail"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="logActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+      <xs:element minOccurs="0" name="activityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityId" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="oldObject" type="xs:string"/>
+      <xs:element minOccurs="0" name="newObject" type="xs:string"/>
+      <xs:element minOccurs="0" name="instanceName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="logActivityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:auditTrail"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

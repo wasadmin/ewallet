@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.contactdetailsservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="contactDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="city" type="xs:string"/>
+      <xs:element minOccurs="0" name="contactName" type="xs:string"/>
+      <xs:element minOccurs="0" name="country" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:anySimpleType"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="fax" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="ownerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="ownerType" type="xs:string"/>
+      <xs:element minOccurs="0" name="postalAddress" type="xs:string"/>
+      <xs:element minOccurs="0" name="street" type="xs:string"/>
+      <xs:element minOccurs="0" name="suburb" type="xs:string"/>
+      <xs:element minOccurs="0" name="telephone" type="xs:string"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

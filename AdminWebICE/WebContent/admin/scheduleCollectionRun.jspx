@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				 <ice:form styleClass="form" id="form1">
+				 <ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages>
+				 <ice:outputText value="All fields marked with a * are required"></ice:outputText>
+					<ice:panelGrid styleClass="panelGrid" id="grid1" columns="2" width="600" cellpadding="5" cellspacing="5">
+						<ice:outputText styleClass="outputLabel" value="Email Address * :"></ice:outputText>
+						<ice:inputText value ="#{scheduleNHReversalRunBean.email}" required="true" requiredMessage="Please enter email address"></ice:inputText>
+						<ice:outputText styleClass="outputLabel" value="Expiration Period (Days)* :"></ice:outputText>
+						<ice:inputText styleClass="selectOneMenu" id="expPeriod" 
+							value="#{scheduleNHReversalRunBean.expPeriod}" requiredMessage="Please select expiration period">
+						</ice:inputText>
+						<ice:outputText styleClass="outputLabel" value="Running Time * (24 hr):"></ice:outputText>
+						<ice:inputText value="#{scheduleNHReversalRunBean.runningTime}" required="true" requiredMessage="Please enter valid time"></ice:inputText>
+						
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group1">
+								<ice:outputText styleClass="panelGridLabel" id="text1"
+									value="Schedule Non Holder Transfer Reversal Run"></ice:outputText>
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelGrid>
+					<ice:panelGrid columns="3">
+						<ice:commandButton type="submit" value="Submit"
+							styleClass="commandButton" id="button1"
+							action="#{scheduleNHReversalRunBean.submit}"></ice:commandButton>
+						<ice:commandButton type="submit" value="Cancel Timer"
+							styleClass="commandButton" 
+							action="#{scheduleNHReversalRunBean.cancelTimer}"></ice:commandButton>
+						<ice:commandButton type="submit" value="Cancel"
+							styleClass="commandButton" id="button2"
+							action="#{scheduleNHReversalRunBean.cancel}" partialSubmit="true" ></ice:commandButton>
+					</ice:panelGrid>
+				
+				
+					
+				</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

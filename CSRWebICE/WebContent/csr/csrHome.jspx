@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<h2>Welcome To CSR Home :
+					<h:outputText styleClass="outputText" id="text8" value="#{pc_CsrHome.jaasUserName}"></h:outputText> 
+				</h2>
+				<br/>
+				This e-Wallet Mobile Banking System has been designed to offer a<br/>
+				top of the class e-banking experience by offering what the consumer <br/>
+				really needs...<br/>
+				<br/>
+				> Your mobile phone as your bank account<br/>
+				<br/>
+				> Withdraw money at any bank or agent<br/>
+				<br/>
+				> Transfer money to people without bank accounts<br/>
+				<br/>
+				> Pay bills using a simple SMS<br/>
+				<br/>
+				> Top-up your phone from your bank account<br/>
+				<br/>
+				> Automatic SMS notifications<br/>
+				<br/>
+				Enjoy the e-Wallet experience!!<br/>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

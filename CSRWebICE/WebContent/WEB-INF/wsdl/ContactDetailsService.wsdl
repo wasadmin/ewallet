@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="ContactDetailsService" targetNamespace="http://service.contactdetailsservices.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.contactdetailsservices.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.contactdetailsservices.ewallet.esolutions.co.zw/" schemaLocation="ContactDetailsService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="findContactDetailsByIdResponse">
+    <part element="tns:findContactDetailsByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteContactDetailsResponse">
+    <part element="tns:deleteContactDetailsResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createContactDetails">
+    <part element="tns:createContactDetails" name="parameters">
+    </part>
+  </message>
+  <message name="Exception">
+    <part element="tns:Exception" name="fault">
+    </part>
+  </message>
+  <message name="createContactDetailsResponse">
+    <part element="tns:createContactDetailsResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateContactDetailsResponse">
+    <part element="tns:updateContactDetailsResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editContactDetails">
+    <part element="tns:editContactDetails" name="parameters">
+    </part>
+  </message>
+  <message name="findContactDetailsById">
+    <part element="tns:findContactDetailsById" name="parameters">
+    </part>
+  </message>
+  <message name="editContactDetailsResponse">
+    <part element="tns:editContactDetailsResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteContactDetails">
+    <part element="tns:deleteContactDetails" name="parameters">
+    </part>
+  </message>
+  <message name="updateContactDetails">
+    <part element="tns:updateContactDetails" name="parameters">
+    </part>
+  </message>
+  <portType name="ContactDetailsService">
+    <operation name="createContactDetails">
+      <input message="tns:createContactDetails">
+    </input>
+      <output message="tns:createContactDetailsResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteContactDetails">
+      <input message="tns:deleteContactDetails">
+    </input>
+      <output message="tns:deleteContactDetailsResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editContactDetails">
+      <input message="tns:editContactDetails">
+    </input>
+      <output message="tns:editContactDetailsResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="updateContactDetails">
+      <input message="tns:updateContactDetails">
+    </input>
+      <output message="tns:updateContactDetailsResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findContactDetailsById">
+      <input message="tns:findContactDetailsById">
+    </input>
+      <output message="tns:findContactDetailsByIdResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="ContactDetailsServiceSOAPBinding" type="tns:ContactDetailsService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createContactDetails">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteContactDetails">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editContactDetails">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateContactDetails">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findContactDetailsById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ContactDetailsService">
+    <port binding="tns:ContactDetailsServiceSOAPBinding" name="ContactDetailsServiceSOAP">
+      <soap:address location="http://localhost:9080/ContactDetailsServices/ContactDetailsService"/>
+    </port>
+  </service>
+</definitions>

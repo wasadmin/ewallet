@@ -1,0 +1,1 @@
+ALTER TABLE BANKIF.CUSTOMER add customerAutoRegStatus VARCHAR(10);

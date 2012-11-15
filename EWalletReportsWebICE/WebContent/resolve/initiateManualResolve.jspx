@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../xmlhttp/css/rime/rime.css" rel="stylesheet"
+				type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<ice:form styleClass="form" id="form1">
+					<p><ice:messages styleClass="messages" id="messages1"
+						errorClass="errorMessage" infoClass="infoMessage" layout="table"
+						globalOnly="false"></ice:messages></p>
+					<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+						cellspacing="5" width="600" columns="2">
+						<ice:outputLabel value="Search Criteria"
+							styleClass="panelGridLabel" id="label2"></ice:outputLabel>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="menu1"
+							value="#{findTransactionBean.selectedCriteria}"
+							valueChangeListener="#{findTransactionBean.handleValueChange}"
+							partialSubmit="true">
+							<f:selectItems value="#{findTransactionBean.criteriaList}"
+								id="selectItems1" />
+						</ice:selectOneMenu>
+						<ice:outputLabel value="Transaction Status"
+							styleClass="outputLabel" id="label4"
+							rendered="#{findTransactionBean.renderStatus}"></ice:outputLabel>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="menu2"
+							value="#{findTransactionBean.selectedStatus}"
+							rendered="#{findTransactionBean.renderStatus}">
+							<f:selectItems value="#{findTransactionBean.statusList}"
+								id="selectItems2" />
+						</ice:selectOneMenu>
+						<ice:outputText styleClass="outputLabel" id="text6"
+							value="Date From(dd/MM/yyyy)* :" rendered="#{findTransactionBean.renderStatus}"></ice:outputText>
+						<ice:selectInputDate styleClass="selectInputDate"
+							renderAsPopup="true" renderMonthAsDropdown="true"
+							renderYearAsDropdown="true" value="#{findTransactionBean.fromDate}"
+							rendered="#{findTransactionBean.renderStatus}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</ice:selectInputDate>
+						
+						<ice:outputText styleClass="outputLabel" id="text20"
+							value="To(dd/MM/yyyy)* :" rendered="#{findTransactionBean.renderStatus}"></ice:outputText>
+						<ice:selectInputDate styleClass="selectInputDate"
+							renderAsPopup="true" renderMonthAsDropdown="true"
+							renderYearAsDropdown="true" value="#{findTransactionBean.toDate}"
+							rendered="#{findTransactionBean.renderStatus}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</ice:selectInputDate>
+						<ice:outputLabel value="Transaction Reference"
+							styleClass="outputLabel" id="label3"
+							rendered="#{findTransactionBean.renderReference}"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="text1"
+							value="#{findTransactionBean.referenceId}"
+							rendered="#{findTransactionBean.renderReference}"></ice:inputText>
+						<ice:commandButton type="submit" value=" Search "
+							styleClass="commandButton" id="button1"
+							action="#{findTransactionBean.search}"></ice:commandButton>
+						<ice:commandButton type="submit" value="View All"
+							styleClass="commandButton" id="button2"
+							action="#{findTransactionBean.viewAll}"></ice:commandButton>
+
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group1">
+								<ice:outputLabel value="Find Transaction"
+									styleClass="panelGridLabel" id="label1"></ice:outputLabel>
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelGrid>
+
+					<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+						columnClasses="columnClass1" headerClass="headerClass"
+						footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+						styleClass="dataTable" id="tableEx1" width="600"
+						value="#{findTransactionBean.txnList}" var="txn">
+						<f:facet name="header">
+							<ice:outputLabel value="Search Results" styleClass="outputLabel"
+								id="label5"></ice:outputLabel>
+
+						</f:facet>
+						
+						<ice:column id="column1">
+							<f:facet name="header">
+								<ice:outputText id="text2" styleClass="outputText"
+									value="Reference"></ice:outputText>
+							</f:facet>
+							<ice:commandLink styleClass="requestLink" id="link1"
+								style="color:green"
+								action="#{findTransactionBean.viewTransaction}">
+								<ice:outputText id="text7" styleClass="outputText"
+									value="#{txn.messageId}" style="color:green"></ice:outputText>
+								<f:param name="messageId" value="#{txn.messageId}"></f:param>
+							</ice:commandLink>
+						</ice:column>
+						<ice:column id="column2">
+							<f:facet name="header">
+								<ice:outputText value="Transaction Type" styleClass="outputText"
+									id="text3"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" id="text6"
+								value="#{txn.transactionType}"></ice:outputText>
+						</ice:column>
+						<ice:column id="column3">
+							<f:facet name="header">
+								<ice:outputText value="Status" styleClass="outputText"
+									id="text4"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" id="text5"
+								value="#{txn.status}">
+								<f:converter converterId="replaceUnderscoreConverter" />
+							</ice:outputText>
+						</ice:column>
+						<ice:column >
+							<f:facet name="header">
+								<ice:outputText value="Date" styleClass="outputText"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" value="#{txn.dateCreated}">
+						<f:converter converterId="dateTimeFormatConverter" />
+					</ice:outputText>
+					</ice:column>
+					</ice:dataTable>
+				</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

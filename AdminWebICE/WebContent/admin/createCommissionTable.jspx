@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				 <ice:form styleClass="form" id="form1">
+				 <h2>Create Commission Table</h2>
+				 <ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table" globalOnly="true"></ice:messages>
+					<ice:panelGrid styleClass="infoBox" >
+					<ice:outputText value="All fields marked with a * are required"></ice:outputText>
+					</ice:panelGrid>
+					<ice:panelGrid styleClass="panelGrid" id="grid1" columns="3" width="600" cellpadding="5" cellspacing="5">
+						<ice:outputText styleClass="outputLabel" 
+							value="Financial Institution* :"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu"
+							value="#{createTariffTableBean.bankItem}" id="instution" required="true" requiredMessage="Please select a financial institution" >
+							<f:selectItems 
+								value="#{createTariffTableBean.bankMenu}" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="instution" errorClass="errorMsg"></ice:message>	
+						
+						
+						<ice:outputText styleClass="outputLabel" id="textLimit"
+							value="Applicable Commission* :"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="limitForItem" valueChangeListener="#{createTariffTableBean.handleTransactionTypeValueChange}"
+					       partialSubmit="true" value="#{createTariffTableBean.ownerTypeItem}" required="true" requiredMessage="Please select the Applicable Commision ">
+							<f:selectItems id="selectItemsOwner"
+								value="#{createTariffTableBean.ownerTypeMenu}" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="limitForItem" errorClass="errorMsg"></ice:message>
+						
+							
+						<ice:outputText styleClass="outputLabel" id="text4"
+							value="Transaction Type* :"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="transactionType"
+							value="#{createTariffTableBean.transactionTypeItem}" required="true" requiredMessage="Please select a transaction type">
+							<f:selectItems id="selectItems2"
+								value="#{createTariffTableBean.transactionTypeMenu}" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="transactionType" errorClass="errorMsg"></ice:message>
+						<ice:outputText styleClass="outputLabel" id="text2"
+							value="Commission Type* :"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="commissionType"
+							value="#{createTariffTableBean.tariffTypeItem}" required="true" requiredMessage="Please select an commission type">
+							<f:selectItems id="selectItems1"
+								value="#{createTariffTableBean.tariffTypeMenu}" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="commissionType" errorClass="errorMsg"></ice:message>
+						<ice:outputText styleClass="outputLabel" id="text7"
+							value="Customer Class* :"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="customerClass" value="#{createTariffTableBean.tariffCustomerClassItem}" required="true" requiredMessage="Please select a customer class">
+							<f:selectItems value="#{createTariffTableBean.tariffCustomerClassMenu}"
+								id="selectItems4" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="customerClass" errorClass="errorMsg"></ice:message>
+						<ice:outputText styleClass="outputLabel" id="text6"
+							value="Effective Date (dd/mm/yyyy)* :"></ice:outputText>
+						<ice:selectInputDate popupDateFormat="dd/MM/yyyy"
+			                 value="#{createTariffTableBean.effectiveDate}" id="effectiveDate" renderAsPopup="true" required="true" requiredMessage="Please enter the effective date">
+			            </ice:selectInputDate>
+			            <ice:message styleClass="messages" for="effectiveDate" errorClass="errorMsg"></ice:message>
+	                    <ice:commandButton type="submit" value="Submit"
+							styleClass="commandButton" id="button1"
+							action="#{createTariffTableBean.createTariffTableAction}"></ice:commandButton>
+						<ice:commandButton type="submit" value="Cancel"
+							styleClass="commandButton" id="button2"
+							action="#{createTariffTableBean.cancelTariffTableCreation}"></ice:commandButton>
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group1">
+								<ice:outputText styleClass="panelGridLabel" id="text1"
+									value="Enter New Commission Table Details"></ice:outputText>
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelGrid>
+				
+				
+				</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

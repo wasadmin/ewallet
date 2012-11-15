@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://services.web.ussd.esolutions.co.zw/" version="1.0" xmlns:tns="http://services.web.ussd.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="createTransaction" type="tns:createTransaction"/>
+
+  <xs:element name="createTransactionResponse" type="tns:createTransactionResponse"/>
+
+  <xs:element name="createWebSession" type="tns:createWebSession"/>
+
+  <xs:element name="createWebSessionResponse" type="tns:createWebSessionResponse"/>
+
+  <xs:element name="deleteTransaction" type="tns:deleteTransaction"/>
+
+  <xs:element name="deleteTransactionResponse" type="tns:deleteTransactionResponse"/>
+
+  <xs:element name="deleteWebSession" type="tns:deleteWebSession"/>
+
+  <xs:element name="deleteWebSessionResponse" type="tns:deleteWebSessionResponse"/>
+
+  <xs:element name="findTransaction" type="tns:findTransaction"/>
+
+  <xs:element name="findTransactionResponse" type="tns:findTransactionResponse"/>
+
+  <xs:element name="findWebSessionById" type="tns:findWebSessionById"/>
+
+  <xs:element name="findWebSessionByIdResponse" type="tns:findWebSessionByIdResponse"/>
+
+  <xs:element name="getActiveBankNames" type="tns:getActiveBankNames"/>
+
+  <xs:element name="getActiveBankNamesResponse" type="tns:getActiveBankNamesResponse"/>
+
+  <xs:element name="getAgentNumberByMobileNumberAndBankId" type="tns:getAgentNumberByMobileNumberAndBankId"/>
+
+  <xs:element name="getAgentNumberByMobileNumberAndBankIdResponse" type="tns:getAgentNumberByMobileNumberAndBankIdResponse"/>
+
+  <xs:element name="getFailedWebSession" type="tns:getFailedWebSession"/>
+
+  <xs:element name="getFailedWebSessionResponse" type="tns:getFailedWebSessionResponse"/>
+
+  <xs:element name="getTargetBankCodeForTargetAccount" type="tns:getTargetBankCodeForTargetAccount"/>
+
+  <xs:element name="getTargetBankCodeForTargetAccountResponse" type="tns:getTargetBankCodeForTargetAccountResponse"/>
+
+  <xs:element name="getTransactionByUSSDSessionId" type="tns:getTransactionByUSSDSessionId"/>
+
+  <xs:element name="getTransactionByUSSDSessionIdResponse" type="tns:getTransactionByUSSDSessionIdResponse"/>
+
+  <xs:element name="getWebSessionByMobileAndBankAndStatus" type="tns:getWebSessionByMobileAndBankAndStatus"/>
+
+  <xs:element name="getWebSessionByMobileAndBankAndStatusResponse" type="tns:getWebSessionByMobileAndBankAndStatusResponse"/>
+
+  <xs:element name="getWebSessionByReferenceId" type="tns:getWebSessionByReferenceId"/>
+
+  <xs:element name="getWebSessionByReferenceIdResponse" type="tns:getWebSessionByReferenceIdResponse"/>
+
+  <xs:element name="isAgentMobile" type="tns:isAgentMobile"/>
+
+  <xs:element name="isAgentMobileResponse" type="tns:isAgentMobileResponse"/>
+
+  <xs:element name="isNonHolderAccount" type="tns:isNonHolderAccount"/>
+
+  <xs:element name="isNonHolderAccountResponse" type="tns:isNonHolderAccountResponse"/>
+
+  <xs:element name="sendTransaction" type="tns:sendTransaction"/>
+
+  <xs:element name="sendTransactionResponse" type="tns:sendTransactionResponse"/>
+
+  <xs:element name="updateTransaction" type="tns:updateTransaction"/>
+
+  <xs:element name="updateTransactionResponse" type="tns:updateTransactionResponse"/>
+
+  <xs:element name="updateWebSession" type="tns:updateWebSession"/>
+
+  <xs:element name="updateWebSessionResponse" type="tns:updateWebSessionResponse"/>
+
+  <xs:element name="validateAgentCustomerWithdrawal" type="tns:validateAgentCustomerWithdrawal"/>
+
+  <xs:element name="validateAgentCustomerWithdrawalResponse" type="tns:validateAgentCustomerWithdrawalResponse"/>
+
+  <xs:element name="validateAgentDeposit" type="tns:validateAgentDeposit"/>
+
+  <xs:element name="validateAgentDepositResponse" type="tns:validateAgentDepositResponse"/>
+
+  <xs:element name="validateAgentTransfer" type="tns:validateAgentTransfer"/>
+
+  <xs:element name="validateAgentTransferResponse" type="tns:validateAgentTransferResponse"/>
+
+  <xs:complexType name="validateAgentTransfer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sourceAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="targetAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateAgentTransferResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isAgentMobile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="formattedMobileNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isAgentMobileResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isNonHolderAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="targetAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isNonHolderAccountResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createWebSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="webSession" type="tns:webSession"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="webSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element name="firstIndex" type="xs:int"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element name="passwordRetryCount" type="xs:int"/>
+      <xs:element minOccurs="0" name="referenceId" type="xs:string"/>
+      <xs:element name="secondIndex" type="xs:int"/>
+      <xs:element name="sendSms" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="timeout" type="xs:dateTime"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createWebSessionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:webSession"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getActiveBankNames">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getActiveBankNamesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="uuid" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTransactionResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ussdTransaction" type="tns:ussdTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ussdTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="aquirerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="flowStatus" type="tns:flowStatus"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+      <xs:element minOccurs="0" name="mno" type="xs:string"/>
+      <xs:element name="sendSms" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="sessionId" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceMobile" type="xs:string"/>
+      <xs:element minOccurs="0" name="uuid" type="xs:string"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:ussdTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFailedWebSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFailedWebSessionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:webSession"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAgentNumberByMobileNumberAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAgentNumberByMobileNumberAndBankIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getWebSessionByReferenceId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="referenceId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getWebSessionByReferenceIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:webSession"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sendTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileWebRequest" type="tns:mobileWebRequestMessage"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mobileWebRequestMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agentNumber" type="xs:string"/>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element minOccurs="0" name="beneficiaryName" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerUtilityAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="ddmmyyDate" type="xs:string"/>
+      <xs:element minOccurs="0" name="destinationBankName" type="xs:string"/>
+      <xs:element minOccurs="0" name="mno" type="tns:mobileNetworkOperator"/>
+      <xs:element minOccurs="0" name="newPin" type="xs:string"/>
+      <xs:element minOccurs="0" name="oldPin" type="xs:string"/>
+      <xs:element minOccurs="0" name="paymentRef" type="xs:string"/>
+      <xs:element minOccurs="0" name="refCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="secretCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceBankAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceBankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceMobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="targetBankAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="targetBankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="targetMobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="transactionType" type="tns:mobileWebTransactionType"/>
+      <xs:element minOccurs="0" name="utilityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="uuid" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sendTransactionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateWebSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="webSession" type="tns:webSession"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateWebSessionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:webSession"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteWebSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="webSessionId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteWebSessionResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findWebSessionById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="webSessionId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findWebSessionByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:webSession"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateAgentDeposit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sourceAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="targetMobile" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateAgentDepositResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTargetBankCodeForTargetAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sessionId" type="xs:string"/>
+      <xs:element minOccurs="0" name="targetAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="targetMobile" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTargetBankCodeForTargetAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTransactionByUSSDSessionId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ussdSessionId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTransactionByUSSDSessionIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:ussdTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateAgentCustomerWithdrawal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="targetAccount" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateAgentCustomerWithdrawalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ussdTransaction" type="tns:ussdTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:ussdTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="uuid" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:ussdTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getWebSessionByMobileAndBankAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getWebSessionByMobileAndBankAndStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:webSession"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="flowStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NEW_STATUS"/>
+      <xs:enumeration value="BANK_REQUEST"/>
+      <xs:enumeration value="COMPLETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mobileNetworkOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ECONET"/>
+      <xs:enumeration value="NETONE"/>
+      <xs:enumeration value="TELECEL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mobileWebTransactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TOPUP"/>
+      <xs:enumeration value="BALANCE"/>
+      <xs:enumeration value="MINI_STATEMENT"/>
+      <xs:enumeration value="TRANSFER"/>
+      <xs:enumeration value="BILLPAY"/>
+      <xs:enumeration value="CHANGE_PASSCODE"/>
+      <xs:enumeration value="AGENT_CUSTOMER_NON_HOLDER_WITHDRAWAL"/>
+      <xs:enumeration value="AGENT_CUSTOMER_DEPOSIT"/>
+      <xs:enumeration value="AGENT_TRANSFER"/>
+      <xs:enumeration value="AGENT_CUSTOMER_WITHDRAWAL"/>
+      <xs:enumeration value="RTGS"/>
+      <xs:enumeration value="AGENT_SUMMARY"/>
+      <xs:enumeration value="REGISTER_MERCHANT"/>
+      <xs:enumeration value="TOPUP_TXT"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

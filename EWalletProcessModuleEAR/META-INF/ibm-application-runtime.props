@@ -1,0 +1,4 @@
+#Created by WebSphere.  Do not modify.
+#Mon Mar 12 19:02:22 CAT 2012
+com.ibm.ws.runtime.components.EWalletProcessModule.war=WebSphere\:specname\=WS_WebContainer
+com.ibm.ws.runtime.components.EWalletProcessModuleEJB.jar=WebSphere\:specname\=WS_JaxWsWebService+WebSphere\:specname\=WS_WebServiceInit+WebSphere\:specname\=WS_EJBContainer

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="AgentStatementEAR">
+        <wb-resource deploy-path="/" source-path="/"/>
+        <dependent-module archiveName="spiffy-all-0.05.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/spiffy-all-0.05.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="groovy-all-1.7.5.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/groovy-all-1.7.5.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-beanutils-1.8.0.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/commons-beanutils-1.8.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jasperreports-javaflow-3.7.2.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/jasperreports-javaflow-3.7.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jasperreports-fonts-3.7.2.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/jasperreports-fonts-3.7.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-1.2.16.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/log4j-1.2.16.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="times.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/times.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-logging-1.0.4.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/commons-logging-1.0.4.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-fileupload-1.2.2.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/commons-fileupload-1.2.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="SuperCSV-1.52.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/SuperCSV-1.52.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-collections-2.1.1.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/commons-collections-2.1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi-3.5-FINAL-20090928.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/poi-3.5-FINAL-20090928.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-digester-1.7.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/commons-digester-1.7.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xercesImpl-2.7.0.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/xercesImpl-2.7.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jasperreports-applet-3.7.2.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/jasperreports-applet-3.7.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jasperreports-3.7.2.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/jasperreports-3.7.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="AgentStatementEJB.jar" deploy-path="/" handle="module:/resource/AgentStatementEJB/AgentStatementEJB">
+            <dependent-object>Module_1335787834081</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="AgentStatementService.war" deploy-path="/" handle="module:/resource/AgentStatementService/AgentStatementService">
+            <dependent-object>Module_1335790308593</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EWalletUtils.jar" deploy-path="/lib" handle="module:/resource/EWalletUtils/EWalletUtils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="WebServiceClients.jar" deploy-path="/lib" handle="module:/resource/WebServiceClients/WebServiceClients">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="iText-2.1.7.jar" deploy-path="/lib" handle="module:/classpath/lib/EWalletReportsWebICEEAR/iText-2.1.7.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				
+		<ice:messages styleClass="messages" id="messages1"></ice:messages>
+
+		<ice:form styleClass="form" id="form1">
+		
+			<ice:panelGrid styleClass="panelGrid"  cellpadding="5"
+				cellspacing="5" width="700" columns="1">
+				
+					<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5" cellspacing="5" width="700" columns="2">
+				<ice:outputLabel value="Search Criteria" styleClass="outputLabel"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu" id="menu1"  partialSubmit="true" value="#{customerSearch.selectedCriteria}" valueChangeListener="#{customerSearch.processCriteriaChange}">
+					<f:selectItems id="selectItems1"
+						value="#{customerSearch.criteriaList}" />
+				</ice:selectOneMenu>
+				<ice:outputLabel></ice:outputLabel>
+				<ice:outputLabel></ice:outputLabel>
+				</ice:panelGrid>
+				<ice:panelGrid styleClass="panelGrid" cellpadding="5"
+				cellspacing="5" width="700" columns="4" rendered="#{customerSearch.renderBankInfo}" >
+				<ice:outputLabel value="Bank Account " styleClass="outputLabel"  ></ice:outputLabel>
+				<ice:inputText styleClass="inputText" value="#{customerSearch.bankAccountNumber}" ></ice:inputText>
+				<ice:outputLabel></ice:outputLabel>
+				<ice:outputLabel></ice:outputLabel>
+				</ice:panelGrid>
+				<ice:panelGrid styleClass="panelGrid"  cellpadding="5"
+				cellspacing="5" width="700" columns="4" rendered="#{customerSearch.renderCustomerInfo }">
+				<ice:outputLabel value="Last Name" styleClass="outputLabel"
+					id="label2"></ice:outputLabel>
+				<ice:inputText styleClass="inputText" value="#{customerSearch.lastName}"></ice:inputText>
+				<ice:outputLabel></ice:outputLabel>
+					<ice:outputLabel></ice:outputLabel>
+				<ice:outputLabel value="National ID" styleClass="outputLabel"></ice:outputLabel>
+				<ice:inputText styleClass="inputText" id="text1" value="#{customerSearch.nationalId}" ></ice:inputText>
+				<ice:outputLabel></ice:outputLabel>
+				<ice:outputLabel></ice:outputLabel>
+				<ice:outputLabel value="Mobile Number" styleClass="outputLabel"></ice:outputLabel>
+				<ice:inputText styleClass="inputText" value="#{customerSearch.mobileNumber}"></ice:inputText>
+				<ice:outputLabel></ice:outputLabel>
+				<ice:outputLabel></ice:outputLabel>
+				<ice:outputLabel value="Customer Class" styleClass="outputLabel"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu" value="#{customerSearch.selectedCustomerClass }">
+				<f:selectItems value="#{customerSearch.customerClassList }"/>
+				</ice:selectOneMenu>
+				<ice:outputLabel></ice:outputLabel>
+				<ice:outputLabel></ice:outputLabel>
+				<ice:outputLabel value="Status" styleClass="outputLabel"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu" value="#{customerSearch.selectedStatus }">
+				<f:selectItems value="#{customerSearch.customerStatusList}"/>
+				</ice:selectOneMenu>
+				<ice:outputLabel></ice:outputLabel>
+				<ice:outputLabel></ice:outputLabel>
+				<ice:outputLabel value="From Date (dd/MM/yyyy):" styleClass="outputLabel"></ice:outputLabel>
+				<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+									renderMonthAsDropdown="true" renderYearAsDropdown="true"
+									value="#{customerSearch.startDate}" >
+									<f:convertDateTime pattern="dd/MM/yyyy" />
+								</ice:selectInputDate>
+				<ice:outputLabel value="To Date (dd/MM/yyyy):" styleClass="outputLabel"></ice:outputLabel>
+				<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+									renderMonthAsDropdown="true" renderYearAsDropdown="true"
+									value="#{customerSearch.endDate}" >
+									<f:convertDateTime pattern="dd/MM/yyyy" />
+								</ice:selectInputDate>
+				</ice:panelGrid>
+				<ice:commandButton type="submit" value="Search"
+					styleClass="commandButton" id="button1" action="#{customerSearch.search}"></ice:commandButton>
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" id="group1">
+						<ice:outputLabel value="Enter Search Infomation"
+							styleClass="panelGridLabel" id="label1"></ice:outputLabel>
+					</ice:panelGroup>
+				</f:facet>
+			</ice:panelGrid>
+		
+		
+		
+		<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+			columnClasses="columnClass1" headerClass="headerClass"
+			footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+			styleClass="dataTableEx" id="tableEx1" width="600"
+			value="#{customerSearch.customers}"
+			var="customer">
+			<f:facet name="header">
+					<ice:outputLabel value="Search Results" styleClass="panelGridlabel"
+						id="label4"></ice:outputLabel>
+				
+			</f:facet>
+			<ice:column id="column1">
+				<f:facet name="header">
+				<ice:commandSortHeader columnName="Lastname" arrow="true"> 
+					<ice:outputText id="text2" styleClass="outputText" value="Lastname"></ice:outputText>
+			</ice:commandSortHeader>
+				</f:facet>
+				<ice:commandLink styleClass="commandLink" id="link1" action="#{customerSearch.viewCustomer}">
+					<ice:outputText id="text6" style="color:green"  styleClass="outputText" value="#{customer.lastName}">
+						<f:converter converterId="nullValueConverter"/>
+					</ice:outputText>
+					<f:param name="customerId" value="#{customer.id}"></f:param>
+				</ice:commandLink>
+			</ice:column>
+			<ice:column id="column2">
+				<f:facet name="header">
+		
+					<ice:outputText value="Firstnames" styleClass="outputText" id="text3"></ice:outputText>
+			
+				</f:facet>
+				<ice:outputText styleClass="outputText" id="text7" value="#{customer.firstNames}"></ice:outputText>
+			</ice:column>
+			<ice:column id="column3">
+				<f:facet name="header">
+					<ice:outputText value="National ID" styleClass="outputText"
+						id="text4"></ice:outputText>
+				</f:facet>
+				<ice:outputText styleClass="outputText" id="text8" value="#{customer.nationalId}"></ice:outputText>
+			</ice:column>
+			<ice:column >
+				<f:facet name="header">
+					<ice:outputText value="Registration Branch" styleClass="outputText"
+						></ice:outputText>
+				</f:facet>
+				<ice:outputText styleClass="outputText"  value="#{customer.branchId}">
+				<f:converter converterId="branchNameConverter"/>
+				</ice:outputText>
+			</ice:column>
+			<ice:column>
+			<f:facet name="header">
+					<ice:outputText value="Bank" styleClass="outputText"
+						></ice:outputText>
+				</f:facet>
+			<h:outputText styleClass="outputText" id="text26"
+										value="#{customer.branchId}">
+										<f:converter converterId="bankNameBranchConverter"/>
+										</h:outputText>
+			
+			</ice:column>
+			<ice:column id="column4">
+				<ice:outputText styleClass="outputText" id="text9" value="#{customer.status}"></ice:outputText>
+				<f:facet name="header">
+					<ice:outputText value="Status" styleClass="outputText" id="text5"></ice:outputText>
+				</f:facet>
+			</ice:column>
+			<ice:column id="column344">
+				<ice:outputText styleClass="outputText" id="te2213xt9" value="#{customer.dateCreated}">
+				<f:convertDateTime pattern="dd/MM/yyyy"/>
+				<f:converter converterId="xmlDateConverter"/>
+				</ice:outputText>
+				<f:facet name="header">
+					<ice:outputText value="Registration Date" styleClass="outputText"></ice:outputText>
+				</f:facet>
+			</ice:column>
+		</ice:dataTable>
+		</ice:form>
+	</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+	
+    <jsp:directive.page contentType="text/html;charset=utf-8" />
+
+<f:view>
+	<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<h2>Agent Details</h2>
+					<ice:form styleClass="form" id="form1">
+						<ice:messages styleClass="messages" id="messages1"
+							errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages>
+						<ice:inputHidden value="#{viewAgentBean.agentId}"></ice:inputHidden>
+						<ice:panelTabSet>
+							<ice:panelTab id="bfpanel1" label="Personal Details">
+								<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+									cellspacing="5" width="600" columns="2">
+									<ice:outputLabel value="Title" styleClass="outputLabel"
+										id="label2"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text1"
+										value="#{viewAgentBean.customer.title}"></ice:outputText>
+									<ice:outputLabel value="Lastname /Company Name" styleClass="outputLabel"
+										id="label3"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text2"
+										value="#{viewAgentBean.customer.lastName}"></ice:outputText>
+									<ice:outputLabel value="Firstnames /Branch" styleClass="outputLabel"
+										id="label4"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text3"
+										value="#{viewAgentBean.customer.firstNames}"></ice:outputText>
+									<ice:outputLabel value="National ID / Company ID" styleClass="outputLabel"
+										id="label5"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text4"
+										value="#{viewAgentBean.customer.nationalId}"></ice:outputText>
+									<ice:outputLabel value="D.O.B/Company Reg Date" styleClass="outputLabel"
+										id="label6"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text5"
+										value="#{viewAgentBean.dateOfBirth}">
+										<f:convertDateTime pattern="dd/MM/yyyy"/>
+									</ice:outputText>
+									<ice:outputLabel value="Gender" styleClass="outputLabel"
+										id="label8"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text7"
+										value="#{viewAgentBean.customer.gender}"></ice:outputText>
+									<f:facet name="header">
+										<ice:panelGroup styleClass="panelGroup" id="group1">
+											<ice:outputLabel value="Personal Details"
+												styleClass="panelGridLabel" id="label1"></ice:outputLabel>
+										</ice:panelGroup>
+									</f:facet>
+								</ice:panelGrid>
+								<ice:panelGrid styleClass="panelGrid" id="grid34" cellpadding="5"
+									cellspacing="5" width="600" columns="2">
+									<ice:outputLabel value="Agent Number" styleClass="outputLabel"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" 
+										value="#{viewAgentBean.agent.agentNumber}"></ice:outputText>
+									<ice:outputLabel value="Agent Type" styleClass="outputLabel"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" 
+										value="#{viewAgentBean.agent.agentType}"></ice:outputText>
+									<ice:outputLabel value="Agent Class" styleClass="outputLabel"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" 
+										value="#{viewAgentBean.agent.agentClass.name}"></ice:outputText>
+									<ice:outputLabel value="Agent Level" styleClass="outputLabel"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" 
+										value="#{viewAgentBean.agent.agentLevel}"></ice:outputText>
+									<ice:outputLabel value="Agent Status" styleClass="outputLabel"
+										id="label9"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text8"
+										value="#{viewAgentBean.agent.status}"></ice:outputText>
+									<f:facet name="header">
+										<ice:panelGroup styleClass="panelGroup" >
+											<ice:outputLabel value="Agent Details"
+												styleClass="panelGridLabel" ></ice:outputLabel>
+										</ice:panelGroup>
+									</f:facet>
+								</ice:panelGrid>
+								<ice:panelGrid styleClass="panelGrid" id="grid2" cellpadding="5"
+									cellspacing="5" width="600" columns="2">
+									<ice:outputLabel value="Telephone" styleClass="outputLabel"
+										id="label11"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text9"
+										value="#{viewAgentBean.contactDetails.telephone}"></ice:outputText>
+									<ice:outputLabel value="Email" styleClass="outputLabel"
+										id="label12"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text10"
+										value="#{viewAgentBean.contactDetails.email}"></ice:outputText>
+									<ice:outputLabel value="Street" styleClass="outputLabel"
+										id="label15"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text13"
+										value="#{viewAgentBean.contactDetails.street}"></ice:outputText>
+									<ice:outputLabel value="Suburb" styleClass="outputLabel"
+										id="label16"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text14"
+										value="#{viewAgentBean.contactDetails.suburb}"></ice:outputText>
+									<ice:outputLabel value="City/Town" styleClass="outputLabel"
+										id="label17"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text15"
+										value="#{viewAgentBean.contactDetails.city}"></ice:outputText>
+									<ice:outputLabel value="Country" styleClass="outputLabel"
+										id="label18"></ice:outputLabel>
+									<ice:outputText styleClass="outputText" id="text16"
+										value="#{viewAgentBean.contactDetails.country}"></ice:outputText>
+									<f:facet name="header">
+										<ice:panelGroup styleClass="panelGroup" id="group2">
+											<ice:outputLabel value="Contact Details"
+												styleClass="panelGridLabel" id="label10"></ice:outputLabel>
+										</ice:panelGroup>
+									</f:facet>
+								</ice:panelGrid>
+								
+								<ice:panelGrid styleClass="panelGrid" id="grid5" columns="8" rendered="#{menuBean.renderAgentApproval and viewAgentBean.approved}">
+									<ice:commandLink styleClass="requestLink" id="link2"
+										action="#{viewAgentBean.approveAll}"
+										>
+										<ice:outputText id="text29" styleClass="outputText"
+											value=""></ice:outputText>
+										<f:param name="agentId"
+											value="#{viewAgentBean.agentId}"></f:param>
+									</ice:commandLink>
+									<ice:commandLink styleClass="requestLink" id="link3"
+										action="#{viewAgentBean.reject}"
+										>
+										<ice:outputText id="text30" styleClass="outputText"
+											value=""></ice:outputText>
+										<f:param name="agentId"
+											value="#{viewAgentBean.agentId}"></f:param>
+									</ice:commandLink>
+									<ice:commandLink styleClass="commandButton" id="link4"
+										action="#{viewAgentBean.approveAll}"
+										>
+										<ice:outputText id="text31" styleClass="outputText"
+											value="Approve All"></ice:outputText>
+										<f:param name="agentId"
+											value="#{viewAgentBean.agentId}"></f:param>
+									</ice:commandLink>
+									<ice:commandLink styleClass="commandButton" id="link5"
+										action="#{viewAgentBean.rejectAll}"
+										>
+										<ice:outputText id="text32" styleClass="outputText"
+											value="Reject All"></ice:outputText>
+										<f:param name="agentId"
+											value="#{viewAgentBean.agentId}"></f:param>
+									</ice:commandLink>
+								</ice:panelGrid>
+								
+								<ice:panelGrid styleClass="panelGrid" id="grid47" columns="2"
+									rendered="#{viewAgentBean.deRegisterClient and viewAgentBean.customer.deregister}">
+									<ice:commandLink styleClass="commandButton"   id="li90773"
+										action="#{viewAgentBean.deRegisterAgent}">
+										<h:outputText id="dee899923" styleClass="outputText"
+											value="Deregister Agent"></h:outputText>
+										<f:param name="agentId"
+											value="#{viewAgentBean.agentId}"></f:param>
+									</ice:commandLink>
+								</ice:panelGrid>
+									
+								<ice:panelGrid styleClass="panelGrid" id="grid4" columns="2">
+									<ice:commandButton type="submit" value="   Back   "
+										styleClass="commandButton" id="button1"
+										action="#{viewAgentBean.ok}"></ice:commandButton>
+									<ice:commandButton type="submit" value="  Edit  " rendered="#{menuBean.renderRegisterAgent}"
+										styleClass="commandButton" id="button2"
+										action="#{viewAgentBean.edit}"
+										actionListener="#{editAgentBean.doEditAction}">
+										<f:attribute name="agentId"
+											value="#{viewAgentBean.agentId}" />
+									</ice:commandButton>
+								</ice:panelGrid>
+							</ice:panelTab>
+							<ice:panelTab id="bfpanel3" label="Mobile Profiles">
+								<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+									columnClasses="columnClass1" headerClass="headerClass"
+									footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+									styleClass="dataTable" id="tableEx1" width="600"
+									value="#{viewAgentBean.mobileProfileList}" var="profile">
+									<f:facet name="header">
+										<ice:outputLabel value="Agent's Mobile Profiles"
+											styleClass="outputLabel" id="label19"></ice:outputLabel>
+									</f:facet>
+									<ice:column id="column1">
+										<f:facet name="header">
+											<ice:outputText id="text17" styleClass="outputText"
+												value="Mobile Number"></ice:outputText>
+										</f:facet>
+										<ice:outputText styleClass="outputText" id="text20"
+											value="#{profile.mobileNumber}"></ice:outputText>
+									</ice:column>
+									<ice:column id="column201">
+										<f:facet name="header">
+											<ice:outputText value="Status" styleClass="outputText"
+												id="text456"></ice:outputText>
+										</f:facet>
+										<ice:outputText styleClass="outputText" id="text111"
+											value="#{profile.network}"></ice:outputText>
+									</ice:column>
+									<ice:column id="column2">
+										<f:facet name="header">
+											<h:outputText value="Status" styleClass="outputText"
+												id="text18"></h:outputText>
+										</f:facet>
+										<ice:outputText styleClass="outputText" id="text21"
+											value="#{profile.status}"></ice:outputText>
+									</ice:column>
+									<ice:column id="columnEx88x">
+										<ice:commandLink styleClass="requestLink" value="Reset Pin"  style="color:green" 
+										action="#{viewAgentBean.resetMobileProfilePin}" rendered="#{viewCustomerBean.canResetMobileProfilePin}">
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+									<ice:column >
+										<ice:commandLink styleClass="requestLink" value="Edit"
+											style="color:green" 
+											action="#{viewAgentBean.editMobileProfile}"
+											rendered="#{menuBean.renderRegisterAgent}">
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+									<ice:column >
+										<ice:commandLink styleClass="requestLink"  
+											action="#{viewAgentBean.viewLogs}"
+											rendered="#{viewAgentBean.auditor}">
+											<ice:outputText  styleClass="outputLabel"
+												value="View Logs"></ice:outputText>		
+											<f:param name="entityId" value="#{profile.id}"></f:param>
+											<f:param name="entityType" value="#{profile.class.simpleName}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+									<ice:column >
+										<f:facet name="header">
+										</f:facet>
+										<ice:commandLink styleClass="commandLink" style="color:green" 
+											action="#{viewCustomerBean.approveMobileProfile}"
+											rendered="#{viewCustomerBean.approver and profile.approvable and profile.mobileProfileRenderApproval and viewCustomerBean.customer.deregister}">
+											<h:outputText  styleClass="outputText"
+												value="Approve"></h:outputText>
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+										<ice:commandLink styleClass="commandLink" style="color:green" 
+											action="#{viewAgentBean.hotMobile}"
+											rendered="#{profile.hottable}">
+											<h:outputText  styleClass="outputText" style="color:green" 
+												value="Hot Mobile"></h:outputText>
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+									<ice:column >
+										<f:facet name="header">
+										</f:facet>
+										<ice:commandLink styleClass="commandLink" style="color:green" 
+											action="#{viewCustomerBean.rejectMobileProfile}"
+											rendered="#{viewCustomerBean.approver and profile.approvable and profile.mobileProfileRenderApproval and viewCustomerBean.customer.deregister}">
+											<h:outputText styleClass="outputText" style="color:green" 
+												value="Reject"></h:outputText>
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+										<ice:commandLink styleClass="commandLink" style="color:green" 
+											action="#{viewAgentBean.coldMobile}"
+											rendered="#{profile.coldable}">
+											<h:outputText  styleClass="outputText" style="color:green" 
+												value="Cold Mobile"></h:outputText>
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+								</ice:dataTable>
+							</ice:panelTab>
+							<ice:panelTab id="bfpanel4" label="Account Details">
+
+								<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+									columnClasses="columnClass1" headerClass="headerClass"
+									footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+									styleClass="dataTableEx" id="tableEx2" width="600"
+									value="#{viewAgentBean.bankAccountList}"
+									var="account">
+									<f:facet name="header">
+										<ice:outputText id="text284" styleClass="outputText"
+												value="Agent Accounts"></ice:outputText>
+									</f:facet>
+									<ice:column id="columnEx1">
+										<f:facet name="header">
+											<ice:outputText id="text22" styleClass="outputText"
+												value="Account Number"></ice:outputText>
+										</f:facet>
+										<ice:outputText id="text221" styleClass="outputText"
+												value="#{account.accountNumber}"></ice:outputText>
+									</ice:column>
+									<ice:column id="columnEx4">
+										<f:facet name="header">
+											<ice:outputText value="Account Code" styleClass="outputText"
+												id="text25"></ice:outputText>
+										</f:facet>
+										<ice:outputText id="text221" styleClass="outputText"
+												value="#{account.code}"></ice:outputText>
+									</ice:column>
+									<ice:column id="columnEx6">
+										<f:facet name="header">
+											<ice:outputText value="Account Type" styleClass="outputText"
+												id="text28"></ice:outputText>
+										</f:facet>
+										<ice:outputText id="text221" styleClass="outputText"
+												value="#{account.type}"></ice:outputText>
+									</ice:column>
+									<ice:column id="columnEx46">
+										<f:facet name="header">
+											<ice:outputText value="Status" styleClass="outputText"
+												id="text278"></ice:outputText>
+										</f:facet>
+										<ice:outputText id="text331" styleClass="outputText"
+												value="#{account.status}"></ice:outputText>
+									</ice:column>
+									<ice:column id="columnEx168">
+										<ice:commandLink styleClass="requestLink" id="link169" 
+											action="#{viewAgentBean.viewLogs}"
+											rendered="#{viewAgentBean.auditor}">
+											<ice:outputText id="text394" styleClass="outputLabel"
+												value="View Logs"></ice:outputText>		
+											<f:param name="entityId" value="#{account.id}"></f:param>
+											<f:param name="entityType" value="#{account.class.simpleName}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+									<ice:column id="columnEx66">
+										<ice:commandLink styleClass="requestLink" id="link6" 
+											action="#{viewAgentBean.editAccount}" rendered="#{menuBean.renderRegisterAgent}"
+											>
+											<ice:outputText id="text294" styleClass="outputLabel" style="color:green"
+												value="Edit"></ice:outputText>		
+											<f:param name="accountId" value="#{account.id}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+								</ice:dataTable>
+							</ice:panelTab>
+							<ice:panelTab label="Sub Agents" rendered="#{viewCorporateAgentBean.subAgentTab}">
+								<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+									columnClasses="columnClass1" headerClass="headerClass"
+									footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+									styleClass="dataTableEx" id="tableEx2" width="600"
+									value="#{viewCorporateAgentBean.subAgentList}"
+									var="subAgent">
+									<f:facet name="header">
+										<ice:panelGroup styleClass="panelGroup" id="group2">
+											<ice:outputLabel value="Sub Agent List" styleClass="outputLabel"
+												id="label4"></ice:outputLabel>
+										</ice:panelGroup>
+									</f:facet>
+									<ice:column id="column2">
+										<f:facet name="header">
+											<ice:outputText value="AGENT NUMBER" styleClass="outputText" id="text4"></ice:outputText>
+										</f:facet>
+						
+										<ice:commandLink styleClass="requestLink" id="link1" action="#{searchAgentBean.viewAgent}">
+											<ice:outputText styleClass="outputText" id="text1"
+											value="#{subAgent.agentNumber}"></ice:outputText>
+											<f:param name="agentId" value="#{subAgent.agentId}"></f:param>
+										</ice:commandLink>
+										
+									</ice:column>
+									<ice:column id="column1">
+										<f:facet name="header">
+											<ice:outputText id="text3" styleClass="outputText" value="AGENT NAME"></ice:outputText>
+										</f:facet>
+										<ice:outputText styleClass="outputText" id="text5"
+											value="#{subAgent.agentName}"></ice:outputText>
+									</ice:column>
+									<ice:column id="column1">
+										<f:facet name="header">
+											<ice:outputText id="text3" styleClass="outputText" value="STATUS"></ice:outputText>
+										</f:facet>
+										<ice:outputText styleClass="outputText" id="text5"
+											value="#{subAgent.status}"></ice:outputText>
+									</ice:column>
+									<ice:column id="column2">
+										<f:facet name="header">
+											<ice:outputText value="AGENT TYPE" styleClass="outputText" id="text4"></ice:outputText>
+										</f:facet>
+											<ice:outputText styleClass="outputText" id="text1"
+												value="#{subAgent.agentType}"></ice:outputText>
+									</ice:column>
+									<ice:column id="column1">
+										<f:facet name="header">
+											<ice:outputText id="text3" styleClass="outputText" value="MOBILE NUMBER"></ice:outputText>
+										</f:facet>
+										<ice:outputText styleClass="outputText" id="text5"
+											value="#{subAgent.mobileNumber}"></ice:outputText>
+									</ice:column>
+								</ice:dataTable>
+							</ice:panelTab>
+							<f:facet name="back">
+								<ice:commandButton type="submit" value="&lt; Back"
+									id="tabbedPanel1_back" style="display:none"></ice:commandButton>
+							</f:facet>
+							<f:facet name="next">
+								<ice:commandButton type="submit" value="Next &gt;"
+									id="tabbedPanel1_next" style="display:none"></ice:commandButton>
+							</f:facet>
+							<f:facet name="finish">
+								<ice:commandButton type="submit" value="Finish"
+									id="tabbedPanel1_finish" style="display:none"></ice:commandButton>
+							</f:facet>
+							<f:facet name="cancel">
+								<ice:commandButton type="submit" value="Cancel"
+									id="tabbedPanel1_cancel" style="display:none"></ice:commandButton>
+							</f:facet>
+						</ice:panelTabSet>
+
+					</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+</f:view>
+</jsp:root>

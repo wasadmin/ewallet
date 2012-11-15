@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.etools.webservice.wscbnd:ClientBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.etools.webservice.wscbnd="http://www.ibm.com/websphere/appserver/schemas/5.0.2/wscbnd.xmi" xmi:id="ClientBinding_1291196298183">
+  <serviceRefs xmi:id="ServiceRef_1291196298187" serviceRefLink="service/ProcessService">
+    <portQnameBindings xmi:id="PortQnameBinding_1291196298187" portQnameNamespaceLink="http://process.ewallet.esolutions.co.zw/" portQnameLocalNameLink="ProcessServiceSOAP" overriddenEndpointURI="http://10.136.192.229:9081/EWalletProcessModule/ProcessService"/>
+  </serviceRefs>
+  <serviceRefs xmi:id="ServiceRef_1291196350298" serviceRefLink="service/BankService">
+    <portQnameBindings xmi:id="PortQnameBinding_1291196350298" portQnameNamespaceLink="http://service.bankservices.ewallet.esolutions.co.zw/" portQnameLocalNameLink="BankServiceSOAP" overriddenEndpointURI="http://localhost:9080/BankServices/BankService"/>
+  </serviceRefs>
+  <serviceRefs xmi:id="ServiceRef_1291196404429" serviceRefLink="service/BookEntryService">
+    <portQnameBindings xmi:id="PortQnameBinding_1291196404429" portQnameNamespaceLink="http://service.bookentryservices.ewallet.esolutions.co.zw/" portQnameLocalNameLink="BookEntryServiceSOAP" overriddenEndpointURI="http://10.136.192.75:9080/BookEntryServices/BookEntryService"/>
+  </serviceRefs>
+  <serviceRefs xmi:id="ServiceRef_1291196454383" serviceRefLink="service/ContactDetailsService">
+    <portQnameBindings xmi:id="PortQnameBinding_1291196454383" portQnameNamespaceLink="http://service.contactdetailsservices.ewallet.esolutions.co.zw/" portQnameLocalNameLink="ContactDetailsServiceSOAP" overriddenEndpointURI="http://10.136.192.75:9080/ContactDetailsServices/ContactDetailsService"/>
+  </serviceRefs>
+  <serviceRefs xmi:id="ServiceRef_1291196503433" serviceRefLink="service/CustomerService">
+    <portQnameBindings xmi:id="PortQnameBinding_1291196503433" portQnameNamespaceLink="http://service.customerservices.ewallet.esolutions.co.zw/" portQnameLocalNameLink="CustomerServiceSOAP" overriddenEndpointURI="http://10.136.192.75:9080/CustomerServices/CustomerService"/>
+  </serviceRefs>
+  <serviceRefs xmi:id="ServiceRef_1291196561928" serviceRefLink="service/LimitService">
+    <portQnameBindings xmi:id="PortQnameBinding_1291196561929" portQnameNamespaceLink="http://service.limitservices.ewallet.esolutions.co.zw/" portQnameLocalNameLink="LimitServiceSOAP" overriddenEndpointURI="http://10.136.192.75:9080/LimitServices/LimitService"/>
+  </serviceRefs>
+  <serviceRefs xmi:id="ServiceRef_1291196633581" serviceRefLink="service/TariffService">
+    <portQnameBindings xmi:id="PortQnameBinding_1291196633581" portQnameNamespaceLink="http://service.tariffservices.ewallet.esolutions.co.zw/" portQnameLocalNameLink="TariffServiceSOAP" overriddenEndpointURI="http://10.136.192.75:9080/TariffServices/TariffService"/>
+  </serviceRefs>
+  <serviceRefs xmi:id="ServiceRef_1295532817029" serviceRefLink="service/ProfileService">
+    <portQnameBindings xmi:id="PortQnameBinding_1295532817029" portQnameNamespaceLink="http://service.profileservices.ewallet.esolutions.co.zw/" portQnameLocalNameLink="ProfileServiceSOAP" overriddenEndpointURI="http://localhost:9080/ProfileServices/ProfileService"/>
+  </serviceRefs>
+</com.ibm.etools.webservice.wscbnd:ClientBinding>

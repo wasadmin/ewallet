@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="customer_list" pageWidth="842" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="840" columnSpacing="5" leftMargin="1" rightMargin="1" topMargin="20" bottomMargin="20" scriptletClass="zw.co.esolutions.ewallet.scriptlets.GenericScriptlet">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="56"/>
+	<template><![CDATA["/opt/ewallet/globals/ReportStyles.jrtx"]]></template>
+	<parameter name="reportTitle" class="java.lang.String"/>
+	<parameter name="pageHeader" class="java.lang.String"/>
+	<parameter name="fromDate" class="java.sql.Timestamp"/>
+	<parameter name="toDate" class="java.sql.Timestamp"/>
+	<field name="bankId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="LASTNAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FIRSTNAMES" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATEOFBIRTH" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NATIONALID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BRANCHID" class="java.lang.String">
+		<fieldDescription><![CDATA[The name of branch or agent which registered this customer]]></fieldDescription>
+	</field>
+	<field name="dateCreated" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="v_dateCreated" class="java.lang.String">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.dateCreated()]]></variableExpression>
+	</variable>
+	<variable name="customerCount" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Count"/>
+	<group name="BankGroup">
+		<groupExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{bankId})]]></groupExpression>
+		<groupHeader>
+			<band height="53" splitType="Stretch">
+				<staticText>
+					<reportElement x="0" y="10" width="230" height="31"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[Customers registered at:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="230" y="10" width="434" height="31"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{bankId})]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="73" splitType="Stretch">
+				<staticText>
+					<reportElement x="0" y="40" width="230" height="30"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[End Customers registered at:]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="230" y="40" width="445" height="30"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{bankId})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="56" y="10" width="174" height="30"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total Customers :]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="230" y="10" width="152" height="30"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{customerCount}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="50" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="840" height="1" forecolor="#000000"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Sans_Normal" x="0" y="10" width="840" height="30"/>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{reportTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="840" height="30"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="840" height="30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="16" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{pageHeader}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="130" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REG DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="130" y="0" width="100" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LASTNAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="230" y="0" width="200" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRST NAMES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="434" y="0" width="100" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE OF BIRTH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="534" y="0" width="100" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NATIONAL ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="634" y="0" width="167" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BRANCH]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="120" height="32"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{v_dateCreated}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="130" y="0" width="100" height="32"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{LASTNAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="430" y="0" width="100" height="32"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_SCRIPTLET}.dateOfBirth()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="534" y="0" width="100" height="32"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{NATIONALID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="644" y="0" width="157" height="32"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{BRANCHID})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="242" y="0" width="177" height="32"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{FIRSTNAMES}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="490" y="10" width="30" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Page | ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="524" y="10" width="50" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="180" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Customer Count:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="180" y="0" width="187" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="490" y="10" width="30" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Page | ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="524" y="10" width="50" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

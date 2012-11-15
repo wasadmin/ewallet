@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="DSTVService" targetNamespace="http://ws.dstv.datacentre.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.dstv.datacentre.co.zw/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://ws.dstv.datacentre.co.zw/" schemaLocation="DSTVService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="validate">
+    <part element="tns:validate" name="parameters">
+    </part>
+  </message>
+  <message name="validateResponse">
+    <part element="tns:validateResponse" name="parameters">
+    </part>
+  </message>
+  <portType name="DSTVService">
+    <operation name="validate">
+      <input message="tns:validate" wsam:Action="http://ws.dstv.datacentre.co.zw/DSTVService/validateRequest">
+    </input>
+      <output message="tns:validateResponse" wsam:Action="http://ws.dstv.datacentre.co.zw/DSTVService/validateResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="DSTVServiceSOAPBinding" type="tns:DSTVService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="validate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DSTVService">
+    <port binding="tns:DSTVServiceSOAPBinding" name="DSTVServiceSOAP">
+      <soap:address location="https://zbnet.zb.co.zw/DSTVPayments/DSTVService"/>
+    </port>
+  </service>
+</definitions>

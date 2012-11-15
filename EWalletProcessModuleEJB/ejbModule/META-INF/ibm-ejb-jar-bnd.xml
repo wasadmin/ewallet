@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar-bnd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://websphere.ibm.com/xml/ns/javaee"
+    xsi:schemaLocation="http://websphere.ibm.com/xml/ns/javaee http://websphere.ibm.com/xml/ns/javaee/ibm-ejb-jar-bnd_1_0.xsd" version="1.0">
+  <message-driven name="DowloadEntitiesMDB">
+    <jca-adapter activation-spec-binding-name="jms/DownloadEntitiesMDBSpec" destination-binding-name="jms/ZB.REG.OUT.QUEUE"/>
+  </message-driven>
+
+  <message-driven name="HandleTransactionRequest">
+    <jca-adapter activation-spec-binding-name="jms/HandleTransactionRequest" destination-binding-name="jms/ZB.IN.QUEUE"/>
+  </message-driven>
+
+  <message-driven name="HandleTransactionResponse">
+    <jca-adapter activation-spec-binding-name="jms/HandleTransactionResponse" destination-binding-name="jms/BANKMED.OUT.QUEUE"/>
+  </message-driven>
+
+  <session name="ProcessUtilImpl">
+  	<message-destination-ref
+  		name="zw.co.esolutions.ewallet.process.ProcessUtilImpl/bankRequestsQueue"
+  		binding-name="jms/BANKMED.IN.QUEUE" />
+  	<message-destination-ref
+  		name="zw.co.esolutions.ewallet.process.ProcessUtilImpl/switchResponseQueue"
+  		binding-name="jms/SWITCH.IN.QUEUE" />
+  	<resource-ref
+  		name="zw.co.esolutions.ewallet.process.ProcessUtilImpl/jmsQueueConnectionFactory"
+  		binding-name="jms/EWalletQCF" />
+  </session>
+</ejb-jar-bnd>
+
+

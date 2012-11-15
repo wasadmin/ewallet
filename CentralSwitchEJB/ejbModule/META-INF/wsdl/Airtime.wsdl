@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.zimswitch.co.zw/AirtimePortal"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://www.zimswitch.co.zw/AirtimePortal"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:types>
+		<s:schema elementFormDefault="qualified"
+			targetNamespace="http://www.zimswitch.co.zw/AirtimePortal">
+			<s:element name="DirectTopup">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="msdn" type="s:string" />
+						<s:element maxOccurs="1" minOccurs="0" name="provider"
+							type="s:string" />
+						<s:element maxOccurs="1" minOccurs="1" name="amount"
+							type="s:decimal" />
+						<s:element maxOccurs="1" minOccurs="0" name="username"
+							type="s:string" />
+						<s:element maxOccurs="1" minOccurs="0" name="password"
+							type="s:string" />
+						<s:element maxOccurs="1" minOccurs="0" name="reference"
+							type="s:string" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:element name="DirectTopupResponse">
+				<s:complexType>
+					<s:sequence>
+						<s:element maxOccurs="1" minOccurs="0" name="DirectTopupResult"
+							type="tns:AirtimeResponse" />
+					</s:sequence>
+				</s:complexType>
+			</s:element>
+			<s:complexType name="AirtimeResponse">
+				<s:sequence>
+					<s:element maxOccurs="1" minOccurs="1" name="ResponseCode"
+						type="s:int" />
+					<s:element maxOccurs="1" minOccurs="1" name="Successful"
+						type="s:boolean" />
+					<s:element maxOccurs="1" minOccurs="0" name="Description"
+						type="s:string" />
+				</s:sequence>
+			</s:complexType>
+			<s:element name="AirtimeResponse" nillable="true"
+				type="tns:AirtimeResponse" />
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="DirectTopupSoapIn">
+		<wsdl:part element="tns:DirectTopup" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="DirectTopupSoapOut">
+		<wsdl:part element="tns:DirectTopupResponse" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="DirectTopupHttpPostIn">
+		<wsdl:part name="msdn" type="s:string" />
+		<wsdl:part name="provider" type="s:string" />
+		<wsdl:part name="amount" type="s:string" />
+		<wsdl:part name="username" type="s:string" />
+		<wsdl:part name="password" type="s:string" />
+		<wsdl:part name="reference" type="s:string" />
+	</wsdl:message>
+	<wsdl:message name="DirectTopupHttpPostOut">
+		<wsdl:part element="tns:AirtimeResponse" name="Body" />
+	</wsdl:message>
+	<wsdl:portType name="AirtimePortalSoap">
+		<wsdl:operation name="DirectTopup">
+			<wsdl:input message="tns:DirectTopupSoapIn" />
+			<wsdl:output message="tns:DirectTopupSoapOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="AirtimePortalHttpPost">
+		<wsdl:operation name="DirectTopup">
+			<wsdl:input message="tns:DirectTopupHttpPostIn" />
+			<wsdl:output message="tns:DirectTopupHttpPostOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="AirtimePortalSoap" type="tns:AirtimePortalSoap">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="DirectTopup">
+			<soap:operation
+				soapAction="http://www.zimswitch.co.zw/AirtimePortal/DirectTopup"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="AirtimePortalSoap12" type="tns:AirtimePortalSoap">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="DirectTopup">
+			<soap12:operation
+				soapAction="http://www.zimswitch.co.zw/AirtimePortal/DirectTopup"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="AirtimePortalHttpPost" type="tns:AirtimePortalHttpPost">
+		<http:binding verb="POST" />
+		<wsdl:operation name="DirectTopup">
+			<http:operation location="/DirectTopup" />
+			<wsdl:input>
+				<mime:content type="application/x-www-form-urlencoded" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:mimeXml part="Body" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="AirtimePortal">
+		<wsdl:port binding="tns:AirtimePortalSoap" name="AirtimePortalSoap">
+			<soap:address location="http://10.91.50.4:82/Endpoints/AirtimePortal.asmx" />
+		</wsdl:port>
+		<wsdl:port binding="tns:AirtimePortalSoap12" name="AirtimePortalSoap12">
+			<soap12:address location="http://10.91.50.4:82/Endpoints/AirtimePortal.asmx" />
+		</wsdl:port>
+		<wsdl:port binding="tns:AirtimePortalHttpPost" name="AirtimePortalHttpPost">
+			<http:address location="http://10.91.50.4:82/Endpoints/AirtimePortal.asmx" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

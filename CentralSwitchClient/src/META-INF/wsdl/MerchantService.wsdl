@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="MerchantService" targetNamespace="http://service.merchantservices.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.merchantservices.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.merchantservices.ewallet.esolutions.co.zw/" schemaLocation="MerchantService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumber">
+    <part element="tns:getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumber" name="parameters">
+    </part>
+  </message>
+  <message name="approveCustomerMerchantResponse">
+    <part element="tns:approveCustomerMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatus">
+    <part element="tns:getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="approveMerchantResponse">
+    <part element="tns:approveMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteCustomerMerchant">
+    <part element="tns:deleteCustomerMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="findCustomerMerchantById">
+    <part element="tns:findCustomerMerchantById" name="parameters">
+    </part>
+  </message>
+  <message name="approveBankMerchant">
+    <part element="tns:approveBankMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByBankIdAndMerchantIdResponse">
+    <part element="tns:getBankMerchantByBankIdAndMerchantIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteMerchant">
+    <part element="tns:deleteMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="findMerchantById">
+    <part element="tns:findMerchantById" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByCustomerIdResponse">
+    <part element="tns:getCustomerMerchantByCustomerIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getMerchantByCustomerIdResponse">
+    <part element="tns:getMerchantByCustomerIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByBankId">
+    <part element="tns:getCustomerMerchantByBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByStatus">
+    <part element="tns:getCustomerMerchantByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByCustomerAccountNumberResponse">
+    <part element="tns:getCustomerMerchantByCustomerAccountNumberResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getMerchantByStatus">
+    <part element="tns:getMerchantByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getAllMerchants">
+    <part element="tns:getAllMerchants" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumberResponse">
+    <part element="tns:getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumberResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approveMerchant">
+    <part element="tns:approveMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByBankIdAndMerchantId">
+    <part element="tns:getBankMerchantByBankIdAndMerchantId" name="parameters">
+    </part>
+  </message>
+  <message name="approveCustomerMerchant">
+    <part element="tns:approveCustomerMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByCustomerId">
+    <part element="tns:getCustomerMerchantByCustomerId" name="parameters">
+    </part>
+  </message>
+  <message name="getMerchantByCustomerId">
+    <part element="tns:getMerchantByCustomerId" name="parameters">
+    </part>
+  </message>
+  <message name="editBankMerchantResponse">
+    <part element="tns:editBankMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="Exception">
+    <part element="tns:Exception" name="fault">
+    </part>
+  </message>
+  <message name="disapproveBankMerchantResponse">
+    <part element="tns:disapproveBankMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByCustomerAccountNumber">
+    <part element="tns:getCustomerMerchantByCustomerAccountNumber" name="parameters">
+    </part>
+  </message>
+  <message name="createBankMerchantResponse">
+    <part element="tns:createBankMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByMerchantIdResponse">
+    <part element="tns:getBankMerchantByMerchantIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByStatusAndBankIdAndMerchantIdResponse">
+    <part element="tns:getBankMerchantByStatusAndBankIdAndMerchantIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findBankMerchantByIdResponse">
+    <part element="tns:findBankMerchantByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteBankMerchantResponse">
+    <part element="tns:deleteBankMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editCustomerMerchantResponse">
+    <part element="tns:editCustomerMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByBankIdAndShortNameAndStatusResponse">
+    <part element="tns:getBankMerchantByBankIdAndShortNameAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getMerchantByShortNameResponse">
+    <part element="tns:getMerchantByShortNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editMerchantResponse">
+    <part element="tns:editMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByBankMerchantIdResponse">
+    <part element="tns:getCustomerMerchantByBankMerchantIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editBankMerchant">
+    <part element="tns:editBankMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveMerchantResponse">
+    <part element="tns:disapproveMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByBankIdResponse">
+    <part element="tns:getBankMerchantByBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByStatusResponse">
+    <part element="tns:getBankMerchantByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createMerchantResponse">
+    <part element="tns:createMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveCustomerMerchantResponse">
+    <part element="tns:disapproveCustomerMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createBankMerchant">
+    <part element="tns:createBankMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="getMerchantByNameResponse">
+    <part element="tns:getMerchantByNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveBankMerchant">
+    <part element="tns:disapproveBankMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="createCustomerMerchantResponse">
+    <part element="tns:createCustomerMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatus">
+    <part element="tns:getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByMerchantId">
+    <part element="tns:getBankMerchantByMerchantId" name="parameters">
+    </part>
+  </message>
+  <message name="deleteMerchantResponse">
+    <part element="tns:deleteMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findMerchantByIdResponse">
+    <part element="tns:findMerchantByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatusResponse">
+    <part element="tns:getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editCustomerMerchant">
+    <part element="tns:editCustomerMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByBankIdAndShortNameAndStatus">
+    <part element="tns:getBankMerchantByBankIdAndShortNameAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getMerchantByShortName">
+    <part element="tns:getMerchantByShortName" name="parameters">
+    </part>
+  </message>
+  <message name="editMerchant">
+    <part element="tns:editMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="deleteCustomerMerchantResponse">
+    <part element="tns:deleteCustomerMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findCustomerMerchantByIdResponse">
+    <part element="tns:findCustomerMerchantByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByBankMerchantId">
+    <part element="tns:getCustomerMerchantByBankMerchantId" name="parameters">
+    </part>
+  </message>
+  <message name="approveBankMerchantResponse">
+    <part element="tns:approveBankMerchantResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByStatusAndBankIdAndMerchantId">
+    <part element="tns:getBankMerchantByStatusAndBankIdAndMerchantId" name="parameters">
+    </part>
+  </message>
+  <message name="findBankMerchantById">
+    <part element="tns:findBankMerchantById" name="parameters">
+    </part>
+  </message>
+  <message name="deleteBankMerchant">
+    <part element="tns:deleteBankMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByBankId">
+    <part element="tns:getBankMerchantByBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getMerchantByStatusResponse">
+    <part element="tns:getMerchantByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByBankIdResponse">
+    <part element="tns:getCustomerMerchantByBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createMerchant">
+    <part element="tns:createMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveCustomerMerchant">
+    <part element="tns:disapproveCustomerMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByStatusResponse">
+    <part element="tns:getCustomerMerchantByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveMerchant">
+    <part element="tns:disapproveMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatusResponse">
+    <part element="tns:getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getMerchantByName">
+    <part element="tns:getMerchantByName" name="parameters">
+    </part>
+  </message>
+  <message name="getAllMerchantsResponse">
+    <part element="tns:getAllMerchantsResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createCustomerMerchant">
+    <part element="tns:createCustomerMerchant" name="parameters">
+    </part>
+  </message>
+  <message name="getBankMerchantByStatus">
+    <part element="tns:getBankMerchantByStatus" name="parameters">
+    </part>
+  </message>
+  <portType name="MerchantService">
+    <operation name="createMerchant">
+      <input message="tns:createMerchant">
+    </input>
+      <output message="tns:createMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteMerchant">
+      <input message="tns:deleteMerchant">
+    </input>
+      <output message="tns:deleteMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveMerchant">
+      <input message="tns:approveMerchant">
+    </input>
+      <output message="tns:approveMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="disapproveMerchant">
+      <input message="tns:disapproveMerchant">
+    </input>
+      <output message="tns:disapproveMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editMerchant">
+      <input message="tns:editMerchant">
+    </input>
+      <output message="tns:editMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findMerchantById">
+      <input message="tns:findMerchantById">
+    </input>
+      <output message="tns:findMerchantByIdResponse">
+    </output>
+    </operation>
+    <operation name="getMerchantByShortName">
+      <input message="tns:getMerchantByShortName">
+    </input>
+      <output message="tns:getMerchantByShortNameResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getMerchantByName">
+      <input message="tns:getMerchantByName">
+    </input>
+      <output message="tns:getMerchantByNameResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getAllMerchants">
+      <input message="tns:getAllMerchants">
+    </input>
+      <output message="tns:getAllMerchantsResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getMerchantByStatus">
+      <input message="tns:getMerchantByStatus">
+    </input>
+      <output message="tns:getMerchantByStatusResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="createCustomerMerchant">
+      <input message="tns:createCustomerMerchant">
+    </input>
+      <output message="tns:createCustomerMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveCustomerMerchant">
+      <input message="tns:approveCustomerMerchant">
+    </input>
+      <output message="tns:approveCustomerMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="disapproveCustomerMerchant">
+      <input message="tns:disapproveCustomerMerchant">
+    </input>
+      <output message="tns:disapproveCustomerMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editCustomerMerchant">
+      <input message="tns:editCustomerMerchant">
+    </input>
+      <output message="tns:editCustomerMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteCustomerMerchant">
+      <input message="tns:deleteCustomerMerchant">
+    </input>
+      <output message="tns:deleteCustomerMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findCustomerMerchantById">
+      <input message="tns:findCustomerMerchantById">
+    </input>
+      <output message="tns:findCustomerMerchantByIdResponse">
+    </output>
+    </operation>
+    <operation name="getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumber">
+      <input message="tns:getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumber">
+    </input>
+      <output message="tns:getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumberResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getCustomerMerchantByBankId">
+      <input message="tns:getCustomerMerchantByBankId">
+    </input>
+      <output message="tns:getCustomerMerchantByBankIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getCustomerMerchantByCustomerId">
+      <input message="tns:getCustomerMerchantByCustomerId">
+    </input>
+      <output message="tns:getCustomerMerchantByCustomerIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getCustomerMerchantByBankMerchantId">
+      <input message="tns:getCustomerMerchantByBankMerchantId">
+    </input>
+      <output message="tns:getCustomerMerchantByBankMerchantIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getCustomerMerchantByCustomerAccountNumber">
+      <input message="tns:getCustomerMerchantByCustomerAccountNumber">
+    </input>
+      <output message="tns:getCustomerMerchantByCustomerAccountNumberResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getCustomerMerchantByStatus">
+      <input message="tns:getCustomerMerchantByStatus">
+    </input>
+      <output message="tns:getCustomerMerchantByStatusResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="createBankMerchant">
+      <input message="tns:createBankMerchant">
+    </input>
+      <output message="tns:createBankMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveBankMerchant">
+      <input message="tns:approveBankMerchant">
+    </input>
+      <output message="tns:approveBankMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteBankMerchant">
+      <input message="tns:deleteBankMerchant">
+    </input>
+      <output message="tns:deleteBankMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editBankMerchant">
+      <input message="tns:editBankMerchant">
+    </input>
+      <output message="tns:editBankMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="disapproveBankMerchant">
+      <input message="tns:disapproveBankMerchant">
+    </input>
+      <output message="tns:disapproveBankMerchantResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findBankMerchantById">
+      <input message="tns:findBankMerchantById">
+    </input>
+      <output message="tns:findBankMerchantByIdResponse">
+    </output>
+    </operation>
+    <operation name="getBankMerchantByStatusAndBankIdAndMerchantId">
+      <input message="tns:getBankMerchantByStatusAndBankIdAndMerchantId">
+    </input>
+      <output message="tns:getBankMerchantByStatusAndBankIdAndMerchantIdResponse">
+    </output>
+    </operation>
+    <operation name="getBankMerchantByBankIdAndMerchantId">
+      <input message="tns:getBankMerchantByBankIdAndMerchantId">
+    </input>
+      <output message="tns:getBankMerchantByBankIdAndMerchantIdResponse">
+    </output>
+    </operation>
+    <operation name="getBankMerchantByStatus">
+      <input message="tns:getBankMerchantByStatus">
+    </input>
+      <output message="tns:getBankMerchantByStatusResponse">
+    </output>
+    </operation>
+    <operation name="getBankMerchantByBankId">
+      <input message="tns:getBankMerchantByBankId">
+    </input>
+      <output message="tns:getBankMerchantByBankIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getBankMerchantByMerchantId">
+      <input message="tns:getBankMerchantByMerchantId">
+    </input>
+      <output message="tns:getBankMerchantByMerchantIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getBankMerchantByBankIdAndShortNameAndStatus">
+      <input message="tns:getBankMerchantByBankIdAndShortNameAndStatus">
+    </input>
+      <output message="tns:getBankMerchantByBankIdAndShortNameAndStatusResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatus">
+      <input message="tns:getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatus">
+    </input>
+      <output message="tns:getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatusResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getMerchantByCustomerId">
+      <input message="tns:getMerchantByCustomerId">
+    </input>
+      <output message="tns:getMerchantByCustomerIdResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatus">
+      <input message="tns:getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatus">
+    </input>
+      <output message="tns:getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatusResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+  </portType>
+  <binding name="MerchantServiceSOAPBinding" type="tns:MerchantService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="disapproveMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findMerchantById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getMerchantByShortName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getMerchantByName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getAllMerchants">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getMerchantByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createCustomerMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveCustomerMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="disapproveCustomerMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editCustomerMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteCustomerMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findCustomerMerchantById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumber">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCustomerMerchantByBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCustomerMerchantByCustomerId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCustomerMerchantByBankMerchantId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCustomerMerchantByCustomerAccountNumber">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCustomerMerchantByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createBankMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveBankMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteBankMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editBankMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="disapproveBankMerchant">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findBankMerchantById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankMerchantByStatusAndBankIdAndMerchantId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankMerchantByBankIdAndMerchantId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankMerchantByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBankMerchantByBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getBankMerchantByMerchantId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getBankMerchantByBankIdAndShortNameAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getMerchantByCustomerId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="MerchantService">
+    <port binding="tns:MerchantServiceSOAPBinding" name="MerchantServiceSOAP">
+      <soap:address location="http://10.136.192.79:9081/MerchantServices/MerchantService"/>
+    </port>
+  </service>
+</definitions>

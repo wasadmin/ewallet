@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="customer_registration_report" pageWidth="842" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="800" columnSpacing="10" leftMargin="20" rightMargin="20" topMargin="10" bottomMargin="10" scriptletClass="zw.co.esolutions.ewallet.scriptlets.GenericScriptlet">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="150"/>
+	<import value="java.sql.Timestamp"/>
+	<import value="java.util.Date"/>
+	<template><![CDATA["/opt/ewallet/globals/ReportStyles.jrtx"]]></template>
+	<parameter name="reportTitle" class="java.lang.String"/>
+	<parameter name="pageHeader" class="java.lang.String"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<field name="bankId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="branchId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.Object">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="branchCode" class="java.lang.String"/>
+	<variable name="allTotal" class="java.lang.Long" calculation="Count">
+		<variableExpression><![CDATA[$F{status}]]></variableExpression>
+	</variable>
+	<variable name="bActive" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("ACTIVE")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bAwait" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("AWAITING_APPROVAL")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bReject" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("DISAPPROVED")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bDelete" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("DELETED")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bTotal" class="java.lang.Long" resetType="Group" resetGroup="BankGroup">
+		<variableExpression><![CDATA[$V{bActive}.longValue() +$V{bAwait}.longValue() +$V{bReject}.longValue()
++ $V{bDelete}.longValue()]]></variableExpression>
+	</variable>
+	<variable name="allActive" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("ACTIVE")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="allAwait" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("AWAITING_APPROVAL")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="allReject" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("DISAPPROVED")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="allDelete" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("DELETED")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bbActive" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("ACTIVE")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bbAwait" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("AWAITING_APPROVAL")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bbReject" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("DISAPPROVED")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bbDelete" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{status}.toString().equals(new String("DELETED")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bbTotal" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup">
+		<variableExpression><![CDATA[$V{bbActive}.longValue() +$V{bbAwait}.longValue() +$V{bbReject}.longValue()
++ $V{bbDelete}.longValue()]]></variableExpression>
+	</variable>
+	<variable name="BRANCH_FOOTER" class="java.lang.String" resetType="Group" resetGroup="BranchGroup">
+		<variableExpression><![CDATA[$F{branchCode}]]></variableExpression>
+	</variable>
+	<group name="BankGroup">
+		<groupExpression><![CDATA[$F{bankId}]]></groupExpression>
+		<groupHeader>
+			<band height="72">
+				<textField isBlankWhenNull="true">
+					<reportElement x="26" y="20" width="747" height="30"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="16" isItalic="true" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{bankId})+" REGISTERED CUSTOMERS"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="3" y="50" width="152" height="20" forecolor="#FFFFFF" backcolor="#006633"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[BRANCH NAME]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="245" y="50" width="123" height="20" forecolor="#FFFFFF" backcolor="#006633"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[ACTIVE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="368" y="50" width="154" height="20" forecolor="#FFFFFF" backcolor="#006633"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[AWAITING APPROVAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="522" y="50" width="105" height="20" forecolor="#FFFFFF" backcolor="#006633"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[REJECTED]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="627" y="50" width="82" height="20" forecolor="#FFFFFF" backcolor="#006633"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[DELETED]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="709" y="50" width="93" height="20" forecolor="#FFFFFF" backcolor="#006633"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TOTAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="155" y="50" width="90" height="20" forecolor="#FFFFFF" backcolor="#006633"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[BRANCH CODE]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="31">
+				<textField isBlankWhenNull="true">
+					<reportElement x="368" y="0" width="154" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bAwait}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="627" y="0" width="82" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bDelete}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="245" y="0" width="123" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bActive}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="709" y="0" width="91" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bTotal}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="522" y="0" width="102" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bReject}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="245" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="10" isBold="true" isItalic="true" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{bankId}) + " TOTALS"]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="BranchGroup">
+		<groupExpression><![CDATA[$F{branchId}]]></groupExpression>
+		<groupFooter>
+			<band height="22" splitType="Stretch">
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="155" height="20"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Serif" size="11" isBold="false" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{branchId})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="245" y="0" width="123" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bbActive}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="368" y="0" width="154" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bbAwait}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="522" y="0" width="105" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bbReject}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="627" y="0" width="82" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bbDelete}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="155" y="0" width="90" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$V{BRANCH_FOOTER}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="709" y="2" width="91" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="12" isBold="false" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$V{bbTotal}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="50" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="800" height="1" forecolor="#000000"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Sans_Normal" x="0" y="10" width="800" height="30"/>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{reportTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="800" height="30"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="800" height="30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="16" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{pageHeader}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="652" y="0" width="30" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Page | ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="682" y="0" width="50" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="228" splitType="Stretch">
+			<staticText>
+				<reportElement x="664" y="202" width="30" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Page | ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="694" y="202" width="50" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="339" y="88" width="461" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$V{allAwait}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="339" y="148" width="459" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$V{allDelete}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="339" y="58" width="459" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$V{allActive}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="341" y="178" width="459" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$V{allTotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="341" y="118" width="459" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$V{allReject}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="58" width="300" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[ACTIVE CUSTOMERS :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="88" width="300" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[AWAITING APPROVAL CUSTOMERS :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="118" width="300" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[REJECTED CUSTOMERS :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="148" width="300" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[DELETED CUSTOMERS :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="178" width="300" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL CUSTOMERS :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="13" width="706" height="33"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="16" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[GRAND TOTALS]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>

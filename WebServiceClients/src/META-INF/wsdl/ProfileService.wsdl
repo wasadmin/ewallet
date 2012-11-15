@@ -1,0 +1,1327 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="ProfileService" targetNamespace="http://service.profileservices.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.profileservices.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.profileservices.ewallet.esolutions.co.zw/" schemaLocation="ProfileService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getActiveRolesResponse">
+    <part element="tns:getActiveRolesResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByUserRoleResponse">
+    <part element="tns:getProfileByUserRoleResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByLastName">
+    <part element="tns:getProfileByLastName" name="parameters">
+    </part>
+  </message>
+  <message name="getRoleByStatusResponse">
+    <part element="tns:getRoleByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="changeProfilePassword">
+    <part element="tns:changeProfilePassword" name="parameters">
+    </part>
+  </message>
+  <message name="createRole">
+    <part element="tns:createRole" name="parameters">
+    </part>
+  </message>
+  <message name="getBulletinByInitiatorResponse">
+    <part element="tns:getBulletinByInitiatorResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approveProfile">
+    <part element="tns:approveProfile" name="parameters">
+    </part>
+  </message>
+  <message name="findRoleAccessRightByIdResponse">
+    <part element="tns:findRoleAccessRightByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deactivateBulletinResponse">
+    <part element="tns:deactivateBulletinResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBulletinByApproverResponse">
+    <part element="tns:getBulletinByApproverResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAccessRightByActionName">
+    <part element="tns:getAccessRightByActionName" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByBranchId">
+    <part element="tns:getProfileByBranchId" name="parameters">
+    </part>
+  </message>
+  <message name="getRoleByRoleName">
+    <part element="tns:getRoleByRoleName" name="parameters">
+    </part>
+  </message>
+  <message name="findProfileById">
+    <part element="tns:findProfileById" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByUserNameResponse">
+    <part element="tns:getProfileByUserNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="authenticateUserResponse">
+    <part element="tns:authenticateUserResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editProfileResponse">
+    <part element="tns:editProfileResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editRole">
+    <part element="tns:editRole" name="parameters">
+    </part>
+  </message>
+  <message name="updateProfile">
+    <part element="tns:updateProfile" name="parameters">
+    </part>
+  </message>
+  <message name="editAccessRight">
+    <part element="tns:editAccessRight" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByUserNameAndStatusResponse">
+    <part element="tns:getProfileByUserNameAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByBranchIdAndAccessRightResponse">
+    <part element="tns:getProfileByBranchIdAndAccessRightResponse" name="parameters">
+    </part>
+  </message>
+  <message name="rejectRole">
+    <part element="tns:rejectRole" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByStatus">
+    <part element="tns:getProfileByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="updateRoleAccessRight">
+    <part element="tns:updateRoleAccessRight" name="parameters">
+    </part>
+  </message>
+  <message name="findRoleByRoleIdResponse">
+    <part element="tns:findRoleByRoleIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBulletinByStatusResponse">
+    <part element="tns:getBulletinByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBulletinByAllFields">
+    <part element="tns:getBulletinByAllFields" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveBulletin">
+    <part element="tns:disapproveBulletin" name="parameters">
+    </part>
+  </message>
+  <message name="approveRoleResponse">
+    <part element="tns:approveRoleResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createBulletin">
+    <part element="tns:createBulletin" name="parameters">
+    </part>
+  </message>
+  <message name="deleteRole">
+    <part element="tns:deleteRole" name="parameters">
+    </part>
+  </message>
+  <message name="deleteAccessRightResponse">
+    <part element="tns:deleteAccessRightResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllProfilesResponse">
+    <part element="tns:getAllProfilesResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findBulletinByIdResponse">
+    <part element="tns:findBulletinByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByIP">
+    <part element="tns:getProfileByIP" name="parameters">
+    </part>
+  </message>
+  <message name="deleteProfileResponse">
+    <part element="tns:deleteProfileResponse" name="parameters">
+    </part>
+  </message>
+  <message name="validateHost">
+    <part element="tns:validateHost" name="parameters">
+    </part>
+  </message>
+  <message name="createAccessRightResponse">
+    <part element="tns:createAccessRightResponse" name="parameters">
+    </part>
+  </message>
+  <message name="canDoResponse">
+    <part element="tns:canDoResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllLoggedOnUsers">
+    <part element="tns:getAllLoggedOnUsers" name="parameters">
+    </part>
+  </message>
+  <message name="getAccessRight">
+    <part element="tns:getAccessRight" name="parameters">
+    </part>
+  </message>
+  <message name="getRoleAccessRightByRoleActionNameAndStatus">
+    <part element="tns:getRoleAccessRightByRoleActionNameAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByLastNameResponse">
+    <part element="tns:getProfileByLastNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="changeProfilePasswordResponse">
+    <part element="tns:changeProfilePasswordResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createRoleResponse">
+    <part element="tns:createRoleResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approveProfileResponse">
+    <part element="tns:approveProfileResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAccessRightByActionNameResponse">
+    <part element="tns:getAccessRightByActionNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getRoleByRoleNameResponse">
+    <part element="tns:getRoleByRoleNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findProfileByIdResponse">
+    <part element="tns:findProfileByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editRoleResponse">
+    <part element="tns:editRoleResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateProfileResponse">
+    <part element="tns:updateProfileResponse" name="parameters">
+    </part>
+  </message>
+  <message name="resetProfileIP">
+    <part element="tns:resetProfileIP" name="parameters">
+    </part>
+  </message>
+  <message name="editAccessRightResponse">
+    <part element="tns:editAccessRightResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createProfile">
+    <part element="tns:createProfile" name="parameters">
+    </part>
+  </message>
+  <message name="getCurrentBulletin">
+    <part element="tns:getCurrentBulletin" name="parameters">
+    </part>
+  </message>
+  <message name="rejectProfile">
+    <part element="tns:rejectProfile" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByBranchIdResponse">
+    <part element="tns:getProfileByBranchIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="rejectRoleResponse">
+    <part element="tns:rejectRoleResponse" name="parameters">
+    </part>
+  </message>
+  <message name="resetProfilePassword">
+    <part element="tns:resetProfilePassword" name="parameters">
+    </part>
+  </message>
+  <message name="approveBulletin">
+    <part element="tns:approveBulletin" name="parameters">
+    </part>
+  </message>
+  <message name="findAccessRightById">
+    <part element="tns:findAccessRightById" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByStatusResponse">
+    <part element="tns:getProfileByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateRoleAccessRightResponse">
+    <part element="tns:updateRoleAccessRightResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getRoleAccessRightByRole">
+    <part element="tns:getRoleAccessRightByRole" name="parameters">
+    </part>
+  </message>
+  <message name="getBulletinByAllFieldsResponse">
+    <part element="tns:getBulletinByAllFieldsResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveBulletinResponse">
+    <part element="tns:disapproveBulletinResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createBulletinResponse">
+    <part element="tns:createBulletinResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteRoleResponse">
+    <part element="tns:deleteRoleResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getActiveRoles">
+    <part element="tns:getActiveRoles" name="parameters">
+    </part>
+  </message>
+  <message name="Exception">
+    <part element="tns:Exception" name="fault">
+    </part>
+  </message>
+  <message name="getProfileByUserRole">
+    <part element="tns:getProfileByUserRole" name="parameters">
+    </part>
+  </message>
+  <message name="getRoleByStatus">
+    <part element="tns:getRoleByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByIPResponse">
+    <part element="tns:getProfileByIPResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editProfile">
+    <part element="tns:editProfile" name="parameters">
+    </part>
+  </message>
+  <message name="validateHostResponse">
+    <part element="tns:validateHostResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllLoggedOnUsersResponse">
+    <part element="tns:getAllLoggedOnUsersResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBulletinByInitiator">
+    <part element="tns:getBulletinByInitiator" name="parameters">
+    </part>
+  </message>
+  <message name="findRoleAccessRightById">
+    <part element="tns:findRoleAccessRightById" name="parameters">
+    </part>
+  </message>
+  <message name="deactivateBulletin">
+    <part element="tns:deactivateBulletin" name="parameters">
+    </part>
+  </message>
+  <message name="getBulletinByApprover">
+    <part element="tns:getBulletinByApprover" name="parameters">
+    </part>
+  </message>
+  <message name="getAccessRightResponse">
+    <part element="tns:getAccessRightResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByUserName">
+    <part element="tns:getProfileByUserName" name="parameters">
+    </part>
+  </message>
+  <message name="authenticateUser">
+    <part element="tns:authenticateUser" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByUserNameAndStatus">
+    <part element="tns:getProfileByUserNameAndStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getProfileByBranchIdAndAccessRight">
+    <part element="tns:getProfileByBranchIdAndAccessRight" name="parameters">
+    </part>
+  </message>
+  <message name="findRoleByRoleId">
+    <part element="tns:findRoleByRoleId" name="parameters">
+    </part>
+  </message>
+  <message name="getRoleAccessRightByRoleActionNameAndStatusResponse">
+    <part element="tns:getRoleAccessRightByRoleActionNameAndStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getBulletinByStatus">
+    <part element="tns:getBulletinByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="approveRole">
+    <part element="tns:approveRole" name="parameters">
+    </part>
+  </message>
+  <message name="resetProfileIPResponse">
+    <part element="tns:resetProfileIPResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createProfileResponse">
+    <part element="tns:createProfileResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteAccessRight">
+    <part element="tns:deleteAccessRight" name="parameters">
+    </part>
+  </message>
+  <message name="getCurrentBulletinResponse">
+    <part element="tns:getCurrentBulletinResponse" name="parameters">
+    </part>
+  </message>
+  <message name="rejectProfileResponse">
+    <part element="tns:rejectProfileResponse" name="parameters">
+    </part>
+  </message>
+  <message name="resetProfilePasswordResponse">
+    <part element="tns:resetProfilePasswordResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllProfiles">
+    <part element="tns:getAllProfiles" name="parameters">
+    </part>
+  </message>
+  <message name="approveBulletinResponse">
+    <part element="tns:approveBulletinResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findAccessRightByIdResponse">
+    <part element="tns:findAccessRightByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findBulletinById">
+    <part element="tns:findBulletinById" name="parameters">
+    </part>
+  </message>
+  <message name="deleteProfile">
+    <part element="tns:deleteProfile" name="parameters">
+    </part>
+  </message>
+  <message name="createAccessRight">
+    <part element="tns:createAccessRight" name="parameters">
+    </part>
+  </message>
+  <message name="canDo">
+    <part element="tns:canDo" name="parameters">
+    </part>
+  </message>
+  <message name="getRoleAccessRightByRoleResponse">
+    <part element="tns:getRoleAccessRightByRoleResponse" name="parameters">
+    </part>
+  </message>
+  <portType name="ProfileService">
+    <operation name="getAccessRightByActionName">
+      <input message="tns:getAccessRightByActionName">
+    </input>
+      <output message="tns:getAccessRightByActionNameResponse">
+    </output>
+    </operation>
+    <operation name="getAccessRight">
+      <input message="tns:getAccessRight">
+    </input>
+      <output message="tns:getAccessRightResponse">
+    </output>
+    </operation>
+    <operation name="getProfileByLastName">
+      <input message="tns:getProfileByLastName">
+    </input>
+      <output message="tns:getProfileByLastNameResponse">
+    </output>
+    </operation>
+    <operation name="getProfileByStatus">
+      <input message="tns:getProfileByStatus">
+    </input>
+      <output message="tns:getProfileByStatusResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="createAccessRight">
+      <input message="tns:createAccessRight">
+    </input>
+      <output message="tns:createAccessRightResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteAccessRight">
+      <input message="tns:deleteAccessRight">
+    </input>
+      <output message="tns:deleteAccessRightResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editAccessRight">
+      <input message="tns:editAccessRight">
+    </input>
+      <output message="tns:editAccessRightResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findAccessRightById">
+      <input message="tns:findAccessRightById">
+    </input>
+      <output message="tns:findAccessRightByIdResponse">
+    </output>
+    </operation>
+    <operation name="updateRoleAccessRight">
+      <input message="tns:updateRoleAccessRight">
+    </input>
+      <output message="tns:updateRoleAccessRightResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findRoleAccessRightById">
+      <input message="tns:findRoleAccessRightById">
+    </input>
+      <output message="tns:findRoleAccessRightByIdResponse">
+    </output>
+    </operation>
+    <operation name="getRoleAccessRightByRoleActionNameAndStatus">
+      <input message="tns:getRoleAccessRightByRoleActionNameAndStatus">
+    </input>
+      <output message="tns:getRoleAccessRightByRoleActionNameAndStatusResponse">
+    </output>
+    </operation>
+    <operation name="getRoleAccessRightByRole">
+      <input message="tns:getRoleAccessRightByRole">
+    </input>
+      <output message="tns:getRoleAccessRightByRoleResponse">
+    </output>
+    </operation>
+    <operation name="createProfile">
+      <input message="tns:createProfile">
+    </input>
+      <output message="tns:createProfileResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteProfile">
+      <input message="tns:deleteProfile">
+    </input>
+      <output message="tns:deleteProfileResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editProfile">
+      <input message="tns:editProfile">
+    </input>
+      <output message="tns:editProfileResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveProfile">
+      <input message="tns:approveProfile">
+    </input>
+      <output message="tns:approveProfileResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="rejectProfile">
+      <input message="tns:rejectProfile">
+    </input>
+      <output message="tns:rejectProfileResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="changeProfilePassword">
+      <input message="tns:changeProfilePassword">
+    </input>
+      <output message="tns:changeProfilePasswordResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="resetProfilePassword">
+      <input message="tns:resetProfilePassword">
+    </input>
+      <output message="tns:resetProfilePasswordResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findProfileById">
+      <input message="tns:findProfileById">
+    </input>
+      <output message="tns:findProfileByIdResponse">
+    </output>
+    </operation>
+    <operation name="getProfileByUserName">
+      <input message="tns:getProfileByUserName">
+    </input>
+      <output message="tns:getProfileByUserNameResponse">
+    </output>
+    </operation>
+    <operation name="getProfileByUserNameAndStatus">
+      <input message="tns:getProfileByUserNameAndStatus">
+    </input>
+      <output message="tns:getProfileByUserNameAndStatusResponse">
+    </output>
+    </operation>
+    <operation name="getProfileByUserRole">
+      <input message="tns:getProfileByUserRole">
+    </input>
+      <output message="tns:getProfileByUserRoleResponse">
+    </output>
+    </operation>
+    <operation name="getAllProfiles">
+      <input message="tns:getAllProfiles">
+    </input>
+      <output message="tns:getAllProfilesResponse">
+    </output>
+    </operation>
+    <operation name="getProfileByBranchId">
+      <input message="tns:getProfileByBranchId">
+    </input>
+      <output message="tns:getProfileByBranchIdResponse">
+    </output>
+    </operation>
+    <operation name="getProfileByBranchIdAndAccessRight">
+      <input message="tns:getProfileByBranchIdAndAccessRight">
+    </input>
+      <output message="tns:getProfileByBranchIdAndAccessRightResponse">
+    </output>
+    </operation>
+    <operation name="createRole">
+      <input message="tns:createRole">
+    </input>
+      <output message="tns:createRoleResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editRole">
+      <input message="tns:editRole">
+    </input>
+      <output message="tns:editRoleResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveRole">
+      <input message="tns:approveRole">
+    </input>
+      <output message="tns:approveRoleResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="rejectRole">
+      <input message="tns:rejectRole">
+    </input>
+      <output message="tns:rejectRoleResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteRole">
+      <input message="tns:deleteRole">
+    </input>
+      <output message="tns:deleteRoleResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findRoleByRoleId">
+      <input message="tns:findRoleByRoleId">
+    </input>
+      <output message="tns:findRoleByRoleIdResponse">
+    </output>
+    </operation>
+    <operation name="getRoleByRoleName">
+      <input message="tns:getRoleByRoleName">
+    </input>
+      <output message="tns:getRoleByRoleNameResponse">
+    </output>
+    </operation>
+    <operation name="getRoleByStatus">
+      <input message="tns:getRoleByStatus">
+    </input>
+      <output message="tns:getRoleByStatusResponse">
+    </output>
+    </operation>
+    <operation name="getActiveRoles">
+      <input message="tns:getActiveRoles">
+    </input>
+      <output message="tns:getActiveRolesResponse">
+    </output>
+    </operation>
+    <operation name="canDo">
+      <input message="tns:canDo">
+    </input>
+      <output message="tns:canDoResponse">
+    </output>
+    </operation>
+    <operation name="authenticateUser">
+      <input message="tns:authenticateUser">
+    </input>
+      <output message="tns:authenticateUserResponse">
+    </output>
+    </operation>
+    <operation name="updateProfile">
+      <input message="tns:updateProfile">
+    </input>
+      <output message="tns:updateProfileResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getAllLoggedOnUsers">
+      <input message="tns:getAllLoggedOnUsers">
+    </input>
+      <output message="tns:getAllLoggedOnUsersResponse">
+    </output>
+    </operation>
+    <operation name="getProfileByIP">
+      <input message="tns:getProfileByIP">
+    </input>
+      <output message="tns:getProfileByIPResponse">
+    </output>
+    </operation>
+    <operation name="resetProfileIP">
+      <input message="tns:resetProfileIP">
+    </input>
+      <output message="tns:resetProfileIPResponse">
+    </output>
+    </operation>
+    <operation name="validateHost">
+      <input message="tns:validateHost">
+    </input>
+      <output message="tns:validateHostResponse">
+    </output>
+    </operation>
+    <operation name="createBulletin">
+      <input message="tns:createBulletin">
+    </input>
+      <output message="tns:createBulletinResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findBulletinById">
+      <input message="tns:findBulletinById">
+    </input>
+      <output message="tns:findBulletinByIdResponse">
+    </output>
+    </operation>
+    <operation name="approveBulletin">
+      <input message="tns:approveBulletin">
+    </input>
+      <output message="tns:approveBulletinResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="disapproveBulletin">
+      <input message="tns:disapproveBulletin">
+    </input>
+      <output message="tns:disapproveBulletinResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deactivateBulletin">
+      <input message="tns:deactivateBulletin">
+    </input>
+      <output message="tns:deactivateBulletinResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getBulletinByStatus">
+      <input message="tns:getBulletinByStatus">
+    </input>
+      <output message="tns:getBulletinByStatusResponse">
+    </output>
+    </operation>
+    <operation name="getCurrentBulletin">
+      <input message="tns:getCurrentBulletin">
+    </input>
+      <output message="tns:getCurrentBulletinResponse">
+    </output>
+    </operation>
+    <operation name="getBulletinByApprover">
+      <input message="tns:getBulletinByApprover">
+    </input>
+      <output message="tns:getBulletinByApproverResponse">
+    </output>
+    </operation>
+    <operation name="getBulletinByInitiator">
+      <input message="tns:getBulletinByInitiator">
+    </input>
+      <output message="tns:getBulletinByInitiatorResponse">
+    </output>
+    </operation>
+    <operation name="getBulletinByAllFields">
+      <input message="tns:getBulletinByAllFields">
+    </input>
+      <output message="tns:getBulletinByAllFieldsResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="ProfileServiceSOAPBinding" type="tns:ProfileService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getAccessRightByActionName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAccessRight">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProfileByLastName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProfileByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createAccessRight">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteAccessRight">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editAccessRight">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findAccessRightById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="updateRoleAccessRight">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findRoleAccessRightById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getRoleAccessRightByRoleActionNameAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getRoleAccessRightByRole">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="rejectProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="changeProfilePassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="resetProfilePassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findProfileById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProfileByUserName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProfileByUserNameAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProfileByUserRole">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllProfiles">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProfileByBranchId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProfileByBranchIdAndAccessRight">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createRole">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editRole">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveRole">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="rejectRole">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteRole">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findRoleByRoleId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getRoleByRoleName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getRoleByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getActiveRoles">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="canDo">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="authenticateUser">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="updateProfile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getAllLoggedOnUsers">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getProfileByIP">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="resetProfileIP">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="validateHost">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createBulletin">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findBulletinById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="approveBulletin">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="disapproveBulletin">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deactivateBulletin">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getBulletinByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getCurrentBulletin">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBulletinByApprover">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBulletinByInitiator">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBulletinByAllFields">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ProfileService">
+    <port binding="tns:ProfileServiceSOAPBinding" name="ProfileServiceSOAP">
+      <soap:address location="http://localhost:9081/ProfileServices/ProfileService"/>
+    </port>
+  </service>
+</definitions>

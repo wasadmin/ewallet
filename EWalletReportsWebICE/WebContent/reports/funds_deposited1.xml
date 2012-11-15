@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<!DOCTYPE jasperReport
+  PUBLIC "-//JasperReports//DTD Report Design//EN"
+  "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport 
+        name="Limits" 
+        pageWidth="595" 
+		pageHeight="842" 
+		columnWidth="515" 
+		columnSpacing="0" 
+		leftMargin="40" 
+		rightMargin="40" 
+		topMargin="50" 
+		bottomMargin="50"
+		whenNoDataType="AllSectionsNoDetail"
+		isTitleNewPage="false"
+		isSummaryNewPage="false">
+
+<template>"/opt/ewallet/globals/ReportStyles.jrtx"</template>
+<parameter name="reportTitle" class="java.lang.String"/>
+<parameter name="pageHeader" class="java.lang.String"/>
+
+<field name="transactionLocationType" class="java.lang.Object"/>
+
+<field name="transactionLocationId" class="java.lang.String"/>
+
+<field name="fromBankId" class="java.lang.String"/>
+
+<field name="branchId" class="java.lang.String"/>
+
+<field name="customerName" class="java.lang.String"/>
+
+<field name="sourceMobile" class="java.lang.String"/>
+	
+<field name="dateCreated" class="java.util.Date"/>
+
+<field name="balance" class="java.lang.Long"/>
+
+<field name="amount" class="java.lang.Long"/>
+
+ <variable name="totalDeposits" class="java.lang.Long" calculation="Sum">
+            <variableExpression>
+                <![CDATA[$F{amount}]]>
+               </variableExpression>
+ </variable>
+ 
+  <variable name="totalBalance" class="java.lang.Long" calculation="Sum">
+            <variableExpression>
+                <![CDATA[($F{balance}]]>
+               </variableExpression>
+  </variable>
+   <background>
+		<band height="742">
+			<image scaleImage="Clip" hAlign="Left" vAlign="Bottom">
+				<reportElement x="0" y="0" width="150" height="742"/>
+				<imageExpression>"/opt/ewallet/globals/esol.png"</imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="50">
+			<line>
+				<reportElement x="0" y="0" width="550" height="0" forecolor="black"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="10" width="515" height="30" style="Sans_Normal"/>
+				<textElement textAlignment="Center" lineSpacing="Single">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">$P{reportTitle}</textFieldExpression>
+			</textField>
+		</band>
+	</title>
+     <pageHeader>
+          <band height="30">
+              <rectangle>
+                  <reportElement x="0" y="0" width="550" height="25"/>
+                  <graphicElement/>
+              </rectangle>
+              <textField isBlankWhenNull="true">
+              <reportElement x="0" y="0" width="555" height="25"/>
+              <textElement textAlignment="Center">
+                  <font fontName="Serif" size="14"/>
+              </textElement>
+             <textFieldExpression class="java.lang.String">$P{pageHeader}</textFieldExpression>
+              </textField>
+         </band>
+    </pageHeader>
+      <columnHeader>
+	<band height="23">
+		<staticText>
+			<reportElement x="40" y="0" width="80" height="20" />
+			<textElement textAlignment="Center" >
+			<font isBold="true" isItalic="false"/>
+			</textElement>
+			<text>Bank Name</text>
+		</staticText>
+		<staticText>
+			<reportElement x="120" y="0" width="80" height="20" />
+			<textElement textAlignment="Center">
+			<font isBold="true" isItalic="false"/>
+			</textElement>
+			<text>Branch</text>
+		</staticText>
+		<staticText>
+			<reportElement x="200" y="0" width="80" height="20"/>
+			<textElement textAlignment="Center">
+			<font isBold="true" isItalic="false"/>
+			</textElement>
+			<text>Mobile Number</text>
+		</staticText>
+		<staticText>
+			<reportElement x="280" y="0" width="80" height="20"/>
+			<textElement textAlignment="Center">
+			<font isBold="true" isItalic="false"/>
+			</textElement>
+			<text>Customer</text>
+		</staticText>
+		<staticText>
+			<reportElement x="360" y="0" width="60" height="20"/>
+			<textElement textAlignment="Center">
+			<font isBold="true" isItalic="false"/>
+			</textElement>
+			<text>Amount</text>
+		</staticText>
+		<staticText>
+			<reportElement x="420" y="0" width="60" height="20"/>
+			<textElement textAlignment="Center">
+			<font isBold="true" isItalic="false"/>
+			</textElement>
+			<text>Balance</text>
+		</staticText>
+		<staticText>
+			<reportElement x="480" y="0" width="80" height="20"/>
+			<textElement textAlignment="Center" >
+			<font isBold="true" isItalic="false"/>
+			</textElement>
+			<text>Txn Date</text>
+		</staticText>
+	</band>
+</columnHeader>
+    <!-- Details to come here -->
+    <detail>
+	<band height="22">
+		<textField isBlankWhenNull="true">
+			<reportElement x="40" y="0" width="80" height="20" isPrintRepeatedValues="false"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{fromBankId})]]></textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true" isStretchWithOverflow="true">
+			<reportElement x="120" y="0" width="80" height="20" isPrintRepeatedValues="false"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{branchId})]]></textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true">
+			<reportElement x="200" y="0" width="80" height="20" isPrintRepeatedValues="false"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression>$F{sourceMobile}</textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true" isStretchWithOverflow="true">
+			<reportElement x="280" y="0" width="80" height="20" isPrintRepeatedValues="false"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression><![CDATA[$F{customerName}]]></textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true" isStretchWithOverflow="true">
+			<reportElement x="360" y="0" width="60" height="20"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression>(new DecimalFormat("#,##0.00")).format(new Double($F{amount}.longValue()) /100.00)</textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true" isStretchWithOverflow="true">
+			<reportElement x="420" y="0" width="60" height="20"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression>(new DecimalFormat("#,##0.00")).format(new Double($F{balance}.longValue()) /100.00)</textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true">
+			<reportElement x="480" y="0" width="80" height="20"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression >(new SimpleDateFormat("dd/MM/yyyy")).format($F{dateCreated})</textFieldExpression>
+		</textField >
+		
+	</band>
+</detail>
+    <pageFooter>
+     <band height = "30">
+       <textField evaluationTime="Report">
+                 <reportElement x="280" y="10" width="275" height="20"/>
+                 <textElement textAlignment="Left">
+                      <font fontName="Serif" size="14"/>
+                 </textElement>
+                 <textFieldExpression class="java.lang.Integer">
+                       $V{PAGE_NUMBER}
+                 </textFieldExpression>
+       </textField>
+    </band>   
+  </pageFooter>
+  <lastPageFooter>
+	<band height="50">
+		<staticText>
+			<reportElement x="0" y="0" width="120" height="20"/>
+			<textElement>
+				<font isBold="true"/>
+			</textElement>
+			<text>Total Deposits:</text>
+		</staticText>
+		<textField isStretchWithOverflow="true">
+			<reportElement x="120" y="0" width="50" height="20"/>
+			<textElement textAlignment="Left">
+				<font fontName="Arial" size="10"/>
+			</textElement>
+			<textFieldExpression class="java.lang.String">
+				<![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{totalDeposits}.longValue()) /100.00)]]>
+			</textFieldExpression>
+		</textField>
+		<staticText>
+			<reportElement x="0" y="10" width="120" height="20"/>
+			<textElement>
+				<font isBold="true"/>
+			</textElement>
+			<text>Total Balance :</text>
+		</staticText>
+		<textField isStretchWithOverflow="true">
+			<reportElement x="120" y="10" width="50" height="20"/>
+			<textElement textAlignment="Left">
+				<font fontName="Arial" size="10"/>
+			</textElement>
+			<textFieldExpression class="java.lang.String">
+				<![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{totalBalance}.longValue()) /100.00)]]>
+			</textFieldExpression>
+		</textField>
+		<staticText>
+			<reportElement x="490" y="10" width="30" height="20"/>
+			<textElement>
+				<font isBold="true"/>
+			</textElement>
+			<text>Page | </text>
+		</staticText>
+		<textField evaluationTime="Now">
+			<reportElement x="524" y="10" width="50" height="20"/>
+			<textElement textAlignment="Left">
+				<font fontName="Serif" size="10"/>
+			</textElement>
+			<textFieldExpression class="java.lang.Integer">
+				$V{PAGE_NUMBER}
+			</textFieldExpression>
+		</textField>
+	</band>
+</lastPageFooter>
+</jasperReport>

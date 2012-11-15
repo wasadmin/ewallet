@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Class-Path: EWalletUtils.jar 
+ comm.jar 
+ log4j-1.2.16.jar 
+ mcommerce.jar 
+ pduutils.jar 
+ xbean.jar 
+ smslib-3.4.6.jar 
+ messages.jar 
+ jsmpp-2.1.0.jar 
+ slf4j-api-1.4.3.jar 
+ slf4j-log4j12-1.4.3.jar 
+ smslib-3.5.1.jar 
+ activemq-all-5.3.1.jar
+

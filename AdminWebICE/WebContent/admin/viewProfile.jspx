@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<h:form styleClass="form" id="form1">
+				<h:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></h:messages>
+				<h:inputHidden value="#{viewProfileBean.profileId}"></h:inputHidden>
+					<h:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+						cellspacing="5" width="600" columns="2">
+						<h:outputLabel value="Date Created" styleClass="outputLabel"></h:outputLabel>
+						<h:outputText styleClass="outputText" value="#{viewProfileBean.profile.dateCreated}">
+							<f:converter converterId="xmlDateConverter"/>
+						</h:outputText>
+						<h:outputLabel value="Username" styleClass="outputLabel" id="label2"></h:outputLabel>
+						<h:outputText styleClass="outputText" id="text1" value="#{viewProfileBean.profile.userName}"></h:outputText>
+						<h:outputLabel value="User Password" styleClass="outputLabel" rendered="#{viewProfileBean.showPassword}"></h:outputLabel>
+						<h:outputText styleClass="outputText" id="password" value="#{viewProfileBean.profile.userPassword}" rendered="#{viewProfileBean.showPassword}"></h:outputText>
+						<h:outputLabel value="Lastname" styleClass="outputLabel" id="label3"></h:outputLabel>
+						<h:outputText styleClass="outputText" id="text2" value="#{viewProfileBean.profile.lastName}"></h:outputText>
+						<h:outputLabel value="Firstnames" styleClass="outputLabel"
+							id="label4"></h:outputLabel>
+						<h:outputText styleClass="outputText" id="text3" value="#{viewProfileBean.profile.firstNames}"></h:outputText>
+						<h:outputLabel value="User Role" styleClass="outputLabel"
+							id="label5"></h:outputLabel>
+						<h:outputText styleClass="outputText" id="text4" value="#{viewProfileBean.profile.role.roleName}"></h:outputText>
+						<h:outputLabel value="IP Address" styleClass="outputLabel"></h:outputLabel>
+						<h:outputText styleClass="outputText" value="#{viewProfileBean.profile.ipAddress}"></h:outputText>
+						<h:outputLabel value="Profile Expiry Date" styleClass="outputLabel" ></h:outputLabel>
+						<h:outputText styleClass="outputText" value="#{viewProfileBean.profile.passwordExpiryDate}">
+							<f:converter converterId="xmlDateConverter"/>
+						</h:outputText>											
+						<h:outputLabel value="Profile Status" styleClass="outputLabel"
+							id="label6"></h:outputLabel>
+						<h:outputText styleClass="outputText" id="text5" value="#{viewProfileBean.profile.status}"></h:outputText>
+						<h:outputLabel value="Email" styleClass="outputLabel" ></h:outputLabel>
+						<h:outputText styleClass="outputText" id="email" value="#{viewProfileBean.profile.email}"></h:outputText>
+						<h:outputLabel value="Mobile Number" styleClass="outputLabel" ></h:outputLabel>
+						<h:outputText styleClass="outputText" id="mobileNumber" value="#{viewProfileBean.profile.mobileNumber}"></h:outputText>	
+						<h:outputLabel value="Mobile Number" styleClass="outputLabel" ></h:outputLabel>
+						<h:outputText styleClass="outputText" id="phoneNumber" value="#{viewProfileBean.profile.phoneNumber}"></h:outputText>
+						
+						<f:facet name="header">
+							<h:panelGroup styleClass="panelGroup" id="group1">
+								<h:outputLabel value="Profile Details" styleClass="panelGridLabel"
+									id="label1"></h:outputLabel>
+							</h:panelGroup>
+						</f:facet>
+					</h:panelGrid>
+					<h:panelGrid styleClass="panelGrid" id="grid2" cellpadding="5"
+						cellspacing="5" width="600" columns="2">
+						<h:outputLabel value="Bank Name" styleClass="outputLabel"
+							id="label8"></h:outputLabel>
+						<h:outputText styleClass="outputText" id="text6" value="#{viewProfileBean.branch.bank.name}"></h:outputText>
+						<h:outputLabel value="Branch" styleClass="outputLabel" id="label9"></h:outputLabel>
+						<h:outputText styleClass="outputText" id="text7" value="#{viewProfileBean.branch.name}"></h:outputText>
+						<f:facet name="header">
+							<h:panelGroup styleClass="panelGroup" id="group2">
+								<h:outputLabel value="Bank Details" styleClass="panelGridLabel"
+									id="label7"></h:outputLabel>
+							</h:panelGroup>
+						</f:facet>
+					</h:panelGrid>
+					<h:panelGrid styleClass="panelGrid" id="grid3" columns="7">
+						<h:commandButton type="submit" value="Approve"
+							styleClass="commandButton" id="approve" action="#{viewProfileBean.approve}" rendered="#{viewProfileBean.approvable}"></h:commandButton>
+						<h:commandButton type="submit" value="Reject"
+							styleClass="commandButton" id="reject" action="#{viewProfileBean.reject}" rendered="#{viewProfileBean.approvable}"></h:commandButton>
+						<h:commandButton type="submit" value="  Edit  "
+							styleClass="commandButton" 
+							action="#{viewProfileBean.edit}"
+							actionListener="#{editProfileBean.edit}" rendered="#{viewProfileBean.editable}">
+							<f:attribute name="profileId" value="#{viewProfileBean.profileId}"/>
+						</h:commandButton>
+						<h:commandButton type="submit" value="Reset Password"
+							styleClass="commandButton" action="#{viewProfileBean.resetPassword}" rendered="#{viewProfileBean.editable}"></h:commandButton>
+						<h:commandButton type="submit" value="Delete Profile"
+							styleClass="commandButton" action="#{viewProfileBean.delete}" rendered="#{viewProfileBean.editable}"></h:commandButton>
+						<h:commandButton type="submit" value="View Logs"
+							styleClass="commandButton" actionListener="#{viewLogsBean.viewLogs}" action="#{viewProfileBean.logs}">
+							<f:attribute name="entityId" value="#{viewProfileBean.profileId}"/>
+							<f:attribute name="entityName" value="PROFILE"/>
+							<f:attribute name="previous" value="admin/viewProfile.jspx"/>
+						</h:commandButton>
+						<h:commandButton type="submit" value="Activate Profile"
+							styleClass="commandButton" action="#{viewProfileBean.activateProfile}" rendered="#{viewProfileBean.activatable}"></h:commandButton>
+						<h:commandButton type="submit" value="Deactivate Profile"
+							styleClass="commandButton" action="#{viewProfileBean.deactivateProfile}" rendered="#{viewProfileBean.deactivatable}"></h:commandButton>
+						<h:commandButton type="submit" value="Reset IP"
+							styleClass="commandButton" action="#{viewProfileBean.resetIP}" rendered="#{viewProfileBean.ipResetable}"></h:commandButton>
+					</h:panelGrid>					
+				</h:form>
+				<ice:panelPopup visible="#{viewProfileBean.showPopup}" modal="true">
+        			<f:facet name="header"><ice:outputText value="Confirmation!" /></f:facet>
+        			<f:facet name="body">
+        				<ice:form>
+        					<ice:outputText value="Are you sure you want to delete this profile?" />
+        					<ice:panelGrid columns="2">
+        						<ice:commandButton type="submit" value="Yes"
+									styleClass="commandButton" action="#{viewProfileBean.deleteProfile}"></ice:commandButton>
+								<ice:commandButton type="submit" value="No"
+									styleClass="commandButton" action="#{viewProfileBean.hidePopup}"></ice:commandButton>
+        					</ice:panelGrid>
+        				</ice:form>
+        			</f:facet>
+    			</ice:panelPopup>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

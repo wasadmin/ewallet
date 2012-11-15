@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="BookEntryService" targetNamespace="http://service.bookentryservices.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.bookentryservices.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.bookentryservices.ewallet.esolutions.co.zw/" schemaLocation="BookEntryService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="createTransaction">
+    <part element="tns:createTransaction" name="parameters">
+    </part>
+  </message>
+  <message name="createAccountBalance">
+    <part element="tns:createAccountBalance" name="parameters">
+    </part>
+  </message>
+  <message name="findTransactionById">
+    <part element="tns:findTransactionById" name="parameters">
+    </part>
+  </message>
+  <message name="updateTransaction">
+    <part element="tns:updateTransaction" name="parameters">
+    </part>
+  </message>
+  <message name="getAccountBalanceByAccountAndDateResponse">
+    <part element="tns:getAccountBalanceByAccountAndDateResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteTransactionResponse">
+    <part element="tns:deleteTransactionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAccountBalanceByAccountResponse">
+    <part element="tns:getAccountBalanceByAccountResponse" name="parameters">
+    </part>
+  </message>
+  <message name="EWalletException">
+    <part element="tns:EWalletException" name="fault">
+    </part>
+  </message>
+  <message name="findAllTransactions">
+    <part element="tns:findAllTransactions" name="parameters">
+    </part>
+  </message>
+  <message name="findAllAccountBalances">
+    <part element="tns:findAllAccountBalances" name="parameters">
+    </part>
+  </message>
+  <message name="findAccountBalanceByIdResponse">
+    <part element="tns:findAccountBalanceByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteAccountBalanceResponse">
+    <part element="tns:deleteAccountBalanceResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateAccountBalance">
+    <part element="tns:updateAccountBalance" name="parameters">
+    </part>
+  </message>
+  <message name="createTransactionResponse">
+    <part element="tns:createTransactionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="Exception">
+    <part element="tns:Exception" name="fault">
+    </part>
+  </message>
+  <message name="createAccountBalanceResponse">
+    <part element="tns:createAccountBalanceResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateTransactionResponse">
+    <part element="tns:updateTransactionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAccountBalanceByAccountAndDate">
+    <part element="tns:getAccountBalanceByAccountAndDate" name="parameters">
+    </part>
+  </message>
+  <message name="deleteTransaction">
+    <part element="tns:deleteTransaction" name="parameters">
+    </part>
+  </message>
+  <message name="getAccountBalanceByAccount">
+    <part element="tns:getAccountBalanceByAccount" name="parameters">
+    </part>
+  </message>
+  <message name="findAllTransactionsResponse">
+    <part element="tns:findAllTransactionsResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findAllAccountBalancesResponse">
+    <part element="tns:findAllAccountBalancesResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findAccountBalanceById">
+    <part element="tns:findAccountBalanceById" name="parameters">
+    </part>
+  </message>
+  <message name="deleteAccountBalance">
+    <part element="tns:deleteAccountBalance" name="parameters">
+    </part>
+  </message>
+  <message name="updateAccountBalanceResponse">
+    <part element="tns:updateAccountBalanceResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findTransactionByIdResponse">
+    <part element="tns:findTransactionByIdResponse" name="parameters">
+    </part>
+  </message>
+  <portType name="BookEntryService">
+    <operation name="createAccountBalance">
+      <input message="tns:createAccountBalance">
+    </input>
+      <output message="tns:createAccountBalanceResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="deleteAccountBalance">
+      <input message="tns:deleteAccountBalance">
+    </input>
+      <output message="tns:deleteAccountBalanceResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="updateAccountBalance">
+      <input message="tns:updateAccountBalance">
+    </input>
+      <output message="tns:updateAccountBalanceResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="findAccountBalanceById">
+      <input message="tns:findAccountBalanceById">
+    </input>
+      <output message="tns:findAccountBalanceByIdResponse">
+    </output>
+    </operation>
+    <operation name="findAllAccountBalances">
+      <input message="tns:findAllAccountBalances">
+    </input>
+      <output message="tns:findAllAccountBalancesResponse">
+    </output>
+    </operation>
+    <operation name="createTransaction">
+      <input message="tns:createTransaction">
+    </input>
+      <output message="tns:createTransactionResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="deleteTransaction">
+      <input message="tns:deleteTransaction">
+    </input>
+      <output message="tns:deleteTransactionResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="updateTransaction">
+      <input message="tns:updateTransaction">
+    </input>
+      <output message="tns:updateTransactionResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="findTransactionById">
+      <input message="tns:findTransactionById">
+    </input>
+      <output message="tns:findTransactionByIdResponse">
+    </output>
+    </operation>
+    <operation name="findAllTransactions">
+      <input message="tns:findAllTransactions">
+    </input>
+      <output message="tns:findAllTransactionsResponse">
+    </output>
+    </operation>
+    <operation name="getAccountBalanceByAccountAndDate">
+      <input message="tns:getAccountBalanceByAccountAndDate">
+    </input>
+      <output message="tns:getAccountBalanceByAccountAndDateResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="getAccountBalanceByAccount">
+      <input message="tns:getAccountBalanceByAccount">
+    </input>
+      <output message="tns:getAccountBalanceByAccountResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+  </portType>
+  <binding name="BookEntryServiceSOAPBinding" type="tns:BookEntryService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createAccountBalance">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteAccountBalance">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateAccountBalance">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findAccountBalanceById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="findAllAccountBalances">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findTransactionById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="findAllTransactions">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAccountBalanceByAccountAndDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getAccountBalanceByAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="BookEntryService">
+    <port binding="tns:BookEntryServiceSOAPBinding" name="BookEntryServiceSOAP">
+      <soap:address location="http://10.136.192.75:9080/BookEntryServices/BookEntryService"/>
+    </port>
+  </service>
+</definitions>

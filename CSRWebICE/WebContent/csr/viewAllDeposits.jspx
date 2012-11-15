@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+			<ice:form styleClass="form" id="form1">
+		<h2>View All Deposits</h2>
+			<p><ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			<br/>
+			<ice:panelGrid styleClass="infoBox" >
+
+						
+							<ice:outputText value="All Values with a * are required" /><br/>
+							
+					</ice:panelGrid>
+			<ice:panelGrid styleClass="panelGrid" id="grid1" columns="5">
+
+				<ice:outputText styleClass="outputLabel" id="text7" value="Transaction Type* :"></ice:outputText>
+				<ice:selectOneMenu styleClass="selectOneMenu" id="menu3" value="#{viewAllDepositsBean.txnTypeItem}">
+					<f:selectItems id="selectItems3"
+						value="#{viewAllDepositsBean.txnTypeMenu}" />
+				</ice:selectOneMenu>
+				<ice:outputText styleClass="outputText" id="text9"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text10"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text11"></ice:outputText>
+				<ice:outputText styleClass="outputLabel" id="text2" value="Bank* :"></ice:outputText>
+				<ice:selectOneMenu styleClass="selectOneMenu" id="menu1"
+					value="#{viewAllDepositsBean.bankItem}">
+					<!-- valueChangeListener="#{viewAllDepositsBean.handleBankValueChange}"
+					onchange="this.form.submit()" immediate="true"-->
+					<f:selectItems id="selectItems1"
+						value="#{viewAllDepositsBean.bankMenu}" />
+				</ice:selectOneMenu>
+				<ice:outputText styleClass="outputLabel" id="text4" value="Branch* :"></ice:outputText>
+				<ice:selectOneMenu styleClass="selectOneMenu" id="menu2"
+					value="#{viewAllDepositsBean.branchItem}" disabled="#{viewAllDepositsBean.disableBranchMenu}">
+					<f:selectItems id="selectItems2"
+						value="#{viewAllDepositsBean.branchMenu}" />
+				</ice:selectOneMenu>
+				<ice:outputText styleClass="outputText" id="text15"></ice:outputText>
+				<ice:outputText styleClass="outputLabel" id="text6"
+					value="Date From* :"></ice:outputText>
+				<ice:inputText styleClass="inputText" id="text8"
+					value="#{viewAllDepositsBean.fromDate}">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</ice:inputText>
+				<ice:outputText styleClass="outputLabel" id="text20" value="To* :"></ice:outputText>
+				<ice:inputText styleClass="inputText" id="text22"
+					value="#{viewAllDepositsBean.toDate}">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</ice:inputText>
+				<ice:commandButton type="submit" value="Search"
+					styleClass="commandButton" id="button1"
+					action="#{viewAllDepositsBean.search}"></ice:commandButton>
+				<ice:outputText styleClass="outputLabel" id="text5"></ice:outputText>
+
+				
+				<ice:outputText styleClass="outputText" id="text3"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text24"></ice:outputText>
+				<ice:commandButton type="submit" value="Current "
+					styleClass="commandButton" id="button2"
+					action="#{viewAllDepositsBean.searchLatest}"></ice:commandButton>
+				<ice:outputText styleClass="outputText" id="text23"></ice:outputText>
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" id="group1">
+						<ice:outputText styleClass="panelGridLabel" id="text1"
+							value="Deposits Made"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+			</ice:panelGrid>
+			<br/>
+			<br/>
+			<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+				columnClasses="columnClass1" headerClass="headerClass"
+				footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+				styleClass="dataTable" id="tableEx1" value="#{viewAllDepositsBean.results}" var="txn">
+				<f:facet name="header">
+						<ice:outputText styleClass="outputLabel" id="text13"
+							value="#{viewAllDepositsBean.tableHeader}"></ice:outputText>
+					
+				</f:facet>
+				<ice:column id="column1">
+					<f:facet name="header">
+						<ice:outputText id="text12" styleClass="outputText"
+							value="Transaction"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text26"
+						value="#{txn.transactionType}">
+						<f:converter converterId="replaceUnderscoreConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="column2">
+					<f:facet name="header">
+						<ice:outputText value="Source Number" styleClass="outputText"
+							id="text14"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text27" value="#{txn.sourceMobileId}">
+					  <f:converter converterId="mobileProfileConverter"/>    
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="column4">
+					<f:facet name="header">
+						<ice:outputText value="Customer Name" styleClass="outputText"
+							id="text17"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text29" value="#{txn.sourceMobileId}">
+					<f:converter converterId="customerNameConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="column6">
+					<f:facet name="header">
+						<ice:outputText value="Amount" styleClass="outputText" id="text19"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text31" value="#{txn.amount}">
+					<f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="column7">
+					<f:facet name="header">
+						<ice:outputText value="Balance" styleClass="outputText" id="text21"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text32" value="#{txn.balance}">
+					<f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="column8">
+					<f:facet name="header">
+						<ice:outputText value="Bank" styleClass="outputText" id="text25"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text33"
+						value="#{txn.branchId}">
+						<f:converter converterId="bankNameBranchConverter"/>
+						</ice:outputText>
+				</ice:column>
+				<ice:column id="column18">
+					<f:facet name="header">
+						<ice:outputText value="Branch" styleClass="outputText" id="text54"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text56"
+						value="#{txn.branchId}">
+						<f:converter converterId="branchNameConverter"/>
+						</ice:outputText>
+				</ice:column>
+				<ice:column id="column9">
+					<f:facet name="header">
+						<ice:outputText value="Date" styleClass="outputText" id="text34"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text35" value="#{txn.dateCreated}">
+						<f:converter converterId="xmlDateConverter" />
+					</ice:outputText>
+				</ice:column>
+			</ice:dataTable>
+		</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

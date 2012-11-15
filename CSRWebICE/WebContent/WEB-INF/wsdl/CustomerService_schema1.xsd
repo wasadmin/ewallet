@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.customerservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.customerservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="activateCustomer" type="tns:activateCustomer"/>
+
+  <xs:element name="activateCustomerResponse" type="tns:activateCustomerResponse"/>
+
+  <xs:element name="approveCustomer" type="tns:approveCustomer"/>
+
+  <xs:element name="approveCustomerResponse" type="tns:approveCustomerResponse"/>
+
+  <xs:element name="approveMobileNumber" type="tns:approveMobileNumber"/>
+
+  <xs:element name="approveMobileNumberResponse" type="tns:approveMobileNumberResponse"/>
+
+  <xs:element name="authenticateMobileProfile" type="tns:authenticateMobileProfile"/>
+
+  <xs:element name="authenticateMobileProfileResponse" type="tns:authenticateMobileProfileResponse"/>
+
+  <xs:element name="coldMobileNumber" type="tns:coldMobileNumber"/>
+
+  <xs:element name="coldMobileNumberResponse" type="tns:coldMobileNumberResponse"/>
+
+  <xs:element name="createCustomer" type="tns:createCustomer"/>
+
+  <xs:element name="createCustomerResponse" type="tns:createCustomerResponse"/>
+
+  <xs:element name="createMobileProfile" type="tns:createMobileProfile"/>
+
+  <xs:element name="createMobileProfileResponse" type="tns:createMobileProfileResponse"/>
+
+  <xs:element name="deleteCustomer" type="tns:deleteCustomer"/>
+
+  <xs:element name="deleteCustomerResponse" type="tns:deleteCustomerResponse"/>
+
+  <xs:element name="deleteMobileProfile" type="tns:deleteMobileProfile"/>
+
+  <xs:element name="deleteMobileProfileResponse" type="tns:deleteMobileProfileResponse"/>
+
+  <xs:element name="deregisterCustomer" type="tns:deregisterCustomer"/>
+
+  <xs:element name="deregisterCustomerResponse" type="tns:deregisterCustomerResponse"/>
+
+  <xs:element name="findCustomerById" type="tns:findCustomerById"/>
+
+  <xs:element name="findCustomerByIdResponse" type="tns:findCustomerByIdResponse"/>
+
+  <xs:element name="findMobileProfileById" type="tns:findMobileProfileById"/>
+
+  <xs:element name="findMobileProfileByIdResponse" type="tns:findMobileProfileByIdResponse"/>
+
+  <xs:element name="generateTxnPassCode" type="tns:generateTxnPassCode"/>
+
+  <xs:element name="generateTxnPassCodeResponse" type="tns:generateTxnPassCodeResponse"/>
+
+  <xs:element name="getCustomerByBranchId" type="tns:getCustomerByBranchId"/>
+
+  <xs:element name="getCustomerByBranchIdResponse" type="tns:getCustomerByBranchIdResponse"/>
+
+  <xs:element name="getCustomerByDateOfBirth" type="tns:getCustomerByDateOfBirth"/>
+
+  <xs:element name="getCustomerByDateOfBirthResponse" type="tns:getCustomerByDateOfBirthResponse"/>
+
+  <xs:element name="getCustomerByGender" type="tns:getCustomerByGender"/>
+
+  <xs:element name="getCustomerByGenderResponse" type="tns:getCustomerByGenderResponse"/>
+
+  <xs:element name="getCustomerByLastName" type="tns:getCustomerByLastName"/>
+
+  <xs:element name="getCustomerByLastNameResponse" type="tns:getCustomerByLastNameResponse"/>
+
+  <xs:element name="getCustomerByNationalId" type="tns:getCustomerByNationalId"/>
+
+  <xs:element name="getCustomerByNationalIdResponse" type="tns:getCustomerByNationalIdResponse"/>
+
+  <xs:element name="getCustomerByStatus" type="tns:getCustomerByStatus"/>
+
+  <xs:element name="getCustomerByStatusAndLastBranch" type="tns:getCustomerByStatusAndLastBranch"/>
+
+  <xs:element name="getCustomerByStatusAndLastBranchResponse" type="tns:getCustomerByStatusAndLastBranchResponse"/>
+
+  <xs:element name="getCustomerByStatusResponse" type="tns:getCustomerByStatusResponse"/>
+
+  <xs:element name="getCustomersByWrapper" type="tns:getCustomersByWrapper"/>
+
+  <xs:element name="getCustomersByWrapperResponse" type="tns:getCustomersByWrapperResponse"/>
+
+  <xs:element name="getMobileProfileByBankAndMobileNumber" type="tns:getMobileProfileByBankAndMobileNumber"/>
+
+  <xs:element name="getMobileProfileByBankAndMobileNumberResponse" type="tns:getMobileProfileByBankAndMobileNumberResponse"/>
+
+  <xs:element name="getMobileProfileByBankIdMobileNumberAndStatus" type="tns:getMobileProfileByBankIdMobileNumberAndStatus"/>
+
+  <xs:element name="getMobileProfileByBankIdMobileNumberAndStatusResponse" type="tns:getMobileProfileByBankIdMobileNumberAndStatusResponse"/>
+
+  <xs:element name="getMobileProfileByCustomer" type="tns:getMobileProfileByCustomer"/>
+
+  <xs:element name="getMobileProfileByCustomerResponse" type="tns:getMobileProfileByCustomerResponse"/>
+
+  <xs:element name="getMobileProfileByMobileNumber" type="tns:getMobileProfileByMobileNumber"/>
+
+  <xs:element name="getMobileProfileByMobileNumberResponse" type="tns:getMobileProfileByMobileNumberResponse"/>
+
+  <xs:element name="getMobileProfileByStatus" type="tns:getMobileProfileByStatus"/>
+
+  <xs:element name="getMobileProfileByStatusResponse" type="tns:getMobileProfileByStatusResponse"/>
+
+  <xs:element name="getMobileProfileListByMobileNumber" type="tns:getMobileProfileListByMobileNumber"/>
+
+  <xs:element name="getMobileProfileListByMobileNumberResponse" type="tns:getMobileProfileListByMobileNumberResponse"/>
+
+  <xs:element name="hotMobileNumber" type="tns:hotMobileNumber"/>
+
+  <xs:element name="hotMobileNumberResponse" type="tns:hotMobileNumberResponse"/>
+
+  <xs:element name="mobileProfileIsActive" type="tns:mobileProfileIsActive"/>
+
+  <xs:element name="mobileProfileIsActiveResponse" type="tns:mobileProfileIsActiveResponse"/>
+
+  <xs:element name="rejectCustomer" type="tns:rejectCustomer"/>
+
+  <xs:element name="rejectCustomerResponse" type="tns:rejectCustomerResponse"/>
+
+  <xs:element name="rejectMobileNumber" type="tns:rejectMobileNumber"/>
+
+  <xs:element name="rejectMobileNumberResponse" type="tns:rejectMobileNumberResponse"/>
+
+  <xs:element name="suspendCustomer" type="tns:suspendCustomer"/>
+
+  <xs:element name="suspendCustomerResponse" type="tns:suspendCustomerResponse"/>
+
+  <xs:element name="txnPassCodeIsValid" type="tns:txnPassCodeIsValid"/>
+
+  <xs:element name="txnPassCodeIsValidResponse" type="tns:txnPassCodeIsValidResponse"/>
+
+  <xs:element name="updateCustomer" type="tns:updateCustomer"/>
+
+  <xs:element name="updateCustomerResponse" type="tns:updateCustomerResponse"/>
+
+  <xs:element name="updateMobileProfile" type="tns:updateMobileProfile"/>
+
+  <xs:element name="updateMobileProfileResponse" type="tns:updateMobileProfileResponse"/>
+
+  <xs:complexType name="updateCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customer">
+    <xs:sequence>
+      <xs:element name="activate" type="xs:boolean"/>
+      <xs:element name="approvable" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+      <xs:element minOccurs="0" name="contactDetailsId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerClass" type="tns:customerClass"/>
+      <xs:element minOccurs="0" name="customerLastBranch" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime"/>
+      <xs:element name="deregister" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="firstNames" type="xs:string"/>
+      <xs:element minOccurs="0" name="gender" type="tns:gender"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+      <xs:element minOccurs="0" name="maritalStatus" type="tns:maritalStatus"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="mobileProfiles" nillable="true" type="tns:mobileProfile"/>
+      <xs:element minOccurs="0" name="nationalId" type="xs:string"/>
+      <xs:element name="renderApproval" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="status" type="tns:customerStatus"/>
+      <xs:element name="suspended" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="title" type="xs:string"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mobileProfile">
+    <xs:sequence>
+      <xs:element name="approvable" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+      <xs:element name="coldable" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element name="hottable" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileProfileEditBranch" type="xs:string"/>
+      <xs:element name="mobileProfileRenderApproval" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="network" type="tns:mobileNetworkOperator"/>
+      <xs:element name="passwordRetryCount" type="xs:int"/>
+      <xs:element name="primary" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="referralCode" type="xs:string"/>
+      <xs:element name="referralProcessed" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="responseCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="secretCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:mobileProfileStatus"/>
+      <xs:element minOccurs="0" name="timeout" type="xs:dateTime"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="coldMobileNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileprofile" type="tns:mobileProfile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="coldMobileNumberResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByDateOfBirth">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateOfBirth" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByDateOfBirthResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByBranchId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByBranchIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectMobileNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileprofile" type="tns:mobileProfile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectMobileNumberResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createMobileProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileProfile" type="tns:mobileProfile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createMobileProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mobileProfileIsActive">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="mobileProfileIsActiveResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileListByMobileNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileListByMobileNumberResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="authenticateMobileProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="secretCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="authenticateMobileProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseCode"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileByMobileNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileByMobileNumberResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:customerStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomersByWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerWrapper" type="tns:customerWrapper"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customerWrapper">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankAccountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerClass" type="tns:customerClass"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="finacialInstitution" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="nationalID" type="xs:string"/>
+      <xs:element minOccurs="0" name="registrationBranch" type="xs:string"/>
+      <xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="tns:customerStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomersByWrapperResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateMobileProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileProfile" type="tns:mobileProfile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateMobileProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileByBankAndMobileNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileByBankAndMobileNumberResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileByBankIdMobileNumberAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:mobileProfileStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileByBankIdMobileNumberAndStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByNationalId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nationalId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByNationalIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileByCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileByCustomerResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findMobileProfileById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findMobileProfileByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deregisterCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deregisterCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByGender">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gender" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByGenderResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByLastName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByLastNameResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findCustomerById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findCustomerByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="txnPassCodeIsValid">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="request" type="tns:validateTxnPassCodeReq"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateTxnPassCodeReq">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="firstIndex" type="xs:int"/>
+      <xs:element minOccurs="0" name="firstValue" type="xs:int"/>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="secondIndex" type="xs:int"/>
+      <xs:element minOccurs="0" name="secondValue" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="txnPassCodeIsValidResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activateCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activateCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByStatusAndLastBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:customerStatus"/>
+      <xs:element minOccurs="0" name="lastBranch" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerByStatusAndLastBranchResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="generateTxnPassCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="generateTxnPassCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:generateTxnPassCodeResp"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="generateTxnPassCodeResp">
+    <xs:sequence>
+      <xs:element name="firstIndex" type="xs:int"/>
+      <xs:element name="secondIndex" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteMobileProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileProfile" type="tns:mobileProfile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteMobileProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveMobileNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileprofile" type="tns:mobileProfile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveMobileNumberResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="hotMobileNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileprofile" type="tns:mobileProfile"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="hotMobileNumberResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="suspendCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="suspendCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="tns:customer"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMobileProfileByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="customerClass">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="REGULAR"/>
+      <xs:enumeration value="EMPLOYEE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="gender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MALE"/>
+      <xs:enumeration value="FEMALE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="maritalStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SINGLE"/>
+      <xs:enumeration value="MARRIED"/>
+      <xs:enumeration value="WIDOWED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mobileNetworkOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ECONET"/>
+      <xs:enumeration value="NETONE"/>
+      <xs:enumeration value="TELECEL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mobileProfileStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="LOCKED"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="DELETED"/>
+      <xs:enumeration value="HOT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="customerStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DRAFT"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="AWAITING_ACTIVATION"/>
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="SUSPENDED"/>
+      <xs:enumeration value="TERMINATED"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="responseCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="E000"/>
+      <xs:enumeration value="E400"/>
+      <xs:enumeration value="E401"/>
+      <xs:enumeration value="E402"/>
+      <xs:enumeration value="E403"/>
+      <xs:enumeration value="E500"/>
+      <xs:enumeration value="E501"/>
+      <xs:enumeration value="E502"/>
+      <xs:enumeration value="E503"/>
+      <xs:enumeration value="E504"/>
+      <xs:enumeration value="E505"/>
+      <xs:enumeration value="E506"/>
+      <xs:enumeration value="E700"/>
+      <xs:enumeration value="E701"/>
+      <xs:enumeration value="E702"/>
+      <xs:enumeration value="E703"/>
+      <xs:enumeration value="E704"/>
+      <xs:enumeration value="E705"/>
+      <xs:enumeration value="E706"/>
+      <xs:enumeration value="E707"/>
+      <xs:enumeration value="E708"/>
+      <xs:enumeration value="E709"/>
+      <xs:enumeration value="E710"/>
+      <xs:enumeration value="E711"/>
+      <xs:enumeration value="E712"/>
+      <xs:enumeration value="E713"/>
+      <xs:enumeration value="E714"/>
+      <xs:enumeration value="E715"/>
+      <xs:enumeration value="E716"/>
+      <xs:enumeration value="E717"/>
+      <xs:enumeration value="E718"/>
+      <xs:enumeration value="E719"/>
+      <xs:enumeration value="E720"/>
+      <xs:enumeration value="E721"/>
+      <xs:enumeration value="E722"/>
+      <xs:enumeration value="E723"/>
+      <xs:enumeration value="E724"/>
+      <xs:enumeration value="E725"/>
+      <xs:enumeration value="E777"/>
+      <xs:enumeration value="E800"/>
+      <xs:enumeration value="E801"/>
+      <xs:enumeration value="E802"/>
+      <xs:enumeration value="E803"/>
+      <xs:enumeration value="E804"/>
+      <xs:enumeration value="E805"/>
+      <xs:enumeration value="E806"/>
+      <xs:enumeration value="E807"/>
+      <xs:enumeration value="E808"/>
+      <xs:enumeration value="E809"/>
+      <xs:enumeration value="E810"/>
+      <xs:enumeration value="E811"/>
+      <xs:enumeration value="E812"/>
+      <xs:enumeration value="E813"/>
+      <xs:enumeration value="E814"/>
+      <xs:enumeration value="E815"/>
+      <xs:enumeration value="E816"/>
+      <xs:enumeration value="E817"/>
+      <xs:enumeration value="E818"/>
+      <xs:enumeration value="E819"/>
+      <xs:enumeration value="E820"/>
+      <xs:enumeration value="E821"/>
+      <xs:enumeration value="E822"/>
+      <xs:enumeration value="E823"/>
+      <xs:enumeration value="E824"/>
+      <xs:enumeration value="E825"/>
+      <xs:enumeration value="E826"/>
+      <xs:enumeration value="E827"/>
+      <xs:enumeration value="E828"/>
+      <xs:enumeration value="E829"/>
+      <xs:enumeration value="E900"/>
+      <xs:enumeration value="E901"/>
+      <xs:enumeration value="E902"/>
+      <xs:enumeration value="E903"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

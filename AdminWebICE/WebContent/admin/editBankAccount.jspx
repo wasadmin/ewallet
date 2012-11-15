@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<ice:form styleClass="form" id="form1">
+						<ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" globalOnly="true"></ice:messages>
+						<ice:outputText value="All fields marked with a * are required"></ice:outputText>
+						<ice:inputHidden value="#{editBankAccountBean.bankAccountId}"></ice:inputHidden>
+						<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+							cellspacing="5" width="600" columns="3">
+							<f:facet name="header">
+								<ice:panelGroup styleClass="panelGroup" id="group1">
+									<ice:outputLabel value="Edit Bank Account Details"
+										styleClass="outputLabel" id="label1"></ice:outputLabel>
+								</ice:panelGroup>
+							</f:facet>
+							<ice:outputLabel value="Account Name*" styleClass="outputLabel"
+								id="label3"></ice:outputLabel>
+							<ice:inputText styleClass="inputText" id="accountName"
+								value="#{editBankAccountBean.bankAccount.accountName}" required="true" requiredMessage="Please enter an account name"></ice:inputText>
+								<ice:message styleClass="messages" for="accountName" errorClass="errorMsg"></ice:message>
+							<ice:outputLabel value="Account Number*" styleClass="outputLabel"
+								id="label4"></ice:outputLabel>
+							<ice:inputText styleClass="inputText" id="accountNumber"
+								value="#{editBankAccountBean.bankAccount.accountNumber}" required="true" requiredMessage="Please enter an account number"></ice:inputText>
+								<ice:message styleClass="messages" for="accountNumber" errorClass="errorMsg"></ice:message>
+							<ice:outputLabel value="Account  Level*" styleClass="outputLabel"
+								id="label5"></ice:outputLabel>
+							<ice:selectOneMenu styleClass="selectOneMenu" id="accountLevel" value="#{editBankAccountBean.selectedLevel}" required="true" requiredMessage="Please select the account level">
+								<f:selectItems id="selectItems2"
+									value="#{editBankAccountBean.accountLevelList}" />
+							</ice:selectOneMenu>
+							<ice:message styleClass="messages" for="accountLevel" errorClass="errorMsg"></ice:message>
+							<ice:outputLabel value="Account Type*" styleClass="outputLabel"
+								id="label6"></ice:outputLabel>
+							<ice:selectOneMenu styleClass="selectOneMenu" id="accountType" value="#{editBankAccountBean.selectedAccountType}" required="true" requiredMessage="Please select the account type">
+								<f:selectItems id="selectItems3"
+									value="#{editBankAccountBean.accountTypeList}" />
+							</ice:selectOneMenu>
+							<ice:message styleClass="messages" for="accountType" errorClass="errorMsg"></ice:message>
+							<ice:outputLabel value="Account Class*" styleClass="outputLabel"
+								id="label7"></ice:outputLabel>
+							<ice:selectOneMenu styleClass="selectOneMenu" id="accountClass" value="#{editBankAccountBean.selectedClass}" required="true" requiredMessage="Please enter an account class">
+								<f:selectItems id="selectItems1"
+									value="#{editBankAccountBean.accountClassList}" />
+							</ice:selectOneMenu>
+							<ice:message styleClass="messages" for="accountClass" errorClass="errorMsg"></ice:message>
+						</ice:panelGrid>
+						<ice:panelGrid styleClass="panelGrid" id="grid2" columns="2">
+							<ice:commandButton type="submit" value="Submit" 
+								styleClass="commandButton" id="button1"
+								action="#{editBankAccountBean.submit}"></ice:commandButton>
+							<ice:commandButton type="submit" value="Cancel" 
+								styleClass="commandButton" id="button2"
+								action="#{editBankAccountBean.cancel}" partialSubmit="true"></ice:commandButton>
+						</ice:panelGrid>
+					</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>
+					

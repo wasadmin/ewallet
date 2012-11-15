@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="USSDTestWeb">
+        <wb-resource deploy-path="/" source-path="/WebContent"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
+        <property name="java-output-path" value="WebContent/WEB-INF/classes"/>
+        <property name="jsf.standard.scheme.managedBean" value="singleFile"/>
+        <property name="jsf.standard.scheme.other" value="singleFile"/>
+        <property name="jsf.standard.scheme.navigationRule.filePath" value="/WEB-INF/faces-config.xml"/>
+        <property name="jsf.standard.scheme.pageCodeBean" value="singleFile"/>
+        <property name="context-root" value="USSDTestWeb"/>
+        <property name="jsf.standard.scheme.pageCodeBean.filePath" value="/WEB-INF/faces-config.xml"/>
+        <property name="JSFComposite.TAGLIB_URI" value="http://co.zw/jsf/USSDTestWeb"/>
+        <property name="jsf.standard.scheme.other.filePath" value="/WEB-INF/faces-config.xml"/>
+        <property name="JSFComposite.TAG_PREFIX" value="u"/>
+        <property name="jsf.base" value="7.5.0.0"/>
+        <property name="jsf.ri" value="7.5.0.0"/>
+        <property name="jsf.standard.scheme.navigationRule" value="singleFile"/>
+        <property name="jsf.standard.scheme.managedBean.filePath" value="/WEB-INF/faces-config.xml"/>
+        <property name="JSFComposite.PACKAGE_PREFIX" value="zw.co.faces.ussdtestweb"/>
+        <property name="jsf.extended" value="8.0.300.v20090430-1430"/>
+    </wb-module>
+</project-modules>

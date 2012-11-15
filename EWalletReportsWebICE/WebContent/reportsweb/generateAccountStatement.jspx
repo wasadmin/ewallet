@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1">
+		<h2>View Account Statement</h2>
+			<p><ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			<br/>
+			<ice:panelGrid styleClass="infoBox" >
+
+						
+							<ice:outputText value="All Values with a * are required" /><br/>
+							
+					</ice:panelGrid>
+			<ice:panelGrid styleClass="panelGrid" id="grid4" cellpadding="5"
+							cellspacing="5" width="600" columns="1" >
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup">
+						<ice:outputText styleClass="panelGridLabel"
+							value="Account Selection"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+				<ice:selectOneRadio disabledClass="selectOneRadio_Disabled"
+				enabledClass="selectOneRadio_Enabled" styleClass="selectOneRadio"
+				id="radio1" value = "#{generateAccountStatementBean.accountId}">
+					<f:selectItems value="#{generateAccountStatementBean.accountMenu}" />
+				</ice:selectOneRadio>
+			</ice:panelGrid>
+			<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+							cellspacing="5" width="600" columns="3">
+
+				<ice:outputText styleClass="outputLabel" id="text6"
+					value="Date From(dd/MM/yyyy) :"></ice:outputText>
+				<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+									renderMonthAsDropdown="true" renderYearAsDropdown="true"
+									value="#{generateAccountStatementBean.fromDate}" >
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+				</ice:selectInputDate>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+				<ice:outputText styleClass="outputLabel" id="text20" value="To Date(dd/MM/yyyy) :"></ice:outputText>
+				<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+									renderMonthAsDropdown="true" renderYearAsDropdown="true"
+									value="#{generateAccountStatementBean.toDate}" >
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+				</ice:selectInputDate>
+				<ice:commandButton type="submit" value="Generate"
+				
+					styleClass="commandButton" id="button1"
+					action="#{generateAccountStatementBean.generateReport}"></ice:commandButton>
+					
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				<ice:commandButton type="submit" value="Back"
+					styleClass="commandButton" id="button2"
+					action="#{generateAccountStatementBean.doBack}"></ice:commandButton>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+					
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup">
+						<ice:outputText styleClass="panelGridLabel"
+							value="Account Statement Report"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+			</ice:panelGrid>
+			<br/>
+			<br/>
+			<ice:inputHidden value="#{generateAccountStatementBean.accountId}" id="Id0"></ice:inputHidden>
+		    <ice:inputHidden value="#{generateAccountStatementBean.bankId}" id="Id1"></ice:inputHidden>
+		
+		</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

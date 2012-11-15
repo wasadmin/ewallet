@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://econetvas.econet.co.zw/" version="1.0" xmlns:tns="http://econetvas.econet.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="balanceEnquiry" type="tns:balanceEnquiry"/>
+
+  <xs:element name="balanceEnquiryResponse" type="tns:balanceEnquiryResponse"/>
+
+  <xs:element name="billPay" type="tns:billPay"/>
+
+  <xs:element name="billPayResponse" type="tns:billPayResponse"/>
+
+  <xs:element name="billPayReversal" type="tns:billPayReversal"/>
+
+  <xs:element name="billPayReversalResponse" type="tns:billPayReversalResponse"/>
+
+  <xs:element name="creditReversal" type="tns:creditReversal"/>
+
+  <xs:element name="creditReversalResponse" type="tns:creditReversalResponse"/>
+
+  <xs:element name="creditSubscriber" type="tns:creditSubscriber"/>
+
+  <xs:element name="creditSubscriberResponse" type="tns:creditSubscriberResponse"/>
+
+  <xs:element name="debitSubscriber" type="tns:debitSubscriber"/>
+
+  <xs:element name="debitSubscriberResponse" type="tns:debitSubscriberResponse"/>
+
+  <xs:element name="txtCredit" type="tns:txtCredit"/>
+
+  <xs:element name="txtCreditResponse" type="tns:txtCreditResponse"/>
+
+  <xs:element name="txtDebit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="txtDebitRequest" type="tns:TextDebitRequest"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="txtDebitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="txtDebitResponse" type="tns:TextDebitResponse"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="BillPaymentReversalRequest">
+    <xs:sequence>
+      <xs:element name="reference" type="xs:string"/>
+      <xs:element name="targetMobileNumber" type="xs:string"/>
+      <xs:element name="amount" type="xs:string"/>
+      <xs:element name="serviceId" type="xs:string"/>
+      <xs:element name="serviceProviderId" type="xs:string"/>
+      <xs:element name="sourceMobileNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="txtCredit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="txtCreditRequest" type="tns:TextCreditRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TextCreditRequest">
+    <xs:sequence>
+      <xs:element name="serviceId" type="xs:string"/>
+      <xs:element name="reference" type="xs:string"/>
+      <xs:element name="serviceProviderId" type="xs:string"/>
+      <xs:element name="amount" type="xs:double"/>
+      <xs:element name="targetMobileNumber" type="xs:string"/>
+      <xs:element name="numberOfTexts" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BillPaymentRequest">
+    <xs:sequence>
+      <xs:element name="reference" type="xs:string"/>
+      <xs:element name="targetMobileNumber" type="xs:string"/>
+      <xs:element name="serviceId" type="xs:string"/>
+      <xs:element name="serviceProviderId" type="xs:string"/>
+      <xs:element name="amount" type="xs:double"/>
+      <xs:element name="sourceMobileNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="txtCreditResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="txtCreditResponse" type="tns:TextCreditResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TextCreditResponse">
+    <xs:sequence>
+      <xs:element name="textCreditRequest" type="tns:TextCreditRequest"/>
+      <xs:element name="responseCode" type="xs:string"/>
+      <xs:element name="narrative" type="xs:string"/>
+      <xs:element name="numberOfTextsAdded" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="creditReversal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="originalCredit" type="tns:CreditRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CreditRequest">
+    <xs:sequence>
+      <xs:element name="reference" type="xs:string"/>
+      <xs:element name="amount" type="xs:double"/>
+      <xs:element name="targetMobileNumber" type="xs:string"/>
+      <xs:element name="serviceId" type="xs:string"/>
+      <xs:element name="serviceProviderId" type="xs:string"/>
+      <xs:element name="sourceMobileNumber" type="xs:string"/>
+      <xs:element name="numberOfDays" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="balanceEnquiry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="balanceRequest" type="tns:BalanceRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BalanceRequest">
+    <xs:sequence>
+      <xs:element name="reference" type="xs:string"/>
+      <xs:element name="mobileNumber" type="xs:string"/>
+      <xs:element name="serviceId" type="xs:string"/>
+      <xs:element name="serviceProviderId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="debitSubscriber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="debitSubscriberRequest" type="tns:DebitRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DebitRequest">
+    <xs:sequence>
+      <xs:element name="reference" type="xs:string"/>
+      <xs:element name="amount" type="xs:double"/>
+      <xs:element name="serviceId" type="xs:string"/>
+      <xs:element name="serviceProviderId" type="xs:string"/>
+      <xs:element name="sourceMobileNumber" type="xs:string"/>
+      <xs:element name="targetMobileNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BillPaymentResponse">
+    <xs:sequence>
+      <xs:element name="paymentRequest" type="tns:BillPaymentRequest"/>
+      <xs:element name="responseCode" type="xs:string"/>
+      <xs:element name="narrative" type="xs:string"/>
+      <xs:element name="balance" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TextDebitRequest">
+    <xs:sequence>
+      <xs:element name="reference" type="xs:string"/>
+      <xs:element name="serviceId" type="xs:string"/>
+      <xs:element name="serviceProviderId" type="xs:string"/>
+      <xs:element name="amount" type="xs:double"/>
+      <xs:element name="targetMobileNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BillPaymentReversalResponse">
+    <xs:sequence>
+      <xs:element name="billReversalRequest" type="tns:BillPaymentReversalRequest"/>
+      <xs:element name="responseCode" type="xs:string"/>
+      <xs:element name="narrative" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="billPayResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="billPayResponse" type="tns:BillPaymentResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CreditReversalResult">
+    <xs:sequence>
+      <xs:element name="responseCode" type="xs:string"/>
+      <xs:element name="narrative" type="xs:string"/>
+      <xs:element name="originalCreditRequest" type="tns:CreditRequest"/>
+      <xs:element name="initialBalance" type="xs:double"/>
+      <xs:element name="finalBalance" type="xs:double"/>
+      <xs:element name="numberOfDays" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="creditReversalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="reversalResult" type="tns:CreditReversalResult"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TextDebitResponse">
+    <xs:sequence>
+      <xs:element name="textDebitRequest" type="tns:TextDebitRequest"/>
+      <xs:element name="responseCode" type="xs:string"/>
+      <xs:element name="narrative" type="xs:string"/>
+      <xs:element name="numberOfTextsRemoved" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="balanceEnquiryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="balanceResponse" type="tns:BalanceResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="BalanceResponse">
+    <xs:sequence>
+      <xs:element name="balanceRequest" type="tns:BalanceRequest"/>
+      <xs:element name="currentBalance" type="xs:double"/>
+      <xs:element name="classOfService" type="xs:string"/>
+      <xs:element name="responseCode" type="xs:string"/>
+      <xs:element name="narrative" type="xs:string"/>
+      <xs:element name="maximumCredit" type="xs:double"/>
+      <xs:element name="expiryDate" type="xs:date"/>
+      <xs:element name="minimumTopup" type="xs:double"/>
+      <xs:element name="suscriberType" type="xs:string"/>
+      <xs:element name="maximumTopup" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="billPay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="billPayRequest" type="tns:BillPaymentRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="billPayReversal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="billPayReversalRequest" type="tns:BillPaymentReversalRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="debitSubscriberResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="debitSubscriberResponse" type="tns:DebitResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DebitResponse">
+    <xs:sequence>
+      <xs:element name="debitReq" type="tns:DebitRequest"/>
+      <xs:element name="responseCode" type="xs:string"/>
+      <xs:element name="narrative" type="xs:string"/>
+      <xs:element name="initialBalance" type="xs:double"/>
+      <xs:element name="finalBalance" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="creditSubscriber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="creditSubscriberRequest" type="tns:CreditRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="billPayReversalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="billPayReversalResponse" type="tns:BillPaymentReversalResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="creditSubscriberResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="creditSubcriberResponse" type="tns:CreditResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CreditResponse">
+    <xs:sequence>
+      <xs:element name="creditReq" type="tns:CreditRequest"/>
+      <xs:element name="responseCode" type="xs:string"/>
+      <xs:element name="narrative" type="xs:string"/>
+      <xs:element name="initialBalance" type="xs:double"/>
+      <xs:element name="daysAdded" type="xs:int"/>
+      <xs:element name="finalBalance" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

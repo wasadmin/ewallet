@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition>
+			<link href="../theme/style.css" rel="stylesheet" type="text/css"/>
+			<ice:form>
+			<h3>Admin Home :</h3>
+				<ul>
+					<li><ice:commandLink value="Home Page" action="#{menuBean.adminHome }" rendered="#{menuBean.renderAdminHome }"></ice:commandLink></li>
+					<li><ice:commandLink value="Change Password" action="#{menuBean.changeProfilePassword }" rendered="#{menuBean.renderChangeProfilePassword }"></ice:commandLink></li>
+					<li><ice:commandLink value="Logout" action="#{loginBean.logout }"></ice:commandLink></li> 
+					 
+				</ul>	
+				<h3>Banks And Merchants:</h3>
+				<ul>
+					<li><ice:commandLink value="Search Bank" action="#{menuBean.searchBank }" rendered="#{menuBean.renderSearchBank }"></ice:commandLink></li>
+					<li><ice:commandLink value="Search Bank Branch" action="#{menuBean.searchBankBranch }" rendered="#{menuBean.renderSearchBankBranch }"></ice:commandLink></li> 
+					<li><ice:commandLink value="New Branch" action="#{menuBean.createBankBranch }" rendered="#{menuBean.renderCreateBankBranch }"></ice:commandLink> </li>
+					<li><ice:commandLink value="Approve Branch" action="#{menuBean.approveBankBranch }" rendered="#{menuBean.renderApproveBankBranch }"></ice:commandLink> </li>
+					<li><ice:commandLink value="New Bank Account" action="#{menuBean.createBankAccount }" rendered="#{menuBean.renderCreateBankAccount }"></ice:commandLink> </li>
+					<li><ice:commandLink value="Search Bank Account" action="#{menuBean.searchBankAccount }" rendered="#{menuBean.renderSearchBankAccount }"></ice:commandLink></li>
+					<li><ice:commandLink value="Approve Bank Account" action="#{menuBean.approveBankAccount }" rendered="#{menuBean.renderApproveBankAccount }"></ice:commandLink></li>
+					<li><ice:commandLink value="New Bank Merchant" action="#{menuBean.createBankMerchant}" rendered="#{menuBean.renderCreateBankMerchant }"></ice:commandLink></li>				
+					<li><ice:commandLink value="Search Bank Merchant" action="#{menuBean.searchBankMerchant}" rendered="#{menuBean.renderSearchBankMerchant }"></ice:commandLink></li>
+					<li><ice:commandLink value="Approve Bank Merchant" action="#{menuBean.approveBankMerchant}" rendered="#{menuBean.renderApproveBankMerchant }"></ice:commandLink></li>
+				</ul>	
+				<h3>Profiles And Roles :</h3>
+				<ul>
+					<li><ice:commandLink value="New Profile" action="#{menuBean.createProfile }" rendered="#{menuBean.renderCreateProfile }"></ice:commandLink></li>
+					<li><ice:commandLink value="New Role" action="#{menuBean.createRole }" rendered="#{menuBean.renderCreateRole }"></ice:commandLink></li>
+					<li><ice:commandLink value="Search Profile" action="#{menuBean.searchProfile }" rendered="#{menuBean.renderSearchProfile }"></ice:commandLink></li>
+					<li><ice:commandLink value="View All Roles" action="#{menuBean.viewAllRoles }" rendered="#{menuBean.renderViewAllRoles }"></ice:commandLink> </li>
+					<li><ice:commandLink value="New Access Right" action="#{menuBean.createAccessRight }" rendered="#{menuBean.renderCreateAccessRight }"></ice:commandLink></li>
+					<li><ice:commandLink value="Search Access Rights" action="#{menuBean.searchAccessRight }" rendered="#{menuBean.renderSearchAccessRight }"></ice:commandLink> </li>
+					<li><ice:commandLink value="Approve Profiles" action="#{menuBean.approveProfile }" rendered="#{menuBean.renderApproveProfile }"></ice:commandLink></li>
+					<li><ice:commandLink value="Approve Roles" action="#{menuBean.approveRoles }" rendered="#{menuBean.renderApproveRoles }"></ice:commandLink></li>
+					
+				</ul>	
+				<h3>Commissions :</h3>
+				<ul>
+					<li><ice:commandLink value="New Commision Table" action="#{menuBean.createCommissionTable }" rendered="#{menuBean.renderCreateCommissionTable }"></ice:commandLink></li>
+					<li><ice:commandLink value="Approve Commision" action="#{menuBean.approveCommission }" rendered="#{menuBean.renderApproveCommission }"></ice:commandLink> </li>
+					<li><ice:commandLink value="Search Commision Tables" action="#{menuBean.viewAllCommissionTables }" rendered="#{menuBean.renderViewAllCommissionTables }"></ice:commandLink></li>
+					
+				</ul>	
+				<h3>Limits :</h3>
+				<ul>
+					<li><ice:commandLink value="New Limit" action="#{menuBean.createLimit }" rendered="#{menuBean.renderCreateLimit }"></ice:commandLink></li>					<li><ice:commandLink value="Search Limits" action="#{menuBean.viewAllLimits }" rendered="#{menuBean.renderViewAllLimits }"></ice:commandLink></li> 
+
+					<li><ice:commandLink value="Approve Limits" action="#{menuBean.approveLimit }" rendered="#{menuBean.renderApproveLimit }"></ice:commandLink></li>
+					
+				</ul>
+				<h3>Configurations :</h3>
+				<ul>
+					<li><ice:commandLink value="Schedule Run" action="#{menuBean.scheduleAccountBalanceRun}" rendered="#{menuBean.renderScheduleAccountBalanceRun}"></ice:commandLink></li>
+					<li><ice:commandLink value="Schedule Collection Run" action="#{menuBean.scheduleCollectionRun}" rendered="#{menuBean.renderScheduleCollectionRun}"></ice:commandLink></li>
+					<li><ice:commandLink value="Schedule Transaction Reversal Run" action="#{menuBean.scheduleTxnReversalRun}" rendered="#{menuBean.renderTxnReversalRun}"></ice:commandLink></li>
+					<li><ice:commandLink value="New Referral Config" action="#{menuBean.createReferralConfig }" rendered="#{menuBean.renderCreateReferralConfig }"></ice:commandLink></li>
+					<li><ice:commandLink value="Search Referral Config" action="#{menuBean.searchReferralConfig }" rendered="#{menuBean.renderSearchReferralConfig }"></ice:commandLink> </li>
+					<li><ice:commandLink value="Schedule Commission Sweep" action="#{menuBean.scheduleCommissionSweep}" rendered="#{menuBean.renderCommissionSweep}"></ice:commandLink></li>
+				</ul>
+				<h3>Audit Trail :</h3>
+				<ul>
+					<li><ice:commandLink value="Activities Config" action="#{menuBean.activityConfig }" rendered="#{menuBean.renderActivityConfig }"></ice:commandLink></li>
+					<li><ice:commandLink value="Search Logs" action="#{menuBean.searchLogs }" rendered="#{menuBean.renderSearchLogs }"></ice:commandLink> </li>
+										
+				</ul>
+				<h3>Alerts :</h3>
+				<ul>
+					<li><ice:commandLink value="Create Transaction Type" action="#{menuBean.createTransactionType }" rendered="#{menuBean.renderCreateTransactionType }"></ice:commandLink></li>
+					<li><ice:commandLink value="Approve Transaction Type" action="#{menuBean.approveTransactionType }" rendered="#{menuBean.renderApproveTransactionType }"></ice:commandLink> </li>
+					<li><ice:commandLink value="Global Alerts Config" action="#{menuBean.globalAlertsConfig }" rendered="#{menuBean.renderGlobalAlertsConfig }"></ice:commandLink></li>
+										
+				</ul>
+				<h3>Bulletins :</h3>
+				<ul>
+					<li><ice:commandLink value="Create Bulletin" action="#{menuBean.createBulletin }" rendered="#{menuBean.renderCreateBulletin }"></ice:commandLink></li>
+					<li><ice:commandLink value="Search Bulletins" action="#{menuBean.searchBulletin}" rendered="#{menuBean.renderSearchBulletin }"></ice:commandLink> </li>
+					<li><ice:commandLink value="Awaiting Approval" action="#{menuBean.bulletinAwaitingApproval }" rendered="#{menuBean.renderBulletinAwaitingApproval }"></ice:commandLink></li>
+										
+				</ul>
+				
+				</ice:form>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

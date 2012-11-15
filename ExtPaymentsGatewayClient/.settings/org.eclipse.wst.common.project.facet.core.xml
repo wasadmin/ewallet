@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faceted-project>
+  <runtime name="was.base.v7"/>
+  <fixed facet="java"/>
+  <fixed facet="jst.appclient"/>
+  <installed facet="java" version="1.6"/>
+  <installed facet="jst.appclient" version="5.0"/>
+  <installed facet="com.ibm.websphere.coexistence.appclient" version="7.0"/>
+  <installed facet="com.ibm.websphere.extended.appclient" version="7.0"/>
+</faceted-project>

@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.tariffservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.tariffservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="EWalletException" type="tns:EWalletException"/>
+
+  <xs:element name="approveCommission" type="tns:approveCommission"/>
+
+  <xs:element name="approveCommissionResponse" type="tns:approveCommissionResponse"/>
+
+  <xs:element name="calculateTariffCharge" type="tns:calculateTariffCharge"/>
+
+  <xs:element name="calculateTariffChargeResponse" type="tns:calculateTariffChargeResponse"/>
+
+  <xs:element name="createCommission" type="tns:createCommission"/>
+
+  <xs:element name="createCommissionResponse" type="tns:createCommissionResponse"/>
+
+  <xs:element name="createCommissionTable" type="tns:createCommissionTable"/>
+
+  <xs:element name="createCommissionTableResponse" type="tns:createCommissionTableResponse"/>
+
+  <xs:element name="deleteTariff" type="tns:deleteTariff"/>
+
+  <xs:element name="deleteTariffResponse" type="tns:deleteTariffResponse"/>
+
+  <xs:element name="deleteTariffTable" type="tns:deleteTariffTable"/>
+
+  <xs:element name="deleteTariffTableResponse" type="tns:deleteTariffTableResponse"/>
+
+  <xs:element name="disapproveCommission" type="tns:disapproveCommission"/>
+
+  <xs:element name="disapproveCommissionResponse" type="tns:disapproveCommissionResponse"/>
+
+  <xs:element name="editCommission" type="tns:editCommission"/>
+
+  <xs:element name="editCommissionResponse" type="tns:editCommissionResponse"/>
+
+  <xs:element name="editCommissionTable" type="tns:editCommissionTable"/>
+
+  <xs:element name="editCommissionTableResponse" type="tns:editCommissionTableResponse"/>
+
+  <xs:element name="findTariffById" type="tns:findTariffById"/>
+
+  <xs:element name="findTariffByIdResponse" type="tns:findTariffByIdResponse"/>
+
+  <xs:element name="findTariffTableById" type="tns:findTariffTableById"/>
+
+  <xs:element name="findTariffTableByIdResponse" type="tns:findTariffTableByIdResponse"/>
+
+  <xs:element name="getAllTariffTables" type="tns:getAllTariffTables"/>
+
+  <xs:element name="getAllTariffTablesByBankId" type="tns:getAllTariffTablesByBankId"/>
+
+  <xs:element name="getAllTariffTablesByBankIdResponse" type="tns:getAllTariffTablesByBankIdResponse"/>
+
+  <xs:element name="getAllTariffTablesResponse" type="tns:getAllTariffTablesResponse"/>
+
+  <xs:element name="getAllTariffs" type="tns:getAllTariffs"/>
+
+  <xs:element name="getAllTariffsByBankId" type="tns:getAllTariffsByBankId"/>
+
+  <xs:element name="getAllTariffsByBankIdResponse" type="tns:getAllTariffsByBankIdResponse"/>
+
+  <xs:element name="getAllTariffsResponse" type="tns:getAllTariffsResponse"/>
+
+  <xs:element name="getEffectiveTariffTablesForBank" type="tns:getEffectiveTariffTablesForBank"/>
+
+  <xs:element name="getEffectiveTariffTablesForBankResponse" type="tns:getEffectiveTariffTablesForBankResponse"/>
+
+  <xs:element name="getTariffByTariffTableAndBankId" type="tns:getTariffByTariffTableAndBankId"/>
+
+  <xs:element name="getTariffByTariffTableAndBankIdResponse" type="tns:getTariffByTariffTableAndBankIdResponse"/>
+
+  <xs:element name="getTariffByTariffTableIdValueTypeAndBankId" type="tns:getTariffByTariffTableIdValueTypeAndBankId"/>
+
+  <xs:element name="getTariffByTariffTableIdValueTypeAndBankIdResponse" type="tns:getTariffByTariffTableIdValueTypeAndBankIdResponse"/>
+
+  <xs:element name="getTariffTableByCustomerClassAndBankId" type="tns:getTariffTableByCustomerClassAndBankId"/>
+
+  <xs:element name="getTariffTableByCustomerClassAndBankIdResponse" type="tns:getTariffTableByCustomerClassAndBankIdResponse"/>
+
+  <xs:element name="getTariffTableByDateRangeAndBankId" type="tns:getTariffTableByDateRangeAndBankId"/>
+
+  <xs:element name="getTariffTableByDateRangeAndBankIdResponse" type="tns:getTariffTableByDateRangeAndBankIdResponse"/>
+
+  <xs:element name="getTariffTableByTariffStatusAndBankId" type="tns:getTariffTableByTariffStatusAndBankId"/>
+
+  <xs:element name="getTariffTableByTariffStatusAndBankIdResponse" type="tns:getTariffTableByTariffStatusAndBankIdResponse"/>
+
+  <xs:element name="getTariffTableByTariffTypeAndBankId" type="tns:getTariffTableByTariffTypeAndBankId"/>
+
+  <xs:element name="getTariffTableByTariffTypeAndBankIdResponse" type="tns:getTariffTableByTariffTypeAndBankIdResponse"/>
+
+  <xs:element name="getTariffTableByTariffTypeEffectiveDateAndBankId" type="tns:getTariffTableByTariffTypeEffectiveDateAndBankId"/>
+
+  <xs:element name="getTariffTableByTariffTypeEffectiveDateAndBankIdResponse" type="tns:getTariffTableByTariffTypeEffectiveDateAndBankIdResponse"/>
+
+  <xs:element name="getTariffTableByTariffTypeTransactionAgentTypeAndBankId" type="tns:getTariffTableByTariffTypeTransactionAgentTypeAndBankId"/>
+
+  <xs:element name="getTariffTableByTariffTypeTransactionAgentTypeAndBankIdResponse" type="tns:getTariffTableByTariffTypeTransactionAgentTypeAndBankIdResponse"/>
+
+  <xs:element name="getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankId" type="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankId"/>
+
+  <xs:element name="getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankIdResponse" type="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankIdResponse"/>
+
+  <xs:element name="getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankId" type="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankId"/>
+
+  <xs:element name="getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankIdResponse" type="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankIdResponse"/>
+
+  <xs:element name="getTariffTableByTransactionTypeAndBankId" type="tns:getTariffTableByTransactionTypeAndBankId"/>
+
+  <xs:element name="getTariffTableByTransactionTypeAndBankIdResponse" type="tns:getTariffTableByTransactionTypeAndBankIdResponse"/>
+
+  <xs:element name="getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankId" type="tns:getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankId"/>
+
+  <xs:element name="getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankIdResponse" type="tns:getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankIdResponse"/>
+
+  <xs:element name="getTariffsByTariffTableId" type="tns:getTariffsByTariffTableId"/>
+
+  <xs:element name="getTariffsByTariffTableIdResponse" type="tns:getTariffsByTariffTableIdResponse"/>
+
+  <xs:element name="retrieveAppropriateTariff" type="tns:retrieveAppropriateTariff"/>
+
+  <xs:element name="retrieveAppropriateTariffResponse" type="tns:retrieveAppropriateTariffResponse"/>
+
+  <xs:complexType name="getTariffTableByTariffTypeAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffType" type="tns:tariffType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTariffTypeAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tariffTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agentType" type="tns:agentType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerClass" type="tns:customerClass"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="oldTariffTableId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:tariffStatus"/>
+      <xs:element minOccurs="0" name="tariffType" type="tns:tariffType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tariffs" nillable="true" type="tns:tariff"/>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tariff">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element name="lowerLimit" type="xs:long"/>
+      <xs:element minOccurs="0" name="oldTariffId" type="xs:string"/>
+      <xs:element minOccurs="0" name="tariffTable" type="tns:tariffTable"/>
+      <xs:element name="upperLimit" type="xs:long"/>
+      <xs:element name="value" type="xs:long"/>
+      <xs:element minOccurs="0" name="valueType" type="tns:tariffValueType"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createCommissionTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffTable" type="tns:tariffTable"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createCommissionTableResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EWalletException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createCommission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariff" type="tns:tariff"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createCommissionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariff"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTransactionTypeAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTransactionTypeAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTariffTypeEffectiveDateAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffType" type="tns:tariffType"/>
+      <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="agentType" type="tns:agentType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTariffTypeEffectiveDateAndBankIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllTariffTablesByBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllTariffTablesByBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findTariffTableById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffTableId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findTariffTableByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTariffStatusAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:tariffStatus"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTariffStatusAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveCommission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffTable" type="tns:tariffTable"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveCommissionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffType" type="tns:tariffType"/>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="agentType" type="tns:agentType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEffectiveTariffTablesForBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEffectiveTariffTablesForBankResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffsByTariffTableId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tableId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffsByTariffTableIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariff"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editCommission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariff" type="tns:tariff"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editCommissionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariff"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="retrieveAppropriateTariff">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerClass" type="tns:customerClass"/>
+      <xs:element minOccurs="0" name="txnType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="agentType" type="tns:agentType"/>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="retrieveAppropriateTariffResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariff"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTariffTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffTableId" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTariffTableResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveCommission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffTable" type="tns:tariffTable"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveCommissionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllTariffs">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllTariffsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariff"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTariffTypeTransactionAgentTypeAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffType" type="tns:tariffType"/>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="agentType" type="tns:agentType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTariffTypeTransactionAgentTypeAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findTariffById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findTariffByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariff"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTariff">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffId" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTariffResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffType" type="tns:tariffType"/>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="agentType" type="tns:agentType"/>
+      <xs:element minOccurs="0" name="bankid" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByDateRangeAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByDateRangeAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllTariffTables">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllTariffTablesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffByTariffTableAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffTableId" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffByTariffTableAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariff"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffByTariffTableIdValueTypeAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffTableId" type="xs:string"/>
+      <xs:element minOccurs="0" name="valueType" type="tns:tariffValueType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffByTariffTableIdValueTypeAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariff"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="agentType" type="tns:agentType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllTariffsByBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllTariffsByBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariff"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="calculateTariffCharge">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerClass" type="tns:customerClass"/>
+      <xs:element minOccurs="0" name="txnType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="agentType" type="tns:agentType"/>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="calculateTariffChargeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByCustomerClassAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerClass" type="tns:customerClass"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTariffTableByCustomerClassAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editCommissionTable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tariffTable" type="tns:tariffTable"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editCommissionTableResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tariffTable"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="tariffType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SCALED"/>
+      <xs:enumeration value="FIXED_AMOUNT"/>
+      <xs:enumeration value="FIXED_PERCENTAGE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="agentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AGENT"/>
+      <xs:enumeration value="BANK_BRANCH"/>
+      <xs:enumeration value="SUPER_AGENT"/>
+      <xs:enumeration value="SUB_AGENT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="customerClass">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="REGULAR"/>
+      <xs:enumeration value="EMPLOYEE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tariffStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DRAFT"/>
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tariffValueType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PERCENTAGE"/>
+      <xs:enumeration value="ABSOLUTE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="transactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PIN"/>
+      <xs:enumeration value="TOPUP"/>
+      <xs:enumeration value="DEPOSIT"/>
+      <xs:enumeration value="WITHDRAWAL"/>
+      <xs:enumeration value="WITHDRAWAL_NONHOLDER"/>
+      <xs:enumeration value="BALANCE"/>
+      <xs:enumeration value="DAYEND_RECEIPTS"/>
+      <xs:enumeration value="DAYEND_PAYOUTS"/>
+      <xs:enumeration value="DAYEND_UNDERPOST"/>
+      <xs:enumeration value="DAYEND_OVERPOST"/>
+      <xs:enumeration value="PASSCODE"/>
+      <xs:enumeration value="CUSTOMER_ACTIVATION"/>
+      <xs:enumeration value="CHANGE_PASSCODE"/>
+      <xs:enumeration value="MINI_STATEMENT"/>
+      <xs:enumeration value="REFERRAL"/>
+      <xs:enumeration value="TARIFF"/>
+      <xs:enumeration value="EWALLET_TO_NON_HOLDER_TRANSFER"/>
+      <xs:enumeration value="BANKACCOUNT_TO_BANKACCOUNT_TRANSFER"/>
+      <xs:enumeration value="BANKACCOUNT_TO_EWALLET_TRANSFER"/>
+      <xs:enumeration value="BANKACCOUNT_TO_NONHOLDER_TRANSFER"/>
+      <xs:enumeration value="EWALLET_TO_EWALLET_TRANSFER"/>
+      <xs:enumeration value="EWALLET_TO_BANKACCOUNT_TRANSFER"/>
+      <xs:enumeration value="BALANCE_REQUEST"/>
+      <xs:enumeration value="BILLPAY"/>
+      <xs:enumeration value="EWALLET_BILLPAY"/>
+      <xs:enumeration value="EWALLET_TOPUP"/>
+      <xs:enumeration value="ENTITY_DOWNLOAD"/>
+      <xs:enumeration value="MERCHANT_REG"/>
+      <xs:enumeration value="AGENT_CUSTOMER_DEPOSIT"/>
+      <xs:enumeration value="AGENT_CUSTOMER_WITHDRAWAL"/>
+      <xs:enumeration value="SUPERAGENT_EWALLET_TRANSFER"/>
+      <xs:enumeration value="COMMISSION_TRANSFER"/>
+      <xs:enumeration value="ALERT"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

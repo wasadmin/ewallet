@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="MobileBankingServicesEAR">
+        <wb-resource deploy-path="/" source-path="/"/>
+        <dependent-module archiveName="EWalletUtils.jar" deploy-path="/" handle="module:/resource/EWalletUtils/EWalletUtils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/MobileBankingServices/MobileBankingServices">
+            <dependent-object>Module_1331647928346</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="MobileBankingClient.jar" deploy-path="/" handle="module:/resource/MobileBankingClient/MobileBankingClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/MobileBankingServicesEJB/MobileBankingServicesEJB">
+            <dependent-object>Module_1332317940634</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

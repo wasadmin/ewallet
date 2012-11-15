@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/woodstock.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<ice:form styleClass="form" id="form1">
+					<ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage"></ice:messages>
+					
+					<ice:dataTable border="0" cellpadding="5" cellspacing="5"
+						columnClasses="columnClass1" headerClass="headerClass"
+						footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+						styleClass="dataTable" id="table1" width="500"
+						value="#{approveBankMerchantBean.bankMerchantList}"
+						var="bankMerchant">
+						<f:facet name="header">
+						
+								<h:outputLabel value="Merchants Awaiting Approval"
+									styleClass="outputLabel" id="label1"></h:outputLabel>
+						
+						</f:facet>
+						<ice:column id="column2">
+							<f:facet name="header">
+								<h:outputText value="Short Name" styleClass="outputText" id="text2"></h:outputText>
+							</f:facet>
+							<ice:commandLink styleClass="requestLink" id="link14ioerf" 
+								action="#{approveBankMerchantBean.viewBankMerchant}">
+								<h:outputText styleClass="outputText" id="text884" value="#{bankMerchant.merchant.shortName}"></h:outputText>
+								<f:param name="bankMerchantId" value="#{bankMerchant.id}"></f:param>
+								<f:param name="back" value="/admin/approveBankMerchant.jspx"></f:param>
+							</ice:commandLink>
+						</ice:column>
+						<ice:column id="column1">
+							<f:facet name="header">
+								<h:outputText id="text1" styleClass="outputText" value="Merchant Name"></h:outputText>
+							</f:facet>
+							<h:outputText styleClass="outputText" id="text6" value="#{bankMerchant.merchant.name}"></h:outputText>
+						</ice:column>
+						
+						<ice:column id="column2">
+							<f:facet name="header">
+								<h:outputText value="Account Number" styleClass="outputText" id="text2883"></h:outputText>
+							</f:facet>
+							<h:outputText styleClass="outputText" id="text8" value="#{bankMerchant.merchantSuspenseAccount}"></h:outputText>
+						</ice:column>
+<!-- 
+			  			<ice:column id="column3">
+							<ice:commandLink styleClass="requestLink" id="link1" action="#{approveBankMerchantBean.approve}" actionListener="#{approveBankBean.doApproveAction}">
+								<h:outputText id="text5" styleClass="outputText" value="Approve"></h:outputText>
+								<f:attribute name="bankId" value="#{bankMerchant.id}"></f:attribute>
+				 			</ice:commandLink>
+							
+						</ice:column>
+						<ice:column id="column4">
+							
+							<ice:commandLink styleClass="requestLink" id="link2" action="#{approveBankMerchantBean.reject}" actionListener="#{approveBankBean.doApproveAction}">
+								<h:outputText id="text7" styleClass="outputText" value="Reject"></h:outputText>
+								<f:attribute name="bankId" value="#{bankMerchant.id}"></f:attribute>
+							</ice:commandLink>
+						</ice:column>
+ -->
+					</ice:dataTable>
+				</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

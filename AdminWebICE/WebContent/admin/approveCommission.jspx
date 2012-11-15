@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<ice:form styleClass="form" id="form1">
+					<ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages>
+				<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+				columnClasses="columnClass1" headerClass="headerClass"
+				footerClass="footerClass" rowClasses="rowClass1, rowClass2" width="600"
+				styleClass="dataTable" id="table1" value="#{approveTariffBean.tariffTableList}" var="tariffTable">
+				<f:facet name="header">
+				
+						<ice:outputText styleClass="outputLabel" id="text14"
+							value="Tariffs Awaiting Approval"></ice:outputText>
+				
+				</f:facet>
+				
+				<ice:column id="column2">
+					<f:facet name="header">
+						<ice:outputText value="Transaction Type" styleClass="outputLabel"
+							id="text9"></ice:outputText>
+					</f:facet>
+					<ice:commandLink styleClass="requestLink" id="link1"
+						action="#{approveTariffBean.viewTariffTable}">
+						<ice:outputText id="text21" styleClass="outputText"
+							value="#{tariffTable.transactionType}">
+						<f:converter converterId="replaceUnderscoreConverter"/>	
+						</ice:outputText>
+						<f:param value="#{tariffTable.id}" name="tariffTableId"
+							id="param1"></f:param>
+					</ice:commandLink>
+					
+				</ice:column>
+				<ice:column id="column3">
+					<f:facet name="header">
+						<ice:outputText styleClass="outputLabel" id="text10" value="Table Status"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text17"
+						value="#{tariffTable.status}">
+					<f:converter converterId="replaceUnderscoreConverter"/>	
+					</ice:outputText>
+				</ice:column>
+				<ice:column >
+					<f:facet name="header">
+						<ice:outputText styleClass="outputLabel" value="Customer Class"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText"
+						value="#{tariffTable.customerClass}">
+					<f:converter converterId="replaceUnderscoreConverter"/>	
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="column1">
+					<ice:outputText styleClass="outputText" id="text16"
+						value="#{tariffTable.tariffType}">
+					<f:converter converterId="replaceUnderscoreConverter"/>	
+					</ice:outputText>
+					<f:facet name="header">
+						<ice:outputText id="text7" styleClass="outputLabel"
+							value="Tariff Type"></ice:outputText>
+					</f:facet>
+					
+				</ice:column>
+				<ice:column id="column4">
+					<f:facet name="header">
+						<ice:outputText value="Effective Date" styleClass="outputLabel"
+							id="text11"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text18" value="#{tariffTable.effectiveDate}">
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+						<f:converter converterId="xmlDateConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="column5">
+					<f:facet name="header">
+						<ice:outputText value="End Date" styleClass="outputLabel"
+							id="text12"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text19" value="#{tariffTable.endDate}">
+						<f:convertDateTime pattern="dd/MM/yyyy" />
+						<f:converter converterId="xmlDateConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="column6">
+					<f:facet name="header">
+						<ice:outputText value="Tariffs" styleClass="outputLabel" id="text13"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text25" value="#{tariffTable.id}">
+					<f:converter converterId="tariffNumber"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column>
+							<f:facet name="header">
+								<ice:outputText value="Bank" styleClass="outputLabel"
+									></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" value="#{tariffTable.bankId}">
+								<f:converter converterId="bankNameConverter"/>
+							</ice:outputText>
+						</ice:column>
+			</ice:dataTable>
+			<br/>
+		</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

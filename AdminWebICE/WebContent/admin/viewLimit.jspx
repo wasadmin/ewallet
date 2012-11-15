@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+			    <h:form styleClass="form" id="form1">
+			    <h2>Limit</h2>
+					<ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages>
+					<ice:inputHidden value="#{viewLimitBean.limitId}" id="Id0"></ice:inputHidden>
+					<ice:inputHidden value="#{viewLimitBean.approvePage}" id="Id2"></ice:inputHidden>
+					<ice:inputHidden value="#{viewLimitBean.initializeInfor}" id="Id3"></ice:inputHidden>
+					<ice:outputText styleClass="outputText" id="text16"
+							style="color: green" value="#{viewLimitBean.msg}"></ice:outputText>
+					<ice:panelGrid styleClass="panelGrid" id="grid1" columns="2" width="600" cellpadding="5" cellspacing="5">
+		
+						<ice:outputText styleClass="outputLabel" id="text2x"
+										value="Financial Institution :"></ice:outputText>
+									<ice:outputText styleClass="outputText" id="text4x"
+										value="#{viewLimitBean.limit.bankId}">
+										<f:converter converterId="bankNameConverter"/>	
+										</ice:outputText>
+						<ice:outputText styleClass="outputLabel" id="text2"
+							value="Limit Type :"></ice:outputText>
+						<ice:outputText styleClass="outputText" id="text4"
+							value="#{viewLimitBean.limit.type}">
+							<f:converter converterId="replaceUnderscoreConverter"/>
+						</ice:outputText>
+						<ice:outputText styleClass="outputLabel" id="text10"
+							value="Account Class :"></ice:outputText>
+						<ice:outputText styleClass="outputText" id="text7"
+							value="#{viewLimitBean.limit.accountClass}"></ice:outputText>
+						<ice:outputText styleClass="outputLabel" id="text3"
+							value="Minimum Value :"></ice:outputText>
+						<ice:outputText styleClass="outputText" id="text8"
+							value="#{viewLimitBean.limit.minValue}">
+							
+							<f:converter converterId="moneyConverter"/>
+						</ice:outputText>
+						<ice:outputText styleClass="outputText" id="text11"
+							value="Maximum Value :"></ice:outputText>
+						<ice:outputText styleClass="outputText" id="text9"
+							value="#{viewLimitBean.limit.maxValue}">
+							
+							<f:converter converterId="moneyConverter"/>
+						</ice:outputText>
+						<ice:outputText styleClass="outputLabel" id="text6"
+							value="Effective Date :"></ice:outputText>
+						<ice:outputText styleClass="outputText" id="text12"
+							value="#{viewLimitBean.limit.effectiveDate}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+							<f:converter converterId="xmlDateConverter"/>
+						</ice:outputText>
+						<ice:outputText styleClass="outputLabel" id="text5" value="End Date :"></ice:outputText>
+						<ice:outputText styleClass="outputText" id="text14"
+							value="#{viewLimitBean.limit.endDate}">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+							<f:converter converterId="xmlDateConverter"/>
+						</ice:outputText>
+						<ice:outputText styleClass="outputLabel" id="text13" value="Period:"></ice:outputText>
+						<ice:outputText styleClass="outputText" id="text15"
+							value="#{viewLimitBean.limit.periodType}"></ice:outputText>
+						<ice:outputText styleClass="outputLabel" id="text17" value="Status :"></ice:outputText>
+						<ice:outputText styleClass="outputText" id="text18" value="#{viewLimitBean.limit.status}">
+						   <f:converter converterId="replaceUnderscoreConverter"/>
+						</ice:outputText>
+						<ice:commandButton type="submit" value="Back"
+							styleClass="commandButton" id="button2"
+							action="#{viewLimitBean.goBack}"></ice:commandButton>
+						<ice:commandButton type="submit" value="Edit"
+							styleClass="commandButton" id="button1" rendered="#{viewLimitBean.renderEditable}"
+							action="#{viewLimitBean.edit}"></ice:commandButton>
+						<ice:commandButton type="submit" value="View Logs"
+							styleClass="commandButton" id="button6" actionListener="#{viewLogsBean.viewLogs}" action="#{viewLimitBean.logs}">
+							<f:attribute name="entityId" value="#{viewLimitBean.limitId}"/>
+							<f:attribute name="entityName" value="LIMIT"/>
+							<f:attribute name="previous" value="admin/viewLimit.jspx"/>
+						</ice:commandButton>
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group1">
+								<ice:outputText styleClass="panelGridLabel" id="text1"
+									value="View Limit Details"></ice:outputText>
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelGrid>
+					<p><br/>
+								</p>
+								<ice:panelGrid styleClass="panelGrid" id="grid12" columns="5" width="600" cellpadding="5" cellspacing="5">
+								<ice:commandLink styleClass="requestLink" 
+								    action="#{viewLimitBean.approveLimit}" rendered="#{viewLimitBean.renderApprove}">
+									<ice:outputText  styleClass="outputText"
+										value="Approve Limit"></ice:outputText>
+									<f:param value="#{viewLimitBean.limitId}"
+										name="limitId"></f:param>
+								</ice:commandLink>
+								<ice:commandLink styleClass="requestLink" 
+									action="#{viewLimitBean.disapproveLimit}" rendered="#{viewLimitBean.renderDisapprove}">
+									<ice:outputText styleClass="outputText"
+										value="Disapprove Limit"></ice:outputText>
+									<f:param value="#{viewLimitBean.limitId}"
+										name="limitId"></f:param>
+								</ice:commandLink>
+								<ice:commandLink styleClass="requestLink"
+									action="#{viewLimitBean.activateLimit}" rendered="#{viewLimitBean.renderActivate}">
+									<ice:outputText styleClass="outputText"
+										value="Activate Limit"></ice:outputText>
+									<f:param value="#{viewLimitBean.limitId}"
+										name="limitId"></f:param>
+								</ice:commandLink>
+								<ice:commandLink styleClass="requestLink"
+									action="#{viewLimitBean.restoreLimit}" rendered="#{viewLimitBean.renderRestore}">
+									<ice:outputText styleClass="outputText"
+										value="Restore Limit"></ice:outputText>
+									<f:param value="#{viewLimitBean.limitId}"
+										name="limitId"></f:param>
+								</ice:commandLink>
+								<ice:commandLink styleClass="requestLink"
+									action="#{viewLimitBean.deleteLimit}" rendered="#{viewLimitBean.renderDelete}">
+									<ice:outputText styleClass="outputText"
+										value="DELETE"></ice:outputText>
+									<f:param value="#{viewLimitBean.limitId}"
+										name="limitId"></f:param>
+								</ice:commandLink>
+								</ice:panelGrid>
+				</h:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ewallet_movement_sub_report" pageWidth="842" pageHeight="595" whenNoDataType="AllSectionsNoDetail" columnWidth="840" columnSpacing="5" leftMargin="1" rightMargin="1" topMargin="20" bottomMargin="20" scriptletClass="zw.co.esolutions.ewallet.scriptlets.GenericScriptlet">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="zw.co.esolutions.ewallet.enums.TransactionType"/>
+	<import value="java.sql.Timestamp"/>
+	<import value="java.util.Date"/>
+	<template><![CDATA["/opt/ewallet/globals/ReportStyles.jrtx"]]></template>
+	<parameter name="accountId" class="java.lang.String"/>
+	<parameter name="fromDate" class="java.sql.Timestamp"/>
+	<parameter name="toDate" class="java.sql.Timestamp"/>
+	<parameter name="schema" class="java.lang.String">
+		<defaultValueExpression><![CDATA["BANKIF"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="OPENING_BAL_P" class="java.lang.Long"/>
+	<parameter name="DEBITS_P" class="java.lang.Long"/>
+	<parameter name="CREDITS_P" class="java.lang.Long"/>
+	<parameter name="NET_MOV_P" class="java.lang.Long"/>
+	<parameter name="CLOSING_BAL_P" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[ SELECT ba.type, t.narrative, t.amount, (SELECT SUM(ab.amount) FROM $P!{schema}.ACCOUNTBALANCE as ab WHERE ab.accountId = $P{accountId} AND ab.dateCreated >= $P{fromDate}
+                  AND ab.dateCreated <= $P{toDate} AND ab.dateCreated IN (SELECT MAX(a.dateCreated) FROM $P!{schema}.ACCOUNTBALANCE as a WHERE a.accountId = $P{accountId} AND a.dateCreated < $P{fromDate})) AS balance FROM
+(select * from Bankif.BANKACCOUNT where id = $P{accountId}) as ba
+LEFT OUTER JOIN
+(select * from $P!{schema}.TRANSACTION where dateCreated >= $P{fromDate} AND dateCreated <= $P{toDate}) AS t
+ON ba.id = t.ACCOUNTID
+					]]>
+	</queryString>
+	<field name="amount" class="java.lang.Long"/>
+	<field name="balance" class="java.lang.Long"/>
+	<field name="narrative" class="java.lang.String"/>
+	<variable name="OPENING_BAL" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{balance}]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{OPENING_BAL_P}]]></initialValueExpression>
+	</variable>
+	<variable name="DEBITS" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount} < 0L ? $F{amount} : 0L]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{DEBITS_P}]]></initialValueExpression>
+	</variable>
+	<variable name="CREDITS" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount} > 0L ? $F{amount} : 0L]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{CREDITS_P}]]></initialValueExpression>
+	</variable>
+	<variable name="NET_MOV" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$V{CREDITS} + $V{DEBITS}]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{NET_MOV_P}]]></initialValueExpression>
+	</variable>
+	<variable name="CLOSING_BAL" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$V{OPENING_BAL} + $V{NET_MOV}]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{CLOSING_BAL_P}]]></initialValueExpression>
+	</variable>
+</jasperReport>

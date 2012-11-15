@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ReferralServicesEAR">
+        <wb-resource deploy-path="/" source-path="/"/>
+        <dependent-module deploy-path="/" handle="module:/resource/ReferralServicesEJB/ReferralServicesEJB">
+            <dependent-object>Module_1309440875793</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ReferralServicesClient.jar" deploy-path="/" handle="module:/resource/ReferralServicesClient/ReferralServicesClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EWalletUtils.jar" deploy-path="/" handle="module:/resource/EWalletUtils/EWalletUtils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/" handle="module:/resource/ReferralServices/ReferralServices">
+            <dependent-object>Module_1309441802247</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://impl.ws.topup.esolutions.co.zw/" version="1.0" targetNamespace="http://impl.ws.topup.esolutions.co.zw/">
+
+  <xs:element name="processRequest" type="tns:processRequest"></xs:element>
+
+  <xs:element name="processRequestResponse" type="tns:processRequestResponse"></xs:element>
+
+  <xs:element name="processReversal" type="tns:processReversal"></xs:element>
+
+  <xs:element name="processReversalResponse" type="tns:processReversalResponse"></xs:element>
+
+  <xs:complexType name="processReversal">
+    <xs:sequence>
+      <xs:element name="reversalRequest" type="tns:reversalRequest" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reversalRequest">
+    <xs:sequence>
+      <xs:element name="requestToReverse" type="tns:wsRequest" minOccurs="0"></xs:element>
+      <xs:element name="serviceCommand" type="tns:serviceCommand" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="wsRequest">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:long"></xs:element>
+      <xs:element name="bankId" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="mnoName" type="tns:mnoName" minOccurs="0"></xs:element>
+      <xs:element name="serviceCommand" type="tns:serviceCommand" minOccurs="0"></xs:element>
+      <xs:element name="serviceId" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="serviceProviderId" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="sourceMobileNumber" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="targetMobileNumber" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="uuid" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="processReversalResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:reversalResponse" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reversalResponse">
+    <xs:sequence>
+      <xs:element name="airtimeBalance" type="xs:double"></xs:element>
+      <xs:element name="initialBalance" type="xs:double"></xs:element>
+      <xs:element name="narrative" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="responseCode" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="reversalRequest" type="tns:reversalRequest" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="processRequest">
+    <xs:sequence>
+      <xs:element name="request" type="tns:wsRequest" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="processRequestResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:wsResponse" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="wsResponse">
+    <xs:sequence>
+      <xs:element name="airtimeBalance" type="xs:double"></xs:element>
+      <xs:element name="initialBalance" type="xs:double"></xs:element>
+      <xs:element name="narrative" type="xs:string" minOccurs="0"></xs:element>
+      <xs:element name="request" type="tns:wsRequest" minOccurs="0"></xs:element>
+      <xs:element name="responseCode" type="xs:string" minOccurs="0"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="mnoName">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ECONET"></xs:enumeration>
+      <xs:enumeration value="NETONE"></xs:enumeration>
+      <xs:enumeration value="TELECEL"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="serviceCommand">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BALANCE"></xs:enumeration>
+      <xs:enumeration value="BILLPAY"></xs:enumeration>
+      <xs:enumeration value="TOPUP"></xs:enumeration>
+      <xs:enumeration value="BILLPAY_REVERSAL"></xs:enumeration>
+      <xs:enumeration value="TOPUP_REVERSAL"></xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

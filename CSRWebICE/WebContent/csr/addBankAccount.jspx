@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			
+				<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+				<link href="../theme/stylesheet.css" rel="stylesheet"
+					type="text/css" />
+				<link rel="stylesheet" type="text/css"
+					href="../xmlhttp/css/royale/royale.css" />
+
+				<ui:define name="header">
+					<ui:include src="../template/header.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="menu">
+					<ui:include src="../template/menu.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="content">
+						<ice:form styleClass="form" id="form1">
+						<h:messages styleClass="messages" id="messages1"
+							errorClass="errorMessage" infoClass="infoMessage" layout="table"></h:messages>
+						<h:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5" cellspacing="5" width="600" columns="2">
+						<h:outputLabel value="Lastname" styleClass="outputLabel" id="label2"></h:outputLabel>
+						<h:outputText styleClass="outputText" id="text1" value="#{addBankAccountBean.customer.lastName}"></h:outputText>
+						<h:outputLabel value="Firstnames" styleClass="outputLabel"
+							id="label3"></h:outputLabel>
+						<h:outputText styleClass="outputText" id="text2" value="#{addBankAccountBean.customer.firstNames}"></h:outputText>
+						<f:facet name="header">
+							<h:panelGroup styleClass="panelGroup" id="group1">
+								<h:outputLabel value="Customer Details" styleClass="outputLabel"
+									id="label1"></h:outputLabel>
+							</h:panelGroup>
+						</f:facet>
+					</h:panelGrid>
+				
+							<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+								cellspacing="5" width="600" columns="3">
+								<ice:outputLabel value="Account Type*" styleClass="outputLabel" 
+									id="label7"></ice:outputLabel>
+								<ice:selectOneMenu styleClass="selectOneMenu" id="menu1" required="true" requiredMessage="Missing Account Type" partialSubmit="true" value="#{addBankAccountBean.selectedAccountType}"   valueChangeListener="#{addBankAccountBean.processValueChange}" >
+									<f:selectItems value="#{addBankAccountBean.accountTypeList}" id="selectItems1" />
+								</ice:selectOneMenu>
+								<ice:message style="messages" errorClass="errorMessage2" id="error14544" for="menu1"/>
+								
+								
+								<ice:outputLabel value="Account Class" styleClass="outputLabel"
+									id="label8"></ice:outputLabel>
+								<ice:selectOneMenu styleClass="selectOneMenu" id="menu2" value="#{addBankAccountBean.selectedAccountClass}">
+									<f:selectItems value="#{addBankAccountBean.accountClassList}" id="selectItems2" />
+								</ice:selectOneMenu>
+								<ice:outputLabel></ice:outputLabel>
+								
+								<ice:outputLabel value="Branch*" styleClass="outputLabel" id="label10"></ice:outputLabel>
+								<ice:selectOneMenu styleClass="selectOneMenu" id="menu4" value="#{addBankAccountBean.selectedBranch}" required="true" requiredMessage="Missing Branch">
+									<f:selectItems value="#{addBankAccountBean.branchList}" id="selectItems4"  />
+								</ice:selectOneMenu>
+								<ice:message style="messages" errorClass="errorMessage2" id="branch342" for="menu4"/>
+								
+								
+								<ice:outputLabel value="Account Number*" styleClass="outputLabel"
+									id="label3"></ice:outputLabel>
+								<ice:inputText styleClass="inputText" id="text2" value="#{addBankAccountBean.bankAccount.accountNumber}" required="true" requiredMessage="Missing Account Number"></ice:inputText>
+								<ice:message errorClass="errorMessage2" id="error1" for="text2"/>
+								
+								<ice:outputLabel value="Card Number" styleClass="outputLabel"
+									id="label4" rendered="#{addBankAccountBean.renderInfo}" ></ice:outputLabel>
+								<ice:inputText styleClass="inputText" id="text3" value="#{addBankAccountBean.bankAccount.cardNumber}" rendered="#{addBankAccountBean.renderInfo}"></ice:inputText>
+								<ice:outputLabel></ice:outputLabel>
+								<ice:outputLabel value="Card Sequence" styleClass="outputLabel"
+									id="label5" rendered="#{addBankAccountBean.renderInfo}"></ice:outputLabel>
+								<ice:inputText styleClass="inputText" id="text4" value="#{addBankAccountBean.bankAccount.cardSequence}" rendered="#{addBankAccountBean.renderInfo}"></ice:inputText>
+								<ice:outputLabel></ice:outputLabel>
+								<ice:outputLabel value="Account Code" styleClass="outputLabel"
+									id="label6" rendered="#{addBankAccountBean.renderInfo}"></ice:outputLabel>
+								<ice:inputText styleClass="inputText" id="text5" value="#{addBankAccountBean.bankAccount.code}" rendered="#{addBankAccountBean.renderInfo}"></ice:inputText>
+								
+								<ice:outputLabel></ice:outputLabel>
+								
+								<f:facet name="header">
+									<ice:panelGroup styleClass="panelGroup" id="group1">
+										<ice:outputLabel value="Add Bank Account Details"
+											styleClass="outputLabel" id="label1"></ice:outputLabel>
+									</ice:panelGroup>
+								</f:facet>
+							</ice:panelGrid>
+							<ice:panelGrid styleClass="panelGrid" id="grid2" columns="2">
+								<ice:commandButton type="submit" value="Submit" label="Submit"
+									styleClass="commandButton" id="button2" action="#{addBankAccountBean.submit}"></ice:commandButton>
+								<ice:commandButton type="submit" value="Cancel" label="Submit" immediate="true"
+									styleClass="commandButton" id="button1" action="#{addBankAccountBean.cancel}"></ice:commandButton>
+							</ice:panelGrid>
+						</ice:form>
+				</ui:define>
+				<ui:define name="footer">
+					<ui:include src="../template/footer.jspx"></ui:include>
+				</ui:define>
+				<link rel="stylesheet" type="text/css" title="Style"
+					href="../theme/stylesheet.css" />
+			
+		</ui:composition>
+	</f:view>
+
+</jsp:root>
+	

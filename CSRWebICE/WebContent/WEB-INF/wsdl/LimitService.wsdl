@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="LimitService" targetNamespace="http://service.limitservices.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.limitservices.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.limitservices.ewallet.esolutions.co.zw/" schemaLocation="LimitService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getLimitByTypeAndBankIdResponse">
+    <part element="tns:getLimitByTypeAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getEffectiveLimitsByBankIdResponse">
+    <part element="tns:getEffectiveLimitsByBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveLimitResponse">
+    <part element="tns:disapproveLimitResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByTypeEffectiveDateStatusAndBankId">
+    <part element="tns:getLimitByTypeEffectiveDateStatusAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankId">
+    <part element="tns:getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByTypeAndStatusAndBankIdResponse">
+    <part element="tns:getLimitByTypeAndStatusAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByTypeValueTypeEffectiveDateStatusAndBankId">
+    <part element="tns:getLimitByTypeValueTypeEffectiveDateStatusAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="createLimit">
+    <part element="tns:createLimit" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankId">
+    <part element="tns:getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="editLimit">
+    <part element="tns:editLimit" name="parameters">
+    </part>
+  </message>
+  <message name="getValidLimitOnDateByBankIdResponse">
+    <part element="tns:getValidLimitOnDateByBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="EWalletException">
+    <part element="tns:EWalletException" name="fault">
+    </part>
+  </message>
+  <message name="deleteLimit">
+    <part element="tns:deleteLimit" name="parameters">
+    </part>
+  </message>
+  <message name="getAllLimitsByBankIdResponse">
+    <part element="tns:getAllLimitsByBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findLimitByIdResponse">
+    <part element="tns:findLimitByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByValueTypeAndStatusAndBankId">
+    <part element="tns:getLimitByValueTypeAndStatusAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankId">
+    <part element="tns:getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByValueTypeEffectiveDateStatusAndBankIdResponse">
+    <part element="tns:getLimitByValueTypeEffectiveDateStatusAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="activateLimit">
+    <part element="tns:activateLimit" name="parameters">
+    </part>
+  </message>
+  <message name="approveLimitResponse">
+    <part element="tns:approveLimitResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByStatusAndBankId">
+    <part element="tns:getLimitByStatusAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="createLimitResponse">
+    <part element="tns:createLimitResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllLimitsResponse">
+    <part element="tns:getAllLimitsResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByAccountClassAndBankId">
+    <part element="tns:getLimitByAccountClassAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByTypeAndBankId">
+    <part element="tns:getLimitByTypeAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankIdResponse">
+    <part element="tns:getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByTypeAndStatusAndBankId">
+    <part element="tns:getLimitByTypeAndStatusAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByTypeValueTypeEffectiveDateStatusAndBankIdResponse">
+    <part element="tns:getLimitByTypeValueTypeEffectiveDateStatusAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveLimit">
+    <part element="tns:disapproveLimit" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByValueTypeAndBankId">
+    <part element="tns:getLimitByValueTypeAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankIdResponse">
+    <part element="tns:getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByTypeEffectiveDateStatusAndBankIdResponse">
+    <part element="tns:getLimitByTypeEffectiveDateStatusAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankIdResponse">
+    <part element="tns:getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllLimitsByBankId">
+    <part element="tns:getAllLimitsByBankId" name="parameters">
+    </part>
+  </message>
+  <message name="deleteLimitResponse">
+    <part element="tns:deleteLimitResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getValidLimitOnDateByBankId">
+    <part element="tns:getValidLimitOnDateByBankId" name="parameters">
+    </part>
+  </message>
+  <message name="editLimitResponse">
+    <part element="tns:editLimitResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByValueTypeAndStatusAndBankIdResponse">
+    <part element="tns:getLimitByValueTypeAndStatusAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findLimitById">
+    <part element="tns:findLimitById" name="parameters">
+    </part>
+  </message>
+  <message name="getEffectiveLimitsByBankId">
+    <part element="tns:getEffectiveLimitsByBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByValueTypeEffectiveDateStatusAndBankId">
+    <part element="tns:getLimitByValueTypeEffectiveDateStatusAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="activateLimitResponse">
+    <part element="tns:activateLimitResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByAccountClassAndBankIdResponse">
+    <part element="tns:getLimitByAccountClassAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="Exception">
+    <part element="tns:Exception" name="fault">
+    </part>
+  </message>
+  <message name="approveLimit">
+    <part element="tns:approveLimit" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByStatusAndBankIdResponse">
+    <part element="tns:getLimitByStatusAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getLimitByValueTypeAndBankIdResponse">
+    <part element="tns:getLimitByValueTypeAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllLimits">
+    <part element="tns:getAllLimits" name="parameters">
+    </part>
+  </message>
+  <portType name="LimitService">
+    <operation name="createLimit">
+      <input message="tns:createLimit">
+    </input>
+      <output message="tns:createLimitResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="deleteLimit">
+      <input message="tns:deleteLimit">
+    </input>
+      <output message="tns:deleteLimitResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="findLimitById">
+      <input message="tns:findLimitById">
+    </input>
+      <output message="tns:findLimitByIdResponse">
+    </output>
+    </operation>
+    <operation name="getLimitByTypeAndStatusAndBankId">
+      <input message="tns:getLimitByTypeAndStatusAndBankId">
+    </input>
+      <output message="tns:getLimitByTypeAndStatusAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getLimitByValueTypeAndStatusAndBankId">
+      <input message="tns:getLimitByValueTypeAndStatusAndBankId">
+    </input>
+      <output message="tns:getLimitByValueTypeAndStatusAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankId">
+      <input message="tns:getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankId">
+    </input>
+      <output message="tns:getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getLimitByValueTypeEffectiveDateStatusAndBankId">
+      <input message="tns:getLimitByValueTypeEffectiveDateStatusAndBankId">
+    </input>
+      <output message="tns:getLimitByValueTypeEffectiveDateStatusAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getLimitByTypeEffectiveDateStatusAndBankId">
+      <input message="tns:getLimitByTypeEffectiveDateStatusAndBankId">
+    </input>
+      <output message="tns:getLimitByTypeEffectiveDateStatusAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getLimitByTypeValueTypeEffectiveDateStatusAndBankId">
+      <input message="tns:getLimitByTypeValueTypeEffectiveDateStatusAndBankId">
+    </input>
+      <output message="tns:getLimitByTypeValueTypeEffectiveDateStatusAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankId">
+      <input message="tns:getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankId">
+    </input>
+      <output message="tns:getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankId">
+      <input message="tns:getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankId">
+    </input>
+      <output message="tns:getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getAllLimits">
+      <input message="tns:getAllLimits">
+    </input>
+      <output message="tns:getAllLimitsResponse">
+    </output>
+    </operation>
+    <operation name="getValidLimitOnDateByBankId">
+      <input message="tns:getValidLimitOnDateByBankId">
+    </input>
+      <output message="tns:getValidLimitOnDateByBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getLimitByTypeAndBankId">
+      <input message="tns:getLimitByTypeAndBankId">
+    </input>
+      <output message="tns:getLimitByTypeAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getLimitByAccountClassAndBankId">
+      <input message="tns:getLimitByAccountClassAndBankId">
+    </input>
+      <output message="tns:getLimitByAccountClassAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getEffectiveLimitsByBankId">
+      <input message="tns:getEffectiveLimitsByBankId">
+    </input>
+      <output message="tns:getEffectiveLimitsByBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getLimitByValueTypeAndBankId">
+      <input message="tns:getLimitByValueTypeAndBankId">
+    </input>
+      <output message="tns:getLimitByValueTypeAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getAllLimitsByBankId">
+      <input message="tns:getAllLimitsByBankId">
+    </input>
+      <output message="tns:getAllLimitsByBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getLimitByStatusAndBankId">
+      <input message="tns:getLimitByStatusAndBankId">
+    </input>
+      <output message="tns:getLimitByStatusAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="editLimit">
+      <input message="tns:editLimit">
+    </input>
+      <output message="tns:editLimitResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="approveLimit">
+      <input message="tns:approveLimit">
+    </input>
+      <output message="tns:approveLimitResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="disapproveLimit">
+      <input message="tns:disapproveLimit">
+    </input>
+      <output message="tns:disapproveLimitResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="activateLimit">
+      <input message="tns:activateLimit">
+    </input>
+      <output message="tns:activateLimitResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+  </portType>
+  <binding name="LimitServiceSOAPBinding" type="tns:LimitService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createLimit">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteLimit">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findLimitById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLimitByTypeAndStatusAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLimitByValueTypeAndStatusAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLimitByValueTypeEffectiveDateStatusAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLimitByTypeEffectiveDateStatusAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLimitByTypeValueTypeEffectiveDateStatusAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllLimits">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getValidLimitOnDateByBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLimitByTypeAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLimitByAccountClassAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getEffectiveLimitsByBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLimitByValueTypeAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllLimitsByBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getLimitByStatusAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="editLimit">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveLimit">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="disapproveLimit">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="activateLimit">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="LimitService">
+    <port binding="tns:LimitServiceSOAPBinding" name="LimitServiceSOAP">
+      <soap:address location="http://localhost:9080/LimitServices/LimitService"/>
+    </port>
+  </service>
+</definitions>

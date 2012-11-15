@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package zw.co.esolutions.ewallet.enums;
+
+/**
+ * @author blessing
+ *
+ */
+public enum USSDTransactionType {
+	TOPUP,
+	BALANCE,
+	MINI_STATEMENT,
+	TRANSFER,
+	BILLPAY, 
+	CHANGE_PASSCODE,
+	AGENT_CUSTOMER_NON_HOLDER_WITHDRAWAL,
+	AGENT_CUSTOMER_DEPOSIT,
+	AGENT_TRANSFER,
+	AGENT_CUSTOMER_WITHDRAWAL,
+	AGENT_SUMMARY, RTGS, REGISTER_MERCHANT,
+	TOPUP_TXT;
+
+}

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1">
+		<h2>eWallet Audit Trail Report</h2>
+			<p><ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			<br/>
+			<ice:panelGrid styleClass="infoBox" >
+
+						
+							<ice:outputText value="All Values with a * are required" /><br/>
+							
+					</ice:panelGrid>
+			<ice:panelGrid styleClass="panelGrid" id="grid1" columns="4">
+
+				<ice:outputLabel styleClass="outputLabel" id="text2" value="Bank* :"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu" id="menu1"
+					value="#{auditTrailReportBean.bankItem}"
+					valueChangeListener="#{auditTrailReportBean.handleBankValueChange}"
+					partialSubmit="true">
+					<f:selectItems id="selectItems1"
+						value="#{auditTrailReportBean.bankMenu}" />
+				</ice:selectOneMenu>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				<ice:outputLabel styleClass="outputLabel" id="text4" value="Branch :"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu" id="menu2"
+					value="#{auditTrailReportBean.branchItem}" disabled="#{auditTrailReportBean.disableBranchMenu}">
+					<f:selectItems id="selectItems2"
+						value="#{auditTrailReportBean.branchMenu}" />
+				</ice:selectOneMenu>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+				<ice:outputLabel styleClass="outputLabel" id="text4" value="Branch :"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu" id="menu2"
+					value="#{auditTrailReportBean.branchItem}" disabled="#{auditTrailReportBean.disableBranchMenu}">
+					<f:selectItems
+						value="#{auditTrailReportBean.branchMenu}" />
+				</ice:selectOneMenu>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+				<ice:outputLabel styleClass="outputLabel" value="Activity :"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu"
+					value="#{auditTrailReportBean.activityItem}">
+					<f:selectItems
+						value="#{auditTrailReportBean.activityMenu}" />
+				</ice:selectOneMenu>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+				<ice:outputLabel styleClass="outputLabel" value="Role Name :"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu"
+					value="#{auditTrailReportBean.roleItem}">
+					<f:selectItems 
+						value="#{auditTrailReportBean.roleMenu}" />
+				</ice:selectOneMenu>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+				<ice:outputLabel value="Mobile Number :" styleClass="outputLabel"></ice:outputLabel>
+				<ice:inputText styleClass="inputText" value="#{auditTrailReportBean.mobileNumber}"></ice:inputText>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+				<ice:outputLabel value="Username :" styleClass="outputLabel"></ice:outputLabel>
+				<ice:inputText styleClass="inputText" value="#{auditTrailReportBean.username}"></ice:inputText>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+				<ice:outputLabel styleClass="outputLabel" value="From (dd/MM/yyyy HH:mm) :"></ice:outputLabel>
+				<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+									renderMonthAsDropdown="true" renderYearAsDropdown="true" 
+									value="#{auditTrailReportBean.fromDate}" converter="customDateConverter" ></ice:selectInputDate>
+				<ice:outputText></ice:outputText>
+				<ice:outputText></ice:outputText>
+				
+				<ice:outputLabel styleClass="outputLabel" value="To (dd/MM/yyyy HH:mm) :"></ice:outputLabel>
+				<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+									renderMonthAsDropdown="true" renderYearAsDropdown="true" 
+									value="#{auditTrailReportBean.toDate}" converter="customDateConverter" ></ice:selectInputDate>
+				<ice:outputText></ice:outputText>
+				<ice:outputText></ice:outputText>
+				
+				<ice:outputText></ice:outputText>
+				<ice:outputText></ice:outputText>
+				<ice:outputText></ice:outputText>
+				<ice:outputText></ice:outputText>
+				
+				<ice:commandButton type="submit" value="Generate"
+					styleClass="commandButton" id="button1"
+					action="#{auditTrailReportBean.generateReport}"></ice:commandButton>
+					
+				<ice:outputText styleClass="outputLabel" id="text5"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text3"></ice:outputText>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				<ice:outputText></ice:outputText>
+				
+			</ice:panelGrid>
+			<br/>
+			<br/>
+		</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

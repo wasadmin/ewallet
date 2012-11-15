@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="PublicTopupWebServiceEAR">
+        <wb-resource deploy-path="/" source-path="/"/>
+        <dependent-module archiveName="PublicTopupWebServiceEJB.jar" deploy-path="/" handle="module:/resource/PublicTopupWebServiceEJB/PublicTopupWebServiceEJB">
+            <dependent-object>Module_1309473625078</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="PublicTopupWebServiceEJBClient.jar" deploy-path="/" handle="module:/resource/PublicTopupWebServiceEJBClient/PublicTopupWebServiceEJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="PublicTopupWebService.war" deploy-path="/" handle="module:/resource/PublicTopupWebService/PublicTopupWebService">
+            <dependent-object>Module_1309471294958</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

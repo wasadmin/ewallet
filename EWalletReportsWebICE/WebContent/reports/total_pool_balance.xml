@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+	name="TableReport"
+	pageWidth="595" 
+	pageHeight="842" 
+	columnWidth="515"
+	leftMargin="20" 
+	rightMargin="20" 
+	topMargin="50" 
+	bottomMargin="50"
+	isFloatColumnFooter="true" 
+	whenNoDataType="AllSectionsNoDetail">
+	<style name="Sans_Normal" isDefault="true" fontName="DejaVu Sans"
+		fontSize="10" isBold="false" isItalic="false" isUnderline="false"
+		isStrikeThrough="false" />
+	<style name="Table">
+		<box>
+			<pen lineColor="red" lineWidth="1" />
+		</box>
+	</style>
+	<style name="TableHeader" mode="Opaque" backcolor="gray" />
+	<style name="TableFooter" mode="Opaque" backcolor="lightGray" />
+	
+	<parameter name="reportTitle" class="java.lang.String"/>
+	<parameter name="pageHeader" class="java.lang.String"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<parameter name="accountType" class="java.lang.String"/>
+	<parameter name="balBFname" class="java.lang.String"/>
+	<parameter name="balBFtype" class="java.lang.String" />
+	<parameter name="balBFnarrative" class="java.lang.String" />
+	<parameter name="balBFamount" class="java.lang.Long" />
+		
+	<field name="ACCOUNTNAME" class="java.lang.String">
+		<fieldDescription></fieldDescription>
+	</field>
+	<field name="TYPE" class="java.lang.Object">
+		<fieldDescription></fieldDescription>
+	</field>
+	<field name="RUNNINGBALANCE" class="java.lang.Long">
+		<fieldDescription></fieldDescription>
+	</field>
+	
+	<variable name="allTotal" class="java.lang.Long" calculation="Sum">
+		<variableExpression>$F{RUNNINGBALANCE}</variableExpression>
+	</variable>
+		
+	<background>
+		<band height="742">
+			<image scaleImage="Clip" hAlign="Left" vAlign="Bottom">
+				<reportElement x="0" y="0" width="150" height="742"/>
+				<imageExpression>"/opt/ewallet/globals/esol.png"</imageExpression>
+			</image>
+		</band>
+	</background>
+	
+	<title>
+		<band height="50">
+			<line>
+				<reportElement x="0" y="0" width="515" height="0" forecolor="black"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="10" width="515" height="30" style="Sans_Normal"/>
+				<textElement textAlignment="Center" lineSpacing="Single">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">$P{reportTitle}</textFieldExpression>
+			</textField>
+		</band>
+	</title>
+    
+    <pageHeader>
+          <band height="30">
+              <rectangle>
+                  <reportElement x="0" y="0" width="515" height="30"/>
+                  <graphicElement/>
+              </rectangle>
+              <textField isBlankWhenNull="true">
+           		  <reportElement x="0" y="0" width="515" height="30"/>
+       		       <textElement textAlignment="Center">
+              		    <font fontName="Serif" size="11"/>
+           		   </textElement>
+             	 <textFieldExpression class="java.lang.String"><![CDATA[$P{pageHeader}]]></textFieldExpression>
+             </textField>
+         </band>
+    </pageHeader>
+    <columnHeader>
+		<band height="30">
+			
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center">
+				<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text>Account Name</text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center">
+				<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text>Account Type</text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="200" height="20"/>
+				<textElement textAlignment="Center">
+				<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text>Narrative</text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center">
+				<font isBold="true" isItalic="false"/>
+				</textElement>
+				<text>Value</text>
+			</staticText>
+		</band>
+	</columnHeader>
+    
+    <detail>
+    	<band height="22">
+		
+		<textField isBlankWhenNull="true">
+			<reportElement x="0" y="0" width="100" height="20"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression class="java.lang.String">$F{ACCOUNTNAME}</textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true">
+			<reportElement x="100" y="0" width="100" height="20"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression class="java.lang.String">$F{TYPE}</textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true">
+			<reportElement x="200" y="0" width="200" height="20"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression class="java.lang.String">$P{balBFnarrative}</textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true">
+			<reportElement x="400" y="0" width="100" height="20"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("#,##0.00").format(new Double($F{RUNNINGBALANCE}.longValue())/100.00)]]></textFieldExpression>
+		</textField>
+	</band>
+    </detail>
+    <pageFooter>
+     <band height = "30">
+       <textField evaluationTime="Report">
+                 <reportElement x="280" y="10" width="275" height="20"/>
+                 <textElement textAlignment="Left">
+                      <font fontName="Serif" size="14"/>
+                 </textElement>
+                 <textFieldExpression class="java.lang.Integer">
+                       $V{PAGE_NUMBER}
+                 </textFieldExpression>
+       </textField>
+    </band>   
+  </pageFooter>
+  <lastPageFooter>
+	<band height="50">
+		<textField isBlankWhenNull="true">
+			<reportElement x="0" y="0" width="100" height="20"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression class="java.lang.String">$P{balBFname}</textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true">
+			<reportElement x="100" y="0" width="100" height="20"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression class="java.lang.String">$P{balBFtype}</textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true">
+			<reportElement x="200" y="0" width="200" height="20"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression class="java.lang.String">$P{balBFnarrative}</textFieldExpression>
+		</textField>
+		<textField isBlankWhenNull="true">
+			<reportElement x="400" y="0" width="100" height="20"/>
+			<textElement textAlignment="Center"/>
+			<textFieldExpression class="java.lang.String"><![CDATA[new DecimalFormat("#,##0.00").format(new Double($V{allTotal})/100.00)]]></textFieldExpression>
+		</textField>
+		<staticText>
+			<reportElement x="490" y="10" width="30" height="20"/>
+			<textElement>
+				<font isBold="true"/>
+			</textElement>
+			<text>Page | </text>
+		</staticText>
+		<textField evaluationTime="Now">
+			<reportElement x="524" y="10" width="50" height="20"/>
+			<textElement textAlignment="Left">
+				<font fontName="Serif" size="10"/>
+			</textElement>
+			<textFieldExpression class="java.lang.Integer">
+				$V{PAGE_NUMBER}
+			</textFieldExpression>
+		</textField>
+	  </band>
+	</lastPageFooter>
+</jasperReport>

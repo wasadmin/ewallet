@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="EWalletProcessModuleEAR">
+        <wb-resource deploy-path="/" source-path="/"/>
+        <dependent-module archiveName="EWalletProcessModule.war" deploy-path="/" handle="module:/resource/EWalletProcessModule/EWalletProcessModule">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EWalletProcessModuleEJB.jar" deploy-path="/" handle="module:/resource/EWalletProcessModuleEJB/EWalletProcessModuleEJB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EWalletUtils.jar" deploy-path="/lib" handle="module:/resource/EWalletUtils/EWalletUtils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EWalletProcessModuleClient.jar" deploy-path="/" handle="module:/resource/EWalletProcessModuleClient/EWalletProcessModuleClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:bankInfo xmlns:tns="http://bank.config.esolutions.co.zw" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://bank.config.esolutions.co.zw BankInfoSchema.xsd ">
+  <tns:requestQueueName>ZABG.IN.QUEUE</tns:requestQueueName>
+  <tns:replyQueueName>BANKS.REPLY.QUEUE</tns:replyQueueName>
+  <tns:bankName>ZABG</tns:bankName>
+  <tns:zswCode>tns:zswCode</tns:zswCode>
+  <tns:zesaPayCode>0</tns:zesaPayCode>
+  <tns:zesaPayBranch>0</tns:zesaPayBranch>
+  <tns:bankId>tns:bankId</tns:bankId>
+  <tns:online>true</tns:online>
+  <tns:signature>tns:signature</tns:signature>
+  <tns:applySignature>true</tns:applySignature>
+  <tns:smsCode>tns:smsCode</tns:smsCode>
+  <tns:ussdCode>tns:ussdCode</tns:ussdCode>
+  <tns:applyVendorSignature>true</tns:applyVendorSignature>
+  <tns:serviceId>tns:serviceId</tns:serviceId>
+  <tns:serviceProviderId>tns:serviceProviderId</tns:serviceProviderId>
+  <tns:alternateBankId>tns:alternateBankId</tns:alternateBankId>
+</tns:bankInfo>

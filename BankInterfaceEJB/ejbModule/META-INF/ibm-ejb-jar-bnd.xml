@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar-bnd
+        xmlns="http://websphere.ibm.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://websphere.ibm.com/xml/ns/javaee http://websphere.ibm.com/xml/ns/javaee/ibm-ejb-jar-bnd_1_0.xsd"
+        version="1.0">
+
+	<message-driven name="HandleBankResponse">
+		<jca-adapter activation-spec-binding-name="jms/HandleBankResponse" destination-binding-name="jms/REPLY.ACS.Q"/>
+		<resource-ref
+			name="zw.co.esolutions.bankif.mdbs.HandleBankResponse/jmsQueueConnectionFactory"
+			binding-name="jms/EWalletQCF" />
+		<message-destination-ref
+			name="zw.co.esolutions.bankif.mdbs.HandleBankResponse/bankResponsesQueue"
+			binding-name="jms/BANKMED.OUT.QUEUE" />
+		<message-destination-ref
+			name="zw.co.esolutions.bankif.mdbs.HandleBankResponse/bankRequestsQueue"
+			binding-name="jms/ACS.MSGS.Q" />
+	</message-driven>
+	
+	<message-driven name="HandleBankRequest">
+		<jca-adapter activation-spec-binding-name="jms/HandleBankRequest" destination-binding-name="jms/BANKMED.IN.QUEUE"/>
+		<message-destination-ref
+			name="zw.co.esolutions.bankif.mdbs.HandleBankRequest/bankRequestsQueue"
+			binding-name="jms/ACS.MSGS.Q" />
+		<message-destination-ref
+			name="zw.co.esolutions.bankif.mdbs.HandleBankRequest/bankResponsesQueue"
+			binding-name="jms/BANKMED.OUT.QUEUE" />
+		<resource-ref
+			name="zw.co.esolutions.bankif.mdbs.HandleBankRequest/jmsQueueConnectionFactory"
+			binding-name="jms/EWalletQCF" />
+	</message-driven>
+</ejb-jar-bnd>

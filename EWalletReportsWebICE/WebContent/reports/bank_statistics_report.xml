@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bank_statistics_report" language="groovy" pageWidth="820" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="java.sql.Timestamp"/>
+	<import value="java.util.Date"/>
+	<parameter name="reportTitle" class="java.lang.String"/>
+	<parameter name="pageHeader" class="java.lang.String"/>
+	<field name="BANK" class="java.lang.String"/>
+	<field name="BRANCH" class="java.lang.String"/>
+	<field name="BRANCH_CODE" class="java.lang.String"/>
+	<field name="STATUS" class="java.lang.String"/>
+	<field name="NO_OF_TXN" class="java.lang.Long"/>
+	<field name="TOTAL_AMOUNT" class="java.lang.Long"/>
+	<variable name="TOTAL_TXN_PER_BANK" class="java.lang.Long" resetType="Group" resetGroup="BANK" incrementType="Column" calculation="Count"/>
+	<variable name="BRANCH_TXN_TOTAL" class="java.lang.Long" resetType="Group" resetGroup="BRANCH" calculation="Sum">
+		<variableExpression><![CDATA[$F{NO_OF_TXN}]]></variableExpression>
+	</variable>
+	<variable name="BRANCH_TOTAL_AMOUNT" class="java.lang.Long" resetType="Group" resetGroup="BRANCH" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_AMOUNT}]]></variableExpression>
+	</variable>
+	<variable name="BANK_TXN_TOTAL" class="java.lang.Long" resetType="Group" resetGroup="BANK" calculation="Sum">
+		<variableExpression><![CDATA[$F{NO_OF_TXN}]]></variableExpression>
+	</variable>
+	<variable name="BANK_TOTAL_AMOUNT" class="java.lang.Long" resetType="Group" resetGroup="BANK" calculation="Sum">
+		<variableExpression><![CDATA[$F{TOTAL_AMOUNT}]]></variableExpression>
+	</variable>
+	<group name="BANK">
+		<groupExpression><![CDATA[$F{BANK}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<staticText>
+					<reportElement x="0" y="10" width="336" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[TRANSACTIONS BY STATUS FOR  :]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="349" y="10" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{BANK}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="40">
+				<staticText>
+					<reportElement x="0" y="0" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[BANK TOTALS]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="201" y="0" width="200" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$V{BANK_TXN_TOTAL}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="402" y="0" width="100" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{BANK_TOTAL_AMOUNT}.longValue()) /100.00)]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="BRANCH">
+		<groupExpression><![CDATA[$F{BRANCH}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<staticText>
+					<reportElement x="0" y="10" width="100" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[BRANCH :]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="101" y="10" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{BRANCH}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="302" y="10" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{BRANCH_CODE}]]></textFieldExpression>
+				</textField>
+			</band>
+			<band height="40">
+				<staticText>
+					<reportElement x="0" y="10" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[STATUS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="201" y="10" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[ NO_OF_TXN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="402" y="10" width="100" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[ TOTAL AMOUNT]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="40">
+				<staticText>
+					<reportElement x="0" y="0" width="200" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="14" isBold="true" isItalic="true"/>
+					</textElement>
+					<text><![CDATA[BRANCH TOTALS]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="201" y="0" width="200" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$V{BRANCH_TXN_TOTAL}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="402" y="0" width="100" height="20"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{BRANCH_TOTAL_AMOUNT}.longValue()) /100.00)]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50">
+			<line>
+				<reportElement x="0" y="0" width="800" height="1" forecolor="#000000"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="10" width="800" height="30"/>
+				<textElement textAlignment="Center" lineSpacing="Single">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{reportTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30">
+			<rectangle>
+				<reportElement x="0" y="0" width="780" height="30"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="780" height="30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="16" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{pageHeader}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="12" width="200" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{STATUS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="12" width="200" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{NO_OF_TXN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="12" width="100" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{TOTAL_AMOUNT}.longValue()) /100.00)]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30">
+			<staticText>
+				<reportElement x="336" y="0" width="30" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Page | ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="366" y="0" width="50" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.1/notation" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation" xmi:id="_Kjg70BzxEeGJApWqSN5r5g" type="Class" name="classdiagram">
+  <eAnnotations xmi:id="_Kka6wBzxEeGJApWqSN5r5g" source="com.ibm.xtools.common.ui.reduction.editingCapabilities">
+    <details xmi:id="_Kka6wRzxEeGJApWqSN5r5g" key="com.ibm.xtools.activities.EJB3VisualizerActivity" value="1"/>
+    <details xmi:id="_Kkbh0BzxEeGJApWqSN5r5g" key="com.ibm.xtools.activities.javaVisualizerActivity" value="1"/>
+    <details xmi:id="_Kkbh0RzxEeGJApWqSN5r5g" key="com.ibm.xtools.activities.EJB3JPAVisualizerActivity" value="1"/>
+    <details xmi:id="_Kkbh0hzxEeGJApWqSN5r5g" key="com.ibm.xtools.viz.java.webservice.capability" value="1"/>
+  </eAnnotations>
+  <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_Kjg70RzxEeGJApWqSN5r5g"/>
+  <element xsi:nil="true"/>
+</notation:Diagram>

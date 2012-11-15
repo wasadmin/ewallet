@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<persistence-unit name="BankServicesEJB">
+		<jta-data-source>jdbc/EWALLET</jta-data-source>
+		<class>zw.co.esolutions.ewallet.bankservices.model.BankBranch</class>
+		<class>zw.co.esolutions.ewallet.bankservices.model.BankAccount</class>
+		<class>zw.co.esolutions.ewallet.bankservices.model.Bank</class>
+		<class>zw.co.esolutions.ewallet.bankservices.model.Transaction</class>
+		<class>zw.co.esolutions.ewallet.bankservices.model.AccountBalance</class>
+		<properties>
+			<property name="openjpa.jdbc.Schema" value="BANKIF"/>
+		</properties>
+	</persistence-unit>
+</persistence>

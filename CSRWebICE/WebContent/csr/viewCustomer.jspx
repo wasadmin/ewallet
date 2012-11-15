@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- jsf:pagecode language="java" location="/src/pagecode/csr/ViewCustomer1.java" --><!-- /jsf:pagecode -->
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+				<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+				<link href="../theme/stylesheet.css" rel="stylesheet"
+					type="text/css" />
+				<link href="../theme/tabpanel.css" rel="stylesheet" type="text/css"/>
+				
+				<ui:define name="header">
+					<ui:include src="../template/header.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="menu">
+					<ui:include src="../template/menu.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="content">
+					<h2>View Customer</h2>
+					<h:form styleClass="form" id="form1">
+						<h:messages styleClass="messages" id="messages1"
+							errorClass="errorMessage" infoClass="infoMessage" layout="table"></h:messages>
+						<h:inputHidden value="#{viewCustomerBean.customerId}"></h:inputHidden>
+						<ice:commandLink styleClass="requestLink" id="link1"
+							action="#{viewCustomerBean.back}">
+							<h:outputText id="text20" styleClass="outputText"
+								value="&lt;&lt;Back"></h:outputText>
+						</ice:commandLink>
+						<br />
+						<ice:panelGroup styleClass="synopsisBox">
+		<ul >
+			<li id="li"><ice:outputText
+				 value="To approve a customer click on the link labelled Approve Customer. This approves the customer details and contact information."  /></li>
+			<li id="li"><ice:outputText
+				value="To approve a mobile profile and bank account select the appropriate tab and approve." /></li>
+		</ul>
+	</ice:panelGroup>
+						<ice:panelTabSet>
+							<ice:panelTab id="bfpanel1" label="Customer Details" >
+													
+								<h:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+									cellspacing="5" width="600" columns="2">
+									<h:outputLabel value="Title" styleClass="outputLabel"
+										id="label2"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text1"
+										value="#{viewCustomerBean.customer.title}"></h:outputText>
+									<h:outputLabel value="Lastname" styleClass="outputLabel"
+										id="label3"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text2"
+										value="#{viewCustomerBean.customer.lastName}"></h:outputText>
+									<h:outputLabel value="Firstnames" styleClass="outputLabel"
+										id="label4"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text3"
+										value="#{viewCustomerBean.customer.firstNames}"></h:outputText>
+									<h:outputLabel value="National ID" styleClass="outputLabel"
+										id="label5"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text4"
+										value="#{viewCustomerBean.customer.nationalId}"></h:outputText>
+									<h:outputLabel value="Date Of Birth" styleClass="outputLabel"
+										id="label6"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text5"
+										value="#{viewCustomerBean.customer.dateOfBirth}">
+										<f:convertDateTime pattern="dd/MM/yyyy"/>
+										<f:converter converterId="xmlDateConverter"/>	
+									</h:outputText>
+									<h:outputLabel value="Gender" styleClass="outputLabel"
+										id="label8"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text7"
+										value="#{viewCustomerBean.customer.gender}"></h:outputText>
+									<h:outputLabel value="Marital Status" styleClass="outputLabel"
+										id="label7"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text6"
+										value="#{viewCustomerBean.customer.maritalStatus}"></h:outputText>
+									<h:outputLabel value="Customer Status" styleClass="outputLabel"
+										id="label9"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text8"
+										value="#{viewCustomerBean.customer.status}"></h:outputText>
+									<h:outputLabel value="Customer Class" styleClass="outputLabel"
+										id="label25"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text26"
+										value="#{viewCustomerBean.customer.customerClass}"></h:outputText>
+									<h:outputLabel value="Registration Branch" styleClass="outputLabel"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text26"
+										value="#{viewCustomerBean.customer.branchId}">
+										<f:converter converterId="branchNameConverter"/>
+										</h:outputText>
+									
+									<h:outputLabel value="Registration Bank" styleClass="outputLabel"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text26"
+										value="#{viewCustomerBean.customer.branchId}">
+										<f:converter converterId="bankNameBranchConverter"/>
+										</h:outputText>
+								
+									<f:facet name="header">
+										<h:panelGroup styleClass="panelGroup" id="group1">
+											<h:outputLabel value="Personal Details"
+												styleClass="panelGridLabel" id="label1"></h:outputLabel>
+										</h:panelGroup>
+									</f:facet>
+								</h:panelGrid>
+								<h:panelGrid styleClass="panelGrid" id="grid2" cellpadding="5"
+									cellspacing="5" width="600" columns="2">
+									<h:outputLabel value="Telephone" styleClass="outputLabel"
+										id="label11"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text9"
+										value="#{viewCustomerBean.contactDetails.telephone}"></h:outputText>
+									<h:outputLabel value="Email" styleClass="outputLabel"
+										id="label12"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text10"
+										value="#{viewCustomerBean.contactDetails.email}"></h:outputText>
+									<h:outputLabel value="Postal Address" styleClass="outputLabel"
+										id="label134"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="tetr34xt13"
+										value="#{viewCustomerBean.contactDetails.postalAddress}"></h:outputText>
+									<h:outputLabel value="Street" styleClass="outputLabel"
+										id="label15"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text13"
+										value="#{viewCustomerBean.contactDetails.street}"></h:outputText>
+									<h:outputLabel value="Suburb" styleClass="outputLabel"
+										id="label16"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text14"
+										value="#{viewCustomerBean.contactDetails.suburb}"></h:outputText>
+									<h:outputLabel value="City/Town" styleClass="outputLabel"
+										id="label17"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text15"
+										value="#{viewCustomerBean.contactDetails.city}"></h:outputText>
+									<h:outputLabel value="Country" styleClass="outputLabel"
+										id="label18"></h:outputLabel>
+									<h:outputText styleClass="outputText" id="text16"
+										value="#{viewCustomerBean.contactDetails.country}"></h:outputText>
+									<f:facet name="header">
+										<h:panelGroup styleClass="panelGroup" id="group2">
+											<h:outputLabel value="Contact Details"
+												styleClass="panelGridLabel" id="label10"></h:outputLabel>
+										</h:panelGroup>
+									</f:facet>
+								</h:panelGrid>
+								<h:panelGrid styleClass="panelGrid" id="grid5" columns="8" cellpadding="4" cellspacing="4">
+								
+								
+								
+									<h:commandLink type="submit" value="View Logs" rendered="#{viewCustomerBean.auditor}"
+									styleClass="commandButton"  actionListener="#{viewLogsBean.viewLogs}" action="#{viewCustomerBean.viewLogs}" >
+										<f:attribute name="entityId" value="#{viewCustomerBean.customerId}"/>
+										<f:attribute name="entityName" value="CUSTOMER"/>
+										<f:attribute name="previous" value="csr/viewCustomer.jspx"/>
+									</h:commandLink>
+									<ice:commandLink styleClass="commandButton"   id="link2"
+										action="#{viewCustomerBean.approveCustomer}"
+										rendered="#{viewCustomerBean.approver and viewCustomerBean.customer.approvable and viewCustomerBean.customer.renderApproval}">
+										<h:outputText id="text29" styleClass="outputText"
+											value="Approve Customer"></h:outputText>
+										<f:param name="customerId"
+											value="#{viewCustomerBean.customerId}"></f:param>
+									</ice:commandLink>
+									<ice:commandLink styleClass="commandButton"   id="link3"
+										action="#{viewCustomerBean.rejectCustomer}"
+										rendered="#{viewCustomerBean.approver and viewCustomerBean.customer.approvable and viewCustomerBean.customer.renderApproval}">
+										<h:outputText id="text30" styleClass="outputText"
+											value="Reject Customer"></h:outputText>
+										<f:param name="customerId"
+											value="#{viewCustomerBean.customerId}"></f:param>
+									</ice:commandLink>
+									<ice:commandLink styleClass="commandButton"  id="link4"
+										action="#{viewCustomerBean.approveAll}"
+										rendered="#{viewCustomerBean.approver and viewCustomerBean.customer.approvable and viewCustomerBean.customer.renderApproval}">
+										<h:outputText id="text31" styleClass="outputText"
+											value="Approve All"></h:outputText>
+										<f:param name="customerId"
+											value="#{viewCustomerBean.customerId}"></f:param>
+									</ice:commandLink>
+									<ice:commandLink styleClass="commandButton"   id="link5"
+										action="#{viewCustomerBean.rejectAll}"
+										rendered="#{viewCustomerBean.approver and viewCustomerBean.customer.approvable and viewCustomerBean.customer.renderApproval}">
+										<h:outputText id="text32" styleClass="outputText"
+											value="Reject All" ></h:outputText>
+										<f:param name="customerId"
+											value="#{viewCustomerBean.customerId}"></f:param>
+									</ice:commandLink>
+									<ice:commandLink styleClass="commandButton"   id="link223"
+										action="#{viewCustomerBean.suspendCustomer}"
+										rendered="#{viewCustomerBean.suspendClient and viewCustomerBean.customer.suspended and viewCustomerBean.customer.renderApproval}">
+										<h:outputText id="textdf29" styleClass="outputText"
+											value="Suspend Customer"  ></h:outputText>
+										<f:param name="customerId"
+											value="#{viewCustomerBean.customerId}"></f:param>
+									</ice:commandLink>
+									<ice:commandLink styleClass="commandButton"   id="link903"
+										action="#{viewCustomerBean.activateCustomer}"
+										rendered="#{viewCustomerBean.approver and viewCustomerBean.customer.activate }">
+										<h:outputText id="te8923" styleClass="outputText"  
+											value="Activate Customer"></h:outputText>
+										<f:param name="customerId"
+											value="#{viewCustomerBean.customerId}"></f:param>
+									</ice:commandLink>
+									
+									<ice:commandLink styleClass="commandButton"   id="li903"
+										action="#{viewCustomerBean.deRegisterCustomer}"
+										rendered="#{viewCustomerBean.deRegisterClient and viewCustomerBean.customer.deregister}">
+										<h:outputText id="dee8923" styleClass="outputText"
+											value="Deregister Customer"></h:outputText>
+										<f:param name="customerId"
+											value="#{viewCustomerBean.customerId}"></f:param>
+									</ice:commandLink>
+									<h:commandButton type="submit" value="  Edit  "
+										styleClass="commandButton" id="button2"
+										action="#{viewCustomerBean.edit}"
+										actionListener="#{editCustomerBean.doEditAction}" rendered="#{viewCustomerBean.editCustomers and viewCustomerBean.customer.pendingApproval}">
+										<f:attribute name="customerId"
+											value="#{viewCustomerBean.customerId}" />
+									</h:commandButton>
+									</h:panelGrid>
+							
+									
+									
+								
+								
+							</ice:panelTab>
+							
+							<ice:panelTab id="bfpanel3" label="Mobile Profiles">
+								<h:dataTable border="0" cellpadding="2" cellspacing="0"
+									columnClasses="columnClass1" headerClass="headerClass"
+									footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+									styleClass="dataTable" id="tableEx1" width="600"
+									value="#{viewCustomerBean.mobileProfileList}" var="profile">
+									<f:facet name="header">
+										<h:outputLabel value="Customer's Mobile Profiles"
+											styleClass="outputLabel" id="label19"></h:outputLabel>
+									</f:facet>
+									<h:column id="column1">
+										<f:facet name="header">
+											<h:outputText id="text17" styleClass="outputText"
+												value="Mobile Number"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" id="text20"
+											value="#{profile.mobileNumber}"></h:outputText>
+									</h:column>
+									<h:column id="column201">
+										<f:facet name="header">
+											<h:outputText value="Status" styleClass="outputText"
+												id="text456"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" id="text111"
+											value="#{profile.network}"></h:outputText>
+									</h:column>
+									<h:column id="column2">
+										<f:facet name="header">
+											<h:outputText value="Status" styleClass="outputText"
+												id="text18"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" id="text21"
+											value="#{profile.status}"></h:outputText>
+									</h:column>
+									<h:column id="columnEx88">
+										<ice:commandLink styleClass="requestLink" value="Edit"  style="color:green" id="link4599" action="#{viewCustomerBean.editMobileProfile}" rendered="#{viewCustomerBean.editMobiles and profile.pendingApproval}">
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+									</h:column>
+									<h:column id="columnEx88x">
+										<ice:commandLink styleClass="requestLink" value="Reset Pin"  style="color:green" id="link99" action="#{viewCustomerBean.resetMobileProfilePin}" rendered="#{viewCustomerBean.canResetMobileProfilePin}">
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+									</h:column>
+									<h:column id="columnEx8845x">
+										<ice:commandLink styleClass="requestLink" value="Unlock"  style="color:green" id="l8899" action="#{viewCustomerBean.unLockMobile}" rendered="#{viewCustomerBean.canUnLockMobileProfile and profile.locked}">
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+									</h:column>
+									<ice:column id="columnEx233">
+										<h:commandLink type="submit" value="View Logs" styleClass="requestLink" style="color:green"   actionListener="#{viewLogsBean.viewLogs}" action="#{viewCustomerBean.viewLogs}">
+											<f:attribute name="entityId" value="#{profile.id}"/>
+											<f:attribute name="entityName" value="MOBILE PROFILE"/>
+											<f:attribute name="previous" value="csr/viewCustomer.jspx"/>
+										</h:commandLink>
+									</ice:column>
+									<h:column id="column3">
+										<f:facet name="header">
+										</f:facet>
+										<ice:commandLink styleClass="commandLink" style="color:green" id="link1"
+											action="#{viewCustomerBean.approveMobileProfile}"
+											rendered="#{viewCustomerBean.approver and profile.approvable and profile.mobileProfileRenderApproval and viewCustomerBean.customer.deregister}">
+											<h:outputText id="text19" styleClass="outputText"
+												value="Approve"></h:outputText>
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+										<ice:commandLink styleClass="commandLink" style="color:green" 
+											action="#{viewCustomerBean.hotMobile}"
+											rendered="#{profile.hottable}">
+											<h:outputText  styleClass="outputText" style="color:green" 
+												value="Hot Mobile"></h:outputText>
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+									</h:column>
+									<h:column id="column35">
+										<f:facet name="header">
+										</f:facet>
+										<ice:commandLink styleClass="commandLink" style="color:green" id="link14"
+											action="#{viewCustomerBean.rejectMobileProfile}"
+											rendered="#{viewCustomerBean.approver and profile.approvable and profile.mobileProfileRenderApproval and viewCustomerBean.customer.deregister}">
+											<h:outputText id="text195" styleClass="outputText" style="color:green" 
+												value="Reject"></h:outputText>
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+										<ice:commandLink styleClass="commandLink" style="color:green" 
+											action="#{viewCustomerBean.coldMobile}"
+											rendered="#{profile.coldable}">
+											<h:outputText  styleClass="outputText" style="color:green" 
+												value="Cold Mobile"></h:outputText>
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+									</h:column>
+									
+									
+									<h:column id="deRegisterColumn23">
+										<f:facet name="header">
+										</f:facet>
+										<ice:commandLink styleClass="commandLink" style="color:green" id="l12ink14"
+											action="#{viewCustomerBean.deRegisterMobileProfile}"
+											rendered="#{viewCustomerBean.deRegisterCustomerMobileProfile}">
+											<h:outputText id="text23195" styleClass="outputText" style="color:green" 
+												value="De-Register"></h:outputText>
+											<f:param name="mobileProfileId" value="#{profile.id}"></f:param>
+										</ice:commandLink>
+										
+									</h:column>
+									
+									
+								</h:dataTable>
+								<br/>
+								<ice:commandButton styleClass="commandButton" value="Add Mobile Profile" action="#{viewCustomerBean.addMobileProfile}" actionListener="#{editCustomerBean.doEditAction}" rendered="#{viewCustomerBean.auditor}"></ice:commandButton>
+							</ice:panelTab>
+							<ice:panelTab id="bfpanel4" label="Account Details">
+
+								<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+									columnClasses="columnClass1" headerClass="headerClass"
+									footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+									styleClass="dataTable" id="tableEx2" width="600"
+									value="#{viewCustomerBean.bankAccountList}"
+									var="account">
+									<f:facet name="header">
+										<h:outputText id="text284" styleClass="outputText"
+												value="Customer Accounts"></h:outputText>
+									</f:facet>
+									<ice:column id="columnEx1">
+										<f:facet name="header">
+											<h:outputText id="text22" styleClass="outputText"
+												value="Account Number"></h:outputText>
+										</f:facet>
+										<h:outputText id="text221" styleClass="outputText"
+												value="#{account.accountNumber}"></h:outputText>
+									</ice:column>
+									
+									<ice:column id="columnEx5">
+										<f:facet name="header">
+											<h:outputText value="Account Class" styleClass="outputText"
+												id="text27"></h:outputText>
+										</f:facet>
+										<h:outputText id="text221" styleClass="outputText"
+												value="#{account.accountClass}"></h:outputText>
+									</ice:column>
+									<ice:column id="columnEx6">
+										<f:facet name="header">
+											<h:outputText value="Account Type" styleClass="outputText"
+												id="text28"></h:outputText>
+										</f:facet>
+										<h:outputText id="text221" styleClass="outputText"
+												value="#{account.type}"></h:outputText>
+									</ice:column>
+									<ice:column id="columnEx46">
+										<f:facet name="header">
+											<h:outputText value="Status" styleClass="outputText"
+												id="text278"></h:outputText>
+										</f:facet>
+										<h:outputText id="text331" styleClass="outputText"
+												value="#{account.status}"></h:outputText>
+									</ice:column>
+									<ice:column id="columnEx6238">  
+										<f:facet name="header">
+											<h:outputText value="Primary Account" styleClass="outputText"
+												></h:outputText>
+										</f:facet>
+										<ice:commandLink styleClass="requestLink" id="link2" style="color:green"
+										 	action="#{viewCustomerBean.changePrimaryAccountValue}">
+										<h:outputText styleClass="outputText" id="text13" value="#{account.primaryAccount}"></h:outputText>
+										<f:param name="bankAccountId" value="#{account.id}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+									<ice:column id="columnEx668">
+										<ice:commandLink styleClass="requestLink"  style="color:green"  id="link69" action="#{viewCustomerBean.editBankAccount}"  rendered="#{viewCustomerBean.editAccount and account.pendingApproval}">
+											<h:outputText id="text994" styleClass="outputLabel"  style="color:green"  
+												value="Edit"></h:outputText>		
+											<f:param name="accountId" value="#{account.id}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+									<ice:column id="columnEx168">
+										<h:commandLink type="submit" styleClass="requestLink" style="color:green"   actionListener="#{configureAlertsBean.configureAlerts}" 
+												action="#{viewCustomerBean.configureAlert}">
+											<h:outputText styleClass="outputLabel" style="color:green" 
+												value="Configure Alerts"></h:outputText>		
+											<f:attribute name="accountId" value="#{account.id}"/>
+											<f:attribute name="previous" value="csr/viewCustomer.jspx"/>											
+										</h:commandLink>
+									</ice:column>
+									<ice:column id="columnEx168">
+										<h:commandLink type="submit" styleClass="requestLink" style="color:green"  actionListener="#{viewLogsBean.viewLogs}" action="#{viewCustomerBean.viewLogs}">
+											<h:outputText styleClass="outputLabel" style="color:green" 
+												value="View Logs"></h:outputText>		
+											<f:attribute name="entityId" value="#{account.id}"/>
+											<f:attribute name="entityName" value="BANK ACCOUNT"/>
+											<f:attribute name="previous" value="csr/viewCustomer.jspx"/>
+										</h:commandLink>
+									</ice:column>
+									<ice:column id="columnEx66">
+										<ice:commandLink styleClass="requestLink" style="color:green"  id="link6" 
+											action="#{viewCustomerBean.approveBankAccount}"
+											rendered="#{viewCustomerBean.approver and account.approvable and account.bankAccRenderApprovable and viewCustomerBean.customer.deregister}">
+											<h:outputText id="text294" styleClass="outputLabel" style="color:green" 
+												value="Approve"></h:outputText>		
+											<f:param name="accountId" value="#{account.id}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+									<ice:column id="columnEx67">
+										<ice:commandLink styleClass="requestLink" style="color:green"  id="link68" 
+											action="#{viewCustomerBean.rejectBankAccount}"
+											rendered="#{viewCustomerBean.approver and account.approvable and account.bankAccRenderApprovable and viewCustomerBean.customer.deregister }">
+											<h:outputText id="text194" styleClass="outputLabel" style="color:green" 
+												value="Reject"></h:outputText>	
+											<f:param name="accountId" value="#{account.id}"></f:param>	
+										</ice:commandLink>
+									</ice:column>
+									
+									
+									
+									<ice:column id="columnEx6237">
+										<ice:commandLink styleClass="requestLink" style="color:green"  
+										
+											action="#{viewCustomerBean.deRegisterBankAccount}"
+											rendered="#{viewCustomerBean.deRegisterCustomerBankAccount }">
+											<h:outputText id="text13494" styleClass="outputLabel" style="color:green" 
+												value="De-Register"></h:outputText>	
+											<f:param name="accountId" value="#{account.id}"></f:param>	
+										</ice:commandLink>
+									</ice:column>
+									
+								</ice:dataTable>
+								<br/>
+								<ice:commandButton styleClass="commandButton" value="Add Bank Account" action="#{viewCustomerBean.addBankAccount}" actionListener="#{editCustomerBean.doEditAction}" rendered="#{viewCustomerBean.auditor}"></ice:commandButton>
+							
+							</ice:panelTab>
+							<ice:panelTab id="bfpanel46" label="Merchant Accounts">
+
+								<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+									columnClasses="columnClass1" headerClass="headerClass"
+									footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+									styleClass="dataTable" id="tableEx26" width="600"
+									value="#{viewCustomerBean.customerMerchantList}"
+									var="customerMerchant">
+									<f:facet name="header">
+										<h:outputText id="text284" styleClass="outputText"
+												value="Merchant Accounts"></h:outputText>
+									</f:facet>
+									<ice:column id="columnEx1z">
+										<f:facet name="header">
+											<h:outputText id="text22z" styleClass="outputText"
+												value="Merchant Name"></h:outputText>
+										</f:facet>
+										<h:outputText id="text221z" styleClass="outputText"
+												value="#{customerMerchant.bankMerchant.merchant.shortName}"></h:outputText>
+									</ice:column>
+									
+									<ice:column id="columnEx5z">
+										<f:facet name="header">
+											<h:outputText value="Account Number" styleClass="outputText"
+												id="text27z"></h:outputText>
+										</f:facet>
+										<h:outputText id="text221z" styleClass="outputText"
+												value="#{customerMerchant.customerAccountNumber}"></h:outputText>
+									</ice:column>
+									<ice:column id="columnEx6z">
+										<f:facet name="header">
+											<h:outputText value="Status" styleClass="outputText"
+												id="text28z"></h:outputText>
+										</f:facet>
+										<h:outputText id="text221z" styleClass="outputText"
+												value="#{customerMerchant.status}"></h:outputText>
+									</ice:column>
+									
+									<ice:column id="columnEx668z">
+										<ice:commandLink styleClass="requestLink" id="link69z" action="#{viewCustomerBean.editCustomerMerchant}"  rendered="#{viewCustomerBean.auditor}">
+											<h:outputText id="text994z" styleClass="outputLabel"
+												value="Edit"></h:outputText>		
+											<f:param name="customerMerchantId" value="#{customerMerchant.id}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+									<ice:column id="columnEx6ty68z">
+										<ice:commandLink styleClass="requestLink" id="link6ir9z" action="#{viewCustomerBean.deleteCustomerMerchant}"  rendered="#{viewCustomerBean.auditor}">
+											<h:outputText id="text99it4z" styleClass="outputLabel"
+												value="Delete"></h:outputText>		
+											<f:param name="customerMerchantId" value="#{customerMerchant.id}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+									
+									<ice:column id="columnEx66z">
+										<ice:commandLink styleClass="requestLink" id="link6z" 
+											action="#{viewCustomerBean.approveCustomerMerchant}"
+											rendered="#{viewCustomerBean.approver and customerMerchant.approvable}">
+											<h:outputText id="text294" styleClass="outputLabel"
+												value="Approve"></h:outputText>		
+											<f:param name="customerMerchantId" value="#{customerMerchant.id}"></f:param>
+										</ice:commandLink>
+									</ice:column>
+									<ice:column id="columnEx67z">
+										<ice:commandLink styleClass="requestLink" id="link68z" 
+											action="#{viewCustomerBean.rejectCustomerMerchant}"
+											rendered="#{viewCustomerBean.approver and customerMerchant.approvable}">
+											<h:outputText id="text194z" styleClass="outputLabel"
+												value="Reject"></h:outputText>	
+											<f:param name="customerMerchantId" value="#{customerMerchant.id}"></f:param>	
+										</ice:commandLink>
+									</ice:column>
+								
+								</ice:dataTable>
+								<br/>
+								<ice:commandLink styleClass="commandButton" id="link68zty" 
+									action="#{viewCustomerBean.addCustomerMerchant}" rendered="#{viewCustomerBean.auditor}">
+									<h:outputText id="text194zut" styleClass="outputLabel"
+											value="Add Customer Merchant"></h:outputText>	
+									<f:param name="customerMerchantId" value="#{customerMerchant.id}"></f:param>	
+								</ice:commandLink>
+							
+							</ice:panelTab>
+							<f:facet name="back">
+								<h:commandButton type="submit" value="&lt; Back"
+									id="tabbedPanel1_back" style="display:none"></h:commandButton>
+							</f:facet>
+							<f:facet name="next">
+								<h:commandButton type="submit" value="Next &gt;"
+									id="tabbedPanel1_next" style="display:none"></h:commandButton>
+							</f:facet>
+							<f:facet name="finish">
+								<h:commandButton type="submit" value="Finish"
+									id="tabbedPanel1_finish" style="display:none"></h:commandButton>
+							</f:facet>
+							<f:facet name="cancel">
+								<h:commandButton type="submit" value="Cancel"
+									id="tabbedPanel1_cancel" style="display:none"></h:commandButton>
+							</f:facet>
+						</ice:panelTabSet>
+						
+						
+						
+		<h:messages styleClass="messages" id="messages67"
+							errorClass="errorMessage" infoClass="infoMessage" layout="table"></h:messages>
+								
+					</h:form>
+				</ui:define>
+				<ui:define name="footer">
+					<ui:include src="../template/footer.jspx"></ui:include>
+				</ui:define>
+				<link rel="stylesheet" type="text/css" title="Style"
+					href="../theme/stylesheet.css" />
+			</ui:composition>
+	</f:view>
+
+</jsp:root>

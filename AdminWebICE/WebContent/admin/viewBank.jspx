@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<ice:form styleClass="form" id="form1">
+					<ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage"></ice:messages>
+					<ice:inputHidden value="#{viewBankBean.bankId}"></ice:inputHidden>
+						<ice:panelTabSet>
+						
+							<ice:panelTab id="bfpanel1" label="Bank Details">
+									<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5" cellspacing="5"
+										columns="2" width="600">
+										<f:facet name="header">
+											<ice:panelGroup styleClass="panelGroup" id="group1">
+												<ice:outputLabel value="Bank Details" styleClass="panelGridLabel"
+													id="label1"></ice:outputLabel>
+											</ice:panelGroup>
+										</f:facet>
+										<ice:outputLabel value="Bank Name" styleClass="outputLabel" id="label2"></ice:outputLabel>
+										<ice:outputText styleClass="outputText" id="text1"
+											value="#{viewBankBean.bank.name}">
+							
+										</ice:outputText>
+										<ice:outputLabel value="Bank Code" styleClass="outputLabel" id="label3"></ice:outputLabel>
+										<ice:outputText styleClass="outputText" id="text2"
+											value="#{viewBankBean.bank.code}">
+							
+										</ice:outputText>
+									</ice:panelGrid>
+									<ice:panelGrid styleClass="panelGrid" id="grid3" columns="2" width="600" cellpadding="5" cellspacing="5">
+										<f:facet name="header">
+											<ice:panelGroup styleClass="panelGroup" id="group3">
+												<ice:outputLabel value="Contact Details" styleClass="panelGridLabel"
+													id="label4">
+							
+												</ice:outputLabel>
+											</ice:panelGroup>
+										</f:facet>
+																	
+										<ice:outputLabel value="Contact Name" styleClass="outputLabel"
+											id="label5"></ice:outputLabel>
+										<ice:outputText styleClass="outputText" id="text4"
+											value="#{viewBankBean.contactDetails.contactName}">
+								
+										</ice:outputText>
+										<ice:outputLabel value="Contact Phone" styleClass="outputLabel"
+											id="label6"></ice:outputLabel>
+										<ice:outputText styleClass="outputText" id="text5"
+											value="#{viewBankBean.contactDetails.telephone}">
+								
+										</ice:outputText>
+										<ice:outputLabel value="Email" styleClass="outputLabel" id="label7"></ice:outputLabel>
+										<ice:outputText styleClass="outputText" id="text6"
+											value="#{viewBankBean.contactDetails.email}">
+								
+										</ice:outputText>
+										<ice:outputLabel value="Fax" styleClass="outputLabel" id="label8"></ice:outputLabel>
+										<ice:outputText styleClass="outputText" id="text7"
+											value="#{viewBankBean.contactDetails.fax}">
+								
+										</ice:outputText>
+										<ice:outputLabel value="Street" styleClass="outputLabel" id="label9"></ice:outputLabel>
+										<ice:outputText styleClass="outputText" id="text8"
+											value="#{viewBankBean.contactDetails.street}">
+								
+										</ice:outputText>
+										<ice:outputLabel value="Suburb" styleClass="outputLabel" id="label10"></ice:outputLabel>
+										<ice:outputText styleClass="outputText" id="text9"
+											value="#{viewBankBean.contactDetails.suburb}">
+								
+										</ice:outputText>
+										<ice:outputLabel value="City" styleClass="outputLabel" id="label11"></ice:outputLabel>
+										<ice:outputText styleClass="outputText" id="text10"
+											value="#{viewBankBean.contactDetails.city}">
+								
+										</ice:outputText>
+										<ice:outputLabel value="Country" styleClass="outputLabel" id="label12"></ice:outputLabel>
+										<ice:outputText styleClass="outputText" id="text11"
+											value="#{viewBankBean.contactDetails.country}">
+								
+										</ice:outputText>
+									</ice:panelGrid>
+							
+						
+									<ice:panelGrid styleClass="panelGrid" id="grid2" cellpadding="5"
+										cellspacing="5" columns="3">
+										<ice:commandButton type="submit" value="     Back   "
+											styleClass="commandButton" id="button1" action="#{viewBankBean.ok}"></ice:commandButton>
+										<ice:commandButton type="submit" value="   Edit   "
+											styleClass="commandButton" id="button2" action="#{viewBankBean.edit}"
+											actionListener="#{editBankBean.editBank}" rendered="#{viewBankBean.editable}">
+											<f:attribute name="bankId" value="#{viewBankBean.bankId}" />
+										</ice:commandButton>
+										<h:commandButton type="submit" value="View Logs"
+											styleClass="commandButton" id="button6" actionListener="#{viewLogsBean.viewLogs}" action="#{viewBankBean.logs}">
+											<f:attribute name="entityId" value="#{viewBankBean.bankId}"/>
+											<f:attribute name="entityName" value="BANK"/>
+											<f:attribute name="previous" value="admin/viewBank.jspx"/>
+										</h:commandButton>
+									</ice:panelGrid>
+									
+							</ice:panelTab>	
+							
+							<ice:panelTab id="bfpanel2" label="Bank Branches">
+								<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+									columnClasses="columnClass1" headerClass="headerClass"
+									footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+									styleClass="dataTable" id="table1" value="#{viewBankBean.branchList}"
+									var="varbranches" width="600">
+									<f:facet name="header">
+										<ice:panelGroup styleClass="panelGroup" id="group2">
+											<ice:outputLabel value="Branches" styleClass="outputLabel"
+												id="label13"></ice:outputLabel>
+										</ice:panelGroup>
+									</f:facet>
+									<ice:column id="column4">
+										<f:facet name="header">
+											<ice:outputText value="CODE" styleClass="outputText" id="text15"></ice:outputText>
+										</f:facet>
+										<ice:commandLink styleClass="requestLink" id="link1" action="#{viewBankBean.viewBranch}">
+											<ice:outputText styleClass="outputText" id="text12"
+											value="#{varbranches.code}"></ice:outputText>
+											<f:param name="branchId" value="#{varbranches.id}"></f:param>
+										</ice:commandLink>
+										
+									</ice:column>
+									<ice:column id="column3">
+										<f:facet name="header">
+											<ice:outputText value="NAME" styleClass="outputText" id="text14"></ice:outputText>
+										</f:facet>
+										<ice:outputText styleClass="outputText" id="text16"
+											value="#{varbranches.name}"></ice:outputText>
+									</ice:column>
+									<ice:column id="column2">
+										<f:facet name="header">
+											<ice:outputText value="CITY" styleClass="outputText" id="text13"></ice:outputText>
+										</f:facet>
+										<ice:outputText styleClass="outputText" id="text17"
+											value="#{varbranches.contactDetailsId}">
+											<f:converter converterId="CityConverter" />
+										</ice:outputText>
+									</ice:column>
+								</ice:dataTable>
+						</ice:panelTab>
+						
+						<ice:panelTab id="bfpanel2" label="Bank Merchant Accounts">
+							<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+									columnClasses="columnClass1" headerClass="headerClass"
+									footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+									styleClass="dataTable" id="table166" value="#{viewBankBean.bankMerchantList}"
+									var="bankMerchant" width="600">
+									<f:facet name="header">
+										<ice:panelGroup styleClass="panelGroup" id="group25">
+											<ice:outputLabel value="Merchant Accounts" styleClass="outputLabel"
+												id="label143"></ice:outputLabel>
+										</ice:panelGroup>
+									</f:facet>
+									<ice:column id="column454">
+										<f:facet name="header">
+											<ice:outputText value="CODE" styleClass="outputText" id="text152"></ice:outputText>
+										</f:facet>
+										
+										<ice:commandLink styleClass="requestLink" id="link14ioerf" 
+											action="#{viewBankBean.viewBankMerchant}">
+										<ice:outputText styleClass="outputText" id="text12"
+											value="#{bankMerchant.merchant.shortName}"></ice:outputText>
+											<f:param name="bankMerchantId" value="#{bankMerchant.id}"></f:param>
+										</ice:commandLink>											
+									</ice:column>
+									<ice:column id="column3u">
+										<f:facet name="header">
+											<ice:outputText value="NAME" styleClass="outputText" id="textr14"></ice:outputText>
+										</f:facet>
+										<ice:outputText styleClass="outputText" id="text1i6"
+											value="#{bankMerchant.merchant.name}"></ice:outputText>
+									</ice:column>
+									<ice:column id="column2j">
+										<f:facet name="header">
+											<ice:outputText value="ACCOUNT NUMBER" styleClass="outputText" id="text13r"></ice:outputText>
+										</f:facet>
+										<ice:outputText styleClass="outputText" id="text17m"
+											value="#{bankMerchant.merchantSuspenseAccount}">
+										</ice:outputText>
+									</ice:column>
+									<ice:column id="column28">
+										<f:facet name="header">
+											<ice:outputText value="STATUS" styleClass="outputText" id="text130"></ice:outputText>
+										</f:facet>
+										<ice:outputText styleClass="outputText" id="text17m4"
+											value="#{bankMerchant.status}">
+										</ice:outputText>
+									</ice:column>
+									<ice:column id="column287">
+										<ice:commandLink styleClass="requestLink" id="link14f" 
+											action="#{viewBankBean.approveBankMerchant}"
+											rendered="#{viewBankBean.approver and bankMerchant.approvable}">
+											<ice:outputText styleClass="outputText" id="text9393"
+												value="Approve"></ice:outputText>
+											<f:param name="bankMerchantId" value="#{bankMerchant.id}"></f:param>
+										</ice:commandLink>	
+									</ice:column>
+									<ice:column id="column288">
+										<ice:commandLink styleClass="requestLink" id="link14h" 
+											action="#{viewBankBean.rejectBankMerchant}"
+											rendered="#{viewBankBean.approver and bankMerchant.approvable}">
+											<ice:outputText styleClass="outputText" id="text8748"
+												value="Reject"></ice:outputText>
+											<f:param name="bankMerchantId" value="#{bankMerchant.id}"></f:param>
+										</ice:commandLink>	
+									</ice:column>
+									<ice:column id="column28">
+										<ice:commandLink styleClass="requestLink" id="link14" action="#{viewBankBean.editBankMerchant}" rendered="#{viewBankBean.bankMerchantEditable}">
+											<ice:outputText styleClass="outputText" id="text1734m4"
+												value="Edit"></ice:outputText>
+											<f:param name="bankMerchantId" value="#{bankMerchant.id}"></f:param>
+											<f:param name="bankId" value="#{bankMerchant.bankId}"></f:param>
+										</ice:commandLink>	
+									</ice:column>
+								</ice:dataTable>
+								<p>
+									<ice:commandLink styleClass="requestLink" id="link14hky" 
+										action="#{viewBankBean.approveAllBankMerchants}"
+										rendered="#{viewBankBean.approver}">
+										<ice:outputText styleClass="outputText" id="text8748"
+											value="Approve All Merchants"></ice:outputText>
+									</ice:commandLink>	
+								</p>
+						</ice:panelTab>
+					</ice:panelTabSet>
+				</ice:form>
+				
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

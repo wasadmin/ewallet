@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:merchantInfo xmlns:tns="http://merchant.config.esolutions.co.zw" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://merchant.config.esolutions.co.zw MerchantInfoSchema.xsd ">
+  <tns:requestQueueName>tns:requestQueueName</tns:requestQueueName>
+  <tns:replyQueueName>tns:replyQueueName</tns:replyQueueName>
+  <tns:merchantName>tns:merchantName</tns:merchantName>
+  <tns:enableAccountValidation>true</tns:enableAccountValidation>
+  <tns:enableStraightThrough>true</tns:enableStraightThrough>
+  <tns:enableNotification>true</tns:enableNotification>
+  <tns:reversalCutOffTime>12:00:00</tns:reversalCutOffTime>
+  <tns:transactionCuttoffTime>12:00:00</tns:transactionCuttoffTime>
+</tns:merchantInfo>

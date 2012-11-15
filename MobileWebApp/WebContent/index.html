@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    	<meta name="apple-mobile-web-app-capable" content="yes" />
+    	<title>e-Wallet</title>
+
+		<style type="text/css">
+			div.fieldset {
+	    		background-color: white;
+	    		border: 1px solid #DDDDDD;
+	    		border-radius: 10px 10px 10px 10px;
+	    		margin: 2px 5px;
+	    		padding: 2px 6px;
+			}
+			div.field-row {
+	    		margin-bottom: 7px;
+	    		margin-top: 7px;
+	    		width: 100%;
+			}
+			div.field-title {
+	    		font-size: 18px;
+	   			font-weight: bold;
+	    		margin: 1em 0.7em 0.3em;
+			}
+			.labelSpan {
+	   			 color: #333333;
+	   			 display: inline-block;
+	   			 font-size: 16px;
+	    		font-weight: bold;
+	   			 line-height: 30px;
+	    		vertical-align: top;
+	   			 width: 140px;
+			}
+		</style>
+ 		<script>
+			/* one script tag */
+			dojoConfig = {
+        		 isDebug: true,
+       			 parseOnLoad: true,
+       			 async:false,
+	        	 packages : [{name : 'mymodule', location : 'js'}]
+   			 };
+		</script>
+		<script type="text/javascript" src="dojo/dojo.js"></script>
+		
+		<!-- Script To Load Dojo Combonents -->
+		<script type="text/javascript" src = "js/dojo_script.js"></script>
+		
+		<!-- System Functionality Scripts -->
+		<script type="text/javascript" src = "js/utility.js"></script>
+ 		<script type="text/javascript" src = "js/login.js"></script>
+		<script type="text/javascript" src = "js/transactions.js"></script>
+ 	</head>
+    <body  style="visibility: visible;">
+    	
+   		<!-- Hidden Fields Here 	-->
+   		 <input type="hidden" id = "parts"/>
+ 		 <input type="hidden" id = "mobile"/>
+ 		 <input type="hidden" id = "isagent"/>
+ 		 <input type="hidden" id = "serviceName"/>
+ 		 <input type="hidden" id = "message"/>
+ 		 <input type="hidden" id = "bankId"/>
+ 		 <input type="hidden" id = "bankConf" value="bank.id"/>
+ 		 
+ 		    
+    	<!-- application will go here -->
+    
+   		 <!-- Login -->
+		<div id="login" data-dojo-type="dojox.mobile.ScrollableView" data-dojo-props="selected: true">
+   			 <h1 data-dojo-type="dojox.mobile.Heading">e-Wallet</h1>
+			<h2 dojoType="dojox.mobile.RoundRectCategory" style="text-align: center">e-Wallet Login</h2>
+			<div dojoType="dojox.mobile.RoundRect" shadow="true"> All fields marked with a * are required</div>
+			<form id="loginForm" method="POST">
+     			<div class="fieldset" >
+					<div class="field-row">
+						<span class = "labelSpan">Mobile Number*</span>
+						<input widgetid="mobileNumber" style="" id="mobileNumber" tabindex="0" class="mblTextBox" dojotype="dojox.mobile.TextBox" name="mobileNumber" required="true" type="text"  trim = "true" maxLength = "12" placeHolder = " mobile number" onchange="generatePasswordParts()">
+					</div>
+					<div class="field-row">
+						<span class = "labelSpan" >National ID*</span>
+						<input value="" widgetid="natId" style="" id="natId" tabindex="0" class="mblTextBox" name="natId" dojotype="dojox.mobile.TextBox" required = "true"  trim = "true" maxLength = "15" placeHolder = " National ID">
+					</div>
+					<div class="field-row">
+						<span class = "labelSpan" >Password Parts*</span>
+						<input value="" widgetid="pin" style="" id="pin" tabindex="0" class="mblTextBox" name="pin" dojotype="dojox.mobile.TextBox" type="password" trim = "true" maxLength = "2" required = "true">
+						<span class = "labelSpan"  id = "partsMessage" style = "color: red"></span>
+					</div>
+				</div>
+				<div >
+					<button label = "Log In" widgetid="loginBtn" style="-moz-user-select: none;" tabindex="0" id="loginBtn" type="button" dojotype="dojox.mobile.Button" class="mblButton greyBtn baseBtn normalBtn" onclick="login()" ></button>
+					<span></span>
+					<button label = "Clear" widgetid="resetBtn" style="-moz-user-select: none;" tabindex="0" id="resetBtn" type="reset" dojotype="dojox.mobile.Button" class="mblButton greyBtn baseBtn normalBtn" ></button>
+				</div>
+			</form>
+   			
+		</div>
+	 
+		<!-- Home -->
+		<div id="home" data-dojo-type="dojox.mobile.ScrollableView">
+	  		 <h1 data-dojo-type="dojox.mobile.Heading" back="Log out" moveTo="#login" label = "e-Wallet Home"  transition = "fade" transitionDir = "1"></h1>
+			 <h2 dojoType="dojox.mobile.RoundRectCategory">
+				<span style="text-align : left; float : left;"> Select Service</span>
+				<span id = "h2Home" style="text-align : right; float : right;"></span>
+			</h2>
+			<form method="POST" id="emptyForm"></form>
+			<ol dojoType="dojox.mobile.RoundRectList">
+				<li dojoType="dojox.mobile.ListItem" onclick = "moveToBalance(this)" id="balanceList" moveTo="#">Balance Enquiry</li>
+				<li dojoType="dojox.mobile.ListItem"  onclick = "moveToMini(this)" id="miniList" moveTo="#">Mini Statement</li>				
+				<li dojoType="dojox.mobile.ListItem"  onclick = "moveToTopupMyPhone(this)" id="topupList" moveTo="#">Buy Airtime(My Phone)</li>
+				<li dojoType="dojox.mobile.ListItem" onclick = "moveToTopupOthers(this)" id="topupOtherList" moveTo="#">Buy Airtime</li>
+				<li dojoType="dojox.mobile.ListItem" onclick = "moveToSendMoney(this)" id="sendMoneyList" moveTo="#">Send Money</li>
+				<li dojoType="dojox.mobile.ListItem" onclick="moveToBillPay(this)" id="billPayList" moveTo="#">Pay Bill</li>
+				<li dojoType="dojox.mobile.ListItem"  onclick = "moveToMerchantRegister(this)" id="mechantRegisterList" moveTo="#">Register Mechant</li>
+				<li dojoType="dojox.mobile.ListItem" onclick="moveToPinChange(this)" id="moveToPinChangeList" moveTo="#">Change Password </li>
+				<li dojoType="dojox.mobile.ListItem" onclick = "moveToRTGS(this)" id="moveToRTGSList" moveTo="#">RTGS</li>
+				
+			</ol>
+		</div>
+	 
+	 	<!-- Select Account -->
+		<div id="selectAccount" data-dojo-type="dojox.mobile.ScrollableView">
+	  		 <h1 data-dojo-type="dojox.mobile.Heading" label = "e-Wallet" back="Home" moveTo="#home">
+	  		 	<div data-dojo-type="dojox.mobile.ToolBarButton" label="Log Out" class="mblColorBlue" style="width:45px;float:right;" moveTo = "#login"   transition = "fade" transitionDir = "1"></div>
+	  		 </h1>
+			 <h2 dojoType="dojox.mobile.RoundRectCategory">
+				<span style="text-align : left; float : left;"> Select Account</span>
+				<span id = "h2Home" style="text-align : right; float : right;"></span>
+			</h2>
+			<ol dojoType="dojox.mobile.RoundRectList"></ol>
+			<div class="fieldset" >
+				<div class="field-row">
+					<span class = "labelSpan" >Select Account*</span>
+					<select id="selectedAccount" name="selectedAccount_name" tabindex="2">  
+    				</select> 
+			</div>
+			</div>
+			<ol dojoType="dojox.mobile.RoundRectList">
+				<li dojoType="dojox.mobile.ListItem"  onclick = "selectAccount(this)" id="selectAccountList" moveTo="#"> Submit</li>
+				
+			</ol>
+		</div>
+	 	
+		<!-- Server Response  -->
+		<div id="serverResponse" data-dojo-type="dojox.mobile.ScrollableView">
+			
+			<h1 data-dojo-type="dojox.mobile.Heading" label="e-Wallet" back="Home" moveTo="#home">
+				<div data-dojo-type="dojox.mobile.ToolBarButton" label="Log Out" class="mblColorBlue" style="width:45px;float:right;" moveTo = "#login"   transition = "fade" transitionDir = "1"></div>
+			</h1>
+			<h2 dojoType="dojox.mobile.RoundRectCategory" style="text-align: center">e-Wallet Response</h2>
+			<div dojoType="dojox.mobile.RoundRect" shadow="true">
+				<p style="text-align: center" id = "serverMsg"></p>
+			</div>
+		</div>
+		
+		
+		<!-- Top Up Amount -->
+		<div id="topupAmountView" data-dojo-type="dojox.mobile.ScrollableView">
+	  		 <h1 data-dojo-type="dojox.mobile.Heading" label="e-Wallet" back="Home" moveTo="#home">
+				<div data-dojo-type="dojox.mobile.ToolBarButton" label="Log Out" class="mblColorBlue" style="width:45px;float:right;" moveTo = "#login"   transition = "fade" transitionDir = "1"></div>
+			</h1>
+			<h2 dojoType="dojox.mobile.RoundRectCategory">
+				<span style="text-align : left; float : left;"> Enter Topup Amount</span>
+				<span id = "h2Home" style="text-align : right; float : right;"></span>
+			</h2>
+			<div dojoType="dojox.mobile.RoundRect" shadow="true"> All fields marked with a * are required</div>
+			<div class="fieldset" >
+				<div class="field-row">
+					<span class = "labelSpan" >Amount*</span>
+					<input value="" widgetid="topupAmount" style="" id="topupAmount" tabindex="0" class="mblTextBox" name="topupAmount" dojotype="dojox.mobile.TextBox" required = "true"  trim = "true" maxLength = "5" placeHolder = "0.00">
+				</div>
+			</div>
+
+			<ol dojoType="dojox.mobile.RoundRectList">
+				<li dojoType="dojox.mobile.ListItem"  onclick = "moveToTopup(this)" id="buyList" moveTo="#">Buy </li>
+				
+			</ol>
+		</div>
+		
+		<!-- Top Other Phone Amount View -->
+		<div id="topupOtherAmountView" data-dojo-type="dojox.mobile.ScrollableView">
+	  		 <h1 data-dojo-type="dojox.mobile.Heading" label="e-Wallet" back="Home" moveTo="#home">
+				<div data-dojo-type="dojox.mobile.ToolBarButton" label="Log Out" class="mblColorBlue" style="width:45px;float:right;" moveTo = "#login"   transition = "fade" transitionDir = "1"></div>
+			</h1>
+			<h2 dojoType="dojox.mobile.RoundRectCategory">
+				<span style="text-align : left; float : left;"> Topup Other Phone</span>
+				<span id = "h2Home" style="text-align : right; float : right;"></span>
+			</h2>
+			<div dojoType="dojox.mobile.RoundRect" shadow="true"> All fields marked with a * are required</div>
+			<form method="POST" id = "topupOtherForm">
+			<div class="fieldset" >
+				<div class="field-row">
+						<span class = "labelSpan">Target Mobile*</span>
+						<input widgetid="targetMobileNumber" style="" id="targetMobileNumber" tabindex="0" class="mblTextBox" dojotype="dojox.mobile.TextBox" name="targetMobileNumber" required="true" type="text"  trim = "true" maxLength = "12" placeHolder = " mobile number">
+				</div>
+				<div class="field-row">
+					<span class = "labelSpan" >Amount*</span>
+					<input value="" widgetid="topupOtherAmount" style="" id="topupOtherAmount" tabindex="0" class="mblTextBox" name="topupOtherAmount" dojotype="dojox.mobile.TextBox" required = "true"  trim = "true" maxLength = "5" placeHolder = "0.00">
+				</div>
+			</div>
+			</form>
+			<ol dojoType="dojox.mobile.RoundRectList">
+				<li dojoType="dojox.mobile.ListItem"  onclick = "topupOther(this)" id="buyOtherList" moveTo="#" dojotype="dojox.mobile.TextBox" required = "true"  trim = "true">Buy </li>
+				
+			</ol>
+		</div>
+
+		<!-- Send Money Amount View -->
+		<div id="sendMoneyAmountView" data-dojo-type="dojox.mobile.ScrollableView">
+	  		 <h1 data-dojo-type="dojox.mobile.Heading" label="e-Wallet" back="Home" moveTo="#home">
+				<div data-dojo-type="dojox.mobile.ToolBarButton" label="Log Out" class="mblColorBlue" style="width:45px;float:right;" moveTo = "#login"   transition = "fade" transitionDir = "1"></div>
+			</h1>
+			<h2 dojoType="dojox.mobile.RoundRectCategory">
+				<span style="text-align : left; float : left;"> Send Money</span>
+				<span id = "h2Home" style="text-align : right; float : right;"></span>
+			</h2>
+			<div dojoType="dojox.mobile.RoundRect" shadow="true"> All fields marked with a * are required</div>
+			<form method="POST" id = "sendMoneyForm">
+			<div class="fieldset" >
+				<div class="field-row">
+						<span class = "labelSpan">Target Account*</span>
+						<input  widgetid="targetAccount" style="" id="targetAccount" tabindex="0" class="mblTextBox" dojotype="dojox.mobile.TextBox" name="targetAccount" required="true" type="text"  trim = "true" maxLength = "12" placeHolder = " account number" onchange = "handleNonHolder()">
+				</div>
+				<div class="field-row">
+					<span class = "labelSpan" >Amount*</span>
+					<input value="" widgetid="sendAmount" style="" id="sendAmount" tabindex="0" class="mblTextBox" name="sendAmount" dojotype="dojox.mobile.TextBox" required = "true"  trim = "true" maxLength = "5" placeHolder = "0.00">
+				</div>
+				<div class="field-row" >
+					<span class = "labelSpan" id = "secretLabel"></span>
+					<input value="" widgetid="secretCode" type="hidden" id = "secretCode">
+				</div>
+			</div>
+			</form>
+			<ol dojoType="dojox.mobile.RoundRectList">
+				<li dojoType="dojox.mobile.ListItem"  onclick = "sendMoney(this)" id="sendMoneyList1" moveTo="#">Send </li>
+				
+			</ol>
+		</div>
+		
+		
+		<!-- RTDS Amount View -->
+		<div id="rtgsAmountView" data-dojo-type="dojox.mobile.ScrollableView">
+	  		 <h1 data-dojo-type="dojox.mobile.Heading" label="e-Wallet" back="Home" moveTo="#home">
+				<div data-dojo-type="dojox.mobile.ToolBarButton" label="Log Out" class="mblColorBlue" style="width:45px;float:right;" moveTo = "#login"   transition = "fade" transitionDir = "1"></div>
+			</h1>
+			<h2 dojoType="dojox.mobile.RoundRectCategory">
+				<span style="text-align : left; float : left;"> RTGS</span>
+				<span id = "h2Home" style="text-align : right; float : right;"></span>
+			</h2>
+			<div dojoType="dojox.mobile.RoundRect" shadow="true"> All fields marked with a * are required</div>
+			<form method="POST" id = "rtgsForm">
+			<div class="fieldset" >
+				<div class="field-row">
+						<span class = "labelSpan">Destination Bank*</span>
+						<select id="rtgsBank" name="rtgsBank_Name" tabindex="2">  
+    					 </select> 
+				</div>
+				<div class="field-row">
+						<span class = "labelSpan">Destination Account*</span>
+						<input  widgetid="destAccount" style="" id="destAccount" tabindex="0" class="mblTextBox" dojotype="dojox.mobile.TextBox" name="destAccount" required="true" type="text"  trim = "true" maxLength = "15" placeHolder = " account number">
+				</div>
+				<div class="field-row">
+						<span class = "labelSpan">Beneficiary Name*</span>
+						<input  widgetid="benefName" style="" id="benefName" tabindex="0" class="mblTextBox" dojotype="dojox.mobile.TextBox" name="destAccount" required="true" type="text"  trim = "true" maxLength = "15" placeHolder = " beneficiary name">
+				</div>
+				<div class="field-row">
+						<span class = "labelSpan">Payment Ref*</span>
+						<input  widgetid="pmntRef" style="" id="pmntRef" tabindex="0" class="mblTextBox" dojotype="dojox.mobile.TextBox" name="pmntRef" required="true" type="text"  trim = "true" maxLength = "15" placeHolder = " payment ref">
+				</div>
+				<div class="field-row">
+					<span class = "labelSpan" >Amount*</span>
+					<input value="" widgetid="rtgsAmount" style="" id="rtgsAmount" tabindex="0" class="mblTextBox" name="rtgsAmount" dojotype="dojox.mobile.TextBox" required = "true"  trim = "true" maxLength = "5" placeHolder = "0.00">
+				</div>
+				
+			</div>
+			</form>
+			<ol dojoType="dojox.mobile.RoundRectList">
+				<li dojoType="dojox.mobile.ListItem"  onclick = "sendRTGS(this)" id="sendRTGSList1" moveTo="#">Send </li>
+				
+			</ol>
+		</div>
+		
+	
+	
+			<!-- Bill Pay -->
+		<div id="billPayView" data-dojo-type="dojox.mobile.ScrollableView">
+	  		 <h1 data-dojo-type="dojox.mobile.Heading" label="e-Wallet" back="Home" moveTo="#home">
+				<div data-dojo-type="dojox.mobile.ToolBarButton" label="Log Out" class="mblColorBlue" style="width:45px;float:right;" moveTo = "#login"   transition = "fade" transitionDir = "1"></div>
+			</h1>
+			<h2 dojoType="dojox.mobile.RoundRectCategory">
+				<span style="text-align : left; float : left;"> Bill Payment</span>
+				<span id = "h2Home" style="text-align : right; float : right;"></span>
+			</h2>
+			<div dojoType="dojox.mobile.RoundRect" shadow="true"> All fields marked with a * are required</div>
+			<form method="POST" id = "billPayForm">
+			<div class="fieldset" >
+				<div class="field-row">
+						<span class = "labelSpan">Select Merchant*</span>
+						<input   id="merchant" >
+				</div>
+				<div class="field-row">
+					<span class = "labelSpan" >Amount*</span>
+					<input value="" widgetid="billAmount" style="" id="billAmount" tabindex="0" class="mblTextBox" name="billAmount" dojotype="dojox.mobile.TextBox" required = "true"  trim = "true" maxLength = "5" placeHolder = "0.00">
+				</div>
+				
+			</div>
+			
+			</form>
+			<ol dojoType="dojox.mobile.RoundRectList">
+				<li dojoType="dojox.mobile.ListItem"  onclick = "payBill(this)" id="billPayList1" moveTo="#">Pay </li>
+				
+			</ol>
+		</div>
+		
+		
+		
+		<!-- Register Mechant View -->
+		<div id="registerMerchantView" data-dojo-type="dojox.mobile.ScrollableView">
+	  		 <h1 data-dojo-type="dojox.mobile.Heading" label="e-Wallet" back="Home" moveTo="#home">
+				<div data-dojo-type="dojox.mobile.ToolBarButton" label="Log Out" class="mblColorBlue" style="width:45px;float:right;" moveTo = "#login"   transition = "fade" transitionDir = "1"></div>
+			</h1>
+			<h2 dojoType="dojox.mobile.RoundRectCategory">
+				<span style="text-align : left; float : left;"> Mechant Registration</span>
+				<span id = "h2Home" style="text-align : right; float : right;"></span>
+			</h2>
+			<div dojoType="dojox.mobile.RoundRect" shadow="true"> All fields marked with a * are required</div>
+			<form method="POST" id = "merchantRegistrationForm">
+			<div class="fieldset" >
+				<div class="field-row">
+						<span class = "labelSpan">Mechant Name*</span>
+						<select id="merchantName" name="merchantName_Name" tabindex="2">  
+    					 </select> 
+				</div>
+				<div class="field-row">
+						<span class = "labelSpan">Customer Account*</span>
+						<input  widgetid="customerAccount" style="" id="customerAccount" tabindex="0" class="mblTextBox" dojotype="dojox.mobile.TextBox" name="customerAccount" required="true" type="text"  trim = "true" maxLength = "15" placeHolder = " account number">
+				</div>
+				
+			</div>
+			</form>
+			<ol dojoType="dojox.mobile.RoundRectList">
+				<li dojoType="dojox.mobile.ListItem"  onclick = "sendMerchantRegister(this)" id="sendRegisterMechantList1" moveTo="#">Send </li>
+				
+			</ol>
+		</div>
+		
+	
+		
+		
+		<!-- Pin Change -->
+		<div id="pinChange" data-dojo-type="dojox.mobile.ScrollableView">
+	  		 <h1 data-dojo-type="dojox.mobile.Heading" label="e-Wallet" back="Home" moveTo="#home">
+				<div data-dojo-type="dojox.mobile.ToolBarButton" label="Log Out" class="mblColorBlue" style="width:45px;float:right;" moveTo = "#login"   transition = "fade" transitionDir = "1"></div>
+			</h1>
+			<h2 dojoType="dojox.mobile.RoundRectCategory">
+				<span style="text-align : left; float : left;"> Change Password</span>
+				<span id = "pinChangeHome" style="text-align : right; float : right;"></span>
+			</h2>
+			<div dojoType="dojox.mobile.RoundRect" shadow="true"> All fields marked with a * are required</div>
+			<form method="POST" id = "pinChangeForm">
+			<div class="fieldset" >
+				<div class="field-row">
+						<span class = "labelSpan">New Password*</span>
+						<input widgetid="password1" style="" id="password1" tabindex="0" class="mblTextBox" dojotype="dojox.mobile.TextBox" name="password1" required="true" type="password"  trim = "true" maxLength = "5" placeHolder = "">
+				</div>
+				<div class="field-row">
+						<span class = "labelSpan">Verify Password*</span>
+						<input widgetid="password2" style="" id="password2" tabindex="0" class="mblTextBox" dojotype="dojox.mobile.TextBox" name="password2" required="true" type="password"  trim = "true" maxLength = "5" placeHolder = "">
+				</div>
+			</div>
+			</form>
+			<ol dojoType="dojox.mobile.RoundRectList">
+				<li dojoType="dojox.mobile.ListItem"  onclick = "changePin(this)" id="changePinList" moveTo="#">Submit </li>
+				
+			</ol>
+		</div>
+		
+	
+    </body>
+</html>

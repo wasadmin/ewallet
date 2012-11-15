@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="AlertsService" targetNamespace="http://service.alertsservices.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.alertsservices.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.alertsservices.ewallet.esolutions.co.zw/" schemaLocation="AlertsService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="findAlertOptionById">
+    <part element="tns:findAlertOptionById" name="parameters">
+    </part>
+  </message>
+  <message name="disableAlertOption">
+    <part element="tns:disableAlertOption" name="parameters">
+    </part>
+  </message>
+  <message name="editAlertOptionResponse">
+    <part element="tns:editAlertOptionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="enableAlertOption">
+    <part element="tns:enableAlertOption" name="parameters">
+    </part>
+  </message>
+  <message name="deleteTransactionTypeResponse">
+    <part element="tns:deleteTransactionTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createAlertOptionsForAccountResponse">
+    <part element="tns:createAlertOptionsForAccountResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTransactionTypeByCodeResponse">
+    <part element="tns:getTransactionTypeByCodeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAlertOptionByStatusResponse">
+    <part element="tns:getAlertOptionByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approveAlertOption">
+    <part element="tns:approveAlertOption" name="parameters">
+    </part>
+  </message>
+  <message name="getAlertOptionByBankAccountId">
+    <part element="tns:getAlertOptionByBankAccountId" name="parameters">
+    </part>
+  </message>
+  <message name="rejectTransactionTypeResponse">
+    <part element="tns:rejectTransactionTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createTransactionTypeResponse">
+    <part element="tns:createTransactionTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAlertOptionByBankAccountAndMobileProfileAndTransactionType">
+    <part element="tns:getAlertOptionByBankAccountAndMobileProfileAndTransactionType" name="parameters">
+    </part>
+  </message>
+  <message name="getTransactionTypeByStatus">
+    <part element="tns:getTransactionTypeByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="findAlertOptionByIdResponse">
+    <part element="tns:findAlertOptionByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disableAlertOptionResponse">
+    <part element="tns:disableAlertOptionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="enableAlertOptionResponse">
+    <part element="tns:enableAlertOptionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editTransactionType">
+    <part element="tns:editTransactionType" name="parameters">
+    </part>
+  </message>
+  <message name="getAllTransactionTypes">
+    <part element="tns:getAllTransactionTypes" name="parameters">
+    </part>
+  </message>
+  <message name="deleteAlertOption">
+    <part element="tns:deleteAlertOption" name="parameters">
+    </part>
+  </message>
+  <message name="approveAlertOptionResponse">
+    <part element="tns:approveAlertOptionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAlertOptionByBankAccountIdResponse">
+    <part element="tns:getAlertOptionByBankAccountIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="rejectAlertOption">
+    <part element="tns:rejectAlertOption" name="parameters">
+    </part>
+  </message>
+  <message name="getAlertOptionByBankAccountAndMobileProfileAndTransactionTypeResponse">
+    <part element="tns:getAlertOptionByBankAccountAndMobileProfileAndTransactionTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAlertOptionByMobileProfileId">
+    <part element="tns:getAlertOptionByMobileProfileId" name="parameters">
+    </part>
+  </message>
+  <message name="createAlertOption">
+    <part element="tns:createAlertOption" name="parameters">
+    </part>
+  </message>
+  <message name="approveTransactionType">
+    <part element="tns:approveTransactionType" name="parameters">
+    </part>
+  </message>
+  <message name="Exception">
+    <part element="tns:Exception" name="fault">
+    </part>
+  </message>
+  <message name="editTransactionTypeResponse">
+    <part element="tns:editTransactionTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTransactionTypeByStatusResponse">
+    <part element="tns:getTransactionTypeByStatusResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findTransactionTypeResponse">
+    <part element="tns:findTransactionTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllTransactionTypesResponse">
+    <part element="tns:getAllTransactionTypesResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteAlertOptionResponse">
+    <part element="tns:deleteAlertOptionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTransactionTypeByAlertOption">
+    <part element="tns:getTransactionTypeByAlertOption" name="parameters">
+    </part>
+  </message>
+  <message name="findTransactionType">
+    <part element="tns:findTransactionType" name="parameters">
+    </part>
+  </message>
+  <message name="rejectAlertOptionResponse">
+    <part element="tns:rejectAlertOptionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAlertOptionByMobileProfileIdResponse">
+    <part element="tns:getAlertOptionByMobileProfileIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disableTransactionType">
+    <part element="tns:disableTransactionType" name="parameters">
+    </part>
+  </message>
+  <message name="createAlertOptionResponse">
+    <part element="tns:createAlertOptionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="enableTransactionType">
+    <part element="tns:enableTransactionType" name="parameters">
+    </part>
+  </message>
+  <message name="getAlertOptionByTransationTypeId">
+    <part element="tns:getAlertOptionByTransationTypeId" name="parameters">
+    </part>
+  </message>
+  <message name="deleteTransactionType">
+    <part element="tns:deleteTransactionType" name="parameters">
+    </part>
+  </message>
+  <message name="approveTransactionTypeResponse">
+    <part element="tns:approveTransactionTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createAlertOptionsForAccount">
+    <part element="tns:createAlertOptionsForAccount" name="parameters">
+    </part>
+  </message>
+  <message name="editAlertOption">
+    <part element="tns:editAlertOption" name="parameters">
+    </part>
+  </message>
+  <message name="getTransactionTypeByCode">
+    <part element="tns:getTransactionTypeByCode" name="parameters">
+    </part>
+  </message>
+  <message name="getAlertOptionByStatus">
+    <part element="tns:getAlertOptionByStatus" name="parameters">
+    </part>
+  </message>
+  <message name="getTransactionTypeByAlertOptionResponse">
+    <part element="tns:getTransactionTypeByAlertOptionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="rejectTransactionType">
+    <part element="tns:rejectTransactionType" name="parameters">
+    </part>
+  </message>
+  <message name="createTransactionType">
+    <part element="tns:createTransactionType" name="parameters">
+    </part>
+  </message>
+  <message name="disableTransactionTypeResponse">
+    <part element="tns:disableTransactionTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="enableTransactionTypeResponse">
+    <part element="tns:enableTransactionTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAlertOptionByTransationTypeIdResponse">
+    <part element="tns:getAlertOptionByTransationTypeIdResponse" name="parameters">
+    </part>
+  </message>
+  <portType name="AlertsService">
+    <operation name="createAlertOptionsForAccount">
+      <input message="tns:createAlertOptionsForAccount">
+    </input>
+      <output message="tns:createAlertOptionsForAccountResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="createAlertOption">
+      <input message="tns:createAlertOption">
+    </input>
+      <output message="tns:createAlertOptionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editAlertOption">
+      <input message="tns:editAlertOption">
+    </input>
+      <output message="tns:editAlertOptionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveAlertOption">
+      <input message="tns:approveAlertOption">
+    </input>
+      <output message="tns:approveAlertOptionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="rejectAlertOption">
+      <input message="tns:rejectAlertOption">
+    </input>
+      <output message="tns:rejectAlertOptionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteAlertOption">
+      <input message="tns:deleteAlertOption">
+    </input>
+      <output message="tns:deleteAlertOptionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="enableAlertOption">
+      <input message="tns:enableAlertOption">
+    </input>
+      <output message="tns:enableAlertOptionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="disableAlertOption">
+      <input message="tns:disableAlertOption">
+    </input>
+      <output message="tns:disableAlertOptionResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findAlertOptionById">
+      <input message="tns:findAlertOptionById">
+    </input>
+      <output message="tns:findAlertOptionByIdResponse">
+    </output>
+    </operation>
+    <operation name="getAlertOptionByBankAccountAndMobileProfileAndTransactionType">
+      <input message="tns:getAlertOptionByBankAccountAndMobileProfileAndTransactionType">
+    </input>
+      <output message="tns:getAlertOptionByBankAccountAndMobileProfileAndTransactionTypeResponse">
+    </output>
+    </operation>
+    <operation name="getAlertOptionByStatus">
+      <input message="tns:getAlertOptionByStatus">
+    </input>
+      <output message="tns:getAlertOptionByStatusResponse">
+    </output>
+    </operation>
+    <operation name="getAlertOptionByBankAccountId">
+      <input message="tns:getAlertOptionByBankAccountId">
+    </input>
+      <output message="tns:getAlertOptionByBankAccountIdResponse">
+    </output>
+    </operation>
+    <operation name="getAlertOptionByMobileProfileId">
+      <input message="tns:getAlertOptionByMobileProfileId">
+    </input>
+      <output message="tns:getAlertOptionByMobileProfileIdResponse">
+    </output>
+    </operation>
+    <operation name="getAlertOptionByTransationTypeId">
+      <input message="tns:getAlertOptionByTransationTypeId">
+    </input>
+      <output message="tns:getAlertOptionByTransationTypeIdResponse">
+    </output>
+    </operation>
+    <operation name="createTransactionType">
+      <input message="tns:createTransactionType">
+    </input>
+      <output message="tns:createTransactionTypeResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="editTransactionType">
+      <input message="tns:editTransactionType">
+    </input>
+      <output message="tns:editTransactionTypeResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="approveTransactionType">
+      <input message="tns:approveTransactionType">
+    </input>
+      <output message="tns:approveTransactionTypeResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="rejectTransactionType">
+      <input message="tns:rejectTransactionType">
+    </input>
+      <output message="tns:rejectTransactionTypeResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteTransactionType">
+      <input message="tns:deleteTransactionType">
+    </input>
+      <output message="tns:deleteTransactionTypeResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="enableTransactionType">
+      <input message="tns:enableTransactionType">
+    </input>
+      <output message="tns:enableTransactionTypeResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="disableTransactionType">
+      <input message="tns:disableTransactionType">
+    </input>
+      <output message="tns:disableTransactionTypeResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findTransactionType">
+      <input message="tns:findTransactionType">
+    </input>
+      <output message="tns:findTransactionTypeResponse">
+    </output>
+    </operation>
+    <operation name="getTransactionTypeByCode">
+      <input message="tns:getTransactionTypeByCode">
+    </input>
+      <output message="tns:getTransactionTypeByCodeResponse">
+    </output>
+    </operation>
+    <operation name="getTransactionTypeByAlertOption">
+      <input message="tns:getTransactionTypeByAlertOption">
+    </input>
+      <output message="tns:getTransactionTypeByAlertOptionResponse">
+    </output>
+    </operation>
+    <operation name="getTransactionTypeByStatus">
+      <input message="tns:getTransactionTypeByStatus">
+    </input>
+      <output message="tns:getTransactionTypeByStatusResponse">
+    </output>
+    </operation>
+    <operation name="getAllTransactionTypes">
+      <input message="tns:getAllTransactionTypes">
+    </input>
+      <output message="tns:getAllTransactionTypesResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="AlertsServiceSOAPBinding" type="tns:AlertsService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createAlertOptionsForAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createAlertOption">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editAlertOption">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveAlertOption">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="rejectAlertOption">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteAlertOption">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="enableAlertOption">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="disableAlertOption">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findAlertOptionById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAlertOptionByBankAccountAndMobileProfileAndTransactionType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAlertOptionByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAlertOptionByBankAccountId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAlertOptionByMobileProfileId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAlertOptionByTransationTypeId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createTransactionType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editTransactionType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveTransactionType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="rejectTransactionType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteTransactionType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="enableTransactionType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="disableTransactionType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findTransactionType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTransactionTypeByCode">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTransactionTypeByAlertOption">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTransactionTypeByStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllTransactionTypes">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="AlertsService">
+    <port binding="tns:AlertsServiceSOAPBinding" name="AlertsServiceSOAP">
+      <soap:address location="http://localhost:9080/AlertsServices/AlertsService"/>
+    </port>
+  </service>
+</definitions>

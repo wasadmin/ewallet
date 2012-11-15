@@ -1,0 +1,17 @@
+package zw.co.esolutions.mobile.banking.msg.enums;
+
+public enum TransactionType {
+	MINISTATEMENT,
+	BALANCE,
+	BILLPAY,
+	TOPUP,
+	TRANSFER,
+	RTGS,
+	PASSWORD_CHANGE,
+	MERCHANT_REG,
+	DEPOSIT,
+	CASH_WITHDRAWAL,
+	CASHOUT,
+	AGENT_SUMMARY, AGENT_TRANSFER,
+	TOPUP_TXT;
+}

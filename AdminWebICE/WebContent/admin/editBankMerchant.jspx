@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" /><f:view>
+		<ui:composition template="../template/template.jspx">
+			
+				<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+				<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+				<ui:define name="header">
+					<ui:include src="../template/header.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="menu">
+					<ui:include src="../template/menu.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="content">
+				
+						<ice:form styleClass="form" id="form1">
+							<ice:messages styleClass="messages" id="messages1"
+								errorClass="errorMessage" infoClass="infoMessage"></ice:messages>
+							<ice:inputHidden value="#{editBankMerchantBean.bankMerchantId}"></ice:inputHidden>
+							<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+								cellspacing="5" width="600" columns="2">
+								<f:facet name="header">
+									<ice:panelGroup styleClass="panelGroup" id="group1">
+										<ice:outputLabel value="Edit Bank Merchant Account Details"
+											styleClass="panelGridLabel" id="label1"></ice:outputLabel>
+									</ice:panelGroup>
+								</f:facet>
+								<ice:outputLabel value="Merchant Short Name"
+									styleClass="outputLabel" id="label3"></ice:outputLabel>
+								<ice:inputText styleClass="inputText" id="shortName"
+									value="#{editBankMerchantBean.bankMerchant.merchant.shortName}"></ice:inputText>
+								<ice:outputLabel value="Merchant Name" styleClass="outputLabel"
+									id="label332"></ice:outputLabel>
+								<ice:inputText styleClass="inputText" id="merchantName"
+									value="#{editBankMerchantBean.bankMerchant.merchant.name}"></ice:inputText>
+								<ice:outputLabel value="Merchant Status"
+									styleClass="outputLabel" id="label45"></ice:outputLabel>
+								<ice:outputText styleClass="outputText" id="status"
+									value="#{editBankMerchantBean.bankMerchant.merchant.status}"></ice:outputText>
+						 		<ice:outputLabel value="Account Number" styleClass="outputLabel"
+									id="label59"></ice:outputLabel>
+								<ice:inputText styleClass="inputText" id="accountNumber"
+									value="#{editBankMerchantBean.bankMerchant.merchantSuspenseAccount}"></ice:inputText>
+								<ice:outputLabel value="Account Holder" styleClass="outputLabel"
+									id="label5990h"></ice:outputLabel>
+								<ice:selectOneMenu styleClass="selectOneMenu" value="#{editBankMerchantBean.selectedAccountHolder}">
+									<f:selectItems value="#{editBankMerchantBean.accountHolderList}"/>
+								</ice:selectOneMenu>
+<!--								<ice:outputLabel value="Account Holder" styleClass="outputLabel"
+									id="label5990"></ice:outputLabel>
+ 							<ice:selectOneMenu styleClass="selectOneMenu" id="menu12"
+									value="#{editBankMerchantBean.selectedBranch}"
+									immediate="true" required="true" requiredMessage="Please select the branch">
+									<f:selectItems id="selectItems71"
+										value="#{editBankMerchantBean.branchList}"/>
+								</ice:selectOneMenu>
+-->								
+								<ice:outputLabel value="Contact Details" styleClass="outputLabel"
+							id="label432">
+							
+						</ice:outputLabel>
+						<ice:outputText styleClass="outputText" id="text3"></ice:outputText>
+						<ice:outputLabel value="Contact Name" styleClass="outputLabel"
+							id="label5"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="text444" value="#{editBankMerchantBean.contactDetails.contactName}">
+							
+						</ice:inputText>
+						<ice:outputLabel value="Contact Phone" styleClass="outputLabel"
+							id="label633"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="text544" value="#{editBankMerchantBean.contactDetails.telephone}">
+							
+						</ice:inputText>
+						<ice:outputLabel value="Email" styleClass="outputLabel" id="label733"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="text644" value="#{editBankMerchantBean.contactDetails.email}">
+							
+						</ice:inputText>
+						<ice:outputLabel value="Fax" styleClass="outputLabel" id="label833"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="text744" value="#{editBankMerchantBean.contactDetails.fax}">
+							
+						</ice:inputText>
+						<ice:outputLabel value="Street" styleClass="outputLabel" id="label933"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="text844" value="#{editBankMerchantBean.contactDetails.street}">
+							
+						</ice:inputText>
+						<ice:outputLabel value="Suburb" styleClass="outputLabel" id="label1033"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="text944" value="#{editBankMerchantBean.contactDetails.suburb}">
+						
+						</ice:inputText>
+						<ice:outputLabel value="City" styleClass="outputLabel" id="label1144"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="text1044" value="#{editBankMerchantBean.contactDetails.city}">
+							
+						</ice:inputText>
+						<ice:outputLabel value="Country" styleClass="outputLabel" id="label1244"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="text1144" value="#{editBankMerchantBean.contactDetails.country}"></ice:inputText>
+							
+							</ice:panelGrid>
+							<ice:panelGrid styleClass="panelGrid" id="grid2" columns="2">
+								<ice:commandButton type="submit" value="Submit"
+									styleClass="commandButton" id="button1"
+									action="#{editBankMerchantBean.submit}"></ice:commandButton>
+								<ice:commandButton type="submit" value="Cancel"
+									styleClass="commandButton" id="button2"
+									action="#{editBankMerchantBean.cancel}"></ice:commandButton>
+							</ice:panelGrid>
+						</ice:form>
+					
+				</ui:define>
+				<ui:define name="footer">
+					<ui:include src="../template/footer.jspx"></ui:include>
+				</ui:define>
+				<link rel="stylesheet" type="text/css" title="Style"
+					href="theme/stylesheet.css" />
+			
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

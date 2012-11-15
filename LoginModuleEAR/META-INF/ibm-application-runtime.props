@@ -1,0 +1,3 @@
+#Created by WebSphere.  Do not modify.
+#Sun Oct 02 22:21:20 CAT 2011
+com.ibm.ws.runtime.components.LoginModule.jar=WebSphere\:specname\=WS_JaxWsWebService+WebSphere\:specname\=WS_WebServiceInit+WebSphere\:specname\=WS_EJBContainer

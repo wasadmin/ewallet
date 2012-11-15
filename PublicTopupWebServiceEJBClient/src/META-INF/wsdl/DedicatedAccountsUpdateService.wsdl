@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="DedicatedAccountsUpdateService" targetNamespace="http://impl.dedicatedacc.econet.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://impl.dedicatedacc.econet.co.zw/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://impl.dedicatedacc.econet.co.zw/" schemaLocation="DedicatedAccountsUpdateService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="updateDA">
+    <part name="parameters" element="tns:updateDA">
+    </part>
+  </message>
+  <message name="updateDAResponse">
+    <part name="parameters" element="tns:updateDAResponse">
+    </part>
+  </message>
+  <message name="getPlatFormInfo">
+    <part name="parameters" element="tns:getPlatFormInfo">
+    </part>
+  </message>
+  <message name="voidUpdateDA">
+    <part name="parameters" element="tns:voidUpdateDA">
+    </part>
+  </message>
+  <message name="voidUpdateDAResponse">
+    <part name="parameters" element="tns:voidUpdateDAResponse">
+    </part>
+  </message>
+  <message name="reverseUpdateDA">
+    <part name="parameters" element="tns:reverseUpdateDA">
+    </part>
+  </message>
+  <message name="getDedicatedAccountBalance">
+    <part name="parameters" element="tns:getDedicatedAccountBalance">
+    </part>
+  </message>
+  <message name="getPlatFormInfoResponse">
+    <part name="parameters" element="tns:getPlatFormInfoResponse">
+    </part>
+  </message>
+  <message name="reverseUpdateDAResponse">
+    <part name="parameters" element="tns:reverseUpdateDAResponse">
+    </part>
+  </message>
+  <message name="getDedicatedAccountBalanceResponse">
+    <part name="parameters" element="tns:getDedicatedAccountBalanceResponse">
+    </part>
+  </message>
+  <portType name="DedicatedAccountsService">
+    <operation name="getPlatFormInfo">
+      <input message="tns:getPlatFormInfo">
+    </input>
+      <output message="tns:getPlatFormInfoResponse">
+    </output>
+    </operation>
+    <operation name="getDedicatedAccountBalance">
+      <input message="tns:getDedicatedAccountBalance">
+    </input>
+      <output message="tns:getDedicatedAccountBalanceResponse">
+    </output>
+    </operation>
+    <operation name="voidUpdateDA">
+      <input message="tns:voidUpdateDA">
+    </input>
+      <output message="tns:voidUpdateDAResponse">
+    </output>
+    </operation>
+    <operation name="reverseUpdateDA">
+      <input message="tns:reverseUpdateDA">
+    </input>
+      <output message="tns:reverseUpdateDAResponse">
+    </output>
+    </operation>
+    <operation name="updateDA">
+      <input message="tns:updateDA">
+    </input>
+      <output message="tns:updateDAResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="DedicatedAccountsUpdateBinding" type="tns:DedicatedAccountsService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getPlatFormInfo">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getDedicatedAccountBalance">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="voidUpdateDA">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="reverseUpdateDA">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="updateDA">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DedicatedAccountsUpdateService">
+    <port name="DedicatedAccountsUpdate" binding="tns:DedicatedAccountsUpdateBinding">
+      <soap:address location="http://ircmsapp.econetzw.local:9081/DedicatedAccountsRouter/DedicatedAccountsUpdateService"/>
+    </port>
+  </service>
+</definitions>

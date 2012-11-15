@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Ignore-Scanning-Archives: jsf-ibm.jar, icu4j_3_4_1.jar
+Class-Path: EWalletUtils.jar 
+ SuperCSV-1.52.jar 
+ WebServiceClients.jar 
+ commons-beanutils-1.8.0.jar 
+ commons-collections-2.1.1.jar 
+ commons-digester-1.7.jar 
+ commons-fileupload-1.2.2.jar 
+ commons-logging-1.0.4.jar 
+ groovy-all-1.7.5.jar 
+ jasperreports-3.7.2.jar 
+ jasperreports-applet-3.7.2.jar 
+ jasperreports-fonts-3.7.2.jar 
+ jasperreports-javaflow-3.7.2.jar 
+ log4j-1.2.16.jar 
+ poi-3.5-FINAL-20090928.jar 
+ spiffy-all-0.05.jar 
+ times.jar 
+ xercesImpl-2.7.0.jar 
+ iText-2.1.7.jar
+

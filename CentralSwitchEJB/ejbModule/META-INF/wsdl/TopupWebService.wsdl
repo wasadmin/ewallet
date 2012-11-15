@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="TopupWebService" targetNamespace="http://impl.ws.topup.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://impl.ws.topup.esolutions.co.zw/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xsd:schema>
+         <xsd:import namespace="http://impl.ws.topup.esolutions.co.zw/" schemaLocation="TopupWebService_schema1.xsd"/>
+     </xsd:schema>
+  </types>
+  <message name="processRequestResponse">
+    <part name="parameters" element="tns:processRequestResponse">
+    </part>
+  </message>
+  <message name="processRequest">
+    <part name="parameters" element="tns:processRequest">
+    </part>
+  </message>
+  <message name="processReversal">
+    <part name="parameters" element="tns:processReversal">
+    </part>
+  </message>
+  <message name="processReversalResponse">
+    <part name="parameters" element="tns:processReversalResponse">
+    </part>
+  </message>
+  <portType name="TopupWebService">
+    <operation name="processRequest">
+      <input message="tns:processRequest">
+    </input>
+      <output message="tns:processRequestResponse">
+    </output>
+    </operation>
+    <operation name="processReversal">
+      <input message="tns:processReversal">
+    </input>
+      <output message="tns:processReversalResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="TopupWebServicePortBinding" type="tns:TopupWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="processRequest">
+      <soap:operation soapAction="ws:processRequest"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="processReversal">
+      <soap:operation soapAction="ws:processReversal"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="TopupWebService">
+    <port name="TopupWebServicePort" binding="tns:TopupWebServicePortBinding">
+      <soap:address location="http://77.246.52.106:80/PublicTopupWebService/TopupWebServiceImplService"/>
+    </port>
+  </service>
+</definitions>

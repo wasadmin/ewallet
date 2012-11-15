@@ -1,0 +1,24 @@
+/* AUTOMATICALLY GENERATED ON Fri Jan 07 11:37:22 CAT 2011*/
+/* DO NOT EDIT */
+
+grant codeBase "file:LoginModule.jar" {
+  permission java.lang.RuntimePermission "modifyThreadGroup";
+  permission javax.security.auth.AuthPermission "createLoginContext.EWalletLogin";
+  permission javax.security.auth.AuthPermission "modifyPrincipals";
+  permission javax.security.auth.AuthPermission "doAsPrivileged";
+  permission java.security.SecurityPermission "getPolicy";
+  permission java.security.SecurityPermission "setPolicy";
+  permission java.lang.RuntimePermission "createSecurityManager";
+  permission java.lang.RuntimePermission "setSecurityManage";
+};
+
+grant codeBase "file:CSRWebICE.war" {
+  permission java.lang.RuntimePermission "modifyThreadGroup";
+  permission java.lang.RuntimePermission "modifyThread";
+  permission java.lang.RuntimePermission "accessDeclaredMembers";
+  permission org.osgi.framework.AdminPermission;
+  permission javax.security.auth.AuthPermission "createLoginContext.EWalletLogin";
+  permission javax.security.auth.AuthPermission "doAsPrivileged";
+  permission java.lang.RuntimePermission "getClassLoader";
+};
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar-bnd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://websphere.ibm.com/xml/ns/javaee"
+    xsi:schemaLocation="http://websphere.ibm.com/xml/ns/javaee http://websphere.ibm.com/xml/ns/javaee/ibm-ejb-jar-bnd_1_0.xsd" version="1.0">
+  
+  <message-driven name="HandlePaymentResponse">
+    <jca-adapter activation-spec-binding-name="jms/HandlePaymentResponse" destination-binding-name="jms/EXTPAY.OUT.Q"/>
+  </message-driven>
+
+  
+  <session name="EWalletPaymentsServiceImpl">
+    <resource-ref name="zw.co.esolutions.ewallet.extpayments.ws.EWalletPaymentsServiceImpl/jmsQueueConnectionFactory"
+        binding-name="jms/EWalletQCF"/>
+    <message-destination-ref binding-name="jms/EXTPAY.IN.Q" name="zw.co.esolutions.ewallet.extpayments.ws.EWalletPaymentsServiceImpl/paymentsRequestQueue"/>
+  </session>
+
+</ejb-jar-bnd> 
+

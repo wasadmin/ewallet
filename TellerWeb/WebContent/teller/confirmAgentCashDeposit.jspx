@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1">
+		<h2>Deposit Cash</h2>
+			<p><ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			<ice:inputHidden value="#{confirmAgentCashDepositBean.mobileNumber}"
+				id="Id0"></ice:inputHidden>
+			<ice:outputText value="All Values with a * are required" />
+			<ice:panelGrid styleClass="panelGrid" id="grid3" cellpadding="5"
+							cellspacing="5" width="600" columns="2" >
+				<ice:outputText styleClass="outputText" id="text34"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text24"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text25"
+						value="AGENT DETAILS"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text26"></ice:outputText>
+					
+					
+					<ice:outputText styleClass="outputLabel" id="text8"
+						value="Agent Name :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text4" value="#{confirmAgentCashDepositBean.agent.agentName}"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text6"
+						value="Agent Number :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text10" value="#{confirmAgentCashDepositBean.agent.agentNumber}"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text18"
+						value="National Id /Customer ID:"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text17" value="#{confirmAgentCashDepositBean.customer.nationalId}"></ice:outputText>
+					
+					<ice:outputText styleClass="outputLabel" id="text9" value="Gender :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text14"
+						value="#{confirmAgentCashDepositBean.customer.gender}"></ice:outputText>
+
+					<ice:outputText styleClass="outputLabel" id="text15"
+						value="Customer Class :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text19"
+						value="#{confirmAgentCashDepositBean.customer.customerClass}"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text13"
+						value="Mobile Number : "></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text20" value="#{confirmAgentCashDepositBean.mobileNumber}"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text23"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text22"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text1"
+						value="BANK DETAILS"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text21"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text12" value="Bank :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text5"
+						value="#{confirmAgentCashDepositBean.branch.bank.name}"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text16"
+						value="Bank Branch :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text11"
+						value="#{confirmAgentCashDepositBean.branch.name}"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text28"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text31"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text29"
+						value="LIMIT AND BALANCE"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text30"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text43"
+						value="(Daily)Minimum Account Balance :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text42" value="#{confirmAgentCashDepositBean.limit.minValue}">
+					     <f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text35"
+						value="(Daily)Maximum Account Balance Allowed :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text36" value="#{confirmAgentCashDepositBean.limit.maxValue}">
+					 <f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+					<ice:outputText styleClass="outputLabel"
+						value="(Transaction) Minimum Deposit  :"></ice:outputText>
+					<ice:outputText styleClass="outputText" value="#{confirmAgentCashDepositBean.deTxnLimit.minValue}">
+					     <f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+					<ice:outputText styleClass="outputLabel"
+						value="(Transaction)Maximum Deposit Allowed :"></ice:outputText>
+					<ice:outputText styleClass="outputText" value="#{confirmAgentCashDepositBean.deTxnLimit.maxValue}">
+					 <f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+					<ice:outputText styleClass="outputLabel"
+						value="(Daily)Minimum Deposit :"></ice:outputText>
+					<ice:outputText styleClass="outputText" value="#{confirmAgentCashDepositBean.deDailyLimit.minValue}">
+					     <f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+					<ice:outputText styleClass="outputLabel"
+						value="(Daily)Maximum Deposit Allowed :"></ice:outputText>
+					<ice:outputText styleClass="outputText" value="#{confirmAgentCashDepositBean.deDailyLimit.maxValue}">
+					 <f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+					
+					<ice:outputText styleClass="outputLabel" id="text32" style="font-weight : bold"
+						value="Balance :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text37" style="font-weight : bold" value="#{confirmAgentCashDepositBean.bankAccount.runningBalance}">
+					   <f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+					<ice:outputText styleClass="outputText" id="text27"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text33"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text38" value="REQUIRED"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text39"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text2" value="Amount* :"></ice:outputText>
+					<ice:inputText styleClass="inputText" id="text7"
+						value="#{confirmAgentCashDepositBean.amount}"
+						disabled="#{confirmAgentCashDepositBean.disableAmount}">
+						<f:converter converterId="tellerMoneyConverter"/>
+					</ice:inputText>
+					<ice:commandButton type="submit" value="Submit"
+						styleClass="commandButton" id="button1"
+						action="#{confirmAgentCashDepositBean.finish}"
+						disabled="#{confirmAgentCashDepositBean.disableAmount}"></ice:commandButton>
+					<ice:commandButton type="submit" value="Back"
+						styleClass="commandButton" id="button2"
+						action="#{confirmAgentCashDepositBean.back}"></ice:commandButton>
+
+
+
+					<f:facet name="header">
+						<ice:panelGroup styleClass="panelGroup" id="group2">
+							<ice:outputText styleClass="panelGridLabel" id="text3"
+								value="AGENT CASH DEPOSIT"></ice:outputText>
+						</ice:panelGroup>
+					</f:facet>
+				</ice:panelGrid>
+				<br></br>
+			 </ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

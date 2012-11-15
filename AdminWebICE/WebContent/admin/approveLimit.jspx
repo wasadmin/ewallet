@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<h:form styleClass="form" id="form1">
+					<ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages>
+					<ice:outputText styleClass="outputText" id="text16"
+							style="color: green" value="#{approveLimitBean.msg}"></ice:outputText>
+					<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+						columnClasses="columnClass1" headerClass="headerClass"
+						footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+						styleClass="dataTable" id="table1" value="#{approveLimitBean.limitList}" var="limit">
+						<f:facet name="header">
+							
+								<ice:outputText styleClass="outputLabel" id="text14"
+									value="Limits Awaiting Approval"></ice:outputText>
+							
+						</f:facet>
+						<ice:column id="column1">
+							<f:facet name="header">
+								<ice:outputText id="text7" styleClass="outputLabel"
+									value="Limit Type"></ice:outputText>
+							</f:facet>
+							<ice:commandLink styleClass="requestLink" id="link1" action="#{approveLimitBean.viewLimit}">
+								<ice:outputText id="text21" styleClass="outputText"
+									value="#{limit.type}">
+								    <f:converter converterId="replaceUnderscoreConverter"/>
+								</ice:outputText>
+								<f:param value="#{limit.id}" name="limitId" id="param1"></f:param>
+							</ice:commandLink>
+						</ice:column>
+						<ice:column id="column2">
+							<f:facet name="header">
+								<ice:outputText value="Account Class" styleClass="outputLabel"
+									id="text9"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" id="text16"
+								value="#{limit.accountClass}"></ice:outputText>
+						</ice:column>
+						<ice:column id="column3" style="text-align: right">
+							<f:facet name="header">
+								<ice:outputText value="Minimum Value" styleClass="outputLabel"
+									id="text10"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" id="text17"
+								value="#{limit.minValue}">
+								<f:converter converterId="moneyConverter"/>
+							</ice:outputText>
+						</ice:column>
+						<ice:column id="column6"  style="text-align: right">
+							<f:facet name="header">
+								<ice:outputText value="Maximum Value" styleClass="outputLabel"
+									id="text13"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" id="text20"
+								value="#{limit.maxValue}">
+								<f:converter converterId="moneyConverter"/>
+							</ice:outputText>
+						</ice:column>
+						<ice:column id="column4">
+							<f:facet name="header">
+								<ice:outputText value="Effective Date" styleClass="outputLabel"
+									id="text11"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" id="text18" value="#{limit.effectiveDate}">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+								<f:converter converterId="xmlDateConverter"/>
+							</ice:outputText>
+						</ice:column>
+						<ice:column id="column5">
+							<f:facet name="header">
+								<ice:outputText value="End Date" styleClass="outputLabel"
+									id="text12"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" id="text19" value="#{limit.endDate}">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+								<f:converter converterId="xmlDateConverter"/>
+							</ice:outputText>
+						</ice:column>
+		
+						<ice:column id="column7">
+							<f:facet name="header">
+								<ice:outputText value="Period " styleClass="outputLabel" id="text8"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" id="text15"
+								value="#{limit.periodType}">
+							     <f:converter converterId="replaceUnderscoreConverter"/>
+							</ice:outputText>
+						</ice:column>
+						<ice:column id="column8">
+							<f:facet name="header">
+								<ice:outputText value="Status" styleClass="outputLabel" id="text22"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" id="text23" value="#{limit.status}">
+							  <f:converter converterId="replaceUnderscoreConverter"/>
+							</ice:outputText>
+						</ice:column>
+						<ice:column>
+							<f:facet name="header">
+								<ice:outputText value="Bank" styleClass="outputLabel"
+									></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" value="#{limit.bankId}">
+								<f:converter converterId="bankNameConverter"/>
+							</ice:outputText>
+						</ice:column>
+					</ice:dataTable>
+					<br/>
+				</h:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

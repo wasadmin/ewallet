@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="ReferenceGeneratorService" targetNamespace="http://service.refgen.mcommerce.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.refgen.mcommerce.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.refgen.mcommerce.esolutions.co.zw/" schemaLocation="ReferenceGeneratorService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getNextNumberInSequenceResponse">
+    <part element="tns:getNextNumberInSequenceResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getNextNumberInSequence">
+    <part element="tns:getNextNumberInSequence" name="parameters">
+    </part>
+  </message>
+  <message name="generateUUIDResponse">
+    <part element="tns:generateUUIDResponse" name="parameters">
+    </part>
+  </message>
+  <message name="generateUUID">
+    <part element="tns:generateUUID" name="parameters">
+    </part>
+  </message>
+  <portType name="ReferenceGeneratorService">
+    <operation name="getNextNumberInSequence">
+      <input message="tns:getNextNumberInSequence">
+    </input>
+      <output message="tns:getNextNumberInSequenceResponse">
+    </output>
+    </operation>
+    <operation name="generateUUID">
+      <input message="tns:generateUUID">
+    </input>
+      <output message="tns:generateUUIDResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="ReferenceGeneratorServiceSOAPBinding" type="tns:ReferenceGeneratorService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getNextNumberInSequence">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="generateUUID">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ReferenceGeneratorService">
+    <port binding="tns:ReferenceGeneratorServiceSOAPBinding" name="ReferenceGeneratorServiceSOAP">
+      <soap:address location="http://localhost:9080/ReferenceGeneratorService/ReferenceGeneratorService"/>
+    </port>
+  </service>
+</definitions>

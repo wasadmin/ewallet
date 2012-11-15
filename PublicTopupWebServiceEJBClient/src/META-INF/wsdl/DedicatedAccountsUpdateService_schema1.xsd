@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://impl.dedicatedacc.econet.co.zw/" xmlns:tns="http://impl.dedicatedacc.econet.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="getDedicatedAccountBalance" type="tns:getDedicatedAccountBalance"/>
+
+  <xs:element name="getDedicatedAccountBalanceResponse" type="tns:getDedicatedAccountBalanceResponse"/>
+
+  <xs:element name="getPlatFormInfo" type="tns:getPlatFormInfo"/>
+
+  <xs:element name="getPlatFormInfoResponse" type="tns:getPlatFormInfoResponse"/>
+
+  <xs:element name="reverseUpdateDA" type="tns:reverseUpdateDA"/>
+
+  <xs:element name="reverseUpdateDAResponse" type="tns:reverseUpdateDAResponse"/>
+
+  <xs:element name="updateDA" type="tns:updateDA"/>
+
+  <xs:element name="updateDAResponse" type="tns:updateDAResponse"/>
+
+  <xs:element name="voidUpdateDA" type="tns:voidUpdateDA"/>
+
+  <xs:element name="voidUpdateDAResponse" type="tns:voidUpdateDAResponse"/>
+
+  <xs:complexType name="updateDA">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:updateDARequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateDARequest">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:int"/>
+      <xs:element name="dedicatedAccountNumber" type="xs:int"/>
+      <xs:element name="mobileNumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="platform" type="xs:string" minOccurs="0"/>
+      <xs:element name="ref" type="xs:string" minOccurs="0"/>
+      <xs:element name="serviceid" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateDAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPlatFormInfo">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPlatFormInfoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:platformInfo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="platformInfo">
+    <xs:sequence>
+      <xs:element name="mobilenumber" type="xs:string" minOccurs="0"/>
+      <xs:element name="platform" type="xs:string" minOccurs="0"/>
+      <xs:element name="ref" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="voidUpdateDA">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:updateDARequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="voidUpdateDAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:resultWrapper" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resultWrapper">
+    <xs:sequence>
+      <xs:element name="responseCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="responseString" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reverseUpdateDA">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:updateDARequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reverseUpdateDAResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:resultWrapper" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDedicatedAccountBalance">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:queryDABalance" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="queryDABalance">
+    <xs:sequence>
+      <xs:element name="dedicatedAccountNum" type="xs:int"/>
+      <xs:element name="mobileNum" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDedicatedAccountBalanceResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

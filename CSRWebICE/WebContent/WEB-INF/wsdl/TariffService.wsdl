@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="TariffService" targetNamespace="http://service.tariffservices.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.tariffservices.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.tariffservices.ewallet.esolutions.co.zw/" schemaLocation="TariffService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="editCommissionTable">
+    <part element="tns:editCommissionTable" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByCustomerClassAndBankId">
+    <part element="tns:getTariffTableByCustomerClassAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="retrieveAppropriateTariffResponse">
+    <part element="tns:retrieveAppropriateTariffResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllTariffsByBankId">
+    <part element="tns:getAllTariffsByBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getAllTariffTables">
+    <part element="tns:getAllTariffTables" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffsByTariffTableIdResponse">
+    <part element="tns:getTariffsByTariffTableIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankId">
+    <part element="tns:getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveCommissionResponse">
+    <part element="tns:disapproveCommissionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteTariff">
+    <part element="tns:deleteTariff" name="parameters">
+    </part>
+  </message>
+  <message name="findTariffById">
+    <part element="tns:findTariffById" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByCustomerClassAndBankIdResponse">
+    <part element="tns:getTariffTableByCustomerClassAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTransactionTypeAndBankIdResponse">
+    <part element="tns:getTariffTableByTransactionTypeAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffTypeEffectiveDateAndBankIdResponse">
+    <part element="tns:getTariffTableByTariffTypeEffectiveDateAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approveCommission">
+    <part element="tns:approveCommission" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankIdResponse">
+    <part element="tns:getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editCommissionTableResponse">
+    <part element="tns:editCommissionTableResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteTariffResponse">
+    <part element="tns:deleteTariffResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findTariffByIdResponse">
+    <part element="tns:findTariffByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllTariffsByBankIdResponse">
+    <part element="tns:getAllTariffsByBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="editCommission">
+    <part element="tns:editCommission" name="parameters">
+    </part>
+  </message>
+  <message name="getAllTariffTablesResponse">
+    <part element="tns:getAllTariffTablesResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankId">
+    <part element="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getEffectiveTariffTablesForBank">
+    <part element="tns:getEffectiveTariffTablesForBank" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffStatusAndBankId">
+    <part element="tns:getTariffTableByTariffStatusAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getAllTariffTablesByBankId">
+    <part element="tns:getAllTariffTablesByBankId" name="parameters">
+    </part>
+  </message>
+  <message name="findTariffTableById">
+    <part element="tns:findTariffTableById" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffTypeAndBankId">
+    <part element="tns:getTariffTableByTariffTypeAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="createCommissionTable">
+    <part element="tns:createCommissionTable" name="parameters">
+    </part>
+  </message>
+  <message name="createCommission">
+    <part element="tns:createCommission" name="parameters">
+    </part>
+  </message>
+  <message name="approveCommissionResponse">
+    <part element="tns:approveCommissionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="calculateTariffCharge">
+    <part element="tns:calculateTariffCharge" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffByTariffTableAndBankId">
+    <part element="tns:getTariffByTariffTableAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="editCommissionResponse">
+    <part element="tns:editCommissionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffByTariffTableIdValueTypeAndBankId">
+    <part element="tns:getTariffByTariffTableIdValueTypeAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="createCommissionTableResponse">
+    <part element="tns:createCommissionTableResponse" name="parameters">
+    </part>
+  </message>
+  <message name="createCommissionResponse">
+    <part element="tns:createCommissionResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankId">
+    <part element="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByDateRangeAndBankId">
+    <part element="tns:getTariffTableByDateRangeAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankIdResponse">
+    <part element="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getEffectiveTariffTablesForBankResponse">
+    <part element="tns:getEffectiveTariffTablesForBankResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffStatusAndBankIdResponse">
+    <part element="tns:getTariffTableByTariffStatusAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllTariffTablesByBankIdResponse">
+    <part element="tns:getAllTariffTablesByBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findTariffTableByIdResponse">
+    <part element="tns:findTariffTableByIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getAllTariffs">
+    <part element="tns:getAllTariffs" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffTypeTransactionAgentTypeAndBankId">
+    <part element="tns:getTariffTableByTariffTypeTransactionAgentTypeAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffTypeAndBankIdResponse">
+    <part element="tns:getTariffTableByTariffTypeAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffByTariffTableIdValueTypeAndBankIdResponse">
+    <part element="tns:getTariffByTariffTableIdValueTypeAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteTariffTable">
+    <part element="tns:deleteTariffTable" name="parameters">
+    </part>
+  </message>
+  <message name="calculateTariffChargeResponse">
+    <part element="tns:calculateTariffChargeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="EWalletException">
+    <part element="tns:EWalletException" name="fault">
+    </part>
+  </message>
+  <message name="retrieveAppropriateTariff">
+    <part element="tns:retrieveAppropriateTariff" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffsByTariffTableId">
+    <part element="tns:getTariffsByTariffTableId" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffByTariffTableAndBankIdResponse">
+    <part element="tns:getTariffByTariffTableAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankIdResponse">
+    <part element="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveCommission">
+    <part element="tns:disapproveCommission" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByDateRangeAndBankIdResponse">
+    <part element="tns:getTariffTableByDateRangeAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteTariffTableResponse">
+    <part element="tns:deleteTariffTableResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTransactionTypeAndBankId">
+    <part element="tns:getTariffTableByTransactionTypeAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffTypeEffectiveDateAndBankId">
+    <part element="tns:getTariffTableByTariffTypeEffectiveDateAndBankId" name="parameters">
+    </part>
+  </message>
+  <message name="getAllTariffsResponse">
+    <part element="tns:getAllTariffsResponse" name="parameters">
+    </part>
+  </message>
+  <message name="getTariffTableByTariffTypeTransactionAgentTypeAndBankIdResponse">
+    <part element="tns:getTariffTableByTariffTypeTransactionAgentTypeAndBankIdResponse" name="parameters">
+    </part>
+  </message>
+  <portType name="TariffService">
+    <operation name="createCommission">
+      <input message="tns:createCommission">
+    </input>
+      <output message="tns:createCommissionResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="deleteTariff">
+      <input message="tns:deleteTariff">
+    </input>
+      <output message="tns:deleteTariffResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="editCommission">
+      <input message="tns:editCommission">
+    </input>
+      <output message="tns:editCommissionResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="findTariffById">
+      <input message="tns:findTariffById">
+    </input>
+      <output message="tns:findTariffByIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffByTariffTableAndBankId">
+      <input message="tns:getTariffByTariffTableAndBankId">
+    </input>
+      <output message="tns:getTariffByTariffTableAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffByTariffTableIdValueTypeAndBankId">
+      <input message="tns:getTariffByTariffTableIdValueTypeAndBankId">
+    </input>
+      <output message="tns:getTariffByTariffTableIdValueTypeAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getAllTariffs">
+      <input message="tns:getAllTariffs">
+    </input>
+      <output message="tns:getAllTariffsResponse">
+    </output>
+    </operation>
+    <operation name="createCommissionTable">
+      <input message="tns:createCommissionTable">
+    </input>
+      <output message="tns:createCommissionTableResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="deleteTariffTable">
+      <input message="tns:deleteTariffTable">
+    </input>
+      <output message="tns:deleteTariffTableResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="findTariffTableById">
+      <input message="tns:findTariffTableById">
+    </input>
+      <output message="tns:findTariffTableByIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffTableByTransactionTypeAndBankId">
+      <input message="tns:getTariffTableByTransactionTypeAndBankId">
+    </input>
+      <output message="tns:getTariffTableByTransactionTypeAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffTableByTariffTypeAndBankId">
+      <input message="tns:getTariffTableByTariffTypeAndBankId">
+    </input>
+      <output message="tns:getTariffTableByTariffTypeAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffTableByTariffTypeTransactionAgentTypeAndBankId">
+      <input message="tns:getTariffTableByTariffTypeTransactionAgentTypeAndBankId">
+    </input>
+      <output message="tns:getTariffTableByTariffTypeTransactionAgentTypeAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffTableByTariffTypeEffectiveDateAndBankId">
+      <input message="tns:getTariffTableByTariffTypeEffectiveDateAndBankId">
+    </input>
+      <output message="tns:getTariffTableByTariffTypeEffectiveDateAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankId">
+      <input message="tns:getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankId">
+    </input>
+      <output message="tns:getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankId">
+      <input message="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankId">
+    </input>
+      <output message="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankId">
+      <input message="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankId">
+    </input>
+      <output message="tns:getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getAllTariffTables">
+      <input message="tns:getAllTariffTables">
+    </input>
+      <output message="tns:getAllTariffTablesResponse">
+    </output>
+    </operation>
+    <operation name="getTariffTableByDateRangeAndBankId">
+      <input message="tns:getTariffTableByDateRangeAndBankId">
+    </input>
+      <output message="tns:getTariffTableByDateRangeAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getEffectiveTariffTablesForBank">
+      <input message="tns:getEffectiveTariffTablesForBank">
+    </input>
+      <output message="tns:getEffectiveTariffTablesForBankResponse">
+    </output>
+    </operation>
+    <operation name="calculateTariffCharge">
+      <input message="tns:calculateTariffCharge">
+    </input>
+      <output message="tns:calculateTariffChargeResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="retrieveAppropriateTariff">
+      <input message="tns:retrieveAppropriateTariff">
+    </input>
+      <output message="tns:retrieveAppropriateTariffResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="getAllTariffsByBankId">
+      <input message="tns:getAllTariffsByBankId">
+    </input>
+      <output message="tns:getAllTariffsByBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getAllTariffTablesByBankId">
+      <input message="tns:getAllTariffTablesByBankId">
+    </input>
+      <output message="tns:getAllTariffTablesByBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffsByTariffTableId">
+      <input message="tns:getTariffsByTariffTableId">
+    </input>
+      <output message="tns:getTariffsByTariffTableIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffTableByCustomerClassAndBankId">
+      <input message="tns:getTariffTableByCustomerClassAndBankId">
+    </input>
+      <output message="tns:getTariffTableByCustomerClassAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="getTariffTableByTariffStatusAndBankId">
+      <input message="tns:getTariffTableByTariffStatusAndBankId">
+    </input>
+      <output message="tns:getTariffTableByTariffStatusAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="editCommissionTable">
+      <input message="tns:editCommissionTable">
+    </input>
+      <output message="tns:editCommissionTableResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="approveCommission">
+      <input message="tns:approveCommission">
+    </input>
+      <output message="tns:approveCommissionResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+    <operation name="disapproveCommission">
+      <input message="tns:disapproveCommission">
+    </input>
+      <output message="tns:disapproveCommissionResponse">
+    </output>
+      <fault message="tns:EWalletException" name="EWalletException">
+    </fault>
+    </operation>
+  </portType>
+  <binding name="TariffServiceSOAPBinding" type="tns:TariffService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createCommission">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteTariff">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="editCommission">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findTariffById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffByTariffTableAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffByTariffTableIdValueTypeAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllTariffs">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createCommissionTable">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteTariffTable">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findTariffTableById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffTableByTransactionTypeAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffTableByTariffTypeAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffTableByTariffTypeTransactionAgentTypeAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffTableByTariffTypeEffectiveDateAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffTableByTransactionTypeEffectiveDateAgentTypeAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffTableByTariffTypeTransactionTypeEffectiveDateAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffTableByTariffTypeTransactionTypeEffectiveDateEndDateAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllTariffTables">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffTableByDateRangeAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getEffectiveTariffTablesForBank">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="calculateTariffCharge">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="retrieveAppropriateTariff">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getAllTariffsByBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAllTariffTablesByBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffsByTariffTableId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffTableByCustomerClassAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTariffTableByTariffStatusAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="editCommissionTable">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="approveCommission">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="disapproveCommission">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="EWalletException">
+        <soap:fault name="EWalletException" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="TariffService">
+    <port binding="tns:TariffServiceSOAPBinding" name="TariffServiceSOAP">
+      <soap:address location="http://localhost:9080/TariffServices/TariffService"/>
+    </port>
+  </service>
+</definitions>

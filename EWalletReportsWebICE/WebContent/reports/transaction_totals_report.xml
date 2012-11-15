@@ -1,0 +1,752 @@
+<?xml version="1.0" ?>
+<!DOCTYPE jasperReport
+  PUBLIC "-//JasperReports//DTD Report Design//EN"
+  "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport 
+        name="transaction_totals_report" 
+        pageWidth="842" 
+		pageHeight="595" 
+		columnWidth="800" 
+		columnSpacing="10" 
+		leftMargin="20" 
+		rightMargin="20" 
+		topMargin="10" 
+		bottomMargin="10"
+		whenNoDataType="AllSectionsNoDetail"
+		isTitleNewPage="false"
+		isSummaryNewPage="false">
+<import value="java.util.Date"/>
+<import value="java.sql.Timestamp"/>
+
+<template>"/opt/ewallet/globals/ReportStyles.jrtx"</template>
+<parameter name="reportTitle" class="java.lang.String"/>
+<parameter name="pageHeader" class="java.lang.String"/>
+<parameter name="fromDate" class="java.lang.String"/>
+<parameter name="toDate" class="java.lang.String"/>
+<field name="bankId" class="java.lang.String">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="balCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="btbCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="bteCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="btnCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="billCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="depositCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="etbCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="eteCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="etnCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="miniCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="topupCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="withCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="withNonCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="balSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="btbSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="bteSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="btnSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="billSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="depositSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="etbSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="eteSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="etnSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="miniSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="topupSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="withSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="withNonSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="branchCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="branchSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<variable name="v_balSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{balSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_depositSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{depositSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_billSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{billSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_btbSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{btbSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_bteSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{bteSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_btnSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{btnSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_etbSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{etbSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_eteSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{eteSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_etnSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{etnSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_miniSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{miniSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_topupSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{topupSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_withSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{withSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_withNonSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{withNonSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+<variable name="v_branchSum" class="java.lang.Double">
+            <variableExpression>
+                <![CDATA[new Double($F{branchSum}.longValue()) / 100]]>
+               </variableExpression>
+</variable>
+ <variable name="v_totalCount" class="java.lang.Long" calculation="Sum">
+            <variableExpression>
+                <![CDATA[$F{branchCount}]]>
+               </variableExpression>
+ </variable>
+ <variable name="v_totalSum" class="java.lang.Long" calculation="Sum">
+            <variableExpression>
+                <![CDATA[$F{branchSum}]]>
+               </variableExpression>
+ </variable>
+<group name="BranchGroup" isStartNewPage="false" >
+	<groupExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{bankId})]]></groupExpression>
+	<groupHeader>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="10" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" isBold="true" isItalic = "true" size = "14"/>
+				</textElement>
+				<text>Transactions at Bank:</text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+			    <reportElement x="401" y="10" width="200" height="20"/>
+			    <textElement>
+					<font fontName="Serif" isBold="true" size = "14"/>
+				</textElement>
+				<textFieldExpression>$P{REPORT_PARAMETERS_MAP}.get($F{bankId})</textFieldExpression>
+			</textField>
+		</band>
+	</groupHeader>
+	<groupFooter>
+		<band height="40">
+			<staticText>
+				<reportElement x="0" y="10" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" isBold="true" isItalic = "true" size = "14"/>
+				</textElement>
+				<text>End Transactions at Bank:</text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+			    <reportElement x="401" y="10" width="200" height="20"/>
+				<textElement>
+					<font fontName="Serif" isBold="true" size = "14"/>
+				</textElement>
+				<textFieldExpression>$P{REPORT_PARAMETERS_MAP}.get($F{bankId})</textFieldExpression>
+			</textField>
+		</band>
+	</groupFooter>
+</group>
+
+
+<!-- <background>
+		<band height="200">
+			<image scaleImage="Clip" hAlign="Left" vAlign="Bottom">
+				<reportElement x="0" y="0" width="150" height="200"/>
+				<imageExpression>"/opt/ewallet/globals/esol.png"</imageExpression>
+			</image>
+		</band>
+</background>  -->
+	<title>
+		<band height="50">
+			<line>
+				<reportElement x="0" y="0" width="800" height="0" forecolor="black" isPrintRepeatedValues = "false"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="10" width="800" height="30" style="Sans_Normal"/>
+				<textElement textAlignment="Center" lineSpacing="Single">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">$P{reportTitle}</textFieldExpression>
+			</textField>
+		</band>
+	</title>
+     <pageHeader>
+          <band height="30">
+              <rectangle>
+                  <reportElement x="0" y="0" width="800" height="30"/>
+                  <graphicElement/>
+              </rectangle>
+              <textField isBlankWhenNull="true">
+           		  <reportElement x="0" y="0" width="800" height="30"/>
+       		       <textElement textAlignment="Center">
+              		    <font isItalic = "true" fontName="Serif" size="16"/>
+           		   </textElement>
+             	 <textFieldExpression class="java.lang.String"><![CDATA[$P{pageHeader}]]></textFieldExpression>
+             </textField>
+          </band>
+    </pageHeader>
+  <detail>
+	<band height="380">
+	        <!--<staticText>
+				<reportElement x="0" y="10" width="400" height="12"/>
+				<textElement>
+					<font fontName="Serif" size="9" isUnderline = "true" isBold = "true"/>
+				</textElement>
+				<text>TRANSACTIONS BREAKDOWN </text> 
+			</staticText> -->
+			<staticText>
+				<reportElement x="0" y="30" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"  isUnderline = "true" isBold = "true" isItalic = "true"/>
+				</textElement>
+				<text>TRANSACTION </text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="30" width="200" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"  isUnderline = "true" isBold = "true" isItalic = "true"/>
+				</textElement>
+				<text> NUMBER OF TRANSACTIONS</text>
+			</staticText>
+			<staticText>
+				<reportElement x="601" y="30" width="200" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"  isUnderline = "true" isBold = "true" isItalic = "true"/>
+				</textElement>
+				<text> TOTAL AMOUNT</text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text>BALANCE ENQUIRY</text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="50" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{balCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="50" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				   <!-- <![CDATA[(new DecimalFormat("#,##0.00")).format($V{v_balSum})]]> -->
+			   </textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="70" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text> DEPOSIT</text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="70" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{depositCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="70" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				   <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{depositSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- Bill Pay  -->
+			<staticText>
+				<reportElement x="0" y="90" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text> BILL PAYMENT </text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="90" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{billCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="90" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				   <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{billSum}.longValue()) / 100)]]>
+				  <!--  <![CDATA[(new DecimalFormat("#,##0.00")).format($V{v_billSum})]]>  -->
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- Mini Statement  -->
+			<staticText>
+				<reportElement x="0" y="110" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text> MINI STATEMENT </text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="110" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{miniCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="110" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				   <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{miniSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- Top up  -->
+			<staticText>
+				<reportElement x="0" y="130" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text> TOP UP </text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="130" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{topupCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="130" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				   <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{topupSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- Withdrawal  -->
+			<staticText>
+				<reportElement x="0" y="150" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text> E-Wallet WITHDRAWAL </text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="150" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{withCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="150" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				   <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{withSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- Withdrawal  NON -->
+			<staticText>
+				<reportElement x="0" y="170" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text> NON-HOLDER WITHDRAWAL </text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="170" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{withNonCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="170" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				   <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{withNonSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- EWALLET_TO_EWALLET_TRANSFER -->
+			<staticText>
+				<reportElement x="0" y="190" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text> EWALLET TO EWALLET TRANSFER </text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="190" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{eteCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="190" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				   <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{eteSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- EWALLET_TO_BANKACCOUNT_TRANSFER -->
+			<staticText>
+				<reportElement x="0" y="210" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text>EWALLET TO BANKACCOUNT TRANSFER</text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="210" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{etbCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="210" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				   <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{etbSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- EWALLET_TO_NON_HOLDER_TRANSFER -->
+			<staticText>
+				<reportElement x="0" y="230" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text>EWALLET TO NON-HOLDER TRANSFER</text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="230" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{etnCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="230" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				   <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{etnSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- BANKACCOUNT_TO_BANKACCOUNT_TRANSFER -->
+			<staticText>
+				<reportElement x="0" y="250" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text>BANKACCOUNT TO BANKACCOUNT TRANSFER</text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="250" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{btbCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="250" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				    <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{btbSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- BANKACCOUNT_TO_EWALLET_TRANSFER -->
+			<staticText>
+				<reportElement x="0" y="270" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text>BANKACCOUNT TO EWALLET TRANSFER</text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="270" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{bteCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="270" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				    <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{bteSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- BANKACCOUNT_TO_NONHOLDER_TRANSFER -->
+			<staticText>
+				<reportElement x="0" y="290" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text>BANKACCOUNT TO NONHOLDER TRANSFER</text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="290" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{btnCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="290" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				    <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{btnSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+			
+			<!-- TOTALS -->
+			<staticText>
+				<reportElement x="0" y="320" width="400" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold = "true" isItalic = "true"/>
+				</textElement>
+				<text>BANK TOTALS :</text>
+			</staticText>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="401" y="320" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true" isUnderline = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+				$F{branchCount}
+			</textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull = "true">
+				<reportElement x="601" y="320" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="10"  isBold = "true" isUnderline = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+				    <![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($F{branchSum}.longValue()) / 100)]]>
+			   </textFieldExpression>
+			</textField>
+	</band>
+</detail>
+<pageFooter>
+     <band height = "30">
+       <staticText>
+			<reportElement x="490" y="10" width="30" height="20"/>
+			<textElement>
+				<font isBold="true"/>
+			</textElement>
+			<text>Page | </text>
+		</staticText>
+		<textField evaluationTime="Now">
+			<reportElement x="524" y="10" width="50" height="20"/>
+			<textElement textAlignment="Left">
+				<font fontName="Serif" size="10"/>
+			</textElement>
+			<textFieldExpression class="java.lang.Integer">
+				$V{PAGE_NUMBER}
+			</textFieldExpression>
+		</textField>
+    </band>   
+ </pageFooter>
+  
+<lastPageFooter>
+	<band height="50">
+		<staticText>
+			<reportElement x="0" y="0" width="120" height="20"/>
+			<textElement>
+					<font fontName="Serif" size="10"/>
+			</textElement>
+			<text>TOTAL TXNS :</text>
+		</staticText>
+		<textField isBlankWhenNull="true">
+			<reportElement x="120" y="0" width="50" height="20"/>
+			<textElement textAlignment="Left">
+				<font fontName="Serif" size="10" isBold = "true"/>
+			</textElement>
+			<textFieldExpression class="java.lang.Long">
+				$V{v_totalCount}
+			</textFieldExpression>
+		</textField>
+		<staticText>
+			<reportElement x="180" y="0" width="120" height="20"/>
+			<textElement>
+					<font fontName="Serif" size="10"/>
+			</textElement>
+			<text>TOTAL AMOUNT :</text>
+		</staticText>
+		<textField isBlankWhenNull="true">
+			<reportElement x="301" y="0" width="50" height="20"/>
+			<textElement textAlignment="Left">
+				<font fontName="Serif" size="10" isBold = "true"/>
+			</textElement>
+			<textFieldExpression class="java.lang.String">
+				<![CDATA[(new DecimalFormat("#,##0.00")).format(new Double($V{v_totalSum}.longValue()) / 100)]]>
+			</textFieldExpression>
+		</textField>
+		<staticText>
+			<reportElement x="490" y="20" width="30" height="20"/>
+			<textElement>
+				<font isBold="true"/>
+			</textElement>
+			<text>Page | </text>
+		</staticText>
+		<textField evaluationTime="Now">
+			<reportElement x="524" y="20" width="50" height="20"/>
+			<textElement textAlignment="Left">
+				<font fontName="Serif" size="10"/>
+			</textElement>
+			<textFieldExpression class="java.lang.Integer">
+				$V{PAGE_NUMBER}
+			</textFieldExpression>
+		</textField>
+	</band>
+</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Class-Path: EWalletUtils.jar 
+ LimitServicesClient.jar 
+ commons-logging-1.1.1.jar 
+ log4j-1.2.16.jar
+

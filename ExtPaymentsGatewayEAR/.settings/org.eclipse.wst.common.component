@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ExtPaymentsGatewayEAR">
+        <wb-resource deploy-path="/" source-path="/"/>
+        <dependent-module archiveName="ExtPaymentsGatewayEJB.jar" deploy-path="/" handle="module:/resource/ExtPaymentsGatewayEJB/ExtPaymentsGatewayEJB">
+            <dependent-object>Module_1348066290203</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ExtPaymentsGatewayClient.jar" deploy-path="/" handle="module:/resource/ExtPaymentsGatewayClient/ExtPaymentsGatewayClient">
+            <dependent-object>Module_1348066290204</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ExtPaymentsGateway.war" deploy-path="/" handle="module:/resource/ExtPaymentsGateway/ExtPaymentsGateway">
+            <dependent-object>Module_1348066290205</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

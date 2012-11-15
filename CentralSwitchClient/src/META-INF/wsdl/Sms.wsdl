@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions targetNamespace="http://www.zimswitch.co.zw/SmsPortal" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:tns="http://www.zimswitch.co.zw/SmsPortal" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://www.zimswitch.co.zw/SmsPortal">
+<s:element name="SendSms">
+<s:complexType>
+<s:sequence>
+<s:element maxOccurs="1" minOccurs="0" name="profile" type="s:string"/>
+<s:element maxOccurs="1" minOccurs="0" name="msdn" type="s:string"/>
+<s:element maxOccurs="1" minOccurs="0" name="body" type="s:string"/>
+<s:element maxOccurs="1" minOccurs="0" name="username" type="s:string"/>
+<s:element maxOccurs="1" minOccurs="0" name="password" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SendSmsResponse">
+<s:complexType>
+<s:sequence>
+<s:element maxOccurs="1" minOccurs="0" name="SendSmsResult" type="tns:SmsResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="SmsResponse">
+<s:sequence>
+<s:element maxOccurs="1" minOccurs="1" name="Successful" type="s:boolean"/>
+<s:element maxOccurs="1" minOccurs="0" name="ResponseDescription" type="s:string"/>
+<s:element maxOccurs="1" minOccurs="1" name="SmsStatus" type="tns:SmsStatus"/>
+</s:sequence>
+</s:complexType>
+<s:simpleType name="SmsStatus">
+<s:restriction base="s:string">
+<s:enumeration value="Delivered"/>
+<s:enumeration value="Pending"/>
+<s:enumeration value="Failed"/>
+</s:restriction>
+</s:simpleType>
+<s:element name="SmsResponse" nillable="true" type="tns:SmsResponse"/>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="SendSmsSoapIn">
+<wsdl:part element="tns:SendSms" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="SendSmsSoapOut">
+<wsdl:part element="tns:SendSmsResponse" name="parameters"/>
+</wsdl:message>
+<wsdl:message name="SendSmsHttpPostIn">
+<wsdl:part name="profile" type="s:string"/>
+<wsdl:part name="msdn" type="s:string"/>
+<wsdl:part name="body" type="s:string"/>
+<wsdl:part name="username" type="s:string"/>
+<wsdl:part name="password" type="s:string"/>
+</wsdl:message>
+<wsdl:message name="SendSmsHttpPostOut">
+<wsdl:part element="tns:SmsResponse" name="Body"/>
+</wsdl:message>
+<wsdl:portType name="SmsPortalSoap">
+<wsdl:operation name="SendSms">
+<wsdl:input message="tns:SendSmsSoapIn"/>
+<wsdl:output message="tns:SendSmsSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:portType name="SmsPortalHttpPost">
+<wsdl:operation name="SendSms">
+<wsdl:input message="tns:SendSmsHttpPostIn"/>
+<wsdl:output message="tns:SendSmsHttpPostOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="SmsPortalSoap" type="tns:SmsPortalSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="SendSms">
+<soap:operation soapAction="http://www.zimswitch.co.zw/SmsPortal/SendSms" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="SmsPortalSoap12" type="tns:SmsPortalSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="SendSms">
+<soap12:operation soapAction="http://www.zimswitch.co.zw/SmsPortal/SendSms" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="SmsPortalHttpPost" type="tns:SmsPortalHttpPost">
+<http:binding verb="POST"/>
+<wsdl:operation name="SendSms">
+<http:operation location="/SendSms"/>
+<wsdl:input>
+<mime:content type="application/x-www-form-urlencoded"/>
+</wsdl:input>
+<wsdl:output>
+<mime:mimeXml part="Body"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="SmsPortal">
+<wsdl:port binding="tns:SmsPortalSoap" name="SmsPortalSoap">
+<soap:address location="http://10.91.50.4:82/Endpoints/SmsPortal.asmx"/>
+</wsdl:port>
+<wsdl:port binding="tns:SmsPortalSoap12" name="SmsPortalSoap12">
+<soap12:address location="http://10.91.50.4:82/Endpoints/SmsPortal.asmx"/>
+</wsdl:port>
+<wsdl:port binding="tns:SmsPortalHttpPost" name="SmsPortalHttpPost">
+<http:address location="http://10.91.50.4:82/Endpoints/SmsPortal.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

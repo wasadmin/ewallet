@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1"><h2>Teller Daily Withdrawals : <ice:outputText
+				styleClass="outputText" id="text3" value="#{runTellerDailyWithdrawalsBean.txnDate}">
+				<f:converter converterId="xmlDateConverter"/>
+			</ice:outputText></h2>
+			<p><ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			<ice:inputHidden value="#{runTellerDailyWithdrawalsBean.disableRun}"
+				id="Id0"></ice:inputHidden><ice:outputText
+				styleClass="outputText" style="color: red" value="#{runTellerDailyWithdrawalsBean.msg}"/>
+			<p></p>
+			<br/>
+			<ice:panelGrid styleClass="infoBox" >
+
+						
+							<ice:outputText value="All Values with a * are required" /><br/>
+							
+					</ice:panelGrid><ice:panelGrid styleClass="panelGrid" id="grid1" columns="2">
+
+
+				<ice:outputText styleClass="outputLabel" id="text7"
+					value="User Role :"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text11"
+					value="#{runTellerDailyWithdrawalsBean.profile.userRole}"></ice:outputText>
+				<ice:outputText styleClass="outputLabel" id="text9"
+					value="User Name :"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text10" value="#{runTellerDailyWithdrawalsBean.profile.userName}"></ice:outputText>
+				<ice:outputText styleClass="outputLabel" id="text2"
+					value="Last Name :"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text5" value="#{runTellerDailyWithdrawalsBean.profile.lastName}"></ice:outputText>
+				<ice:outputText styleClass="outputLabel" id="text4"
+					value="First Names :"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text6" value="#{runTellerDailyWithdrawalsBean.profile.firstNames}"></ice:outputText>
+
+				<ice:outputText styleClass="outputLabel" id="text8" value="Status :"></ice:outputText>
+
+				<ice:outputText styleClass="outputText" id="text12"
+					value="#{runTellerDailyWithdrawalsBean.profile.status}"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text31"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text33"></ice:outputText>
+				<ice:outputText styleClass="outputLabel" id="text32" value="BANK DETAILS"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text35"></ice:outputText>
+				<ice:outputText styleClass="outputLabel" id="text34"
+					value="Bank Name :"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text37" value="#{runTellerDailyWithdrawalsBean.branch.bank.name}"></ice:outputText>
+				<ice:outputText styleClass="outputLabel" id="text36" value="Branch Name :"></ice:outputText>
+				<ice:outputText styleClass="outputText" id="text38" value="#{runTellerDailyWithdrawalsBean.branch.name}"></ice:outputText>
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" id="group1">
+						<ice:outputText styleClass="panelGridLabel" id="text1"
+							value="TELLER DETAILS"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+			</ice:panelGrid>
+			<br/><hr/><ice:dataTable border="0" cellpadding="2" cellspacing="0"
+				columnClasses="columnClass1" headerClass="headerClass"
+				footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+				styleClass="dataTable" id="tableEx1" value="#{runTellerDailyWithdrawalsBean.results}" var="results"><f:facet name="footer">
+					
+						<ice:panelGrid styleClass="panelGrid" id="grid3" columns="3">
+							<ice:outputText styleClass="outputLabel" id="text23"
+								value="Total Amount = "></ice:outputText>
+							<ice:outputText styleClass="outputText" id="text24" value="#{runTellerDailyWithdrawalsBean.totalAmount}">
+							   <f:converter converterId="moneyConverter"/>
+							</ice:outputText>
+							<ice:panelGrid styleClass="panelGrid" id="grid2" columns="3">
+
+								<ice:commandLink styleClass="commandLink" id="link1" action="#{runTellerDailyWithdrawalsBean.run}">
+									<ice:outputText id="text13" styleClass="outputText"
+										value="Run Day End"></ice:outputText>
+								</ice:commandLink>
+								<ice:outputText styleClass="outputText" id="text16"
+									value="_____________"></ice:outputText>
+								<ice:commandLink styleClass="commandLink" id="link2" action="#{runTellerDailyWithdrawalsBean.backToSearch}">
+
+									<ice:outputText id="text15" styleClass="outputText"
+										value="Back To Search"></ice:outputText>
+								</ice:commandLink>
+							</ice:panelGrid>
+						</ice:panelGrid>
+					
+				</f:facet>
+				<f:facet name="header">
+					
+						<ice:outputText styleClass="panelGridLabel" id="text17" value="Teller Deposits "></ice:outputText>
+					
+				</f:facet>
+				<ice:column >
+					<f:facet name="header">
+						<ice:outputText  styleClass="outputText"
+							value="Withdrawal Type"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{results.transactionType}">
+					    <f:converter converterId="replaceUnderscoreConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="columnEx1">
+					<f:facet name="header">
+						<ice:outputText id="text14" styleClass="outputText"
+							value="Customer Name"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text25" value="#{results.sourceMobileId}">
+					<f:converter converterId="customerNameConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="columnEx2">
+					<f:facet name="header">
+						<ice:outputText value="Mobile Number" styleClass="outputText"
+							id="text18"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text26" value="#{results.sourceMobileId}">
+					<f:converter converterId="mobileProfileConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="columnEx3">
+					<f:facet name="header">
+						<ice:outputText value="Amount" styleClass="outputText" id="text19"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text27" value="#{results.amount}">
+					  <f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="columnEx4">
+					<f:facet name="header">
+						<ice:outputText value="Balance" styleClass="outputText" id="text20"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text28" value="#{results.balance}">
+					<f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="columnEx6">
+					<f:facet name="header">
+						<ice:outputText value="Date" styleClass="outputText" id="text22"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text29" value="#{results.dateCreated}">
+					 <f:converter converterId="xmlDateConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="columnEx5">
+					<f:facet name="header">
+						<ice:outputText value="Bank Details" styleClass="outputText"
+							id="text21"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text30" value="#{results.branchId}">
+					<f:converter converterId="bankBranchDetailsConverter"/>
+					</ice:outputText>
+				</ice:column>
+			</ice:dataTable>
+			<br/>
+			
+		</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

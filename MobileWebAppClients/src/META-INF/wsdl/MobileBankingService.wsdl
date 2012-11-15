@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="MobileBankingService" targetNamespace="http://services.banking.mobile.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.banking.mobile.esolutions.co.zw/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://services.banking.mobile.esolutions.co.zw/" schemaLocation="MobileBankingService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="getBanksResponse">
+    <part name="parameters" element="tns:getBanksResponse">
+    </part>
+  </message>
+  <message name="getBanks">
+    <part name="parameters" element="tns:getBanks">
+    </part>
+  </message>
+  <message name="submitTransactionResponse">
+    <part name="parameters" element="tns:submitTransactionResponse">
+    </part>
+  </message>
+  <message name="getMerchantsResponse">
+    <part name="parameters" element="tns:getMerchantsResponse">
+    </part>
+  </message>
+  <message name="submitTransaction">
+    <part name="parameters" element="tns:submitTransaction">
+    </part>
+  </message>
+  <message name="getMerchants">
+    <part name="parameters" element="tns:getMerchants">
+    </part>
+  </message>
+  <message name="verifyPasswordResponse">
+    <part name="parameters" element="tns:verifyPasswordResponse">
+    </part>
+  </message>
+  <message name="verifyPassword">
+    <part name="parameters" element="tns:verifyPassword">
+    </part>
+  </message>
+  <message name="verifyEnrolment">
+    <part name="parameters" element="tns:verifyEnrolment">
+    </part>
+  </message>
+  <message name="verifyEnrolmentResponse">
+    <part name="parameters" element="tns:verifyEnrolmentResponse">
+    </part>
+  </message>
+  <portType name="MobileBankingService">
+    <operation name="verifyEnrolment">
+      <input message="tns:verifyEnrolment">
+    </input>
+      <output message="tns:verifyEnrolmentResponse">
+    </output>
+    </operation>
+    <operation name="verifyPassword">
+      <input message="tns:verifyPassword">
+    </input>
+      <output message="tns:verifyPasswordResponse">
+    </output>
+    </operation>
+    <operation name="submitTransaction">
+      <input message="tns:submitTransaction">
+    </input>
+      <output message="tns:submitTransactionResponse">
+    </output>
+    </operation>
+    <operation name="getMerchants">
+      <input message="tns:getMerchants">
+    </input>
+      <output message="tns:getMerchantsResponse">
+    </output>
+    </operation>
+    <operation name="getBanks">
+      <input message="tns:getBanks">
+    </input>
+      <output message="tns:getBanksResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="MobileBankingServiceSOAPBinding" type="tns:MobileBankingService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="verifyEnrolment">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="verifyPassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="submitTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getMerchants">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getBanks">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="MobileBankingService">
+    <port name="MobileBankingServiceSOAP" binding="tns:MobileBankingServiceSOAPBinding">
+      <soap:address location="http://localhost:9081/MobileBankingServices/MobileBankingService"/>
+    </port>
+  </service>
+</definitions>

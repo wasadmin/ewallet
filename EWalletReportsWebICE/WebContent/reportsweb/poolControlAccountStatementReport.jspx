@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1">
+		<h2>Pool Control Account Statement</h2>
+			<p><ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			<br/>
+			<ice:panelGrid styleClass="infoBox" >
+
+						
+							<ice:outputText value="All Values with a * are required" /><br/>
+							
+					</ice:panelGrid>
+			<ice:panelGrid styleClass="panelGrid" id="grid1" columns="3">
+
+				<ice:outputText styleClass="outputLabel" id="text2" value="Bank* :"></ice:outputText>
+				<ice:selectOneMenu styleClass="selectOneMenu" id="menu1"
+					value="#{poolControlAccountStatementReportBean.bankItem}">
+					<f:selectItems id="selectItems1"
+						value="#{poolControlAccountStatementReportBean.bankMenu}" />
+				</ice:selectOneMenu>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+								
+				<ice:outputText styleClass="outputLabel" id="text6"
+					value="Date From(dd/MM/yyyy HH:mm) :"></ice:outputText>
+				<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+									renderMonthAsDropdown="true" renderYearAsDropdown="true"
+									value="#{poolControlAccountStatementReportBean.fromDate}" converter="customDateConverter" >
+				</ice:selectInputDate>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+
+				<ice:outputText styleClass="outputLabel" id="text20" value="To(dd/MM/yyyy HH:mm) :"></ice:outputText>
+				<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+									renderMonthAsDropdown="true" renderYearAsDropdown="true" 
+									value="#{poolControlAccountStatementReportBean.toDate}" converter="customDateConverter" >
+				</ice:selectInputDate>
+				<ice:commandButton type="submit" value="Generate"
+					styleClass="commandButton" id="button1"
+					action="#{poolControlAccountStatementReportBean.generateReport}"></ice:commandButton>
+				
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" id="group1">
+						<ice:outputText styleClass="panelGridLabel" id="text1"
+							value="Pool Account Statement Report"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+			</ice:panelGrid>
+			<br/>
+			<br/>
+		</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

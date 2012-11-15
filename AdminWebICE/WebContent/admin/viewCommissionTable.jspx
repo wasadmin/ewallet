@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended"
+	xmlns:odc="http://www.ibm.com/jsf/BrowserFramework">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<ice:form styleClass="form" id="form1">
+					<h2>Commission Table</h2>
+					<ice:messages styleClass="messages" id="messages1"
+						errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages>
+					<ice:inputHidden value="#{viewTariffTableBean.tariffTableId}"
+						id="Id0"></ice:inputHidden>
+					<ice:inputHidden value="#{viewTariffTableBean.approver}" id="Id2"></ice:inputHidden>
+					<ice:inputHidden value="#{viewTariffTableBean.selectedTariffId}"
+						id="Id4"></ice:inputHidden>
+					<ice:inputHidden value="#{viewTariffTableBean.initializeInfor}"
+						id="Id5"></ice:inputHidden>
+					<ice:inputHidden value="#{viewTariffTableBean.approverMsg}"
+						id="Id6"></ice:inputHidden>
+					<ice:inputHidden value="#{viewTariffTableBean.fromPageName}"
+						id="Id7"></ice:inputHidden>
+					<ice:outputText styleClass="outputText" id="text16"
+						style="color: green" value="#{viewTariffTableBean.msg}"></ice:outputText>
+					<odc:tabbedPanel slantInactiveRight="4" width="500"
+						styleClass="tabbedPanel" height="400" slantActiveRight="4"
+						showBackNextButton="true" id="tabbedPanel1" showTabs="true"
+						variableTabLength="false">
+						<odc:bfPanel id="bfpanel1" name="Commission Table"
+							showFinishCancelButton="false">
+							<br />
+							<ice:panelGrid styleClass="panelGrid" id="grid1" columns="2"
+								width="600" cellpadding="5" cellspacing="5">
+								<ice:outputText styleClass="outputLabel" id="text2x"
+									value="Financial Institution :"></ice:outputText>
+								<ice:outputText styleClass="outputText" id="text4x"
+									value="#{viewTariffTableBean.tariffTable.bankId}">
+									<f:converter converterId="bankNameConverter" />
+								</ice:outputText>
+								<ice:outputText styleClass="outputLabel" id="text2"
+									value="Commission  Type :"></ice:outputText>
+								<ice:outputText styleClass="outputText" id="text4"
+									value="#{viewTariffTableBean.tariffTable.tariffType}">
+									<f:converter converterId="replaceUnderscoreConverter" />
+								</ice:outputText>
+								<ice:outputText styleClass="outputLabel" id="text3"
+									value="Customer Class :"></ice:outputText>
+								<ice:outputText styleClass="outputText" id="text6"
+									value="#{viewTariffTableBean.tariffTable.customerClass}">
+									<f:converter converterId="replaceUnderscoreConverter" />
+								</ice:outputText>
+								<ice:outputText styleClass="outputLabel" id="text5"
+									value="Status :"></ice:outputText>
+								<ice:outputText styleClass="outputText" id="text8"
+									value="#{viewTariffTableBean.tariffTable.status}">
+									<f:converter converterId="replaceUnderscoreConverter" />
+								</ice:outputText>
+								<ice:outputText styleClass="outputLabel" id="text7"
+									value="Transaction Type : "></ice:outputText>
+								<ice:outputText styleClass="outputText" id="text9"
+									value="#{viewTariffTableBean.tariffTable.transactionType}">
+									<f:converter converterId="replaceUnderscoreConverter" />
+								</ice:outputText>
+								<ice:outputText styleClass="outputLabel" id="text12"
+									value="Effective Date :"></ice:outputText>
+								<ice:outputText styleClass="outputText" id="text13"
+									value="#{viewTariffTableBean.tariffTable.effectiveDate}">
+									<f:converter converterId="xmlDateConverter" />
+								</ice:outputText>
+								<ice:outputText styleClass="outputLabel" id="text10"
+									value="End Date :"></ice:outputText>
+								<ice:outputText styleClass="outputText" id="text15"
+									value="#{viewTariffTableBean.tariffTable.endDate}">
+									<f:converter converterId="xmlDateConverter" />
+								</ice:outputText>
+								<ice:commandButton type="submit" value="Edit"
+									styleClass="commandButton" id="button1"
+									action="#{viewTariffTableBean.editTable}"
+									rendered="#{viewTariffTableBean.renderEditable}"></ice:commandButton>
+								<ice:commandButton type="submit" value="Back"
+									styleClass="commandButton" id="button2"
+									action="#{viewTariffTableBean.goBack}"></ice:commandButton>
+								<f:facet name="header">
+									<ice:panelGroup styleClass="panelGroup" id="group1">
+										<ice:outputText styleClass="panelGridLabel" id="text1"
+											value="Table Details"></ice:outputText>
+									</ice:panelGroup>
+								</f:facet>
+							</ice:panelGrid>
+						</odc:bfPanel>
+						<odc:bfPanel id="bfpanel2" name="Commission(es)"
+							showFinishCancelButton="false">
+
+							<p><br />
+							</p>
+							<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+								columnClasses="columnClass1" headerClass="headerClass"
+								footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+								styleClass="dataTable" id="table1"
+								value="#{viewTariffTableBean.tariffList}" var="tariff">
+								<f:facet name="header">
+
+									<ice:outputText styleClass="outputLabel" id="text19"
+										value="Commissions"></ice:outputText>
+
+								</f:facet>
+								<ice:column id="column1">
+									<f:facet name="header">
+										<ice:outputText id="text111" styleClass="outputText"
+											value="Value Type"></ice:outputText>
+									</f:facet>
+									<ice:commandLink styleClass="requestLink" id="link11"
+										disabled="#{!viewTariffTableBean.renderEditable}"
+										action="#{viewTariffTableBean.editTariff}">
+										<ice:outputText id="text23" styleClass="outputText"
+											value="#{tariff.valueType}"></ice:outputText>
+										<f:param value="#{tariff.id}" name="tariffId" id="param1"></f:param>
+									</ice:commandLink>
+								</ice:column>
+								<ice:column id="column2">
+									<f:facet name="header">
+										<ice:outputText value="Lower Limit" styleClass="outputText"
+											id="text14"></ice:outputText>
+									</f:facet>
+									<ice:outputText styleClass="outputText" id="text22"
+										value="#{tariff.lowerLimit}">
+										<f:converter converterId="moneyConverter" />
+									</ice:outputText>
+								</ice:column>
+								<ice:column id="column3">
+									<f:facet name="header">
+										<ice:outputText value="Upper Limit" styleClass="outputText"
+											id="text17"></ice:outputText>
+									</f:facet>
+									<ice:outputText styleClass="outputText" id="text21"
+										value="#{tariff.upperLimit}">
+										<f:converter converterId="moneyConverter" />
+									</ice:outputText>
+								</ice:column>
+								<ice:column id="column4">
+									<f:facet name="header">
+										<ice:outputText value="Value" styleClass="outputText"
+											id="text18"></ice:outputText>
+									</f:facet>
+									<ice:outputText styleClass="outputText" id="text20"
+										value="#{tariff.value}">
+										<f:converter converterId="moneyConverter" />
+									</ice:outputText>
+								</ice:column>
+								<ice:column>
+									<f:facet name="header">
+										<ice:outputText value=" " styleClass="outputText"></ice:outputText>
+									</f:facet>
+									<ice:commandLink styleClass="requestLink" action="#{viewTariffTableBean.viewLogs}">
+										<ice:outputText styleClass="outputText" value="View Logs" />
+										<f:param name="entityId" value="#{tariff.id}" />
+										<f:param name="entityName" value="COMMISSION" />
+										<f:param name="previous" value="admin/viewCommissionTable.jspx" />
+									</ice:commandLink>
+								</ice:column>
+							</ice:dataTable>
+							<p><br />
+							</p>
+							<ice:panelGrid styleClass="panelGrid" id="grid12" columns="6"
+								width="600" cellpadding="5" cellspacing="5">
+								<ice:commandLink styleClass="requestLink" id="link1"
+									action="#{viewTariffTableBean.newTariff}"
+									rendered="#{viewTariffTableBean.renderNew and viewTariffTableBean.renderEditable}">
+									<ice:outputText id="text11" styleClass="outputText"
+										value="New Commission"></ice:outputText>
+									<f:param value="#{viewTariffTableBean.tariffTableId}"
+										name="tariffTableId" id="param2"></f:param>
+								</ice:commandLink>
+								<ice:commandLink styleClass="requestLink"
+									action="#{viewTariffTableBean.approveTariff}"
+									rendered="#{viewTariffTableBean.renderApprove}">
+									<ice:outputText styleClass="outputText"
+										value="Approve Commission"></ice:outputText>
+									<f:param value="#{viewTariffTableBean.tariffTableId}"
+										name="tariffTableId"></f:param>
+								</ice:commandLink>
+								<ice:commandLink styleClass="requestLink"
+									action="#{viewTariffTableBean.disApproveTariff}"
+									rendered="#{viewTariffTableBean.renderDisapprove}">
+									<ice:outputText styleClass="outputText"
+										value="Disapprove Commission"></ice:outputText>
+									<f:param value="#{viewTariffTableBean.tariffTableId}"
+										name="tariffTableId"></f:param>
+								</ice:commandLink>
+								<ice:commandLink styleClass="requestLink"
+									action="#{viewTariffTableBean.activateTariff}"
+									rendered="#{viewTariffTableBean.renderActivate}">
+									<ice:outputText styleClass="outputText"
+										value="Activate Commission"></ice:outputText>
+									<f:param value="#{viewTariffTableBean.tariffTableId}"
+										name="tariffTableId"></f:param>
+								</ice:commandLink>
+								<ice:commandLink styleClass="requestLink"
+									action="#{viewTariffTableBean.activateTariff}"
+									rendered="#{viewTariffTableBean.renderRestore}">
+									<ice:outputText styleClass="outputText"
+										value="Restore Commission"></ice:outputText>
+									<f:param value="#{viewTariffTableBean.tariffTableId}"
+										name="tariffTableId"></f:param>
+								</ice:commandLink>
+								<ice:commandLink styleClass="requestLink"
+									action="#{viewTariffTableBean.deleteTariff}"
+									rendered="#{viewTariffTableBean.renderDelete}">
+									<ice:outputText styleClass="outputText" value="DELETE"></ice:outputText>
+									<f:param value="#{viewTariffTableBean.tariffTableId}"
+										name="tariffTableId"></f:param>
+								</ice:commandLink>
+							</ice:panelGrid>
+							<p></p>
+						</odc:bfPanel>
+						<f:facet name="back">
+							<ice:commandButton type="submit" value="&lt; Back"
+								id="tabbedPanel1_back" style="display:none"></ice:commandButton>
+						</f:facet>
+						<f:facet name="next">
+							<ice:commandButton type="submit" value="Next &gt;"
+								id="tabbedPanel1_next" style="display:none"></ice:commandButton>
+						</f:facet>
+						<f:facet name="finish">
+							<ice:commandButton type="submit" value="Finish"
+								id="tabbedPanel1_finish" style="display:none"></ice:commandButton>
+						</f:facet>
+						<f:facet name="cancel">
+							<ice:commandButton type="submit" value="Cancel"
+								id="tabbedPanel1_cancel" style="display:none"></ice:commandButton>
+						</f:facet>
+					</odc:tabbedPanel>
+					<br />
+					<h:commandButton type="submit" value="View Logs"
+						styleClass="commandButton" id="button6"
+						actionListener="#{viewLogsBean.viewLogs}"
+						action="#{viewTariffTableBean.logs}">
+						<f:attribute name="entityId"
+							value="#{viewTariffTableBean.tariffTableId}" />
+						<f:attribute name="entityName" value="COMMISSION TABLE" />
+						<f:attribute name="previous"
+							value="admin/viewCommissionTable.jspx" />
+					</h:commandButton>
+
+				</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

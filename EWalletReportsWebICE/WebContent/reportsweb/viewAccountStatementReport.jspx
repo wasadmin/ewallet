@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1">
+		<h2>Account Statement</h2>
+			<p><ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			<br/>
+			<ice:panelGrid styleClass="infoBox" >
+
+						
+							<ice:outputText value="All Values with a * are required" /><br/><br/>
+							<ul >
+								<li id="li"><ice:outputText
+									 value="Account Number or Account Name is required for all customer accounts."  /></li><br/>
+								<li id="li"><ice:outputText
+									value="Examples of Customer Accounts : E-Wallet, Savings, Current." /></li>
+		 					</ul>
+							
+							
+					</ice:panelGrid>
+			<ice:panelGrid styleClass="panelGrid" id="grid1" columns="3">
+			
+				<ice:outputText styleClass="outputLabel" id="text2" value="Bank* :"></ice:outputText>
+				<ice:selectOneMenu styleClass="selectOneMenu" id="menu1"
+					value="#{viewAccountStatementBean.bankItem}">
+					<f:selectItems id="selectItems1"
+						value="#{viewAccountStatementBean.bankMenu}" />
+				</ice:selectOneMenu>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+				<ice:outputText styleClass="outputLabel" value="Account Type :"></ice:outputText>
+				<ice:selectOneMenu styleClass="selectOneMenu" value="#{viewAccountStatementBean.accTypeItem}">
+					<f:selectItems value="#{viewAccountStatementBean.accTypeMenu}" />
+				</ice:selectOneMenu>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+				<ice:outputText styleClass="outputLabel" value="Account Name : "></ice:outputText>
+				<ice:inputText styleClass="inputText" value= "#{viewAccountStatementBean.accountName}"></ice:inputText>
+				<ice:outputText styleClass="outputText"></ice:outputText>
+				
+				<ice:outputText styleClass="outputLabel" value="Account Number : "></ice:outputText>
+				<ice:inputText styleClass="inputText" value= "#{viewAccountStatementBean.accountNumber}"></ice:inputText>
+				<ice:commandButton type="submit" value="Submit"
+					styleClass="commandButton" id="button1"
+					action="#{viewAccountStatementBean.search}"></ice:commandButton>
+					
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" id="group1">
+						<ice:outputText styleClass="panelGridLabel" id="text1"
+							value="Account Statement"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+			</ice:panelGrid>
+			<br/>
+			<br/>
+			<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+						columnClasses="columnClass1" headerClass="headerClass"
+						footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+						styleClass="dataTable" id="tableEx1" width="600"
+						value="#{viewAccountStatementBean.accountList}" var="account">
+						<f:facet name="header">
+
+							<ice:outputLabel value="Accounts" styleClass="outputLabel"
+								></ice:outputLabel>
+
+						</f:facet>
+						<ice:column id="columnEx1">
+							<f:facet name="header">
+								<ice:outputText id="text1" styleClass="outputText"
+									value="Account Number"></ice:outputText>
+							</f:facet>
+
+							<!--<ice:commandLink styleClass="requestLink" style="color:green" id="link1" action="#{viewAccountStatementBean.submit}">
+								<ice:outputText styleClass="outputText" style="color:green"
+									value="#{account.accountNumber}"></ice:outputText>
+								<f:param name="accountId" value="#{account.id}"></f:param>
+							</ice:commandLink> -->
+							
+							<ice:commandLink styleClass="requestLink" style="color:green" id="link1" action="#{viewAccountStatementBean.submit}" actionListener="#{generateAccountStatementBean.accountAction}">
+								<ice:outputText styleClass="outputText" style="color:green"
+									value="#{account.accountNumber}"></ice:outputText>
+								<f:attribute name="accountId" value="#{account.id}"></f:attribute>
+								<f:attribute name="bankId" value="#{viewAccountStatementBean.bankItem}"></f:attribute>
+							</ice:commandLink>
+							
+							</ice:column>
+						<ice:column id="columnEx11">
+							<f:facet name="header">
+								<ice:outputText styleClass="outputText"
+									value="Account Name"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText"
+								value="#{account.accountName}"></ice:outputText>
+						</ice:column>
+						<ice:column id="columnEx2">
+							<f:facet name="header">
+								<ice:outputText value="Account Type" styleClass="outputText"
+									></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText"
+								value="#{account.type}"><f:converter converterId="replaceUnderscoreConverter"/></ice:outputText>
+						</ice:column>
+						<ice:column>
+							<f:facet name="header">
+								<ice:outputText value="BRANCH" styleClass="outputText"
+									></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText"
+								value="#{account.branch}"><f:converter converterId="nullBankBranchConverter"/></ice:outputText>
+						</ice:column>
+						<ice:column id="columnEx3">
+							<f:facet name="header">
+								<ice:outputText value="Status" styleClass="outputText"
+									></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" 
+								value="#{account.status}"><f:converter converterId="replaceUnderscoreConverter"/></ice:outputText>
+						</ice:column>
+						<ice:column id="columnEx4">
+							<f:facet name="header">
+								<ice:outputText value="Balance" styleClass="outputText"
+									></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText"
+								value="#{account.runningBalance}">
+								<f:converter converterId="moneyConverter"/>	
+							</ice:outputText>
+						</ice:column>
+					</ice:dataTable>
+		</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

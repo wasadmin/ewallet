@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<persistence-unit name="PublicTopupWebServiceEJB" transaction-type="JTA">
+		<jta-data-source>jdbc/TOPUPWS</jta-data-source>
+		<class>zw.co.esolutions.topup.ws.model.TransactionInfo</class>
+		<class>zw.co.esolutions.topup.ws.model.MobileNetworkOperator</class>		
+		
+		<properties>
+			<property name="openjpa.jdbc.Schema" value="TOPUPWS"></property>
+			<property name="openjpa.TransactionMode" value="managed" />
+			<property name="openjpa.jdbc.SynchronizeMappings" value="false" />
+			<property name="openjpa.ConnectionFactoryMode" value="managed" />
+			<property name="openjpa.jdbc.DBDictionary" value="mysql(SupportsSubselect=true)" />
+			<property name="openjpa.LockManager" value="pessimistic(VersionCheckOnReadLock=true,VersionUpdateOnWriteLock=true)" />
+		</properties>
+	</persistence-unit>
+</persistence>

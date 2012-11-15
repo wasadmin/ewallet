@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1">
+		<h2>Withdraw Cash</h2>
+			<ice:inputHidden value="#{confirmCashWithdrawalBean.mobileNumber}"
+				id="Id0"></ice:inputHidden>
+			<br/>
+			<ice:panelGrid styleClass="infoBox" >
+
+						
+							<ice:outputText value="All Values with a * are required" /><br/>
+				<ice:panelGrid styleClass="panelGrid" id="grid2" columns="2">
+					<ice:outputText styleClass="outputText" id="text34"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text24"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text25"
+						value="CUSTOMER DETAILS"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text26"></ice:outputText>
+					
+					
+					<ice:outputText styleClass="outputLabel" id="text18"
+						value="National Id :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text17" value="#{confirmCashWithdrawalBean.customer.nationalId}"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text8"
+						value="Last Name :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text4" value="#{confirmCashWithdrawalBean.customer.lastName}"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text6"
+						value="First Name :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text10" value="#{confirmCashWithdrawalBean.customer.firstNames}"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text9" value="Gender :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text14"
+						value="#{confirmCashWithdrawalBean.customer.gender}"></ice:outputText>
+
+					<ice:outputText styleClass="outputLabel" id="text15"
+						value="Customer Class :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text19"
+						value="#{confirmCashWithdrawalBean.customer.customerClass}"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text13"
+						value="Mobile Number : "></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text20" value="#{confirmCashWithdrawalBean.mobileNumber}"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text23"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text22"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text1"
+						value="BANK DEATAILS"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text21"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text12" value="Bank :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text5"
+						value="#{confirmCashWithdrawalBean.branch.bank.name}"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text16"
+						value="Bank Branch :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text11"
+						value="#{confirmCashWithdrawalBean.branch.name}"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text28"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text31"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text29"
+						value="LIMIT AND BALANCE"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text30"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text40" value="Period :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text41" value="#{confirmCashWithdrawalBean.limit.periodType}"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text43"
+						value="Minimum Balance :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text42" value="#{confirmCashWithdrawalBean.limit.minValue}">
+					     <f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text35"
+						value="Maximum Balance Allowed :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text36" value="#{confirmCashWithdrawalBean.limit.maxValue}">
+					 <f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+					
+					<ice:outputText styleClass="outputLabel" id="text32"
+						value="Balance :"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text37" value="#{confirmCashWithdrawalBean.bankAccount.runningBalance}">
+					   <f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+					<ice:outputText styleClass="outputText" id="text27"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text33"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text38" value="REQUIRED"></ice:outputText>
+					<ice:outputText styleClass="outputText" id="text39"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" id="text2" value="Amount* :"></ice:outputText>
+					<ice:inputText styleClass="inputText" id="text7"
+						value="#{confirmCashWithdrawalBean.amount}"
+						disabled="#{confirmCashWithdrawalBean.disableAmount}">
+
+						<f:convertNumber pattern="#,##0.00" />
+					</ice:inputText>
+					<ice:commandButton type="submit" value="Submit"
+						styleClass="commandButton" id="button1"
+						action="#{confirmCashWithdrawalBean.finish}"
+						disabled="#{confirmCashWithdrawalBean.disableAmount}"></ice:commandButton>
+					<ice:commandButton type="submit" value="Back"
+						styleClass="commandButton" id="button2"
+						action="#{confirmCashWithdrawalBean.back}"></ice:commandButton>
+
+
+
+					<f:facet name="header">
+						<ice:panelGroup styleClass="panelGroup" id="group2">
+							<ice:outputText styleClass="panelGridLabel" id="text3"
+								value="CASH WITHDRAWAL"></ice:outputText>
+						</ice:panelGroup>
+					</f:facet>
+				</ice:panelGrid>
+				<br></br>
+							
+					</ice:panelGrid>
+					<p><ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			
+					</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

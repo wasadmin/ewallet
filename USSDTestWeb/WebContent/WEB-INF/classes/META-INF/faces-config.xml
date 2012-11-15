@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE faces-config PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+                              "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+<faces-config>
+    <application>
+        <property-resolver>zw.co.faces.ussdtestweb.util.CustomComponentPropertyResolver</property-resolver>
+        <variable-resolver>zw.co.faces.ussdtestweb.util.CustomComponentVariableResolver</variable-resolver>
+    </application>
+</faces-config>

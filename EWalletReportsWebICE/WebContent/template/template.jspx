@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+<head>
+  <title><ui:insert name="title">e-Wallet Mobile Banking System</ui:insert></title>
+  	<link rel="stylesheet" type="text/css"  href="../xmlhttp/css/rime/rime.css" />
+	<link href="../theme/style.css" rel="stylesheet" type="text/css"/>
+	<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div id="wrap">
+	<div id="header">
+	    <ui:insert name="header">
+	    	This is the default header content... if you see this then DIAL 911!
+	    </ui:insert>
+	</div>
+	<div id="headerLine">
+		<hr/>
+	</div>
+	<div id="left">
+		<ui:insert name="menu">
+    		There are no links here... if you see this content then DIAL 911!
+  		</ui:insert>
+  		<hr/>
+	</div>
+	<div id="right">
+		<ui:insert name="content">
+    		This is the default body content... if you see this then DIAL 911!
+  		</ui:insert>
+  	</div>
+	<div id="footer">
+		<div style="clear: both;"> </div>
+ 		<ui:insert name="footer">
+    		If you see this content .. dial 911
+  		</ui:insert>
+	</div>
+</div>
+
+</body>
+
+</html>

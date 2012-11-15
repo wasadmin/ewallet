@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			
+				<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+				<link href="../theme/stylesheet.css" rel="stylesheet"
+					type="text/css" />
+				<link rel="stylesheet" type="text/css"
+					href="../xmlhttp/css/royale/royale.css" />
+
+				<ui:define name="header">
+					<ui:include src="../template/header.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="menu">
+					<ui:include src="../template/menu.jspx"></ui:include>
+				</ui:define>
+				<ui:define name="content">
+						<h:form styleClass="form" id="form1">
+						<h:inputHidden value="#{editBankAccountBean.bankAccountId}"></h:inputHidden>
+							<h:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+								cellspacing="5" width="600" columns="2">
+								<h:outputLabel value="Account Name" styleClass="outputLabel"
+									id="label2"></h:outputLabel>
+								<h:inputText styleClass="inputText" id="text1" value="#{editBankAccountBean.bankAccount.accountName}" required="true"></h:inputText>
+								<h:outputLabel value="Account Number" styleClass="outputLabel"
+									id="label3"></h:outputLabel>
+								<h:inputText styleClass="inputText" id="text2" value="#{editBankAccountBean.bankAccount.accountNumber}" required="true"></h:inputText>
+								<h:outputLabel value="Card Number" styleClass="outputLabel"
+									id="label4"></h:outputLabel>
+								<h:inputText styleClass="inputText" id="text3" value="#{editBankAccountBean.bankAccount.cardNumber}"></h:inputText>
+								<h:outputLabel value="Card Sequence" styleClass="outputLabel"
+									id="label5"></h:outputLabel>
+								<h:inputText styleClass="inputText" id="text4" value="#{editBankAccountBean.bankAccount.cardSequence}"></h:inputText>
+								<h:outputLabel value="Account Code" styleClass="outputLabel"
+									id="label6"></h:outputLabel>
+								<h:inputText styleClass="inputText" id="text5" value="#{editBankAccountBean.bankAccount.code}"></h:inputText>
+								<h:outputLabel value="Account Type" styleClass="outputLabel"
+									id="label7"></h:outputLabel>
+								<h:selectOneMenu styleClass="selectOneMenu" id="menu1" value="#{editBankAccountBean.selectedAccountType}">
+									<f:selectItems value="#{editBankAccountBean.accountTypeList}" id="selectItems1" />
+								</h:selectOneMenu>
+								<h:outputLabel value="Account Class" styleClass="outputLabel"
+									id="label8"></h:outputLabel>
+								<h:selectOneMenu styleClass="selectOneMenu" id="menu2" value="#{editBankAccountBean.selectedAccountClass}">
+									<f:selectItems value="#{editBankAccountBean.accountClassList}" id="selectItems2" />
+								</h:selectOneMenu>
+								<h:outputLabel value="Branch" styleClass="outputLabel" id="label10"></h:outputLabel>
+								<h:selectOneMenu styleClass="selectOneMenu" id="menu4" value="#{editBankAccountBean.selectedBranch}">
+									<f:selectItems value="#{editBankAccountBean.branchList}" id="selectItems4" />
+								</h:selectOneMenu>
+								<f:facet name="header">
+									<h:panelGroup styleClass="panelGroup" id="group1">
+										<h:outputLabel value="Edit Bank Account Details"
+											styleClass="outputLabel" id="label1"></h:outputLabel>
+									</h:panelGroup>
+								</f:facet>
+							</h:panelGrid>
+							<h:panelGrid styleClass="panelGrid" id="grid2" columns="2">
+								<h:commandButton type="submit" value="Submit" label="Submit"
+									styleClass="commandButton" id="button2" action="#{editBankAccountBean.submit}"></h:commandButton>
+								<h:commandButton type="submit" value="Cancel" label="Submit"
+									styleClass="commandButton" id="button1" action="#{editBankAccountBean.cancel}"></h:commandButton>
+							</h:panelGrid>
+						</h:form>
+				</ui:define>
+				<ui:define name="footer">
+					<ui:include src="../template/footer.jspx"></ui:include>
+				</ui:define>
+				<link rel="stylesheet" type="text/css" title="Style"
+					href="../theme/stylesheet.css" />
+			
+		</ui:composition>
+	</f:view>
+
+</jsp:root>
+	

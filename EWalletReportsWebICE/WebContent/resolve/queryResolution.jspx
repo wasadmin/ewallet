@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1">
+		   <h2>Direct Postings</h2>
+		   <br></br>
+			<p><ice:messages styleClass="messages" id="messages21"
+							errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			
+			<ice:panelGrid styleClass="panelGrid" id="grid4" cellpadding="5"
+							cellspacing="5" width="700" columns="4" >
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" id="group4">
+						<ice:outputText styleClass="panelGridLabel"
+							value="Ewallet Accounts"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+				
+					<ice:outputText styleClass="outputLabel" id="text8"
+						value="Source Account :"></ice:outputText>
+					<ice:inputText styleClass="inputText"  style="inputText" id="text4" value="#{queryResolutionBean.manualPojo.sourceAccountNumber}">
+					</ice:inputText>
+					<ice:outputText styleClass="outputLabel" value="Destination Account :"></ice:outputText>
+					<ice:inputText styleClass="outputText"  id="text62" style="inputText" value="#{queryResolutionBean.manualPojo.destinationAccountNumber}"></ice:inputText>
+										
+					<ice:outputText styleClass="outputLabel"  value="Source Charge Account :"></ice:outputText>
+					<ice:inputText styleClass="outputText" id="txt67" value="#{queryResolutionBean.manualPojo.fromEwalletChargeAccount}">
+				
+					</ice:inputText>
+					
+					<ice:outputText styleClass="outputLabel"  value="Destination Charge Account :"></ice:outputText>
+					<ice:inputText styleClass="outputText" id="txt72" value="#{queryResolutionBean.manualPojo.toEwalletChargeAccount}">
+					</ice:inputText>
+					
+					
+				</ice:panelGrid>
+				<br></br>
+				
+				
+			
+			
+			 <ice:panelGrid styleClass="panelGrid" cellpadding="5" 
+							cellspacing="5" width="700" columns="4" >
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" >
+						<ice:outputText styleClass="panelGridLabel"
+							value="Equation Accounts"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+				
+				<ice:outputText styleClass="outputLabel" value="Source Account :"></ice:outputText>
+				<ice:inputText styleClass="outputText" value="#{queryResolutionBean.manualPojo.sourceEQ3AccountNumber}">
+				
+					</ice:inputText>
+					
+					<ice:outputText styleClass="outputLabel" value="Destination Account"></ice:outputText>
+					<ice:inputText styleClass="outputText" value="#{queryResolutionBean.manualPojo.destinationEQ3AccountNumber}">
+				
+					</ice:inputText>
+					
+					<ice:outputText styleClass="outputLabel" value="Source Charge Account"></ice:outputText>
+					<ice:inputText styleClass="outputText" value="#{queryResolutionBean.manualPojo.fromEQ3ChargeAccount}">
+				
+					</ice:inputText>
+					
+					
+					
+					<ice:outputText styleClass="outputLabel" value="Destination Charge Account"></ice:outputText>
+					<ice:inputText styleClass="outputText" value="#{queryResolutionBean.manualPojo.toEQ3ChargeAccount}">
+				
+					</ice:inputText>
+					
+					
+					
+				</ice:panelGrid>
+				
+				 <ice:panelGrid styleClass="panelGrid" cellpadding="5" 
+							cellspacing="5" width="700" columns="2" >
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" >
+						<ice:outputText styleClass="panelGridLabel"
+							value="Transaction Details"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+								
+					<ice:outputText styleClass="outputLabel" value="Original Reference"></ice:outputText>
+				<ice:inputText styleClass="outputText" value="#{queryResolutionBean.manualPojo.oldMessageId}">
+				
+					</ice:inputText>
+					
+					
+					<ice:outputText styleClass="outputLabel" value="Narrative"></ice:outputText>
+				<ice:inputTextarea styleClass="inputTextarea" value="#{queryResolutionBean.manualPojo.reason}"> </ice:inputTextarea>
+				
+					<ice:outputText styleClass="outputLabel" value="Transaction Amount"></ice:outputText>
+					<ice:inputText styleClass="inputText" id = "txnamount" value= "#{queryResolutionBean.amount}" >
+						<f:converter converterId="tellerMoneyConverter"/>
+						<f:validator validatorId="moneyValidator"/>
+				    </ice:inputText>
+					
+					
+					
+					<ice:outputText styleClass="outputLabel" value="Charge Amount"></ice:outputText>
+					<ice:inputText styleClass="inputText" id = "chargeAmount" value= "#{queryResolutionBean.charge}" >
+						<f:converter converterId="tellerMoneyConverter"/>
+						<f:validator validatorId="moneyValidatorAllowZeroValue"/>
+				    </ice:inputText>
+					
+					
+					
+				</ice:panelGrid>
+				
+				
+				 <ice:panelGrid styleClass="panelGrid" cellpadding="5" columns="2" >
+							<f:facet name="header">
+								<ice:panelGroup styleClass="panelGroup" id="group1">
+									<ice:outputText styleClass="panelGridLabel" value="Apply To "></ice:outputText>
+								</ice:panelGroup>
+							</f:facet>
+							<ice:selectOneRadio disabledClass="selectOneRadio_Disabled" 
+									enabledClass="selectOneRadio_Enabled" styleClass="selectOneRadio"
+									id="radio1" value = "#{queryResolutionBean.applyItem}"  required="true" requiredMessage="No Apply To Value">
+								<f:selectItems value="#{queryResolutionBean.applyMenu}" />
+							</ice:selectOneRadio>
+							<ice:message style="messages" errorClass="errorMessage2" id="rad1" for="radio1"/>
+					</ice:panelGrid>
+					
+					
+					
+					<br></br>
+					
+					
+				<ice:panelGrid styleClass="panelGrid" id="grid3" cellpadding="3"
+							cellspacing="5" width="700" columns="2" >
+					<ice:commandButton type="submit" value="Save"
+						styleClass="commandButton"
+						action="#{queryResolutionBean.save}" ></ice:commandButton>
+					
+					<ice:commandButton type="submit" value="Cancel"
+						styleClass="commandButton" id="button2"
+						action="#{queryResolutionBean.cancel}"
+						></ice:commandButton>
+				</ice:panelGrid>
+				<br></br>
+			</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

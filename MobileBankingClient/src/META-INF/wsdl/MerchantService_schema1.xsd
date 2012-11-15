@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.merchantservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.merchantservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="approveBankMerchant" type="tns:approveBankMerchant"/>
+
+  <xs:element name="approveBankMerchantResponse" type="tns:approveBankMerchantResponse"/>
+
+  <xs:element name="approveCustomerMerchant" type="tns:approveCustomerMerchant"/>
+
+  <xs:element name="approveCustomerMerchantResponse" type="tns:approveCustomerMerchantResponse"/>
+
+  <xs:element name="approveMerchant" type="tns:approveMerchant"/>
+
+  <xs:element name="approveMerchantResponse" type="tns:approveMerchantResponse"/>
+
+  <xs:element name="createBankMerchant" type="tns:createBankMerchant"/>
+
+  <xs:element name="createBankMerchantResponse" type="tns:createBankMerchantResponse"/>
+
+  <xs:element name="createCustomerMerchant" type="tns:createCustomerMerchant"/>
+
+  <xs:element name="createCustomerMerchantResponse" type="tns:createCustomerMerchantResponse"/>
+
+  <xs:element name="createMerchant" type="tns:createMerchant"/>
+
+  <xs:element name="createMerchantResponse" type="tns:createMerchantResponse"/>
+
+  <xs:element name="deleteBankMerchant" type="tns:deleteBankMerchant"/>
+
+  <xs:element name="deleteBankMerchantResponse" type="tns:deleteBankMerchantResponse"/>
+
+  <xs:element name="deleteCustomerMerchant" type="tns:deleteCustomerMerchant"/>
+
+  <xs:element name="deleteCustomerMerchantResponse" type="tns:deleteCustomerMerchantResponse"/>
+
+  <xs:element name="deleteMerchant" type="tns:deleteMerchant"/>
+
+  <xs:element name="deleteMerchantResponse" type="tns:deleteMerchantResponse"/>
+
+  <xs:element name="disapproveBankMerchant" type="tns:disapproveBankMerchant"/>
+
+  <xs:element name="disapproveBankMerchantResponse" type="tns:disapproveBankMerchantResponse"/>
+
+  <xs:element name="disapproveCustomerMerchant" type="tns:disapproveCustomerMerchant"/>
+
+  <xs:element name="disapproveCustomerMerchantResponse" type="tns:disapproveCustomerMerchantResponse"/>
+
+  <xs:element name="disapproveMerchant" type="tns:disapproveMerchant"/>
+
+  <xs:element name="disapproveMerchantResponse" type="tns:disapproveMerchantResponse"/>
+
+  <xs:element name="editBankMerchant" type="tns:editBankMerchant"/>
+
+  <xs:element name="editBankMerchantResponse" type="tns:editBankMerchantResponse"/>
+
+  <xs:element name="editCustomerMerchant" type="tns:editCustomerMerchant"/>
+
+  <xs:element name="editCustomerMerchantResponse" type="tns:editCustomerMerchantResponse"/>
+
+  <xs:element name="editMerchant" type="tns:editMerchant"/>
+
+  <xs:element name="editMerchantResponse" type="tns:editMerchantResponse"/>
+
+  <xs:element name="findBankMerchantById" type="tns:findBankMerchantById"/>
+
+  <xs:element name="findBankMerchantByIdResponse" type="tns:findBankMerchantByIdResponse"/>
+
+  <xs:element name="findCustomerMerchantById" type="tns:findCustomerMerchantById"/>
+
+  <xs:element name="findCustomerMerchantByIdResponse" type="tns:findCustomerMerchantByIdResponse"/>
+
+  <xs:element name="findMerchantById" type="tns:findMerchantById"/>
+
+  <xs:element name="findMerchantByIdResponse" type="tns:findMerchantByIdResponse"/>
+
+  <xs:element name="getAllMerchants" type="tns:getAllMerchants"/>
+
+  <xs:element name="getAllMerchantsResponse" type="tns:getAllMerchantsResponse"/>
+
+  <xs:element name="getBankMerchantByBankId" type="tns:getBankMerchantByBankId"/>
+
+  <xs:element name="getBankMerchantByBankIdAndMerchantId" type="tns:getBankMerchantByBankIdAndMerchantId"/>
+
+  <xs:element name="getBankMerchantByBankIdAndMerchantIdResponse" type="tns:getBankMerchantByBankIdAndMerchantIdResponse"/>
+
+  <xs:element name="getBankMerchantByBankIdAndShortNameAndStatus" type="tns:getBankMerchantByBankIdAndShortNameAndStatus"/>
+
+  <xs:element name="getBankMerchantByBankIdAndShortNameAndStatusResponse" type="tns:getBankMerchantByBankIdAndShortNameAndStatusResponse"/>
+
+  <xs:element name="getBankMerchantByBankIdResponse" type="tns:getBankMerchantByBankIdResponse"/>
+
+  <xs:element name="getBankMerchantByMerchantId" type="tns:getBankMerchantByMerchantId"/>
+
+  <xs:element name="getBankMerchantByMerchantIdResponse" type="tns:getBankMerchantByMerchantIdResponse"/>
+
+  <xs:element name="getBankMerchantByStatus" type="tns:getBankMerchantByStatus"/>
+
+  <xs:element name="getBankMerchantByStatusAndBankIdAndMerchantId" type="tns:getBankMerchantByStatusAndBankIdAndMerchantId"/>
+
+  <xs:element name="getBankMerchantByStatusAndBankIdAndMerchantIdResponse" type="tns:getBankMerchantByStatusAndBankIdAndMerchantIdResponse"/>
+
+  <xs:element name="getBankMerchantByStatusResponse" type="tns:getBankMerchantByStatusResponse"/>
+
+  <xs:element name="getCustomerMerchantByBankId" type="tns:getCustomerMerchantByBankId"/>
+
+  <xs:element name="getCustomerMerchantByBankIdResponse" type="tns:getCustomerMerchantByBankIdResponse"/>
+
+  <xs:element name="getCustomerMerchantByBankMerchantId" type="tns:getCustomerMerchantByBankMerchantId"/>
+
+  <xs:element name="getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumber" type="tns:getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumber"/>
+
+  <xs:element name="getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumberResponse" type="tns:getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumberResponse"/>
+
+  <xs:element name="getCustomerMerchantByBankMerchantIdResponse" type="tns:getCustomerMerchantByBankMerchantIdResponse"/>
+
+  <xs:element name="getCustomerMerchantByCustomerAccountNumber" type="tns:getCustomerMerchantByCustomerAccountNumber"/>
+
+  <xs:element name="getCustomerMerchantByCustomerAccountNumberResponse" type="tns:getCustomerMerchantByCustomerAccountNumberResponse"/>
+
+  <xs:element name="getCustomerMerchantByCustomerId" type="tns:getCustomerMerchantByCustomerId"/>
+
+  <xs:element name="getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatus" type="tns:getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatus"/>
+
+  <xs:element name="getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatusResponse" type="tns:getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatusResponse"/>
+
+  <xs:element name="getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatus" type="tns:getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatus"/>
+
+  <xs:element name="getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatusResponse" type="tns:getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatusResponse"/>
+
+  <xs:element name="getCustomerMerchantByCustomerIdResponse" type="tns:getCustomerMerchantByCustomerIdResponse"/>
+
+  <xs:element name="getCustomerMerchantByStatus" type="tns:getCustomerMerchantByStatus"/>
+
+  <xs:element name="getCustomerMerchantByStatusResponse" type="tns:getCustomerMerchantByStatusResponse"/>
+
+  <xs:element name="getMerchantByCustomerId" type="tns:getMerchantByCustomerId"/>
+
+  <xs:element name="getMerchantByCustomerIdResponse" type="tns:getMerchantByCustomerIdResponse"/>
+
+  <xs:element name="getMerchantByName" type="tns:getMerchantByName"/>
+
+  <xs:element name="getMerchantByNameResponse" type="tns:getMerchantByNameResponse"/>
+
+  <xs:element name="getMerchantByShortName" type="tns:getMerchantByShortName"/>
+
+  <xs:element name="getMerchantByShortNameResponse" type="tns:getMerchantByShortNameResponse"/>
+
+  <xs:element name="getMerchantByStatus" type="tns:getMerchantByStatus"/>
+
+  <xs:element name="getMerchantByStatusResponse" type="tns:getMerchantByStatusResponse"/>
+
+  <xs:complexType name="getBankMerchantByBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankMerchantByBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bankMerchant">
+    <xs:sequence>
+      <xs:element name="approvable" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="customerMerchants" nillable="true" type="tns:customerMerchant"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element name="enabled" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="merchant" type="tns:merchant"/>
+      <xs:element minOccurs="0" name="merchantSuspenseAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:bankMerchantStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customerMerchant">
+    <xs:sequence>
+      <xs:element name="approvable" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankMerchant" type="tns:bankMerchant"/>
+      <xs:element minOccurs="0" name="customerAccountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:customerMerchantStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="merchant">
+    <xs:sequence>
+      <xs:element name="approvable" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="bankMerchants" nillable="true" type="tns:bankMerchant"/>
+      <xs:element minOccurs="0" name="contactDetailsId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="shortName" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:merchantStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByCustomerId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByCustomerIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMerchantByCustomerId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMerchantByCustomerIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:merchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankMerchantByStatusAndBankIdAndMerchantId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:bankMerchantStatus"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="merchantId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankMerchantByStatusAndBankIdAndMerchantIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findBankMerchantById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankMerchantId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findBankMerchantByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteBankMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankMerchant" type="tns:bankMerchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteBankMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMerchantByName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMerchantByNameResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:merchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createCustomerMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerMerchant" type="tns:customerMerchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createCustomerMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankMerchantByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:bankMerchantStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankMerchantByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="merchant" type="tns:merchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:merchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveCustomerMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerMerchant" type="tns:customerMerchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveCustomerMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByCustomerAccountNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerAccountNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByCustomerAccountNumberResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="merchant" type="tns:merchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:merchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="tns:customerMerchantStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByCustomerIdAndBankMerchantIdAndStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editCustomerMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerMerchant" type="tns:customerMerchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editCustomerMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankMerchantByBankIdAndShortNameAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="tns:bankMerchantStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankMerchantByBankIdAndShortNameAndStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankMerchantByBankIdAndMerchantId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="merchantId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankMerchantByBankIdAndMerchantIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMerchantByShortName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="shortName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMerchantByShortNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:merchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="merchant" type="tns:merchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:merchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByBankMerchantId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankMerchantId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByBankMerchantIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveCustomerMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerMerchant" type="tns:customerMerchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveCustomerMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankMerchantByMerchantId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankMerchantByMerchantIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="merchant" type="tns:merchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:merchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editBankMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankMerchant" type="tns:bankMerchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editBankMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllMerchants">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllMerchantsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:merchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createBankMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankMerchant" type="tns:bankMerchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createBankMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveBankMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankMerchant" type="tns:bankMerchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveBankMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:customerMerchantStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMerchantByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:merchantStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getMerchantByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:merchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankMerchantId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerAccountNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByBankMerchantIdAndCustomerIdAndCustomerAccountNumberResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteCustomerMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerMerchant" type="tns:customerMerchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteCustomerMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findCustomerMerchantById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findCustomerMerchantByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveBankMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankMerchant" type="tns:bankMerchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveBankMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findMerchantById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findMerchantByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:merchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteMerchant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="merchant" type="tns:merchant"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteMerchantResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="merchantShortName" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:customerMerchantStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCustomerMerchantByCustomerIdAndMerchantShortNameAndStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customerMerchant"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="customerMerchantStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DRAFT"/>
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="merchantStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="DISABLED"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="APPROVED"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="DELETED"/>
+      <xs:enumeration value="DISAPPROVED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankMerchantStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="DELETED"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="DRAFT"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

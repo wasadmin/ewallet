@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+			<ice:form styleClass="form" id="form1">
+		<h2>Manual Intervention Approval</h2>
+			<p><ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			<br/>
+			
+			<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+				columnClasses="columnClass1" headerClass="headerClass"
+				footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+				styleClass="dataTable" id="tableEx1" value="#{approveManualResolveBean.txns}" var="txn" >
+				<f:facet name="footer">
+						
+				</f:facet>
+				<f:facet name="header">
+						<ice:outputText styleClass="outputLabel" id="text13"
+							value="Approve Manual Resolve"></ice:outputText>
+					
+				</f:facet>
+				<ice:column id="column9">
+					<f:facet name="header">
+						<ice:outputText value="Date" styleClass="outputText" id="text34"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text35" value="#{txn.dateCreated}">
+						<f:converter converterId="dateTimeFormatConverter" />
+					</ice:outputText>
+				</ice:column>
+			    <ice:column >
+					<f:facet name="header">
+						<ice:outputText value="Reference" styleClass="outputText"></ice:outputText>
+					</f:facet>
+					<ice:commandLink styleClass="requestLink" style="color:green" action = "#{approveManualResolveBean.viewPostings}"> 
+					    <ice:outputText styleClass="outputText" style="color:green"
+									value="#{txn.messageId}"/>
+					   <f:param value="#{txn.messageId}" name = "messageId"></f:param>
+					</ice:commandLink>
+					
+				</ice:column>
+				<ice:column id="columsen7">
+					<f:facet name="header">
+						<ice:outputText value="Initiator Name" styleClass="outputText" id="sdtext21"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="swtext32" value="#{txn.nonTellerId}">
+					<f:converter converterId="profileConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="column6">
+					<f:facet name="header">
+						<ice:outputText value="Amount" styleClass="outputText" id="text19"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text31" value="#{txn.amount}">
+					<f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+				</ice:column>
+				<!--<ice:column id="column7">
+					<f:facet name="header">
+						<ice:outputText value="Balance" styleClass="outputText" id="text21"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text32" value="#{txn.balance}">
+					<f:converter converterId="moneyConverter"/>
+					</ice:outputText>
+				</ice:column> -->
+				<ice:column id="column1">
+					<f:facet name="header">
+						<ice:outputText id="text12" styleClass="outputText"
+							value="Transaction"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text26"
+						value="#{txn.transactionType}">
+					   <f:converter converterId="replaceUnderscoreConverter"/>	
+					</ice:outputText>
+				</ice:column>
+				<ice:column id="column2">
+					<f:facet name="header">
+						<ice:outputText value="Source Account Number" styleClass="outputText"
+							id="text14"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text27" value="#{txn.sourceAccountNumber}">
+				</ice:outputText>
+				</ice:column>
+				<ice:column id="column4">
+					<f:facet name="header">
+						<ice:outputText value="Customer Name" styleClass="outputText"
+							id="text17"></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" id="text29" value="#{txn.customerName}">
+					</ice:outputText>
+				</ice:column>
+				<ice:column >
+					<f:facet name="header">
+						<ice:outputText value="Narrative" styleClass="outputText"
+							></ice:outputText>
+					</f:facet>
+					<ice:outputText styleClass="outputText" value="#{txn.narrative}">
+					<f:converter converterId="replaceUnderscoreConverter"/>
+					</ice:outputText>
+				</ice:column>
+			</ice:dataTable>
+		</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://ws.dstv.datacentre.co.zw/" version="1.0" xmlns:tns="http://ws.dstv.datacentre.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="validate" type="tns:validate"/>
+
+  <xs:element name="validateResponse" type="tns:validateResponse"/>
+
+  <xs:complexType name="validate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:dstvMessage"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dstvMessage">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:double"/>
+      <xs:element minOccurs="0" name="bouquet" type="xs:string"/>
+      <xs:element name="commission" type="xs:double"/>
+      <xs:element minOccurs="0" name="dstvAccount" type="xs:string"/>
+      <xs:element name="months" type="xs:int"/>
+      <xs:element minOccurs="0" name="narrative" type="xs:string"/>
+      <xs:element minOccurs="0" name="responseCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dstvMessage"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

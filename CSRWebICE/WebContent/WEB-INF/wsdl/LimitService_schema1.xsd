@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.limitservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.limitservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="EWalletException" type="tns:EWalletException"/>
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="activateLimit" type="tns:activateLimit"/>
+
+  <xs:element name="activateLimitResponse" type="tns:activateLimitResponse"/>
+
+  <xs:element name="approveLimit" type="tns:approveLimit"/>
+
+  <xs:element name="approveLimitResponse" type="tns:approveLimitResponse"/>
+
+  <xs:element name="createLimit" type="tns:createLimit"/>
+
+  <xs:element name="createLimitResponse" type="tns:createLimitResponse"/>
+
+  <xs:element name="deleteLimit" type="tns:deleteLimit"/>
+
+  <xs:element name="deleteLimitResponse" type="tns:deleteLimitResponse"/>
+
+  <xs:element name="disapproveLimit" type="tns:disapproveLimit"/>
+
+  <xs:element name="disapproveLimitResponse" type="tns:disapproveLimitResponse"/>
+
+  <xs:element name="editLimit" type="tns:editLimit"/>
+
+  <xs:element name="editLimitResponse" type="tns:editLimitResponse"/>
+
+  <xs:element name="findLimitById" type="tns:findLimitById"/>
+
+  <xs:element name="findLimitByIdResponse" type="tns:findLimitByIdResponse"/>
+
+  <xs:element name="getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankId" type="tns:getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankId"/>
+
+  <xs:element name="getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankIdResponse" type="tns:getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankIdResponse"/>
+
+  <xs:element name="getAllLimits" type="tns:getAllLimits"/>
+
+  <xs:element name="getAllLimitsByBankId" type="tns:getAllLimitsByBankId"/>
+
+  <xs:element name="getAllLimitsByBankIdResponse" type="tns:getAllLimitsByBankIdResponse"/>
+
+  <xs:element name="getAllLimitsResponse" type="tns:getAllLimitsResponse"/>
+
+  <xs:element name="getEffectiveLimitsByBankId" type="tns:getEffectiveLimitsByBankId"/>
+
+  <xs:element name="getEffectiveLimitsByBankIdResponse" type="tns:getEffectiveLimitsByBankIdResponse"/>
+
+  <xs:element name="getLimitByAccountClassAndBankId" type="tns:getLimitByAccountClassAndBankId"/>
+
+  <xs:element name="getLimitByAccountClassAndBankIdResponse" type="tns:getLimitByAccountClassAndBankIdResponse"/>
+
+  <xs:element name="getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankId" type="tns:getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankId"/>
+
+  <xs:element name="getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankIdResponse" type="tns:getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankIdResponse"/>
+
+  <xs:element name="getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankId" type="tns:getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankId"/>
+
+  <xs:element name="getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankIdResponse" type="tns:getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankIdResponse"/>
+
+  <xs:element name="getLimitByStatusAndBankId" type="tns:getLimitByStatusAndBankId"/>
+
+  <xs:element name="getLimitByStatusAndBankIdResponse" type="tns:getLimitByStatusAndBankIdResponse"/>
+
+  <xs:element name="getLimitByTypeAndBankId" type="tns:getLimitByTypeAndBankId"/>
+
+  <xs:element name="getLimitByTypeAndBankIdResponse" type="tns:getLimitByTypeAndBankIdResponse"/>
+
+  <xs:element name="getLimitByTypeAndStatusAndBankId" type="tns:getLimitByTypeAndStatusAndBankId"/>
+
+  <xs:element name="getLimitByTypeAndStatusAndBankIdResponse" type="tns:getLimitByTypeAndStatusAndBankIdResponse"/>
+
+  <xs:element name="getLimitByTypeEffectiveDateStatusAndBankId" type="tns:getLimitByTypeEffectiveDateStatusAndBankId"/>
+
+  <xs:element name="getLimitByTypeEffectiveDateStatusAndBankIdResponse" type="tns:getLimitByTypeEffectiveDateStatusAndBankIdResponse"/>
+
+  <xs:element name="getLimitByTypeValueTypeEffectiveDateStatusAndBankId" type="tns:getLimitByTypeValueTypeEffectiveDateStatusAndBankId"/>
+
+  <xs:element name="getLimitByTypeValueTypeEffectiveDateStatusAndBankIdResponse" type="tns:getLimitByTypeValueTypeEffectiveDateStatusAndBankIdResponse"/>
+
+  <xs:element name="getLimitByValueTypeAndBankId" type="tns:getLimitByValueTypeAndBankId"/>
+
+  <xs:element name="getLimitByValueTypeAndBankIdResponse" type="tns:getLimitByValueTypeAndBankIdResponse"/>
+
+  <xs:element name="getLimitByValueTypeAndStatusAndBankId" type="tns:getLimitByValueTypeAndStatusAndBankId"/>
+
+  <xs:element name="getLimitByValueTypeAndStatusAndBankIdResponse" type="tns:getLimitByValueTypeAndStatusAndBankIdResponse"/>
+
+  <xs:element name="getLimitByValueTypeEffectiveDateStatusAndBankId" type="tns:getLimitByValueTypeEffectiveDateStatusAndBankId"/>
+
+  <xs:element name="getLimitByValueTypeEffectiveDateStatusAndBankIdResponse" type="tns:getLimitByValueTypeEffectiveDateStatusAndBankIdResponse"/>
+
+  <xs:element name="getValidLimitOnDateByBankId" type="tns:getValidLimitOnDateByBankId"/>
+
+  <xs:element name="getValidLimitOnDateByBankIdResponse" type="tns:getValidLimitOnDateByBankIdResponse"/>
+
+  <xs:complexType name="getLimitByStatusAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:limitStatus"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByStatusAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="limit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountClass" type="tns:bankAccountClass"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element name="maxValue" type="xs:long"/>
+      <xs:element name="minValue" type="xs:long"/>
+      <xs:element minOccurs="0" name="oldLimitId" type="xs:string"/>
+      <xs:element minOccurs="0" name="periodType" type="tns:limitPeriodType"/>
+      <xs:element minOccurs="0" name="status" type="tns:limitStatus"/>
+      <xs:element minOccurs="0" name="type" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="valueType" type="tns:limitValueType"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllLimits">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllLimitsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByAccountClassAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountClass" type="tns:bankAccountClass"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByAccountClassAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activateLimit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="limit" type="tns:limit"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activateLimitResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveLimit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="limit" type="tns:limit"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveLimitResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getValidLimitOnDateByBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="type" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="accountClass" type="tns:bankAccountClass"/>
+      <xs:element minOccurs="0" name="onDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="periodType" type="tns:limitPeriodType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getValidLimitOnDateByBankIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteLimit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="limitId" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteLimitResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EWalletException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editLimit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="limit" type="tns:limit"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editLimitResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllLimitsByBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllLimitsByBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLimitById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="limitId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLimitByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByValueTypeAndStatusAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="valueType" type="tns:limitValueType"/>
+      <xs:element minOccurs="0" name="status" type="tns:limitStatus"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByValueTypeAndStatusAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByValueTypeEffectiveDateStatusAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="valueType" type="tns:limitValueType"/>
+      <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="tns:limitStatus"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByValueTypeEffectiveDateStatusAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEffectiveLimitsByBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="limitDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getEffectiveLimitsByBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountClass" type="tns:bankAccountClass"/>
+      <xs:element minOccurs="0" name="type" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="valueType" type="tns:limitValueType"/>
+      <xs:element minOccurs="0" name="status" type="tns:limitStatus"/>
+      <xs:element minOccurs="0" name="periodtype" type="tns:limitPeriodType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByAccountClassTypeValueTypeStatusPeriodTypeAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByTypeAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="limitType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByTypeAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByTypeAndStatusAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="type" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="status" type="tns:limitStatus"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByTypeAndStatusAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveLimit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="limit" type="tns:limit"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveLimitResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByTypeValueTypeEffectiveDateStatusAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="type" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="valueType" type="tns:limitValueType"/>
+      <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="tns:limitStatus"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByTypeValueTypeEffectiveDateStatusAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByTypeEffectiveDateStatusAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="type" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="tns:limitStatus"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByTypeEffectiveDateStatusAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountClass" type="tns:bankAccountClass"/>
+      <xs:element minOccurs="0" name="type" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="valueType" type="tns:limitValueType"/>
+      <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="periodType" type="tns:limitPeriodType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getActiveLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusPeriodTypeAndBankIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountClass" type="tns:bankAccountClass"/>
+      <xs:element minOccurs="0" name="type" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="valueType" type="tns:limitValueType"/>
+      <xs:element minOccurs="0" name="effectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="tns:limitStatus"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByAccountClassTypeValueTypeEffectiveDateEndDateStatusAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByValueTypeAndBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="valueType" type="tns:limitValueType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getLimitByValueTypeAndBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createLimit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="limit" type="tns:limit"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createLimitResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:limit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="limitStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DRAFT"/>
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankAccountClass">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="SYSTEM"/>
+      <xs:enumeration value="BRONZE"/>
+      <xs:enumeration value="SILVER"/>
+      <xs:enumeration value="GOLD"/>
+      <xs:enumeration value="PLATINUM"/>
+      <xs:enumeration value="DIAMOND"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="limitPeriodType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TRANSACTION"/>
+      <xs:enumeration value="DAILY"/>
+      <xs:enumeration value="MONTHLY"/>
+      <xs:enumeration value="YEARLY"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="transactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PIN"/>
+      <xs:enumeration value="TOPUP"/>
+      <xs:enumeration value="DEPOSIT"/>
+      <xs:enumeration value="WITHDRAWAL"/>
+      <xs:enumeration value="WITHDRAWAL_NONHOLDER"/>
+      <xs:enumeration value="BALANCE"/>
+      <xs:enumeration value="DAYEND_RECEIPTS"/>
+      <xs:enumeration value="DAYEND_PAYOUTS"/>
+      <xs:enumeration value="DAYEND_UNDERPOST"/>
+      <xs:enumeration value="DAYEND_OVERPOST"/>
+      <xs:enumeration value="PASSCODE"/>
+      <xs:enumeration value="CUSTOMER_ACTIVATION"/>
+      <xs:enumeration value="CHANGE_PASSCODE"/>
+      <xs:enumeration value="MINI_STATEMENT"/>
+      <xs:enumeration value="REFERRAL"/>
+      <xs:enumeration value="TARIFF"/>
+      <xs:enumeration value="EWALLET_TO_NON_HOLDER_TRANSFER"/>
+      <xs:enumeration value="BANKACCOUNT_TO_BANKACCOUNT_TRANSFER"/>
+      <xs:enumeration value="BANKACCOUNT_TO_EWALLET_TRANSFER"/>
+      <xs:enumeration value="BANKACCOUNT_TO_NONHOLDER_TRANSFER"/>
+      <xs:enumeration value="EWALLET_TO_EWALLET_TRANSFER"/>
+      <xs:enumeration value="EWALLET_TO_BANKACCOUNT_TRANSFER"/>
+      <xs:enumeration value="BALANCE_REQUEST"/>
+      <xs:enumeration value="BILLPAY"/>
+      <xs:enumeration value="EWALLET_BILLPAY"/>
+      <xs:enumeration value="EWALLET_TOPUP"/>
+      <xs:enumeration value="ENTITY_DOWNLOAD"/>
+      <xs:enumeration value="MERCHANT_REG"/>
+      <xs:enumeration value="AGENT_CUSTOMER_DEPOSIT"/>
+      <xs:enumeration value="AGENT_CUSTOMER_WITHDRAWAL"/>
+      <xs:enumeration value="SUPERAGENT_EWALLET_TRANSFER"/>
+      <xs:enumeration value="COMMISSION_TRANSFER"/>
+      <xs:enumeration value="ALERT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="limitValueType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ABSOLUTE"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

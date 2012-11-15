@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="StatementService" targetNamespace="http://timers.process.ewallet.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://timers.process.ewallet.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://timers.process.ewallet.esolutions.co.zw/" schemaLocation="StatementService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="checkTimer">
+    <part element="tns:checkTimer" name="parameters">
+    </part>
+  </message>
+  <message name="checkTimerResponse">
+    <part element="tns:checkTimerResponse" name="parameters">
+    </part>
+  </message>
+  <portType name="StatementService">
+    <operation name="checkTimer">
+      <input message="tns:checkTimer">
+    </input>
+      <output message="tns:checkTimerResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="StatementServiceSOAPBinding" type="tns:StatementService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="checkTimer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="StatementService">
+    <port binding="tns:StatementServiceSOAPBinding" name="StatementServiceSOAP">
+      <soap:address location="http://localhost:9082/AgentStatementService/StatementService"/>
+    </port>
+  </service>
+</definitions>

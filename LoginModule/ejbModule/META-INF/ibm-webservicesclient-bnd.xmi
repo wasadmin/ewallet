@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.etools.webservice.wscbnd:ClientBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.etools.webservice.wscbnd="http://www.ibm.com/websphere/appserver/schemas/5.0.2/wscbnd.xmi" xmi:id="ClientBinding_1291967601641">
+  <componentScopedRefs xmi:id="ComponentScopedRefs_1332494032268" componentNameLink="LoginServiceImpl">
+    <serviceRefs xmi:id="ServiceRef_1332494032268" serviceRefLink="service/ProfileService">
+      <portQnameBindings xmi:id="PortQnameBinding_1332494032268" portQnameNamespaceLink="http://service.profileservices.ewallet.esolutions.co.zw/" portQnameLocalNameLink="ProfileServiceSOAP" overriddenEndpointURI="http://10.136.192.229:9081/ProfileServices/ProfileService"/>
+    </serviceRefs>
+  </componentScopedRefs>
+</com.ibm.etools.webservice.wscbnd:ClientBinding>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.etools.webservice.wscbnd:ClientBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.etools.webservice.wscbnd="http://www.ibm.com/websphere/appserver/schemas/5.0.2/wscbnd.xmi" xmi:id="ClientBinding_1332147863326">
+  <componentScopedRefs xmi:id="ComponentScopedRefs_1332147863326" componentNameLink="MobileWebRequestProcessUtilImpl">
+    <serviceRefs xmi:id="ServiceRef_1332147863326" serviceRefLink="service/AirtimePortal">
+      <portQnameBindings xmi:id="PortQnameBinding_1332147863326" portQnameNamespaceLink="http://www.zimswitch.co.zw/AirtimePortal" portQnameLocalNameLink="AirtimePortalHttpPost" overriddenEndpointURI="http://10.91.50.4:82/Endpoints/AirtimePortal.asmx"/>
+    </serviceRefs>
+    <serviceRefs xmi:id="ServiceRef_1332147899172" serviceRefLink="service/SmsPortal">
+      <portQnameBindings xmi:id="PortQnameBinding_1332147899172" portQnameNamespaceLink="http://www.zimswitch.co.zw/SmsPortal" portQnameLocalNameLink="SmsPortalHttpPost" overriddenEndpointURI="http://10.91.50.4:82/Endpoints/SmsPortal.asmx"/>
+    </serviceRefs>
+  </componentScopedRefs>
+</com.ibm.etools.webservice.wscbnd:ClientBinding>

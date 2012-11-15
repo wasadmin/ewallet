@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://timers.process.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://timers.process.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="checkTimer" type="tns:checkTimer"/>
+
+  <xs:element name="checkTimerResponse" type="tns:checkTimerResponse"/>
+
+  <xs:complexType name="checkTimer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkTimerResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://merchant.config.esolutions.co.zw"
+	xmlns:tns="http://merchant.config.esolutions.co.zw" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation>
+		<xs:documentation>Author : Blessing Bonde</xs:documentation>
+	</xs:annotation>
+
+	<element name="merchantInfo" type="tns:MerchantInfo"></element>
+
+	<complexType name="MerchantInfo">
+		<sequence>
+			<element name="requestQueueName" type="string"></element>
+			<element name="replyQueueName" type="string"></element>
+			<element name="merchantName" type="string"></element>
+			<element name="enableAccountValidation" type="boolean"></element>
+			<element name="enableStraightThrough" type="boolean"></element>
+			<element name="enableNotification" type="boolean"></element>
+			<element name="reversalCutOffTime" type="time"></element>
+			<element name="transactionCuttoffTime" type="time"></element>
+		</sequence>
+	</complexType>
+</schema>

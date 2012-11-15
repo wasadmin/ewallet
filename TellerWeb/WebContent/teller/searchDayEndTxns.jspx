@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1"><h2>Day End Transaction Searches</h2>
+			<p><ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			
+			<p></p>
+			<br/>
+			
+			<ice:panelGrid>
+			
+			<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+				cellspacing="5" width="600" columns="2">
+				<ice:outputLabel value="Search Criteria" 
+					id="label2"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu" id="menu1" partialSubmit="true" value="#{dayEndTransactionSearch.selectedCriteria}" valueChangeListener="#{dayEndTransactionSearch.processCriteriaChange}">
+					<f:selectItems id="selectItems1"
+						value="#{dayEndTransactionSearch.criteriaList}" />
+				</ice:selectOneMenu>
+				
+				<ice:outputLabel value="Branch" rendered="#{dayEndTransactionSearch.renderBranchInfo}"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu" value="#{dayEndTransactionSearch.selectedBranch}" rendered="#{dayEndTransactionSearch.renderBranchInfo}">
+				<f:selectItems value="#{dayEndTransactionSearch.branchMenu}"/>
+				</ice:selectOneMenu>
+				<ice:outputLabel value="Teller" rendered="#{dayEndTransactionSearch.renderTellerInfo}"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu" value="#{dayEndTransactionSearch.selectedTeller }" rendered="#{dayEndTransactionSearch.renderTellerInfo}">
+				<f:selectItems value="#{dayEndTransactionSearch.tellerMenu }"/>
+				</ice:selectOneMenu>
+				<ice:outputLabel value="From Date (dd/MM/yyyy)" rendered="#{dayEndTransactionSearch.renderParameters}"></ice:outputLabel>
+				<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+									renderMonthAsDropdown="true" renderYearAsDropdown="true" value="#{dayEndTransactionSearch.fromDate}"  rendered="#{dayEndTransactionSearch.renderParameters}">
+				<f:convertDateTime pattern="dd/MM/yyyy" />
+				</ice:selectInputDate>
+				<ice:outputLabel value="To Date (dd/MM/yyyy)" rendered="#{dayEndTransactionSearch.renderParameters}" ></ice:outputLabel  >
+				<ice:selectInputDate styleClass="selectInputDate" renderAsPopup="true"
+									renderMonthAsDropdown="true" renderYearAsDropdown="true" value="#{dayEndTransactionSearch.toDate }"  rendered="#{dayEndTransactionSearch.renderParameters}">
+								<f:convertDateTime pattern="dd/MM/yyyy" />	
+									
+									</ice:selectInputDate>
+				
+			<ice:outputLabel value="Transaction Status"  rendered="#{dayEndTransactionSearch.renderParameters}"></ice:outputLabel>
+			<ice:selectOneMenu styleClass="selectOneMenu" value="#{dayEndTransactionSearch.selectedStatus }"  rendered="#{dayEndTransactionSearch.renderParameters}">
+			<f:selectItems value="#{dayEndTransactionSearch.statusList}"/>
+			</ice:selectOneMenu>
+				<ice:commandButton type="submit" value="Search"
+					styleClass="commandButton" id="button1" action="#{dayEndTransactionSearch.search}" rendered="#{dayEndTransactionSearch.renderParameters}"></ice:commandButton>
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" id="group1">
+						<ice:outputLabel value="Enter Search Infomation"
+							styleClass="panelGridLabel" id="label1"></ice:outputLabel>
+					</ice:panelGroup>
+				</f:facet>
+			</ice:panelGrid>
+		
+		<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+			columnClasses="columnClass1" headerClass="headerClass"
+			footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+			styleClass="dataTableEx" id="tableEx1" width="600"
+			value="#{dayEndTransactionSearch.list}"
+			var="dayEnd">
+			<f:facet name="header">
+					<ice:outputLabel value="Search Results" styleClass="panelGridlabel"
+						id="label4"></ice:outputLabel>
+				
+			</f:facet>
+			<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Date Created"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" 
+											value="#{dayEnd.dateCreated}">
+											<f:converter converterId="dateTimeFormatConverter" />
+											
+										
+											</h:outputText>
+											
+									</h:column>	
+			<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Teller"></h:outputText>
+										</f:facet>
+										
+											<ice:commandLink styleClass="commandLink" id="link1" action="#{dayEndTransactionSearch.viewDayEnd}">
+					<ice:outputText id="text6" styleClass="outputText2" style="color:green"  value="#{dayEnd.tellerId}">
+					<f:converter converterId="profileConverter"/>
+					</ice:outputText>
+					<f:param name="dayEndId" value="#{dayEnd.dayEndId}"></f:param>
+				</ice:commandLink>
+									</h:column>	
+									<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Day End Date"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" 
+											value="#{dayEnd.dayEndDate}">
+											<f:convertDateTime pattern="dd/MM/yyyy"/>
+										<f:converter converterId="xmlDateConverter"/>	
+										
+											</h:outputText>
+											
+									</h:column>	
+									
+									<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Branch"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" 
+											value="#{dayEnd.branchId}">
+												<f:converter converterId="branchNameConverter"/>
+											</h:outputText>
+									</h:column>	
+									<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Cash Tendered"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" 
+											value="#{dayEnd.cashTendered}">
+													<f:converter converterId="moneyConverter"/>
+											</h:outputText>
+									</h:column>
+									
+									<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Status"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" 
+											value="#{dayEnd.status}"></h:outputText>
+									</h:column>		
+									
+			
+		</ice:dataTable>
+			
+			</ice:panelGrid>
+		</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

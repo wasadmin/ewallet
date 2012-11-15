@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions name="LoggingService" targetNamespace="http://loggingservices.maas.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://loggingservices.maas.esolutions.co.zw/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://loggingservices.maas.esolutions.co.zw/" schemaLocation="LoggingService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="findAllActivitiesPendingApproval">
+    <part element="tns:findAllActivitiesPendingApproval" name="parameters">
+    </part>
+  </message>
+  <message name="findLogByEntityIdAndEntityTypeAndDateRange">
+    <part element="tns:findLogByEntityIdAndEntityTypeAndDateRange" name="parameters">
+    </part>
+  </message>
+  <message name="createActivityResponse">
+    <part element="tns:createActivityResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approve">
+    <part element="tns:approve" name="parameters">
+    </part>
+  </message>
+  <message name="createLogResponse">
+    <part element="tns:createLogResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findActivityByName">
+    <part element="tns:findActivityByName" name="parameters">
+    </part>
+  </message>
+  <message name="findLog">
+    <part element="tns:findLog" name="parameters">
+    </part>
+  </message>
+  <message name="logActivityResponse">
+    <part element="tns:logActivityResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findLogByEntityIdAndEntityType">
+    <part element="tns:findLogByEntityIdAndEntityType" name="parameters">
+    </part>
+  </message>
+  <message name="findLogsByUserName">
+    <part element="tns:findLogsByUserName" name="parameters">
+    </part>
+  </message>
+  <message name="findAllActivitiesResponse">
+    <part element="tns:findAllActivitiesResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findLogByActivityName">
+    <part element="tns:findLogByActivityName" name="parameters">
+    </part>
+  </message>
+  <message name="updateLogResponse">
+    <part element="tns:updateLogResponse" name="parameters">
+    </part>
+  </message>
+  <message name="deleteLog">
+    <part element="tns:deleteLog" name="parameters">
+    </part>
+  </message>
+  <message name="updateActivityResponse">
+    <part element="tns:updateActivityResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findActivityById">
+    <part element="tns:findActivityById" name="parameters">
+    </part>
+  </message>
+  <message name="findAllActivitiesPendingApprovalResponse">
+    <part element="tns:findAllActivitiesPendingApprovalResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findLogByAllResponse">
+    <part element="tns:findLogByAllResponse" name="parameters">
+    </part>
+  </message>
+  <message name="disapproveResponse">
+    <part element="tns:disapproveResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findLogResponse">
+    <part element="tns:findLogResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findLogByEntityIdAndEntityTypeAndDateRangeResponse">
+    <part element="tns:findLogByEntityIdAndEntityTypeAndDateRangeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="approveResponse">
+    <part element="tns:approveResponse" name="parameters">
+    </part>
+  </message>
+  <message name="Exception">
+    <part element="tns:Exception" name="fault">
+    </part>
+  </message>
+  <message name="createLog">
+    <part element="tns:createLog" name="parameters">
+    </part>
+  </message>
+  <message name="createActivity">
+    <part element="tns:createActivity" name="parameters">
+    </part>
+  </message>
+  <message name="findActivityByNameResponse">
+    <part element="tns:findActivityByNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findLogByEntityIdAndEntityTypeResponse">
+    <part element="tns:findLogByEntityIdAndEntityTypeResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findAllActivities">
+    <part element="tns:findAllActivities" name="parameters">
+    </part>
+  </message>
+  <message name="findLogsByUserNameResponse">
+    <part element="tns:findLogsByUserNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="logActivity">
+    <part element="tns:logActivity" name="parameters">
+    </part>
+  </message>
+  <message name="findLogByActivityNameResponse">
+    <part element="tns:findLogByActivityNameResponse" name="parameters">
+    </part>
+  </message>
+  <message name="findLogByAll">
+    <part element="tns:findLogByAll" name="parameters">
+    </part>
+  </message>
+  <message name="disapprove">
+    <part element="tns:disapprove" name="parameters">
+    </part>
+  </message>
+  <message name="updateActivity">
+    <part element="tns:updateActivity" name="parameters">
+    </part>
+  </message>
+  <message name="deleteLogResponse">
+    <part element="tns:deleteLogResponse" name="parameters">
+    </part>
+  </message>
+  <message name="updateLog">
+    <part element="tns:updateLog" name="parameters">
+    </part>
+  </message>
+  <message name="findActivityByIdResponse">
+    <part element="tns:findActivityByIdResponse" name="parameters">
+    </part>
+  </message>
+  <portType name="LoggingService">
+    <operation name="createLog">
+      <input message="tns:createLog">
+    </input>
+      <output message="tns:createLogResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findLog">
+      <input message="tns:findLog">
+    </input>
+      <output message="tns:findLogResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="findLogsByUserName">
+      <input message="tns:findLogsByUserName">
+    </input>
+      <output message="tns:findLogsByUserNameResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="updateLog">
+      <input message="tns:updateLog">
+    </input>
+      <output message="tns:updateLogResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="deleteLog">
+      <input message="tns:deleteLog">
+    </input>
+      <output message="tns:deleteLogResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="logActivity">
+      <input message="tns:logActivity">
+    </input>
+      <output message="tns:logActivityResponse">
+    </output>
+      <fault message="tns:Exception" name="Exception">
+    </fault>
+    </operation>
+    <operation name="createActivity">
+      <input message="tns:createActivity">
+    </input>
+      <output message="tns:createActivityResponse">
+    </output>
+    </operation>
+    <operation name="updateActivity">
+      <input message="tns:updateActivity">
+    </input>
+      <output message="tns:updateActivityResponse">
+    </output>
+    </operation>
+    <operation name="findActivityByName">
+      <input message="tns:findActivityByName">
+    </input>
+      <output message="tns:findActivityByNameResponse">
+    </output>
+    </operation>
+    <operation name="findActivityById">
+      <input message="tns:findActivityById">
+    </input>
+      <output message="tns:findActivityByIdResponse">
+    </output>
+    </operation>
+    <operation name="findAllActivities">
+      <input message="tns:findAllActivities">
+    </input>
+      <output message="tns:findAllActivitiesResponse">
+    </output>
+    </operation>
+    <operation name="findLogByEntityIdAndEntityType">
+      <input message="tns:findLogByEntityIdAndEntityType">
+    </input>
+      <output message="tns:findLogByEntityIdAndEntityTypeResponse">
+    </output>
+    </operation>
+    <operation name="findLogByEntityIdAndEntityTypeAndDateRange">
+      <input message="tns:findLogByEntityIdAndEntityTypeAndDateRange">
+    </input>
+      <output message="tns:findLogByEntityIdAndEntityTypeAndDateRangeResponse">
+    </output>
+    </operation>
+    <operation name="findLogByActivityName">
+      <input message="tns:findLogByActivityName">
+    </input>
+      <output message="tns:findLogByActivityNameResponse">
+    </output>
+    </operation>
+    <operation name="approve">
+      <input message="tns:approve">
+    </input>
+      <output message="tns:approveResponse">
+    </output>
+    </operation>
+    <operation name="disapprove">
+      <input message="tns:disapprove">
+    </input>
+      <output message="tns:disapproveResponse">
+    </output>
+    </operation>
+    <operation name="findAllActivitiesPendingApproval">
+      <input message="tns:findAllActivitiesPendingApproval">
+    </input>
+      <output message="tns:findAllActivitiesPendingApprovalResponse">
+    </output>
+    </operation>
+    <operation name="findLogByAll">
+      <input message="tns:findLogByAll">
+    </input>
+      <output message="tns:findLogByAllResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="LoggingServiceSOAPBinding" type="tns:LoggingService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createLog">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findLog">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findLogsByUserName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateLog">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteLog">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="logActivity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createActivity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="updateActivity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="findActivityByName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="findActivityById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="findAllActivities">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="findLogByEntityIdAndEntityType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="findLogByEntityIdAndEntityTypeAndDateRange">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="findLogByActivityName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="approve">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="disapprove">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="findAllActivitiesPendingApproval">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="findLogByAll">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="LoggingService">
+    <port binding="tns:LoggingServiceSOAPBinding" name="LoggingServiceSOAP">
+      <soap:address location="http://10.136.192.70:9080/LoggingServices/LoggingService"/>
+    </port>
+  </service>
+</definitions>

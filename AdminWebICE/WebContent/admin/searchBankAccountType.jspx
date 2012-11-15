@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				
+				<ice:form styleClass="form" id="form1">
+					<ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage"></ice:messages>	
+					<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+						cellspacing="5" columns="2" width="600">
+						<ice:outputLabel value="Search Criteria" styleClass="outputLabel"
+							id="label2"></ice:outputLabel>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="menu1"
+							value="#{searchBankAccountTypeBean.selectedCriteria}">
+							<f:selectItems id="selectItems1"
+								value="#{searchBankAccountTypeBean.criteriaList}" />
+						</ice:selectOneMenu>
+						<ice:outputLabel value="Search Field" styleClass="outputLabel"
+							id="label3"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="text2"
+							value="#{searchBankAccountTypeBean.searchField}"></ice:inputText>
+						<ice:commandButton type="submit" value="Search"
+							styleClass="commandButton" id="button1"
+							action="#{searchBankAccountTypeBean.search}"></ice:commandButton>
+						<ice:commandButton type="submit" value="View All"
+							styleClass="commandButton" id="button2"
+							action="#{searchBankAccountTypeBean.listAll}"></ice:commandButton>
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group1">
+								<ice:outputLabel value="Enter Search Details Below"
+									styleClass="panelGridLabel" id="label1"></ice:outputLabel>
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelGrid>
+			
+					<ice:dataTable border="0" cellpadding="2" cellspacing="0"
+						columnClasses="columnClass1" headerClass="headerClass"
+						footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+						styleClass="dataTable" id="table1" width="600"
+						value="#{searchBankAccountTypeBean.accountTypeList}" var="accountType">
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group2">
+								<ice:outputLabel value="Search Results" styleClass="outputLabel"
+									id="label4"></ice:outputLabel>
+							</ice:panelGroup>
+						</f:facet>
+						<ice:column id="column2">
+							<f:facet name="header">
+								<ice:outputText value="Type Name" styleClass="outputText" id="text4"></ice:outputText>
+							</f:facet>
+			
+							<ice:commandLink styleClass="requestLink" id="link1" action="#{searchBankAccountTypeBean.viewBankAccountType}">
+								<ice:outputText styleClass="outputText" id="text1"
+								value="#{accountType.typeName}"></ice:outputText>
+								<f:param name="bankAccountTypeId" value="#{accountType.id}"></f:param>
+							</ice:commandLink>
+							
+						</ice:column>
+						<ice:column id="column1">
+							<f:facet name="header">
+								<ice:outputText id="text3" styleClass="outputText" value="Status"></ice:outputText>
+							</f:facet>
+							<ice:outputText styleClass="outputText" id="text5"
+								value="#{accountType.status}"></ice:outputText>
+						</ice:column>
+					</ice:dataTable>
+				</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

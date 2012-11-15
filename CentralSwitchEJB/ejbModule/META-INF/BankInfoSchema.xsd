@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bank.config.esolutions.co.zw"
+	xmlns:tns="http://bank.config.esolutions.co.zw" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation>
+		<xs:documentation>Author : Blessing Bonde</xs:documentation>
+	</xs:annotation>
+
+	<element name="bankInfo" type="tns:BankInfo"></element>
+
+	<complexType name="BankInfo">
+		<sequence>
+			<element name="requestQueueName" type="string"></element>
+			<element name="replyQueueName" type="string"></element>
+			<element name="bankName" type="string"></element>
+			<element name="zswCode" type="string"></element>
+			<element name="zesaPayCode" type="int"></element>
+			<element name="zesaPayBranch" type="int"></element>
+			<element name="bankId" type="string"></element>
+			<element name="online" type="boolean"></element>
+			<element name="signature" type="string"></element>
+			<element name="applySignature" type="boolean"></element>
+			<element name="smsCode" type="string"></element>
+			<element name="ussdCode" type="string"></element>
+			<element name="applyVendorSignature" type="boolean"></element>
+			<element name="serviceId" type="string"></element>
+			<element name="serviceProviderId" type="string"></element>
+			<element name="alternateBankId" type="string"></element>
+		</sequence>
+	</complexType>
+</schema>

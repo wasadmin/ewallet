@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pin_reset_summary_report" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" scriptletClass="zw.co.esolutions.ewallet.scriptlets.GenericScriptlet">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="java.sql.Timestamp"/>
+	<import value="java.util.Date"/>
+	<template><![CDATA["/opt/ewallet/globals/ReportStyles.jrtx"]]></template>
+	<parameter name="reportTitle" class="java.lang.String"/>
+	<parameter name="pageHeader" class="java.lang.String"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<field name="bankId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="branchId" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CUSTOMERCLASS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="allAgent" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("AGENT")) && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).toString().equals(new String("RESET")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="allRegular" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("REGULAR")) && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).toString().equals(new String("RESET")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="allEmployee" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("EMPLOYEE")) && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).toString().equals(new String("RESET")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="allNewPinAgent" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("AGENT")) && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).toString().equals(new String("NEW PIN")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="allNewPinRegular" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("REGULAR")) && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).toString().equals(new String("NEW PIN")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="allNewPinEmployee" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("EMPLOYEE")) && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).toString().equals(new String("NEW PIN")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="allTotal" class="java.lang.Long" calculation="Count">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}]]></variableExpression>
+	</variable>
+	<variable name="bAgent" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("AGENT")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bRegular" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("REGULAR")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bEmployee" class="java.lang.Long" resetType="Group" resetGroup="BankGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("EMPLOYEE")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bTotal" class="java.lang.Long" resetType="Group" resetGroup="BankGroup">
+		<variableExpression><![CDATA[$V{bAgent}.longValue() +$V{bRegular}.longValue() +$V{bEmployee}.longValue()]]></variableExpression>
+	</variable>
+	<variable name="bbAgent" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("AGENT")) && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).toString().equals(new String("RESET")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bbRegular" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("REGULAR"))  && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).toString().equals(new String("RESET")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bbEmployee" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("EMPLOYEE"))  && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).toString().equals(new String("RESET")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="newPinAgent" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("AGENT")) && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).toString().equalsIgnoreCase(new String("NEW PIN")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="newPinRegular" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("REGULAR")) && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).toString().equalsIgnoreCase(new String("NEW PIN")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="newPinEmployee" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup" calculation="Sum">
+		<variableExpression><![CDATA[$F{CUSTOMERCLASS}.toString().equals(new String("EMPLOYEE")) && $P{REPORT_PARAMETERS_MAP}.get($F{NAME}).equalsIgnoreCase(new String("NEW PIN")) ? 1L : 0L]]></variableExpression>
+	</variable>
+	<variable name="bbTotal" class="java.lang.Long" resetType="Group" resetGroup="BranchGroup">
+		<variableExpression><![CDATA[$V{bbRegular}.longValue() +$V{bbEmployee}.longValue() + $V{bbAgent}.longValue()+ $V{newPinAgent}.longValue()+$V{newPinRegular}.longValue()+ $V{newPinEmployee}.longValue()]]></variableExpression>
+	</variable>
+	<variable name="BRANCH_FOOTER" class="java.lang.String" resetType="Group" resetGroup="BranchGroup">
+		<variableExpression><![CDATA[$P{REPORT_SCRIPTLET}.branchCode()]]></variableExpression>
+	</variable>
+	<group name="BankGroup">
+		<groupExpression><![CDATA[$F{bankId}]]></groupExpression>
+		<groupHeader>
+			<band height="69">
+				<staticText>
+					<reportElement mode="Opaque" x="176" y="20" width="150" height="20" forecolor="#FFFFFF" backcolor="#006633"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[AGENT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="326" y="20" width="146" height="20" forecolor="#FFFFFF" backcolor="#006633"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[REGULAR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="472" y="20" width="138" height="20" forecolor="#FFFFFF" backcolor="#006633"/>
+					<textElement>
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<text><![CDATA[EMPLOYEE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="176" y="49" width="49" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RESET]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="235" y="49" width="91" height="19"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NEW PIN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="326" y="49" width="48" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RESET]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="472" y="49" width="67" height="20"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RESET]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="540" y="49" width="70" height="19"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NEW PIN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="386" y="49" width="66" height="19"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NEW PIN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="628" y="49" width="116" height="19"/>
+					<textElement>
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BRANCH TOTAL]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="31">
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="11" width="155" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="10" isBold="true" isItalic="true" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{bankId}) + " TOTALS"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="176" y="11" width="90" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{bTotal}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="BranchGroup">
+		<groupExpression><![CDATA[$F{branchId}]]></groupExpression>
+		<groupFooter>
+			<band height="32" splitType="Stretch">
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="155" height="20"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Serif" size="11" isBold="false" isUnderline="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get($F{branchId})+" PIN RESETS"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement x="628" y="0" width="90" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{bbTotal}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="176" y="0" width="49" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{bbAgent}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="326" y="0" width="48" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{bbRegular}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="472" y="0" width="50" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{bbEmployee}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="386" y="0" width="66" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{newPinRegular}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="539" y="0" width="62" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{newPinEmployee}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="235" y="0" width="49" height="20"/>
+					<textElement textAlignment="Left">
+						<font fontName="Serif" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{newPinAgent}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="50" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="800" height="1" forecolor="#000000"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Sans_Normal" x="0" y="10" width="800" height="30"/>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reportTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="800" height="30"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="800" height="30"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="16" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pageHeader}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="652" y="0" width="30" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Page | ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="682" y="0" width="50" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="228" splitType="Stretch">
+			<staticText>
+				<reportElement x="664" y="202" width="30" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Page | ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="58" width="240" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[AGENTS PIN RESETS :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="88" width="240" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[REGULAR CUSTOMER PIN RESETS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="118" width="240" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[EMPLOYEE PIN RESETS :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="158" width="300" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL PIN RESETS :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="13" width="706" height="33"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="16" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[GRAND TOTALS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="694" y="202" width="50" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="266" y="58" width="78" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allAgent}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="266" y="88" width="78" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allRegular}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="266" y="118" width="78" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allEmployee}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="328" y="158" width="459" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allTotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="374" y="58" width="240" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[AGENTS NEW PIN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="88" width="240" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[REGULAR CUSTOMER NEW PINS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="118" width="240" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<text><![CDATA[EMPLOYEE NEW PINS:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="614" y="58" width="78" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allNewPinAgent}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="614" y="88" width="78" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allNewPinRegular}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="614" y="118" width="78" height="20"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allNewPinEmployee}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

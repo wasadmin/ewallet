@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<ui:composition>
+		<link href="../theme/style.css" rel="stylesheet" type="text/css"/>
+		<ice:form>
+		<h3>Teller Home :</h3>
+			<ul>
+			    <li><ice:commandLink value="Home Page" action="#{menuBean.tellerHome}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Change Password" action="#{menuBean.changePassword }"></ice:commandLink></li>
+			    <li><ice:commandLink value="Logout" action="#{loginBean.logout }"></ice:commandLink></li> 
+			</ul>
+			<!-- <h3>Customers :</h3>
+			<ul>
+				<li><a href="../teller/registerCustomer.jspx">Register Customer</a></li> 
+				<li><a href="../teller/searchCustomer.jspx">Search Customer</a></li>
+			</ul> -->	
+			<h3>Teller Net Position</h3>
+			<ul>
+			<li><ice:commandLink value="Teller Net Position" action="#{menuBean.tellerNetPosition}" rendered="#{menuBean.renderTellerNetPosition}"></ice:commandLink></li>
+			
+			</ul>
+			<h3>Deposits :</h3>
+			<ul>
+			    <li><ice:commandLink value="Make Deposit" action="#{menuBean.depositCash}" rendered="#{menuBean.renderDepositCash}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Make Agent Deposit" action="#{menuBean.depositAgentCash}" rendered="#{menuBean.renderDepositAgentCash}"></ice:commandLink></li>
+				<li><ice:commandLink value="Search Deposits" action="#{menuBean.viewAllDeposits}" rendered="#{menuBean.renderViewAllDeposits}"></ice:commandLink></li> 
+				<li><ice:commandLink value="Teller Today's Deposits" action="#{menuBean.viewTellerDailyDeposits}" rendered="#{menuBean.renderViewTellerDailyDeposits}"></ice:commandLink></li> 
+				 
+			</ul>	
+			<h3>Withdrawals :</h3>
+			<ul>
+			   <li><ice:commandLink value="Withdraw Cash" action="#{menuBean.withdrawCash}" rendered="#{menuBean.renderWithdrawCash}"></ice:commandLink></li>
+			   <li><ice:commandLink value="Search Withdrawal" action="#{menuBean.viewAllWithdrawals}" rendered="#{menuBean.renderViewAllWithdrawals}"></ice:commandLink></li>
+			   <li><ice:commandLink value="Teller Today's Withdrawals" action="#{menuBean.viewTellerDailyWithdrawals}" rendered="#{menuBean.renderViewTellerDailyWithdrawals}"></ice:commandLink></li>
+			   <li><ice:commandLink value="Non Account Holder Withdrawal" action="#{menuBean.searchNonHolderWithdrawalTxn}" rendered="#{menuBean.renderSearchNonHolderWithdrawalTxn}"></ice:commandLink></li>
+			   
+			</ul>	
+			<h3>Transfers :</h3>
+			<ul>
+			    <li><ice:commandLink value="Search Transfers" action="#{menuBean.viewAllTransfers}" rendered="#{menuBean.renderViewAllTransfers}"></ice:commandLink></li>
+				 
+			</ul>
+			<h3>Search Transactions :</h3>
+			<ul>
+			    <li><ice:commandLink value="Teller Transactions" action="#{menuBean.searchTellerTransactions}" rendered="#{menuBean.renderSearchTellerTransactions}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Branch Transactions" action="#{menuBean.searchBranchTransactions}" rendered="#{menuBean.renderSearchBranchTransactions}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Bank Transactions" action="#{menuBean.searchBankTransactions}" rendered="#{menuBean.renderSearchBankTransactions}"></ice:commandLink></li>
+			    <li><ice:commandLink value="All Banks Transactions" action="#{menuBean.searchAllBanksTransactions}" rendered="#{menuBean.renderSearchAllBanksTransactions}"></ice:commandLink></li>
+				 
+			</ul>
+			<h3>Start of Day :</h3>
+			<ul>
+			<li>
+			<ice:commandLink value="Teller Start of Day" action="#{menuBean.tellerStartOfDay}" rendered="#{menuBean.renderTellerStartOfDay}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Approve Teller Start of Day" action="#{menuBean.approveTellerStartofDay}" rendered="#{menuBean.renderStartOfDayApproval}"></ice:commandLink></li>
+				
+			</ul>
+			
+			
+			<h3>Teller Day End Run :</h3>
+			<ul>
+			
+			
+				
+				<li><ice:commandLink value="Teller Day End" action="#{menuBean.tellerDayEnd}" rendered="#{menuBean.renderTellerDayEnd}"></ice:commandLink></li>
+				<li><ice:commandLink value="Day End Approval" action="#{menuBean.dayEndApproval}" rendered="#{menuBean.renderDayEndApproval}"></ice:commandLink></li>
+			<li><ice:commandLink value="Day End Searches" action="#{menuBean.dayEndSearches}" rendered="#{menuBean.renderDayEndSearchs}"></ice:commandLink></li>
+			<li><ice:commandLink value="Day End Manual Resolution" action="#{menuBean.dayEndManualResolve}" rendered="#{menuBean.renderDayEndManualResolve}"></ice:commandLink></li>
+			</ul>
+			</ice:form>	
+	</ui:composition>
+</html>

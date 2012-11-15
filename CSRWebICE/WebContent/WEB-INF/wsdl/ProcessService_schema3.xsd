@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.bankservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.bankservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="bankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountClass" type="tns:bankAccountClass"/>
+      <xs:element minOccurs="0" name="accountHolderId" type="xs:string"/>
+      <xs:element minOccurs="0" name="accountName" type="xs:string"/>
+      <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+      <xs:element name="approvable" type="xs:boolean"/>
+      <xs:element name="bankAccRenderApprovable" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="bankAccountLastBranch" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankReferenceId" type="xs:string"/>
+      <xs:element minOccurs="0" name="branch" type="tns:bankBranch"/>
+      <xs:element minOccurs="0" name="cardNumber" type="xs:string"/>
+      <xs:element name="cardSequence" type="xs:int"/>
+      <xs:element minOccurs="0" name="code" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:anySimpleType"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="level" type="tns:bankAccountLevel"/>
+      <xs:element minOccurs="0" name="ownerType" type="tns:ownerType"/>
+      <xs:element name="primaryAccount" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="registrationBranchId" type="xs:string"/>
+      <xs:element name="runningBalance" type="xs:long"/>
+      <xs:element minOccurs="0" name="status" type="tns:bankAccountStatus"/>
+      <xs:element minOccurs="0" name="type" type="tns:bankAccountType"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bankBranch">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="accounts" nillable="true" type="tns:bankAccount"/>
+      <xs:element minOccurs="0" name="bank" type="tns:bank"/>
+      <xs:element minOccurs="0" name="code" type="xs:string"/>
+      <xs:element minOccurs="0" name="contactDetailsId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:anySimpleType"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:bankBranchStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bank">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="branches" nillable="true" type="tns:bankBranch"/>
+      <xs:element minOccurs="0" name="code" type="xs:string"/>
+      <xs:element minOccurs="0" name="contactDetailsId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:anySimpleType"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:bankStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="bankAccountClass">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="SYSTEM"/>
+      <xs:enumeration value="BRONZE"/>
+      <xs:enumeration value="SILVER"/>
+      <xs:enumeration value="GOLD"/>
+      <xs:enumeration value="PLATINUM"/>
+      <xs:enumeration value="DIAMOND"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="DISABLED"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankBranchStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="DISABLED"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankAccountLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INDIVIDUAL"/>
+      <xs:enumeration value="CORPORATE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ownerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BANK"/>
+      <xs:enumeration value="BANK_BRANCH"/>
+      <xs:enumeration value="AGENT"/>
+      <xs:enumeration value="CUSTOMER"/>
+      <xs:enumeration value="MERCHANT"/>
+      <xs:enumeration value="BANK_MERCHANT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankAccountStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DRAFT"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="SUSPENDED"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankAccountType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="E_WALLET"/>
+      <xs:enumeration value="POOL_CONTROL"/>
+      <xs:enumeration value="TARIFFS_CONTROL"/>
+      <xs:enumeration value="AGENT_CONTROL"/>
+      <xs:enumeration value="AGENT_COMMISSION_CONTROL"/>
+      <xs:enumeration value="PAYOUT_CONTROL"/>
+      <xs:enumeration value="BANK_SUSPENSE"/>
+      <xs:enumeration value="MERCHANT_SUSPENSE"/>
+      <xs:enumeration value="SAVINGS"/>
+      <xs:enumeration value="TOPUP_SUSPENSE_ACCOUNT"/>
+      <xs:enumeration value="CURRENT"/>
+      <xs:enumeration value="CHEQUE"/>
+      <xs:enumeration value="BRANCH_CASH_ACCOUNT"/>
+      <xs:enumeration value="EWALLET_BRANCH_CASH_ACCOUNT"/>
+      <xs:enumeration value="EWALLET_BALANCING_SUSPENSE_ACCOUNT"/>
+      <xs:enumeration value="MOBILE_TO_BANK_CONTROL"/>
+      <xs:enumeration value="BANK_TO_MOBILE_CONTROL"/>
+      <xs:enumeration value="BANK_TO_NON_MOBILE_CONTROL"/>
+      <xs:enumeration value="EWALLET_TRANSACTION_ACCOUNT"/>
+      <xs:enumeration value="EWALLET_COMMISSION_ACCOUNT"/>
+      <xs:enumeration value="SUSPENSE"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

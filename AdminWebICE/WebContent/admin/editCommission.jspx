@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				 <ice:form styleClass="form" id="form1">
+				 <h2>Edit Commission</h2>
+				 <ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table" globalOnly="true"></ice:messages>
+				 <ice:panelGrid styleClass="infoBox" >
+				 <ice:outputText value="All fields marked with a * are required"></ice:outputText>
+				 </ice:panelGrid>
+					<ice:inputHidden value="#{editTariffBean.tariffId}" id="Id0"></ice:inputHidden>
+					<ice:inputHidden value="#{editTariffBean.tariffTableItem}" id="Id1"></ice:inputHidden>
+					<ice:panelGrid styleClass="panelGrid" id="grid1" columns="3" width="600" cellpadding="5" cellspacing="5">
+						<ice:outputText styleClass="outputLabel" id="text2"
+							value="Commission Table* :"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="menu1"
+							value="#{editTariffBean.tariffTableItem}" valueChangeListener="#{editTariffBean.handleTableValueChange}"
+							 partialSubmit="true" immediate="true">
+							<f:selectItems id="selectItems1"
+								value="#{editTariffBean.tariffTableMenu}" />
+						</ice:selectOneMenu>
+						<ice:outputText styleClass="outputLabel"></ice:outputText>
+						<ice:outputText styleClass="outputLabel" id="text6"
+							value="Lower Limit* :"></ice:outputText>
+						<ice:inputText styleClass="inputText" id="lowerLimit" value="#{editTariffBean.lowerLimit}" disabled="#{editTariffBean.showScaledFields}" required="true" requiredMessage="Please enter the lower limit" validatorMessage="Lower limit cannot be below zero">
+							<f:converter converterId="doubleMoneyConverter" />
+						</ice:inputText>
+						<ice:message styleClass="messages" for="lowerLimit" errorClass="errorMsg"></ice:message>
+						<ice:outputText styleClass="outputLabel" id="text4"
+							value="Upper Limit* :"></ice:outputText>
+						<ice:inputText styleClass="inputText" id="upperLimit" value="#{editTariffBean.upperLimit}" disabled="#{editTariffBean.showScaledFields}" required="true" requiredMessage="Please enter the upper limit" validatorMessage="Upper limit cannot be below zero">
+							<f:converter converterId="doubleMoneyConverter" />
+						</ice:inputText>
+						<ice:message styleClass="messages" for="upperLimit" errorClass="errorMsg"></ice:message>
+						<ice:outputText styleClass="outputLabel" id="text5"
+							value="Commission Value* :"></ice:outputText>
+						<ice:inputText styleClass="inputText" id="commissionType"
+							value="#{editTariffBean.value}" required="true" requiredMessage="Please enter the commision value" validatorMessage="Commission value cannot be below zero">
+							<f:converter converterId="doubleMoneyConverter" />
+						</ice:inputText>
+						<ice:message styleClass="messages" for="commissionType" errorClass="errorMsg"></ice:message>
+						<ice:commandButton type="submit" value="Submit"
+							styleClass="commandButton" id="button1"
+							action="#{editTariffBean.editTariffAction}"></ice:commandButton>
+						<ice:commandButton type="submit" value="Cancel"
+							styleClass="commandButton" id="button2"
+							action="#{editTariffBean.cancelTariffCreation}" partialSubmit="true" ></ice:commandButton>
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group1">
+								<ice:outputText styleClass="panelGridLabel" id="text1"
+									value="Edit Commission "></ice:outputText>
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelGrid>
+		
+				
+						
+				</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

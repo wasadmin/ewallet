@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1">
+		   <h2>View Query</h2>
+			<p><ice:messages styleClass="messages" id="messages12"
+							errorClass="errorMessage" infoClass="infoMessage" layout="table" globalOnly="true"></ice:messages></p>
+			
+			<ice:panelGrid styleClass="panelGrid" id="grid4" cellpadding="5"
+							cellspacing="5" width="700" columns="4" >
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" id="group4">
+						<ice:outputText styleClass="panelGridLabel"
+							value="Ewallet Accounts"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+				
+						<ice:outputText styleClass="outputLabel" id="text88"
+						value="Source Account :"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" value="#{viewQuery.txn.sourceAccountNumber }"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" value="Destination Account :"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" value="#{viewQuery.txn.destinationAccountNumber }"></ice:outputText>
+					<ice:outputText styleClass="outputLabel"  value="Source Charge Account :"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" value="#{viewQuery.manualPojo.fromEwalletChargeAccount}"></ice:outputText>
+					<ice:outputText styleClass="outputLabel"  value="Destination Charge Account :"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" value="#{viewQuery.manualPojo.toEwalletChargeAccount}"></ice:outputText>
+				</ice:panelGrid>
+				<br></br>
+				
+				
+			
+			
+			 <ice:panelGrid styleClass="panelGrid" cellpadding="5" 
+							cellspacing="5" width="700" columns="4" >
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" >
+						<ice:outputText styleClass="panelGridLabel"
+							value="Equation Accounts"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+				
+				<ice:outputText styleClass="outputLabel" value="Source Account :"></ice:outputText>
+				<ice:outputText styleClass="outputLabel" value="#{viewQuery.manualPojo.sourceEQ3AccountNumber}">
+				
+					</ice:outputText>
+					
+					<ice:outputText styleClass="outputLabel" value="Destination Account"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" value="#{viewQuery.manualPojo.destinationEQ3AccountNumber}">
+				
+					</ice:outputText>
+					
+					<ice:outputText styleClass="outputLabel" value="Source Charge Account"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" value="#{viewQuery.manualPojo.destinationEQ3AccountNumber}">
+				
+					</ice:outputText>
+					
+					
+					
+					<ice:outputText styleClass="outputLabel" value="Destination Charge Account"></ice:outputText>
+					<ice:outputText styleClass="outputLabel" value="#{viewQuery.manualPojo.toEQ3ChargeAccount}">
+				
+					</ice:outputText>
+					
+					
+					
+				</ice:panelGrid>
+				<br></br>
+				 <ice:panelGrid styleClass="panelGrid" cellpadding="5" 
+							cellspacing="5" width="700" columns="2" >
+				<f:facet name="header">
+					<ice:panelGroup styleClass="panelGroup" >
+						<ice:outputText styleClass="panelGridLabel"
+							value="Transaction Details"></ice:outputText>
+					</ice:panelGroup>
+				</f:facet>
+				
+				<ice:outputText styleClass="outputLabel" value="Reference :"></ice:outputText>
+				<ice:outputText styleClass="outputLabel" value="#{viewQuery.txn.id}">
+				
+					</ice:outputText>
+					
+				
+				<ice:outputText styleClass="outputLabel" value="Original Reference :"></ice:outputText>
+				<ice:outputText styleClass="outputLabel" value="#{viewQuery.txn.oldMessageId}">
+				
+					</ice:outputText>
+					
+					
+					<ice:outputText styleClass="outputLabel" value="Narrative :" ></ice:outputText>
+				<ice:outputText styleClass="outputLabel" value="#{viewQuery.txn.narrative}"> </ice:outputText>
+				
+				<ice:outputText styleClass="outputLabel" value="Amount:" ></ice:outputText>
+				<ice:outputText styleClass="outputLabel" value="#{viewQuery.txn.amount}">
+				<f:converter converterId="moneyConverter"/>
+				</ice:outputText>
+				
+				<ice:outputText styleClass="outputLabel" value="Charge:" ></ice:outputText>
+				
+				<ice:outputText styleClass="outputLabel" value="#{viewQuery.manualPojo.chargeAmount}">
+				
+						<f:converter converterId="moneyConverter"/>
+				</ice:outputText>
+				
+		
+				
+		
+					
+				</ice:panelGrid>
+				
+				
+					
+				<br></br>
+			</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13335326268200" configfile="/EWalletReportsWebICE/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login/login" x="338" y="178" id="pf13335326924911" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf13335326924912 pf13335326924913" inlinks="pf13335326924913 pf13335326924914" path="/login/login.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="reportsweb/reportsHome" x="554" y="380" id="pf13335326924915" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" inlinks="pf13335326924912 pf13335326924916 pf13335326924917" path="/reportsweb/reportsHome.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="login/errorPage" x="338" y="583" id="pf13335326924918" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13335326924916" path="/login/errorPage.jspx"/>
+  <nodes xsi:type="pageflow:PFPage" name="login/logout" x="122" y="380" id="pf13335326924919" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf13335326924914 pf13335326924917" path="/login/logout.jspx"/>
+  <links id="pf13335326924912" target="pf13335326924915" source="pf13335326924911" outcome="success" fromaction="#{loginBean.login}"/>
+  <links id="pf13335326924916" target="pf13335326924915" source="pf13335326924918" outcome="back" fromaction="#{errorPageBean.back}"/>
+  <links id="pf13335326924914" target="pf13335326924911" source="pf13335326924919" outcome="logout" fromaction="#{loginBean.logout}"/>
+  <links id="pf13335326924917" target="pf13335326924915" source="pf13335326924919" outcome="cancelLogout" fromaction="#{loginBean.cancelLogout}"/>
+  <links id="pf13335326924913" target="pf13335326924911" source="pf13335326924911" outcome="clear" fromaction="#{loginBean.clear}">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+</pageflow:Pageflow>

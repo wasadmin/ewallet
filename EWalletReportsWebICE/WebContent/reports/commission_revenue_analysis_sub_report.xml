@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<!DOCTYPE jasperReport
+  PUBLIC "-//JasperReports//DTD Report Design//EN"
+  "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport 
+        name="commission_revenue_analysis_sub_report" 
+        pageWidth="842" 
+		pageHeight="595" 
+		columnWidth="840" 
+		columnSpacing="5" 
+		leftMargin="1" 
+		rightMargin="1" 
+		topMargin="20" 
+		bottomMargin="20"
+		whenNoDataType="AllSectionsNoDetail"
+		isTitleNewPage="false"
+		isSummaryNewPage="false"
+		scriptletClass = "zw.co.esolutions.ewallet.scriptlets.GenericScriptlet">
+<import value="java.util.Date"/>
+<import value="java.sql.Timestamp"/>
+<import value = "zw.co.esolutions.ewallet.enums.TransactionType" />
+
+<template>"/opt/ewallet/globals/ReportStyles.jrtx"</template>
+<parameter name="fromBankId" class="java.lang.String"/>
+<parameter name="branchId" class="java.lang.String"/>
+<parameter name="fromDate" class="java.sql.Timestamp"/>
+<parameter name="toDate" class="java.sql.Timestamp"/>
+<parameter name="schema1" class="java.lang.String"/>	
+<parameter name="bankAmount" class="java.lang.Long"/>	
+<parameter name="schema" isForPrompting="false" class="java.lang.String">
+	<defaultValueExpression ><![CDATA["BANKIF"]]></defaultValueExpression>
+</parameter> 
+<parameter name="transactionTypeParam" isForPrompting="false" class="java.lang.String">
+	<defaultValueExpression >
+			<![CDATA[
+					"(p.transactionType = 'DEPOSIT' OR p.transactionType = 'WITHDRAWAL' "+  
+					"OR p.transactionType = 'WITHDRAWAL_NONHOLDER' OR p.transactionType = 'BANKACCOUNT_TO_BANKACCOUNT_TRANSFER' "+ 
+					"OR p.transactionType = 'BANKACCOUNT_TO_EWALLET_TRANSFER' OR p.transactionType = 'BANKACCOUNT_TO_NONHOLDER_TRANSFER' "+ 
+					"OR p.transactionType = 'BILLPAY' OR p.transactionType = 'EWALLET_TO_BANKACCOUNT_TRANSFER' "+ 
+					"OR p.transactionType = 'EWALLET_TO_EWALLET_TRANSFER' OR p.transactionType = 'EWALLET_TO_NON_HOLDER_TRANSFER' "+ 
+					"OR p.transactionType = 'TOPUP' OR p.transactionType = 'AGENT_CUSTOMER_WITHDRAWAL' "+ 
+					"OR p.transactionType = 'COMMISSION_TRANSFER' OR p.transactionType = 'MINI_STATEMENT' "+
+					"OR p.transactionType = 'SUPERAGENT_EWALLET_TRANSFER' OR p.transactionType = 'BALANCE')"
+			]]></defaultValueExpression>
+</parameter> 
+
+<queryString>
+		<![CDATA[ SELECT DISTINCT(p.fromBankId), (SELECT COUNT(*) FROM $P!{schema}.PROCESSTRANSACTION  p WHERE p.fromBankId = $P{fromBankId} AND p.dateCreated >= $P{fromDate} 
+					AND p.dateCreated <= $P{toDate} AND $P!{transactionTypeParam} AND p.status = 'COMPLETED') AS bankCount,
+					(SELECT SUM(p.tariffAmount) FROM $P!{schema}.PROCESSTRANSACTION  p WHERE p.fromBankId = $P{fromBankId} AND p.dateCreated >= $P{fromDate} 
+					AND p.dateCreated <= $P{toDate} AND $P!{transactionTypeParam} AND p.status = 'COMPLETED') AS bankCommissionSum,
+					(SELECT SUM(p.agentCommissionAmount) FROM $P!{schema}.PROCESSTRANSACTION  p WHERE p.fromBankId = $P{fromBankId} AND p.dateCreated >= $P{fromDate} 
+					AND p.dateCreated <= $P{toDate} AND $P!{transactionTypeParam} AND p.status = 'COMPLETED') AS bankAgentCommissionSum FROM BANKIF.PROCESSTRANSACTION p WHERE p.fromBankId = $P{fromBankId}
+					]]>
+	</queryString>
+<field name="bankCount" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="bankCommissionSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+<field name="bankAgentCommissionSum" class="java.lang.Long">
+	<fieldDescription></fieldDescription>
+</field>
+
+<variable name="bankAmountSub" class="java.lang.Long">
+     <variableExpression>
+     	<![CDATA[$P{REPORT_SCRIPTLET}.bankLongSum()]]>
+     </variableExpression>
+  	 
+ </variable>
+ 		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="2"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="1"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="4"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+<detail>
+	<band height="120">
+		<rectangle>
+                  <reportElement x="180" y="0" width="610" height="120"/>
+                  <graphicElement/>
+        </rectangle>
+		 <staticText>
+				<reportElement x="200" y="20" width="200" height="20"/>
+				<textElement>
+					<font fontName="Serif" isBold="true" isItalic = "true" size = "12" isUnderline = "true"/>
+				</textElement>
+				<text>TRANSACTIONS :</text>
+			</staticText>
+			<textField isBlankWhenNull="true" isStretchWithOverflow="true">
+				<reportElement x="401" y="20" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="12" isBold = "true" isUnderline = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Long">
+					$F{bankCount}.longValue()
+				</textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="50" width="200" height="20"/>
+				<textElement>
+					<font fontName="Serif" size = "12"/>
+				</textElement>
+				<text>GROSS COMMISSION</text>
+			</staticText>
+			<textField isBlankWhenNull="true" isStretchWithOverflow="true">
+				<reportElement x="401" y="50" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+					<![CDATA[$P{REPORT_SCRIPTLET}.bankCommissionSum()]]>
+				</textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="70" width="200" height="20"/>
+				<textElement>
+					<font fontName="Serif" size = "12"/>
+				</textElement>
+				<text>TOTAL AGENT COMMISSION</text>
+			</staticText>
+			<textField isBlankWhenNull="true" isStretchWithOverflow="true">
+				<reportElement x="401" y="70" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="12" isUnderline = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+					<![CDATA[$P{REPORT_SCRIPTLET}.agentCommissionSum()]]>
+				</textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="90" width="200" height="20"/>
+				<textElement>
+					<font fontName="Serif" size = "12"/>
+				</textElement>
+				<text> COMMISSION LESS AGENT COMMISSION :</text>
+			</staticText>
+			<textField isBlankWhenNull="true" isStretchWithOverflow="true">
+				<reportElement x="401" y="90" width="200" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Serif" size="12" isBold = "true" isUnderline = "true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String">
+					<![CDATA[$P{REPORT_SCRIPTLET}.deductedCommissionSum()]]>
+				</textFieldExpression>
+			</textField>
+			
+			
+	</band>
+	
+</detail>
+
+
+</jasperReport>

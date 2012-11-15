@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.referralservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.referralservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="createReferral" type="tns:createReferral"/>
+
+  <xs:element name="createReferralConfig" type="tns:createReferralConfig"/>
+
+  <xs:element name="createReferralConfigResponse" type="tns:createReferralConfigResponse"/>
+
+  <xs:element name="createReferralResponse" type="tns:createReferralResponse"/>
+
+  <xs:element name="createReferralState" type="tns:createReferralState"/>
+
+  <xs:element name="createReferralStateResponse" type="tns:createReferralStateResponse"/>
+
+  <xs:element name="deleteReferral" type="tns:deleteReferral"/>
+
+  <xs:element name="deleteReferralConfig" type="tns:deleteReferralConfig"/>
+
+  <xs:element name="deleteReferralConfigResponse" type="tns:deleteReferralConfigResponse"/>
+
+  <xs:element name="deleteReferralResponse" type="tns:deleteReferralResponse"/>
+
+  <xs:element name="deleteReferralState" type="tns:deleteReferralState"/>
+
+  <xs:element name="deleteReferralStateResponse" type="tns:deleteReferralStateResponse"/>
+
+  <xs:element name="findReferralById" type="tns:findReferralById"/>
+
+  <xs:element name="findReferralByIdResponse" type="tns:findReferralByIdResponse"/>
+
+  <xs:element name="findReferralConfigById" type="tns:findReferralConfigById"/>
+
+  <xs:element name="findReferralConfigByIdResponse" type="tns:findReferralConfigByIdResponse"/>
+
+  <xs:element name="findReferralStateById" type="tns:findReferralStateById"/>
+
+  <xs:element name="findReferralStateByIdResponse" type="tns:findReferralStateByIdResponse"/>
+
+  <xs:element name="getActiveReferralConfig" type="tns:getActiveReferralConfig"/>
+
+  <xs:element name="getActiveReferralConfigResponse" type="tns:getActiveReferralConfigResponse"/>
+
+  <xs:element name="getReferral" type="tns:getReferral"/>
+
+  <xs:element name="getReferralByCode" type="tns:getReferralByCode"/>
+
+  <xs:element name="getReferralByCodeResponse" type="tns:getReferralByCodeResponse"/>
+
+  <xs:element name="getReferralByDateCreated" type="tns:getReferralByDateCreated"/>
+
+  <xs:element name="getReferralByDateCreatedResponse" type="tns:getReferralByDateCreatedResponse"/>
+
+  <xs:element name="getReferralByReferredMobile" type="tns:getReferralByReferredMobile"/>
+
+  <xs:element name="getReferralByReferredMobileAndCode" type="tns:getReferralByReferredMobileAndCode"/>
+
+  <xs:element name="getReferralByReferredMobileAndCodeResponse" type="tns:getReferralByReferredMobileAndCodeResponse"/>
+
+  <xs:element name="getReferralByReferredMobileAndStatus" type="tns:getReferralByReferredMobileAndStatus"/>
+
+  <xs:element name="getReferralByReferredMobileAndStatusResponse" type="tns:getReferralByReferredMobileAndStatusResponse"/>
+
+  <xs:element name="getReferralByReferredMobileResponse" type="tns:getReferralByReferredMobileResponse"/>
+
+  <xs:element name="getReferralByReferrerMobileId" type="tns:getReferralByReferrerMobileId"/>
+
+  <xs:element name="getReferralByReferrerMobileIdResponse" type="tns:getReferralByReferrerMobileIdResponse"/>
+
+  <xs:element name="getReferralByStatus" type="tns:getReferralByStatus"/>
+
+  <xs:element name="getReferralByStatusResponse" type="tns:getReferralByStatusResponse"/>
+
+  <xs:element name="getReferralConfig" type="tns:getReferralConfig"/>
+
+  <xs:element name="getReferralConfigBetweenDates" type="tns:getReferralConfigBetweenDates"/>
+
+  <xs:element name="getReferralConfigBetweenDatesResponse" type="tns:getReferralConfigBetweenDatesResponse"/>
+
+  <xs:element name="getReferralConfigByDateFrom" type="tns:getReferralConfigByDateFrom"/>
+
+  <xs:element name="getReferralConfigByDateFromResponse" type="tns:getReferralConfigByDateFromResponse"/>
+
+  <xs:element name="getReferralConfigByDateTo" type="tns:getReferralConfigByDateTo"/>
+
+  <xs:element name="getReferralConfigByDateToResponse" type="tns:getReferralConfigByDateToResponse"/>
+
+  <xs:element name="getReferralConfigResponse" type="tns:getReferralConfigResponse"/>
+
+  <xs:element name="getReferralResponse" type="tns:getReferralResponse"/>
+
+  <xs:element name="getReferralState" type="tns:getReferralState"/>
+
+  <xs:element name="getReferralStateByDateCreated" type="tns:getReferralStateByDateCreated"/>
+
+  <xs:element name="getReferralStateByDateCreatedResponse" type="tns:getReferralStateByDateCreatedResponse"/>
+
+  <xs:element name="getReferralStateByReferral" type="tns:getReferralStateByReferral"/>
+
+  <xs:element name="getReferralStateByReferralResponse" type="tns:getReferralStateByReferralResponse"/>
+
+  <xs:element name="getReferralStateByStatus" type="tns:getReferralStateByStatus"/>
+
+  <xs:element name="getReferralStateByStatusResponse" type="tns:getReferralStateByStatusResponse"/>
+
+  <xs:element name="getReferralStateResponse" type="tns:getReferralStateResponse"/>
+
+  <xs:element name="promoteReferralState" type="tns:promoteReferralState"/>
+
+  <xs:element name="promoteReferralStateResponse" type="tns:promoteReferralStateResponse"/>
+
+  <xs:element name="updateReferral" type="tns:updateReferral"/>
+
+  <xs:element name="updateReferralConfig" type="tns:updateReferralConfig"/>
+
+  <xs:element name="updateReferralConfigResponse" type="tns:updateReferralConfigResponse"/>
+
+  <xs:element name="updateReferralResponse" type="tns:updateReferralResponse"/>
+
+  <xs:element name="updateReferralState" type="tns:updateReferralState"/>
+
+  <xs:element name="updateReferralStateResponse" type="tns:updateReferralStateResponse"/>
+
+  <xs:complexType name="getReferralStateByDateCreated">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralStateByDateCreatedResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referralState"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="referralState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="referral" type="tns:referral"/>
+      <xs:element minOccurs="0" name="status" type="tns:referralStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="referral">
+    <xs:sequence>
+      <xs:element name="code" type="xs:int"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="referredMobile" type="xs:string"/>
+      <xs:element minOccurs="0" name="referrerMobileId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="states" nillable="true" type="tns:referralState"/>
+      <xs:element minOccurs="0" name="status" type="tns:referralStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByReferredMobileAndCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element name="arg1" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByReferredMobileAndCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByReferredMobileAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="tns:referralStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByReferredMobileAndStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findReferralStateById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findReferralStateByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:referralState"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findReferralById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findReferralByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteReferral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referral"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteReferralResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateReferralConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referralConfig"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="referralConfig">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dateFrom" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dateTo" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element name="maxReferrals" type="xs:int"/>
+      <xs:element name="referredRatio" type="xs:int"/>
+      <xs:element name="referrerRatio" type="xs:int"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateReferralConfigResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:referralConfig"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateReferralState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referralState"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateReferralStateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:referralState"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralConfig">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralConfigResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referralConfig"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByDateCreated">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByDateCreatedResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralConfigBetweenDates">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralConfigBetweenDatesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referralConfig"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralStateByReferral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralStateByReferralResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referralState"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByReferredMobile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByReferredMobileResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralState">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralStateResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referralState"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createReferral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createReferralResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralConfigByDateFrom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralConfigByDateFromResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referralConfig"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByReferrerMobileId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByReferrerMobileIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateReferral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referral"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateReferralResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralStateByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referralStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralStateByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referralState"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteReferralState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referralState"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteReferralStateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findReferralConfigById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findReferralConfigByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:referralConfig"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteReferralConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referralConfig"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteReferralConfigResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="promoteReferralState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referral"/>
+      <xs:element minOccurs="0" name="arg1" type="tns:referralStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="promoteReferralStateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralConfigByDateTo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralConfigByDateToResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referralConfig"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByCode">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByCodeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferral">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referralStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getReferralByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createReferralState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referralState"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createReferralStateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:referralState"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getActiveReferralConfig">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getActiveReferralConfigResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:referralConfig"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createReferralConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:referralConfig"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createReferralConfigResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:referralConfig"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="referralStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NEW"/>
+      <xs:enumeration value="REGISTERED"/>
+      <xs:enumeration value="DEBIT_ORDER"/>
+      <xs:enumeration value="BANK_RESP"/>
+      <xs:enumeration value="COMMISSION_POSTED"/>
+      <xs:enumeration value="EXPIRED"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

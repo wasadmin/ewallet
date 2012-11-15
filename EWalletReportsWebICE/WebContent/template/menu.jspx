@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<ui:composition>
+		<link href="../theme/style.css" rel="stylesheet" type="text/css"/>
+		<ice:form>
+		<h3>Dashboard Home :</h3>
+		   <ul>
+				<li><ice:commandLink value="Home Page" action="#{menuBean.reportsHome}" rendered="#{menuBean.renderReportsHome}"></ice:commandLink></li>
+				<li><ice:commandLink value="Logout" action="#{loginBean.logout }"></ice:commandLink></li> 
+					 
+			</ul>
+			
+			<h3>Transactions :</h3>
+			<ul>
+			    <li><ice:commandLink value="Transaction Logs" action="#{menuBean.txnLogReport}" rendered="#{menuBean.renderTxnLog}"></ice:commandLink></li>
+				<li><ice:commandLink value="Transaction Failures" action="#{menuBean.failureByReasonReport}" rendered="#{menuBean.renderFailureByReasonReport}"></ice:commandLink></li>
+				<li><ice:commandLink value="Exceptions" action="#{menuBean.exceptionsReport}" rendered="#{menuBean.renderExceptionsReport}"></ice:commandLink></li>
+				<li><ice:commandLink value="Transaction Detail" action="#{menuBean.viewTransaction}" rendered="#{menuBean.renderViewTransaction}"></ice:commandLink></li>
+				
+			</ul>
+			<h3>Manual Intervention :</h3>
+			<ul>
+			    <li><ice:commandLink value="Mark Transaction Status" action="#{menuBean.initiateManualResolve}" rendered="#{menuBean.renderInitiateManualResolve}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Approve Manual Resolve" action="#{menuBean.approveManualResolve}" rendered="#{menuBean.renderApproveManualResolve}"></ice:commandLink></li>
+				<li><ice:commandLink value="Direct Postings" action="#{menuBean.queryResolution}" rendered="#{menuBean.renderqueryResolution}"></ice:commandLink></li>
+			
+			</ul>
+			<h3>Financial Statements :</h3>
+			<ul>
+			    <li><ice:commandLink value="Account Statements" action="#{menuBean.viewAccountStatementReport}" rendered="#{menuBean.renderViewAccountStatementReport}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Settlement Report" action="#{menuBean.settlementReport}" rendered="#{menuBean.renderSettlementReport}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Pool Account Statement" action="#{menuBean.poolControlAccountStatementReport}" rendered="#{menuBean.renderPoolControlAccountStatementReport}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Ewallet Balance Report" action="#{menuBean.viewEWalletBalanceStatementReport}" rendered="#{menuBean.renderEWalletBalanceReport}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Reconciliation Report" action="#{menuBean.reconciliationReport}" rendered="#{menuBean.renderReconciliationReport}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Auto Reconcile" action="#{menuBean.autoReconcile}" rendered="#{menuBean.renderAutoReconcile}"></ice:commandLink></li>
+			</ul>
+			<h3>Statistics :</h3>
+			<ul>
+				<li><ice:commandLink value="Customer" action="#{menuBean.customerRegStatisticsReport}" rendered="#{menuBean.renderCustomerRegStatisticsReport}"></ice:commandLink></li>
+				<li><ice:commandLink value="Mobile Profile" action="#{menuBean.mobileProfileRegStatisticsReport}" rendered="#{menuBean.renderMobileProfileRegStatisticsReport}"></ice:commandLink></li>
+				<li><ice:commandLink value="Bank Accounts" action="#{menuBean.bankAccountRegStatisticsReport}" rendered="#{menuBean.renderBankAccountRegStatisticsReport}"></ice:commandLink></li>
+				<li><ice:commandLink value="Bank Transactions" action="#{menuBean.bankStatisticsReport}" rendered="#{menuBean.renderBankStatisticsReport}"></ice:commandLink></li>
+				<li><ice:commandLink value="Transactions Totals" action="#{menuBean.transactionTotalsReport}" rendered="#{menuBean.renderTransactionTotalsReport}"></ice:commandLink></li>
+				<li><ice:commandLink value="Pin Generation" action="#{menuBean.pinGenerationReport}" rendered="#{menuBean.renderPinGenerationReport}"></ice:commandLink></li>
+				<li><ice:commandLink value="Logged On Users" action="#{menuBean.loggedOnUsersReport}" rendered="#{menuBean.renderLoggedOnUsersReport}"></ice:commandLink></li>
+				<li><ice:commandLink value="Audit Trail" action="#{menuBean.auditTrailReport}" rendered="#{menuBean.renderAuditTrailReport}"></ice:commandLink></li>
+			</ul>
+			<h3>Customers :</h3>
+			<ul>
+			    <li><ice:commandLink value="Registered Customers" action="#{menuBean.customersReport}" rendered="#{menuBean.renderCustomersReport}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Dormant Customers" action="#{menuBean.dormantCustomersReport}" rendered="#{menuBean.renderDormantCustomersReport}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Merchant Customers" action="#{menuBean.merchantCustomersReport}" rendered="#{menuBean.renderMerchantCustomersReport}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Top Customers By Choice" action="#{menuBean.topXCustomersReport}" rendered="#{menuBean.renderTopXCustomersReport}"></ice:commandLink></li>
+			</ul>
+			<h3>Cash and Revenue :</h3>
+			<ul>
+				<li><ice:commandLink value="E-Wallet Movement" action="#{menuBean.ewalletMovementReport}" rendered="#{menuBean.renderEwalletMovementReport}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Cash Movement" action="#{menuBean.cashMovementReport}" rendered="#{menuBean.renderCashMovementReport}"></ice:commandLink></li>
+			    <li><ice:commandLink value="Revenue Analysis" action="#{menuBean.commissionRevenueAnalysisReport}" rendered="#{menuBean.renderCommissionRevenueAnalysisReport}"></ice:commandLink></li>
+			</ul>
+			<h3>Commission :</h3>
+			<ul>
+			    <li><ice:commandLink value="Search Commission" action="#{menuBean.commissionListReport}" rendered="#{menuBean.renderCommissionListReport}"></ice:commandLink></li>
+			</ul>	
+			
+			</ice:form>	
+	</ui:composition>
+</html>

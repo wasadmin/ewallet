@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="MobileCommerceService" targetNamespace="http://services.web.ussd.esolutions.co.zw/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.web.ussd.esolutions.co.zw/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://services.web.ussd.esolutions.co.zw/" schemaLocation="MobileCommerceService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="validateAgentCustomerWithdrawal">
+    <part name="parameters" element="tns:validateAgentCustomerWithdrawal">
+    </part>
+  </message>
+  <message name="getTargetBankCodeForTargetAccount">
+    <part name="parameters" element="tns:getTargetBankCodeForTargetAccount">
+    </part>
+  </message>
+  <message name="getTransactionByUSSDSessionId">
+    <part name="parameters" element="tns:getTransactionByUSSDSessionId">
+    </part>
+  </message>
+  <message name="createTransactionResponse">
+    <part name="parameters" element="tns:createTransactionResponse">
+    </part>
+  </message>
+  <message name="getWebSessionByMobileAndBankAndStatus">
+    <part name="parameters" element="tns:getWebSessionByMobileAndBankAndStatus">
+    </part>
+  </message>
+  <message name="findTransaction">
+    <part name="parameters" element="tns:findTransaction">
+    </part>
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception">
+    </part>
+  </message>
+  <message name="updateWebSessionResponse">
+    <part name="parameters" element="tns:updateWebSessionResponse">
+    </part>
+  </message>
+  <message name="deleteWebSession">
+    <part name="parameters" element="tns:deleteWebSession">
+    </part>
+  </message>
+  <message name="findWebSessionById">
+    <part name="parameters" element="tns:findWebSessionById">
+    </part>
+  </message>
+  <message name="deleteTransaction">
+    <part name="parameters" element="tns:deleteTransaction">
+    </part>
+  </message>
+  <message name="validateAgentDepositResponse">
+    <part name="parameters" element="tns:validateAgentDepositResponse">
+    </part>
+  </message>
+  <message name="getActiveBankNamesResponse">
+    <part name="parameters" element="tns:getActiveBankNamesResponse">
+    </part>
+  </message>
+  <message name="sendTransaction">
+    <part name="parameters" element="tns:sendTransaction">
+    </part>
+  </message>
+  <message name="updateTransactionResponse">
+    <part name="parameters" element="tns:updateTransactionResponse">
+    </part>
+  </message>
+  <message name="getWebSessionByReferenceId">
+    <part name="parameters" element="tns:getWebSessionByReferenceId">
+    </part>
+  </message>
+  <message name="getAgentNumberByMobileNumberAndBankId">
+    <part name="parameters" element="tns:getAgentNumberByMobileNumberAndBankId">
+    </part>
+  </message>
+  <message name="getFailedWebSession">
+    <part name="parameters" element="tns:getFailedWebSession">
+    </part>
+  </message>
+  <message name="validateAgentTransferResponse">
+    <part name="parameters" element="tns:validateAgentTransferResponse">
+    </part>
+  </message>
+  <message name="createWebSession">
+    <part name="parameters" element="tns:createWebSession">
+    </part>
+  </message>
+  <message name="isNonHolderAccountResponse">
+    <part name="parameters" element="tns:isNonHolderAccountResponse">
+    </part>
+  </message>
+  <message name="isAgentMobile">
+    <part name="parameters" element="tns:isAgentMobile">
+    </part>
+  </message>
+  <message name="createTransaction">
+    <part name="parameters" element="tns:createTransaction">
+    </part>
+  </message>
+  <message name="validateAgentCustomerWithdrawalResponse">
+    <part name="parameters" element="tns:validateAgentCustomerWithdrawalResponse">
+    </part>
+  </message>
+  <message name="findTransactionResponse">
+    <part name="parameters" element="tns:findTransactionResponse">
+    </part>
+  </message>
+  <message name="getTargetBankCodeForTargetAccountResponse">
+    <part name="parameters" element="tns:getTargetBankCodeForTargetAccountResponse">
+    </part>
+  </message>
+  <message name="getTransactionByUSSDSessionIdResponse">
+    <part name="parameters" element="tns:getTransactionByUSSDSessionIdResponse">
+    </part>
+  </message>
+  <message name="updateWebSession">
+    <part name="parameters" element="tns:updateWebSession">
+    </part>
+  </message>
+  <message name="getWebSessionByMobileAndBankAndStatusResponse">
+    <part name="parameters" element="tns:getWebSessionByMobileAndBankAndStatusResponse">
+    </part>
+  </message>
+  <message name="deleteWebSessionResponse">
+    <part name="parameters" element="tns:deleteWebSessionResponse">
+    </part>
+  </message>
+  <message name="findWebSessionByIdResponse">
+    <part name="parameters" element="tns:findWebSessionByIdResponse">
+    </part>
+  </message>
+  <message name="validateAgentDeposit">
+    <part name="parameters" element="tns:validateAgentDeposit">
+    </part>
+  </message>
+  <message name="getActiveBankNames">
+    <part name="parameters" element="tns:getActiveBankNames">
+    </part>
+  </message>
+  <message name="getFailedWebSessionResponse">
+    <part name="parameters" element="tns:getFailedWebSessionResponse">
+    </part>
+  </message>
+  <message name="sendTransactionResponse">
+    <part name="parameters" element="tns:sendTransactionResponse">
+    </part>
+  </message>
+  <message name="deleteTransactionResponse">
+    <part name="parameters" element="tns:deleteTransactionResponse">
+    </part>
+  </message>
+  <message name="getAgentNumberByMobileNumberAndBankIdResponse">
+    <part name="parameters" element="tns:getAgentNumberByMobileNumberAndBankIdResponse">
+    </part>
+  </message>
+  <message name="updateTransaction">
+    <part name="parameters" element="tns:updateTransaction">
+    </part>
+  </message>
+  <message name="validateAgentTransfer">
+    <part name="parameters" element="tns:validateAgentTransfer">
+    </part>
+  </message>
+  <message name="getWebSessionByReferenceIdResponse">
+    <part name="parameters" element="tns:getWebSessionByReferenceIdResponse">
+    </part>
+  </message>
+  <message name="isNonHolderAccount">
+    <part name="parameters" element="tns:isNonHolderAccount">
+    </part>
+  </message>
+  <message name="isAgentMobileResponse">
+    <part name="parameters" element="tns:isAgentMobileResponse">
+    </part>
+  </message>
+  <message name="createWebSessionResponse">
+    <part name="parameters" element="tns:createWebSessionResponse">
+    </part>
+  </message>
+  <portType name="MobileCommerceService">
+    <operation name="createTransaction">
+      <input message="tns:createTransaction">
+    </input>
+      <output message="tns:createTransactionResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="updateTransaction">
+      <input message="tns:updateTransaction">
+    </input>
+      <output message="tns:updateTransactionResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="deleteTransaction">
+      <input message="tns:deleteTransaction">
+    </input>
+      <output message="tns:deleteTransactionResponse">
+    </output>
+      <fault name="Exception" message="tns:Exception">
+    </fault>
+    </operation>
+    <operation name="findTransaction">
+      <input message="tns:findTransaction">
+    </input>
+      <output message="tns:findTransactionResponse">
+    </output>
+    </operation>
+    <operation name="getTransactionByUSSDSessionId">
+      <input message="tns:getTransactionByUSSDSessionId">
+    </input>
+      <output message="tns:getTransactionByUSSDSessionIdResponse">
+    </output>
+    </operation>
+    <operation name="createWebSession">
+      <input message="tns:createWebSession">
+    </input>
+      <output message="tns:createWebSessionResponse">
+    </output>
+    </operation>
+    <operation name="deleteWebSession">
+      <input message="tns:deleteWebSession">
+    </input>
+      <output message="tns:deleteWebSessionResponse">
+    </output>
+    </operation>
+    <operation name="findWebSessionById">
+      <input message="tns:findWebSessionById">
+    </input>
+      <output message="tns:findWebSessionByIdResponse">
+    </output>
+    </operation>
+    <operation name="getFailedWebSession">
+      <input message="tns:getFailedWebSession">
+    </input>
+      <output message="tns:getFailedWebSessionResponse">
+    </output>
+    </operation>
+    <operation name="getWebSessionByReferenceId">
+      <input message="tns:getWebSessionByReferenceId">
+    </input>
+      <output message="tns:getWebSessionByReferenceIdResponse">
+    </output>
+    </operation>
+    <operation name="updateWebSession">
+      <input message="tns:updateWebSession">
+    </input>
+      <output message="tns:updateWebSessionResponse">
+    </output>
+    </operation>
+    <operation name="getWebSessionByMobileAndBankAndStatus">
+      <input message="tns:getWebSessionByMobileAndBankAndStatus">
+    </input>
+      <output message="tns:getWebSessionByMobileAndBankAndStatusResponse">
+    </output>
+    </operation>
+    <operation name="sendTransaction">
+      <input message="tns:sendTransaction">
+    </input>
+      <output message="tns:sendTransactionResponse">
+    </output>
+    </operation>
+    <operation name="getTargetBankCodeForTargetAccount">
+      <input message="tns:getTargetBankCodeForTargetAccount">
+    </input>
+      <output message="tns:getTargetBankCodeForTargetAccountResponse">
+    </output>
+    </operation>
+    <operation name="isAgentMobile">
+      <input message="tns:isAgentMobile">
+    </input>
+      <output message="tns:isAgentMobileResponse">
+    </output>
+    </operation>
+    <operation name="validateAgentDeposit">
+      <input message="tns:validateAgentDeposit">
+    </input>
+      <output message="tns:validateAgentDepositResponse">
+    </output>
+    </operation>
+    <operation name="validateAgentTransfer">
+      <input message="tns:validateAgentTransfer">
+    </input>
+      <output message="tns:validateAgentTransferResponse">
+    </output>
+    </operation>
+    <operation name="validateAgentCustomerWithdrawal">
+      <input message="tns:validateAgentCustomerWithdrawal">
+    </input>
+      <output message="tns:validateAgentCustomerWithdrawalResponse">
+    </output>
+    </operation>
+    <operation name="getAgentNumberByMobileNumberAndBankId">
+      <input message="tns:getAgentNumberByMobileNumberAndBankId">
+    </input>
+      <output message="tns:getAgentNumberByMobileNumberAndBankIdResponse">
+    </output>
+    </operation>
+    <operation name="isNonHolderAccount">
+      <input message="tns:isNonHolderAccount">
+    </input>
+      <output message="tns:isNonHolderAccountResponse">
+    </output>
+    </operation>
+    <operation name="getActiveBankNames">
+      <input message="tns:getActiveBankNames">
+    </input>
+      <output message="tns:getActiveBankNamesResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="MobileCommerceServiceSOAPBinding" type="tns:MobileCommerceService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTransactionByUSSDSessionId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="createWebSession">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="deleteWebSession">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="findWebSessionById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getFailedWebSession">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getWebSessionByReferenceId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="updateWebSession">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getWebSessionByMobileAndBankAndStatus">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="sendTransaction">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getTargetBankCodeForTargetAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="isAgentMobile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="validateAgentDeposit">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="validateAgentTransfer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="validateAgentCustomerWithdrawal">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getAgentNumberByMobileNumberAndBankId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="isNonHolderAccount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getActiveBankNames">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="MobileCommerceService">
+    <port name="MobileCommerceServiceSOAP" binding="tns:MobileCommerceServiceSOAPBinding">
+      <soap:address location="http://localhost:9081/MobileBankingServices/MobileCommerceService"/>
+    </port>
+  </service>
+</definitions>

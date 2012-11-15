@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.bookentryservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.bookentryservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="EWalletException" type="tns:EWalletException"/>
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="createAccountBalance" type="tns:createAccountBalance"/>
+
+  <xs:element name="createAccountBalanceResponse" type="tns:createAccountBalanceResponse"/>
+
+  <xs:element name="createTransaction" type="tns:createTransaction"/>
+
+  <xs:element name="createTransactionResponse" type="tns:createTransactionResponse"/>
+
+  <xs:element name="deleteAccountBalance" type="tns:deleteAccountBalance"/>
+
+  <xs:element name="deleteAccountBalanceResponse" type="tns:deleteAccountBalanceResponse"/>
+
+  <xs:element name="deleteTransaction" type="tns:deleteTransaction"/>
+
+  <xs:element name="deleteTransactionResponse" type="tns:deleteTransactionResponse"/>
+
+  <xs:element name="findAccountBalanceById" type="tns:findAccountBalanceById"/>
+
+  <xs:element name="findAccountBalanceByIdResponse" type="tns:findAccountBalanceByIdResponse"/>
+
+  <xs:element name="findAllAccountBalances" type="tns:findAllAccountBalances"/>
+
+  <xs:element name="findAllAccountBalancesResponse" type="tns:findAllAccountBalancesResponse"/>
+
+  <xs:element name="findAllTransactions" type="tns:findAllTransactions"/>
+
+  <xs:element name="findAllTransactionsResponse" type="tns:findAllTransactionsResponse"/>
+
+  <xs:element name="findTransactionById" type="tns:findTransactionById"/>
+
+  <xs:element name="findTransactionByIdResponse" type="tns:findTransactionByIdResponse"/>
+
+  <xs:element name="getAccountBalanceByAccount" type="tns:getAccountBalanceByAccount"/>
+
+  <xs:element name="getAccountBalanceByAccountAndDate" type="tns:getAccountBalanceByAccountAndDate"/>
+
+  <xs:element name="getAccountBalanceByAccountAndDateResponse" type="tns:getAccountBalanceByAccountAndDateResponse"/>
+
+  <xs:element name="getAccountBalanceByAccountResponse" type="tns:getAccountBalanceByAccountResponse"/>
+
+  <xs:element name="updateAccountBalance" type="tns:updateAccountBalance"/>
+
+  <xs:element name="updateAccountBalanceResponse" type="tns:updateAccountBalanceResponse"/>
+
+  <xs:element name="updateTransaction" type="tns:updateTransaction"/>
+
+  <xs:element name="updateTransactionResponse" type="tns:updateTransactionResponse"/>
+
+  <xs:complexType name="getAccountBalanceByAccountAndDate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAccountBalanceByAccountAndDateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:accountBalance"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="accountBalance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountId" type="xs:string"/>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element minOccurs="0" name="balanceDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transaction" type="tns:transaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="transaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountId" type="xs:string"/>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="narrative" type="xs:string"/>
+      <xs:element minOccurs="0" name="processTxnReference" type="xs:string"/>
+      <xs:element minOccurs="0" name="transactionDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="type" type="tns:transactionType"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EWalletException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findTransactionById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findTransactionByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAccountBalanceByAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAccountBalanceByAccountResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:accountBalance"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transaction" type="tns:transaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllAccountBalances">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllAccountBalancesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:accountBalance"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllTransactions">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllTransactionsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:transaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateAccountBalance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountBalance" type="tns:accountBalance"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateAccountBalanceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:accountBalance"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAccountBalanceById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountBalanceId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAccountBalanceByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:accountBalance"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteAccountBalance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountBalanceId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteAccountBalanceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createAccountBalance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountBalance" type="tns:accountBalance"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createAccountBalanceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:accountBalance"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="transactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PIN"/>
+      <xs:enumeration value="TOPUP"/>
+      <xs:enumeration value="DEPOSIT"/>
+      <xs:enumeration value="WITHDRAWAL"/>
+      <xs:enumeration value="WITHDRAWAL_NONHOLDER"/>
+      <xs:enumeration value="BALANCE"/>
+      <xs:enumeration value="PASSCODE"/>
+      <xs:enumeration value="CUSTOMER_ACTIVATION"/>
+      <xs:enumeration value="CHANGE_PASSCODE"/>
+      <xs:enumeration value="MINI_STATEMENT"/>
+      <xs:enumeration value="REFERRAL"/>
+      <xs:enumeration value="TARIFF"/>
+      <xs:enumeration value="EWALLET_TO_NON_HOLDER_TRANSFER"/>
+      <xs:enumeration value="BANKACCOUNT_TO_EWALLET_TRANSFER"/>
+      <xs:enumeration value="BANKACCOUNT_TO_NONHOLDER_TRANSFER"/>
+      <xs:enumeration value="EWALLET_TO_EWALLET_TRANSFER"/>
+      <xs:enumeration value="EWALLET_TO_BANKACCOUNT_TRANSFER"/>
+      <xs:enumeration value="BALANCE_REQUEST"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

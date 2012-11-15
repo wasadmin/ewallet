@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.alertsservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.alertsservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="approveAlertOption" type="tns:approveAlertOption"/>
+
+  <xs:element name="approveAlertOptionResponse" type="tns:approveAlertOptionResponse"/>
+
+  <xs:element name="approveTransactionType" type="tns:approveTransactionType"/>
+
+  <xs:element name="approveTransactionTypeResponse" type="tns:approveTransactionTypeResponse"/>
+
+  <xs:element name="createAlertOption" type="tns:createAlertOption"/>
+
+  <xs:element name="createAlertOptionResponse" type="tns:createAlertOptionResponse"/>
+
+  <xs:element name="createAlertOptionsForAccount" type="tns:createAlertOptionsForAccount"/>
+
+  <xs:element name="createAlertOptionsForAccountResponse" type="tns:createAlertOptionsForAccountResponse"/>
+
+  <xs:element name="createTransactionType" type="tns:createTransactionType"/>
+
+  <xs:element name="createTransactionTypeResponse" type="tns:createTransactionTypeResponse"/>
+
+  <xs:element name="deleteAlertOption" type="tns:deleteAlertOption"/>
+
+  <xs:element name="deleteAlertOptionResponse" type="tns:deleteAlertOptionResponse"/>
+
+  <xs:element name="deleteTransactionType" type="tns:deleteTransactionType"/>
+
+  <xs:element name="deleteTransactionTypeResponse" type="tns:deleteTransactionTypeResponse"/>
+
+  <xs:element name="disableAlertOption" type="tns:disableAlertOption"/>
+
+  <xs:element name="disableAlertOptionResponse" type="tns:disableAlertOptionResponse"/>
+
+  <xs:element name="disableTransactionType" type="tns:disableTransactionType"/>
+
+  <xs:element name="disableTransactionTypeResponse" type="tns:disableTransactionTypeResponse"/>
+
+  <xs:element name="editAlertOption" type="tns:editAlertOption"/>
+
+  <xs:element name="editAlertOptionResponse" type="tns:editAlertOptionResponse"/>
+
+  <xs:element name="editTransactionType" type="tns:editTransactionType"/>
+
+  <xs:element name="editTransactionTypeResponse" type="tns:editTransactionTypeResponse"/>
+
+  <xs:element name="enableAlertOption" type="tns:enableAlertOption"/>
+
+  <xs:element name="enableAlertOptionResponse" type="tns:enableAlertOptionResponse"/>
+
+  <xs:element name="enableTransactionType" type="tns:enableTransactionType"/>
+
+  <xs:element name="enableTransactionTypeResponse" type="tns:enableTransactionTypeResponse"/>
+
+  <xs:element name="findAlertOptionById" type="tns:findAlertOptionById"/>
+
+  <xs:element name="findAlertOptionByIdResponse" type="tns:findAlertOptionByIdResponse"/>
+
+  <xs:element name="findTransactionType" type="tns:findTransactionType"/>
+
+  <xs:element name="findTransactionTypeResponse" type="tns:findTransactionTypeResponse"/>
+
+  <xs:element name="getAlertOptionByBankAccountAndMobileProfileAndTransactionType" type="tns:getAlertOptionByBankAccountAndMobileProfileAndTransactionType"/>
+
+  <xs:element name="getAlertOptionByBankAccountAndMobileProfileAndTransactionTypeResponse" type="tns:getAlertOptionByBankAccountAndMobileProfileAndTransactionTypeResponse"/>
+
+  <xs:element name="getAlertOptionByBankAccountId" type="tns:getAlertOptionByBankAccountId"/>
+
+  <xs:element name="getAlertOptionByBankAccountIdResponse" type="tns:getAlertOptionByBankAccountIdResponse"/>
+
+  <xs:element name="getAlertOptionByMobileProfileId" type="tns:getAlertOptionByMobileProfileId"/>
+
+  <xs:element name="getAlertOptionByMobileProfileIdResponse" type="tns:getAlertOptionByMobileProfileIdResponse"/>
+
+  <xs:element name="getAlertOptionByStatus" type="tns:getAlertOptionByStatus"/>
+
+  <xs:element name="getAlertOptionByStatusResponse" type="tns:getAlertOptionByStatusResponse"/>
+
+  <xs:element name="getAlertOptionByTransationTypeId" type="tns:getAlertOptionByTransationTypeId"/>
+
+  <xs:element name="getAlertOptionByTransationTypeIdResponse" type="tns:getAlertOptionByTransationTypeIdResponse"/>
+
+  <xs:element name="getAllTransactionTypes" type="tns:getAllTransactionTypes"/>
+
+  <xs:element name="getAllTransactionTypesResponse" type="tns:getAllTransactionTypesResponse"/>
+
+  <xs:element name="getTransactionTypeByAlertOption" type="tns:getTransactionTypeByAlertOption"/>
+
+  <xs:element name="getTransactionTypeByAlertOptionResponse" type="tns:getTransactionTypeByAlertOptionResponse"/>
+
+  <xs:element name="getTransactionTypeByCode" type="tns:getTransactionTypeByCode"/>
+
+  <xs:element name="getTransactionTypeByCodeResponse" type="tns:getTransactionTypeByCodeResponse"/>
+
+  <xs:element name="getTransactionTypeByStatus" type="tns:getTransactionTypeByStatus"/>
+
+  <xs:element name="getTransactionTypeByStatusResponse" type="tns:getTransactionTypeByStatusResponse"/>
+
+  <xs:element name="rejectAlertOption" type="tns:rejectAlertOption"/>
+
+  <xs:element name="rejectAlertOptionResponse" type="tns:rejectAlertOptionResponse"/>
+
+  <xs:element name="rejectTransactionType" type="tns:rejectTransactionType"/>
+
+  <xs:element name="rejectTransactionTypeResponse" type="tns:rejectTransactionTypeResponse"/>
+
+  <xs:complexType name="getTransactionTypeByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:transactionTypeStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTransactionTypeByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="transactionType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="alertOptions" nillable="true" type="tns:alertOption"/>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionTypeStatus"/>
+      <xs:element minOccurs="0" name="transactionCode" type="xs:string"/>
+      <xs:element name="version" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="alertOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankAccountId" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileProfileId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:alertOptionStatus"/>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element name="version" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTransactionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteTransactionTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editTransactionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editTransactionTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createAlertOptionsForAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountId" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileProfileId" type="xs:string"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createAlertOptionsForAccountResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAlertOptionByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:alertOptionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlertOptionByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAllTransactionTypes">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllTransactionTypesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteAlertOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alertOption" type="tns:alertOption"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteAlertOptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTransactionTypeByCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionTypeCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTransactionTypeByCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editAlertOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alertOption" type="tns:alertOption"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editAlertOptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectTransactionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectTransactionTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createTransactionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createTransactionTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlertOptionByMobileProfileId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mobileProfileId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlertOptionByMobileProfileIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectAlertOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alertOption" type="tns:alertOption"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectAlertOptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createAlertOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alertOption" type="tns:alertOption"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createAlertOptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disableAlertOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alertOption" type="tns:alertOption"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disableAlertOptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAlertOptionById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alertOptionId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAlertOptionByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveTransactionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveTransactionTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="enableAlertOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alertOption" type="tns:alertOption"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="enableAlertOptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveAlertOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alertOption" type="tns:alertOption"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveAlertOptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTransactionTypeByAlertOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alertOption" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTransactionTypeByAlertOptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlertOptionByBankAccountId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankAccountId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlertOptionByBankAccountIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findTransactionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionTypeId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findTransactionTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlertOptionByBankAccountAndMobileProfileAndTransactionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankAccountId" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileProfileId" type="xs:string"/>
+      <xs:element minOccurs="0" name="transactionTypeId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlertOptionByBankAccountAndMobileProfileAndTransactionTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disableTransactionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disableTransactionTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlertOptionByTransationTypeId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionTypeId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAlertOptionByTransationTypeIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:alertOption"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="enableTransactionType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="username" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="enableTransactionTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="transactionTypeStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ENABLED"/>
+      <xs:enumeration value="DISABLED"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="alertOptionStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="DISABLED"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

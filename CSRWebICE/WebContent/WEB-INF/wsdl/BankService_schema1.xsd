@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://service.bankservices.ewallet.esolutions.co.zw/" version="1.0" xmlns:tns="http://service.bankservices.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="approveBank" type="tns:approveBank"/>
+
+  <xs:element name="approveBankAccount" type="tns:approveBankAccount"/>
+
+  <xs:element name="approveBankAccountResponse" type="tns:approveBankAccountResponse"/>
+
+  <xs:element name="approveBankBranch" type="tns:approveBankBranch"/>
+
+  <xs:element name="approveBankBranchResponse" type="tns:approveBankBranchResponse"/>
+
+  <xs:element name="approveBankResponse" type="tns:approveBankResponse"/>
+
+  <xs:element name="createBank" type="tns:createBank"/>
+
+  <xs:element name="createBankAccount" type="tns:createBankAccount"/>
+
+  <xs:element name="createBankAccountResponse" type="tns:createBankAccountResponse"/>
+
+  <xs:element name="createBankBranch" type="tns:createBankBranch"/>
+
+  <xs:element name="createBankBranchResponse" type="tns:createBankBranchResponse"/>
+
+  <xs:element name="createBankResponse" type="tns:createBankResponse"/>
+
+  <xs:element name="deRegisterBankAccountsByOwnerId" type="tns:deRegisterBankAccountsByOwnerId"/>
+
+  <xs:element name="deRegisterBankAccountsByOwnerIdResponse" type="tns:deRegisterBankAccountsByOwnerIdResponse"/>
+
+  <xs:element name="deleteBank" type="tns:deleteBank"/>
+
+  <xs:element name="deleteBankAccount" type="tns:deleteBankAccount"/>
+
+  <xs:element name="deleteBankAccountResponse" type="tns:deleteBankAccountResponse"/>
+
+  <xs:element name="deleteBankBranch" type="tns:deleteBankBranch"/>
+
+  <xs:element name="deleteBankBranchResponse" type="tns:deleteBankBranchResponse"/>
+
+  <xs:element name="deleteBankResponse" type="tns:deleteBankResponse"/>
+
+  <xs:element name="editBank" type="tns:editBank"/>
+
+  <xs:element name="editBankAccount" type="tns:editBankAccount"/>
+
+  <xs:element name="editBankAccountResponse" type="tns:editBankAccountResponse"/>
+
+  <xs:element name="editBankBranch" type="tns:editBankBranch"/>
+
+  <xs:element name="editBankBranchResponse" type="tns:editBankBranchResponse"/>
+
+  <xs:element name="editBankResponse" type="tns:editBankResponse"/>
+
+  <xs:element name="findBankAccountById" type="tns:findBankAccountById"/>
+
+  <xs:element name="findBankAccountByIdResponse" type="tns:findBankAccountByIdResponse"/>
+
+  <xs:element name="findBankBranchById" type="tns:findBankBranchById"/>
+
+  <xs:element name="findBankBranchByIdResponse" type="tns:findBankBranchByIdResponse"/>
+
+  <xs:element name="findBankById" type="tns:findBankById"/>
+
+  <xs:element name="findBankByIdResponse" type="tns:findBankByIdResponse"/>
+
+  <xs:element name="getBank" type="tns:getBank"/>
+
+  <xs:element name="getBankAccount" type="tns:getBankAccount"/>
+
+  <xs:element name="getBankAccountByAccountHolderAndTypeAndOwnerType" type="tns:getBankAccountByAccountHolderAndTypeAndOwnerType"/>
+
+  <xs:element name="getBankAccountByAccountHolderAndTypeAndOwnerTypeResponse" type="tns:getBankAccountByAccountHolderAndTypeAndOwnerTypeResponse"/>
+
+  <xs:element name="getBankAccountByAccountHolderIdAndOwnerType" type="tns:getBankAccountByAccountHolderIdAndOwnerType"/>
+
+  <xs:element name="getBankAccountByAccountHolderIdAndOwnerTypeResponse" type="tns:getBankAccountByAccountHolderIdAndOwnerTypeResponse"/>
+
+  <xs:element name="getBankAccountByAccountNumberAndOwnerType" type="tns:getBankAccountByAccountNumberAndOwnerType"/>
+
+  <xs:element name="getBankAccountByAccountNumberAndOwnerTypeResponse" type="tns:getBankAccountByAccountNumberAndOwnerTypeResponse"/>
+
+  <xs:element name="getBankAccountByBank" type="tns:getBankAccountByBank"/>
+
+  <xs:element name="getBankAccountByBankResponse" type="tns:getBankAccountByBankResponse"/>
+
+  <xs:element name="getBankAccountByBranch" type="tns:getBankAccountByBranch"/>
+
+  <xs:element name="getBankAccountByBranchResponse" type="tns:getBankAccountByBranchResponse"/>
+
+  <xs:element name="getBankAccountByLevel" type="tns:getBankAccountByLevel"/>
+
+  <xs:element name="getBankAccountByLevelAndStatus" type="tns:getBankAccountByLevelAndStatus"/>
+
+  <xs:element name="getBankAccountByLevelAndStatusResponse" type="tns:getBankAccountByLevelAndStatusResponse"/>
+
+  <xs:element name="getBankAccountByLevelResponse" type="tns:getBankAccountByLevelResponse"/>
+
+  <xs:element name="getBankAccountByStatus" type="tns:getBankAccountByStatus"/>
+
+  <xs:element name="getBankAccountByStatusAndOwnerType" type="tns:getBankAccountByStatusAndOwnerType"/>
+
+  <xs:element name="getBankAccountByStatusAndOwnerTypeResponse" type="tns:getBankAccountByStatusAndOwnerTypeResponse"/>
+
+  <xs:element name="getBankAccountByStatusResponse" type="tns:getBankAccountByStatusResponse"/>
+
+  <xs:element name="getBankAccountByType" type="tns:getBankAccountByType"/>
+
+  <xs:element name="getBankAccountByTypeResponse" type="tns:getBankAccountByTypeResponse"/>
+
+  <xs:element name="getBankAccountResponse" type="tns:getBankAccountResponse"/>
+
+  <xs:element name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatus" type="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatus"/>
+
+  <xs:element name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountType" type="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountType"/>
+
+  <xs:element name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountTypeResponse" type="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountTypeResponse"/>
+
+  <xs:element name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusResponse" type="tns:getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusResponse"/>
+
+  <xs:element name="getBankAccountsByAccountNumber" type="tns:getBankAccountsByAccountNumber"/>
+
+  <xs:element name="getBankAccountsByAccountNumberResponse" type="tns:getBankAccountsByAccountNumberResponse"/>
+
+  <xs:element name="getBankBranch" type="tns:getBankBranch"/>
+
+  <xs:element name="getBankBranchByBank" type="tns:getBankBranchByBank"/>
+
+  <xs:element name="getBankBranchByBankResponse" type="tns:getBankBranchByBankResponse"/>
+
+  <xs:element name="getBankBranchByCode" type="tns:getBankBranchByCode"/>
+
+  <xs:element name="getBankBranchByCodeResponse" type="tns:getBankBranchByCodeResponse"/>
+
+  <xs:element name="getBankBranchByName" type="tns:getBankBranchByName"/>
+
+  <xs:element name="getBankBranchByNameResponse" type="tns:getBankBranchByNameResponse"/>
+
+  <xs:element name="getBankBranchByStatus" type="tns:getBankBranchByStatus"/>
+
+  <xs:element name="getBankBranchByStatusResponse" type="tns:getBankBranchByStatusResponse"/>
+
+  <xs:element name="getBankBranchResponse" type="tns:getBankBranchResponse"/>
+
+  <xs:element name="getBankByCode" type="tns:getBankByCode"/>
+
+  <xs:element name="getBankByCodeResponse" type="tns:getBankByCodeResponse"/>
+
+  <xs:element name="getBankByName" type="tns:getBankByName"/>
+
+  <xs:element name="getBankByNameResponse" type="tns:getBankByNameResponse"/>
+
+  <xs:element name="getBankByStatus" type="tns:getBankByStatus"/>
+
+  <xs:element name="getBankByStatusResponse" type="tns:getBankByStatusResponse"/>
+
+  <xs:element name="getBankResponse" type="tns:getBankResponse"/>
+
+  <xs:element name="getPrimaryAccountByAccountHolderIdAndOwnerType" type="tns:getPrimaryAccountByAccountHolderIdAndOwnerType"/>
+
+  <xs:element name="getPrimaryAccountByAccountHolderIdAndOwnerTypeResponse" type="tns:getPrimaryAccountByAccountHolderIdAndOwnerTypeResponse"/>
+
+  <xs:element name="rejectBankAccount" type="tns:rejectBankAccount"/>
+
+  <xs:element name="rejectBankAccountResponse" type="tns:rejectBankAccountResponse"/>
+
+  <xs:element name="rejectBankBranch" type="tns:rejectBankBranch"/>
+
+  <xs:element name="rejectBankBranchResponse" type="tns:rejectBankBranchResponse"/>
+
+  <xs:complexType name="approveBankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankAccount" type="tns:bankAccount"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountClass" type="tns:bankAccountClass"/>
+      <xs:element minOccurs="0" name="accountHolderId" type="xs:string"/>
+      <xs:element minOccurs="0" name="accountName" type="xs:string"/>
+      <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+      <xs:element name="approvable" type="xs:boolean"/>
+      <xs:element name="bankAccRenderApprovable" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="bankAccountLastBranch" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankReferenceId" type="xs:string"/>
+      <xs:element minOccurs="0" name="branch" type="tns:bankBranch"/>
+      <xs:element minOccurs="0" name="cardNumber" type="xs:string"/>
+      <xs:element name="cardSequence" type="xs:int"/>
+      <xs:element minOccurs="0" name="code" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="level" type="tns:bankAccountLevel"/>
+      <xs:element minOccurs="0" name="ownerType" type="tns:ownerType"/>
+      <xs:element name="primaryAccount" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="registrationBranchId" type="xs:string"/>
+      <xs:element name="runningBalance" type="xs:long"/>
+      <xs:element minOccurs="0" name="status" type="tns:bankAccountStatus"/>
+      <xs:element minOccurs="0" name="type" type="tns:bankAccountType"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bankBranch">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="accounts" nillable="true" type="tns:bankAccount"/>
+      <xs:element minOccurs="0" name="bank" type="tns:bank"/>
+      <xs:element minOccurs="0" name="code" type="xs:string"/>
+      <xs:element minOccurs="0" name="contactDetailsId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:bankBranchStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bank">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="branches" nillable="true" type="tns:bankBranch"/>
+      <xs:element minOccurs="0" name="code" type="xs:string"/>
+      <xs:element minOccurs="0" name="contactDetailsId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:bankStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveBankAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findBankById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findBankByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bank"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bank" type="tns:bank"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteBankResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankBranchByBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankBranchByBankResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankBranch"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByAccountHolderAndTypeAndOwnerType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountHolderId" type="xs:string"/>
+      <xs:element minOccurs="0" name="type" type="tns:bankAccountType"/>
+      <xs:element minOccurs="0" name="ownerType" type="tns:ownerType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByAccountHolderAndTypeAndOwnerTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountHolderId" type="xs:string"/>
+      <xs:element minOccurs="0" name="ownerType" type="tns:ownerType"/>
+      <xs:element minOccurs="0" name="status" type="tns:bankAccountStatus"/>
+      <xs:element minOccurs="0" name="bankAAccountType" type="tns:bankAccountType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusAndBankAccountTypeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountHolderId" type="xs:string"/>
+      <xs:element minOccurs="0" name="ownerType" type="tns:ownerType"/>
+      <xs:element minOccurs="0" name="status" type="tns:bankAccountStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountsByAccountHolderIdAndOwnerTypeAndStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteBankBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankBranch" type="tns:bankBranch"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteBankBranchResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findBankBranchById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findBankBranchByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankBranch"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findBankAccountById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findBankAccountByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByBranchResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankByName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankByNameResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bank"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankBranchByName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankBranchByNameResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankBranch"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deRegisterBankAccountsByOwnerId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ownerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deRegisterBankAccountsByOwnerIdResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByLevel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="level" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByLevelResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByAccountHolderIdAndOwnerType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountHolderId" type="xs:string"/>
+      <xs:element minOccurs="0" name="ownerType" type="tns:ownerType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByAccountHolderIdAndOwnerTypeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bank" type="tns:bank"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createBankResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bank"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createBankBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankBranch" type="tns:bankBranch"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createBankBranchResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankBranch"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccount">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:bankAccountStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bank" type="tns:bank"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editBankResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bank"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteBankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankAccount" type="tns:bankAccount"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteBankAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountsByAccountNumber">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankAccountNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountsByAccountNumberResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editBankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankAccount" type="tns:bankAccount"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editBankAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="type" type="tns:bankAccountType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByTypeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByBankResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editBankBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankBranch" type="tns:bankBranch"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editBankBranchResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankBranch"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveBank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bank" type="tns:bank"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveBankResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bank"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveBankBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankBranch" type="tns:bankBranch"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveBankBranchResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankBranch"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankBranch">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getBankBranchResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankBranch"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createBankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankAccount" type="tns:bankAccount"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createBankAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankByCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="code" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankByCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bank"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByLevelAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:bankAccountLevel"/>
+      <xs:element minOccurs="0" name="arg1" type="tns:bankAccountStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByLevelAndStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPrimaryAccountByAccountHolderIdAndOwnerType">
+    <xs:sequence>
+      <xs:element name="isPrimaryAccount" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="accountHolderId" type="xs:string"/>
+      <xs:element minOccurs="0" name="ownerType" type="tns:ownerType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPrimaryAccountByAccountHolderIdAndOwnerTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBank">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getBankResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bank"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectBankAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankAccount" type="tns:bankAccount"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectBankAccountResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectBankBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankBranch" type="tns:bankBranch"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rejectBankBranchResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankBranch"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankBranchByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:bankBranchStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankBranchByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankBranch"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankBranchByCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="code" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankBranchByCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankBranch"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByStatusAndOwnerType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:bankAccountStatus"/>
+      <xs:element minOccurs="0" name="ownerType" type="tns:ownerType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByStatusAndOwnerTypeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByAccountNumberAndOwnerType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="ownerType" type="tns:ownerType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankAccountByAccountNumberAndOwnerTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bankAccount"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:bankStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getBankByStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bank"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="bankAccountClass">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NONE"/>
+      <xs:enumeration value="SYSTEM"/>
+      <xs:enumeration value="BRONZE"/>
+      <xs:enumeration value="SILVER"/>
+      <xs:enumeration value="GOLD"/>
+      <xs:enumeration value="PLATINUM"/>
+      <xs:enumeration value="DIAMOND"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="DISABLED"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankBranchStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="DISABLED"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankAccountLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INDIVIDUAL"/>
+      <xs:enumeration value="CORPORATE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ownerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BANK"/>
+      <xs:enumeration value="BANK_BRANCH"/>
+      <xs:enumeration value="AGENT"/>
+      <xs:enumeration value="CUSTOMER"/>
+      <xs:enumeration value="MERCHANT"/>
+      <xs:enumeration value="BANK_MERCHANT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankAccountStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DRAFT"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="INACTIVE"/>
+      <xs:enumeration value="SUSPENDED"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="bankAccountType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="E_WALLET"/>
+      <xs:enumeration value="POOL_CONTROL"/>
+      <xs:enumeration value="TARIFFS_CONTROL"/>
+      <xs:enumeration value="AGENT_CONTROL"/>
+      <xs:enumeration value="AGENT_COMMISSION_CONTROL"/>
+      <xs:enumeration value="PAYOUT_CONTROL"/>
+      <xs:enumeration value="BANK_SUSPENSE"/>
+      <xs:enumeration value="MERCHANT_SUSPENSE"/>
+      <xs:enumeration value="SAVINGS"/>
+      <xs:enumeration value="TOPUP_SUSPENSE_ACCOUNT"/>
+      <xs:enumeration value="CURRENT"/>
+      <xs:enumeration value="CHEQUE"/>
+      <xs:enumeration value="BRANCH_CASH_ACCOUNT"/>
+      <xs:enumeration value="EWALLET_BRANCH_CASH_ACCOUNT"/>
+      <xs:enumeration value="EWALLET_BALANCING_SUSPENSE_ACCOUNT"/>
+      <xs:enumeration value="MOBILE_TO_BANK_CONTROL"/>
+      <xs:enumeration value="BANK_TO_MOBILE_CONTROL"/>
+      <xs:enumeration value="BANK_TO_NON_MOBILE_CONTROL"/>
+      <xs:enumeration value="EWALLET_TRANSACTION_ACCOUNT"/>
+      <xs:enumeration value="EWALLET_COMMISSION_ACCOUNT"/>
+      <xs:enumeration value="SUSPENSE"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

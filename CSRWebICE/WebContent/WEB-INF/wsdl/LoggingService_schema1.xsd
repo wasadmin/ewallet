@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://loggingservices.maas.esolutions.co.zw/" version="1.0" xmlns:tns="http://loggingservices.maas.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="approve" type="tns:approve"/>
+
+  <xs:element name="approveResponse" type="tns:approveResponse"/>
+
+  <xs:element name="createActivity" type="tns:createActivity"/>
+
+  <xs:element name="createActivityResponse" type="tns:createActivityResponse"/>
+
+  <xs:element name="createLog" type="tns:createLog"/>
+
+  <xs:element name="createLogResponse" type="tns:createLogResponse"/>
+
+  <xs:element name="deleteLog" type="tns:deleteLog"/>
+
+  <xs:element name="deleteLogResponse" type="tns:deleteLogResponse"/>
+
+  <xs:element name="disapprove" type="tns:disapprove"/>
+
+  <xs:element name="disapproveResponse" type="tns:disapproveResponse"/>
+
+  <xs:element name="findActivityById" type="tns:findActivityById"/>
+
+  <xs:element name="findActivityByIdResponse" type="tns:findActivityByIdResponse"/>
+
+  <xs:element name="findActivityByName" type="tns:findActivityByName"/>
+
+  <xs:element name="findActivityByNameResponse" type="tns:findActivityByNameResponse"/>
+
+  <xs:element name="findAllActivities" type="tns:findAllActivities"/>
+
+  <xs:element name="findAllActivitiesPendingApproval" type="tns:findAllActivitiesPendingApproval"/>
+
+  <xs:element name="findAllActivitiesPendingApprovalResponse" type="tns:findAllActivitiesPendingApprovalResponse"/>
+
+  <xs:element name="findAllActivitiesResponse" type="tns:findAllActivitiesResponse"/>
+
+  <xs:element name="findLog" type="tns:findLog"/>
+
+  <xs:element name="findLogByActivityName" type="tns:findLogByActivityName"/>
+
+  <xs:element name="findLogByActivityNameResponse" type="tns:findLogByActivityNameResponse"/>
+
+  <xs:element name="findLogByAll" type="tns:findLogByAll"/>
+
+  <xs:element name="findLogByAllResponse" type="tns:findLogByAllResponse"/>
+
+  <xs:element name="findLogByEntityIdAndEntityType" type="tns:findLogByEntityIdAndEntityType"/>
+
+  <xs:element name="findLogByEntityIdAndEntityTypeAndDateRange" type="tns:findLogByEntityIdAndEntityTypeAndDateRange"/>
+
+  <xs:element name="findLogByEntityIdAndEntityTypeAndDateRangeResponse" type="tns:findLogByEntityIdAndEntityTypeAndDateRangeResponse"/>
+
+  <xs:element name="findLogByEntityIdAndEntityTypeResponse" type="tns:findLogByEntityIdAndEntityTypeResponse"/>
+
+  <xs:element name="findLogResponse" type="tns:findLogResponse"/>
+
+  <xs:element name="findLogsByUserName" type="tns:findLogsByUserName"/>
+
+  <xs:element name="findLogsByUserNameResponse" type="tns:findLogsByUserNameResponse"/>
+
+  <xs:element name="logActivity" type="tns:logActivity"/>
+
+  <xs:element name="logActivityResponse" type="tns:logActivityResponse"/>
+
+  <xs:element name="updateActivity" type="tns:updateActivity"/>
+
+  <xs:element name="updateActivityResponse" type="tns:updateActivityResponse"/>
+
+  <xs:element name="updateLog" type="tns:updateLog"/>
+
+  <xs:element name="updateLogResponse" type="tns:updateLogResponse"/>
+
+  <xs:complexType name="findAllActivitiesPendingApproval">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllActivitiesPendingApprovalResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="activity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element name="logged" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="logs" nillable="true" type="tns:log"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:activityStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="log">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activity" type="tns:activity"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="details" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityId" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityType" type="xs:string"/>
+      <xs:element minOccurs="0" name="instanceName" type="xs:string"/>
+      <xs:element minOccurs="0" name="logId" type="xs:string"/>
+      <xs:element minOccurs="0" name="timestamp" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+      <xs:element name="version" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approve">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activityId" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLogByEntityIdAndEntityTypeAndDateRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entityId" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityType" type="xs:string"/>
+      <xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLogByEntityIdAndEntityTypeAndDateRangeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:log"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="logId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLogResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:log"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activity" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createActivityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findActivityByName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activityName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findActivityByNameResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="log" type="tns:log"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createLogResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:log"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLogsByUserName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLogsByUserNameResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:log"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAllActivities">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllActivitiesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLogByEntityIdAndEntityType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entityId" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityType" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLogByEntityIdAndEntityTypeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:log"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="logActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+      <xs:element minOccurs="0" name="activityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityId" type="xs:string"/>
+      <xs:element minOccurs="0" name="entityType" type="xs:string"/>
+      <xs:element minOccurs="0" name="oldObject" type="xs:string"/>
+      <xs:element minOccurs="0" name="newObject" type="xs:string"/>
+      <xs:element minOccurs="0" name="instanceName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="logActivityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:log"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLogByAll">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entityType" type="xs:string"/>
+      <xs:element minOccurs="0" name="action" type="xs:string"/>
+      <xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLogByAllResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:log"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapprove">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activityId" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLogByActivityName">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activityName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findLogByActivityNameResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:log"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="log" type="tns:log"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateLogResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:log"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findActivityById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activityId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findActivityByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="logId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteLogResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="updateActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activity" type="tns:activity"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateActivityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:activity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="activityStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="PENDING_APPROVAL"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

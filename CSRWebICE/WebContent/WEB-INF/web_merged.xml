@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?><web-app id="WebApp_ID" version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>CSRWebICE</display-name>
+    <context-param>
+        <description>The location where state information is saved.
+Valid values are 'server' (typically saved in HttpSession) and 'client' (typically
+saved as a hidden field in the form.
+Default is server.</description>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>server</param-value>
+    </context-param>
+    <context-param>
+        <description>Comma-delimited list of context-relative resource paths under which the JSF implementation
+will look for application configuration resources, before loading a configuration resource
+named /WEB-INF/facesconfig.xml (if such a resource exists).</description>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/WEB-INF/faces-config.xml</param-value>
+    </context-param>
+    <context-param>
+        <description>The default suffix for extension-mapped resources that contain JSF components.
+Default is '.jsp'.</description>
+        <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+        <param-value>.jspx</param-value>
+    </context-param>
+    <context-param>
+        <description>Monitors Faces JSP files for modifications and synchronizes a running server with
+the changes without restarting the server. If this parameter is set to false or
+removed from the deployment descriptor, any changes made to Faces JSP files may
+not be seen by the server until it is restarted. This parameter is usually set
+to true while the Faces JSP files are being developed and debugged in order to
+improve the performance of the development environment.</description>
+        <param-name>com.ibm.ws.jsf.JSP_UPDATE_CHECK</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <description>Load JSF runtime when the application server starts up. If this parameter is set to false or removed,
+JSF runtime will be loaded and initialized when the first JSF request is processed.
+This may disable custom JSF extensions, such as factories defined in the project.</description>
+        <param-name>com.ibm.ws.jsf.LOAD_FACES_CONFIG_AT_STARTUP</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <description>To allow multiple windows for a single application.</description>
+        <param-name>com.icesoft.faces.concurrentDOMViews</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <description>Turn on/off application-wide synchronous or asynchronous updates.</description>
+        <param-name>com.icesoft.faces.synchronousUpdate</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <description>Google Maps API key is required if gMap component is used. Sign up for an API key from http://code.google.com/apis/maps/signup.html</description>
+        <param-name>com.icesoft.faces.gmapKey</param-name>
+        <param-value>ABQIAAAADlu0ZiSTam64EKaCQr9eTRTOTuQNzJNXRlYRLknj4cQ89tFfpxTEqxQnVWL4k55OPICgF5_SOZE06A</param-value>
+    </context-param>
+    <context-param>
+        <param-name>com.icesoft.faces.uploadDirectory</param-name>
+        <param-value>upload</param-value>
+    </context-param>
+    <context-param>
+        <param-name>com.icesoft.faces.uploadMaxFileSize</param-name>
+        <param-value>4048576</param-value>
+    </context-param>
+    <context-param>
+        <description>If set to true disables use of MultipartFacesContext, allowing underlying implementations to be used.
+MultipartFacesContext is required when the FileUpload component is used, and can be disabled otherwise.</description>
+        <param-name>com.ibm.faces.DISABLE_JWL_MULTIPART_CONTEXT</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <description>Value, in milliseconds, to be used for Expires header for resources served by the JavaScript Resource Servlet.
+Default is never (31536000000 milliseconds or 1 year).</description>
+        <param-name>com.ibm.faces.RESOURCE_EXPIRE_MS</param-name>
+        <param-value>31536000000</param-value>
+    </context-param>
+    <context-param>
+        <description>Defines the strictness of the conversion when converting from a string to a date.
+The higher the value, the more exactly the value must conform to the format.
+If 0 (liberal), all 'literals' are ignored while parsing a value, mis-ordered components will be rearranged,
+any missing component is supplied using the current datetime, misspellings and incomplete spellings are allowed
+(to the extent that they can be evaluated), 'E' and other non-unique components are ignored.
+If 1 (strict), all 'literals' are ignored while parsing a value, any missing component is supplied using the current
+datetime, misspellings and incomplete spellings are allowed (to the extent that they can be evaluated),
+'E' and other non-unique components are ignored. For example if the pattern is MMMM dd, yyyy a user can enter 'Feb/02/04'
+and it will be parsed as February 02, 2004.
+If 2 (very strict), an exact match is required except long month names can be 'shortened' to the minimum number of unique
+characters and 'E' and other non-unique components are ignored. Literals must match exactly.
+Default is 1.</description>
+        <param-name>com.ibm.faces.DATETIME_ASSIST_STRICTNESS</param-name>
+        <param-value>1</param-value>
+    </context-param>
+    <context-param>
+        <description>Defines the strictness of the conversion when converting from a string to a number.
+The higher the value, the more exactly the value must conform to the pattern.
+For numbers, currently strictness levels of 0 and 1 are equivalent. If the strictness is 2,
+if number is signed, the sign must be provided (otherwise it's assumed positive).
+Default is 1.</description>
+        <param-name>com.ibm.faces.NUMBER_ASSIST_STRICTNESS</param-name>
+        <param-value>1</param-value>
+    </context-param>
+    <context-param>
+        <description>Defines the path for resources such as JavaScript libraries and images.
+The value can be either:
+1. An empty string. Context path of the current application will be used.
+2. A path string. Example: /project13. A number. Specifies the number of nodes to use from the context path starting from the left.
+Example: With a value of 1 if the context path is /screen/faces/SSID110267549/RID1102676
+the path will be evaluated as /screen
+Default is an empty string.</description>
+        <param-name>com.ibm.faces.USE_UNENCODED_CONTEXT_PATH</param-name>
+        <param-value/>
+    </context-param>
+    <context-param>
+        <description>Sets a custom url-pattern for the JavaScript Resource servlet.
+Should match servlet mapping setting for the JavaScript Resource servlet. If the default default mapping
+value '/.ibmjsfres/*' is modified, this context-param should also be modified.</description>
+        <param-name>com.ibm.faces.JS_RESOURCE_SERVLET_URL_PATTERN</param-name>
+        <param-value>/.ibmjsfres/*</param-value>
+    </context-param>
+    <context-param>
+        <description>If set to true, forces JavaScript Resource Servlet to cache all resources on the server.
+This can be useful when client-side caching is turned off.</description>
+        <param-name>com.ibm.faces.JS_RESOURCE_SERVLET_CACHE</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <description>Sets a custom charset mapping properties file similar to converter.properties in WAS.</description>
+        <param-name>com.ibm.faces.ENCODING_MAPPING</param-name>
+        <param-value>converter.properties</param-value>
+    </context-param>
+    <context-param>
+        <description>If set to true, the entire JavaScript library, containing code for all components, will be included
+in the generated pages as one file. If set to false or removed, multiple smaller JavaScript files will be
+included, depending on the components used on the page.Default is false.</description>
+        <param-name>com.ibm.faces.USE_HXCLIENT_FULL</param-name>
+        <param-value>false</param-value>
+    </context-param>
+    <context-param>
+        <description>Specifies maximum size for the request content processed by MultipartExternalContext.
+Can be used to prevent large files from being uploaded.
+Takes an integer value, in bytes. 0 or empty means there is no limit.
+Default is no limit.</description>
+        <param-name>com.ibm.faces.MAX_REQUEST_CONTENT_SIZE</param-name>
+        <param-value>0</param-value>
+    </context-param>
+    <filter>
+        <display-name>LoginFilter</display-name>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>zw.co.esolutions.ewallet.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/csr/*</url-pattern>
+    </filter-mapping>
+    <listener>
+        <listener-class>com.icesoft.faces.util.event.servlet.ContextEventRepeater</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>Persistent Faces Servlet</servlet-name>
+        <servlet-class>com.icesoft.faces.webapp.xmlhttp.PersistentFacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>Blocking Servlet</servlet-name>
+        <servlet-class>com.icesoft.faces.webapp.xmlhttp.BlockingServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>uploadServlet</servlet-name>
+        <servlet-class>com.icesoft.faces.component.inputfile.FileUploadServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>JavaScript Resource Servlet</servlet-name>
+        <servlet-class>com.ibm.faces.webapp.JSResourceServlet</servlet-class>
+        <load-on-startup>-1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Persistent Faces Servlet</servlet-name>
+        <url-pattern>*.iface</url-pattern>
+        <url-pattern>*.jspx</url-pattern>
+        <url-pattern>/xmlhttp/*</url-pattern>
+        <url-pattern>/faces/*</url-pattern>
+        <url-pattern>*.faces</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Blocking Servlet</servlet-name>
+        <url-pattern>/block/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>uploadServlet</servlet-name>
+        <url-pattern>/uploadHtml</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JavaScript Resource Servlet</servlet-name>
+        <url-pattern>/.ibmjsfres/*</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>/login/login.jspx</welcome-file>
+    </welcome-file-list>
+    <ejb-local-ref>
+        <ejb-ref-name>zw.co.esolutions.ewallet.csrweb.LoginBean/ls</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>zw.co.esolutions.security.loginmodule.LoginService</local>
+        <ejb-link>LoginModule.jar#LoginServiceImpl</ejb-link>
+        <injection-target>
+            <injection-target-class>zw.co.esolutions.ewallet.csrweb.LoginBean</injection-target-class>
+            <injection-target-name>ls</injection-target-name>
+        </injection-target>
+    </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>zw.co.esolutions.ewallet.csrweb.ForceChangePasswordBean/ls</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>zw.co.esolutions.security.loginmodule.LoginService</local>
+        <ejb-link>LoginModule.jar#LoginServiceImpl</ejb-link>
+        <injection-target>
+            <injection-target-class>zw.co.esolutions.ewallet.csrweb.ForceChangePasswordBean</injection-target-class>
+            <injection-target-name>ls</injection-target-name>
+        </injection-target>
+    </ejb-local-ref>
+</web-app>

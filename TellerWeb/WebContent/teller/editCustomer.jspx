@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<!-- jsf:pagecode language="java" location="/src/pagecode/teller/EditCustomer.java" --><!-- /jsf:pagecode --><f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+			<ice:form styleClass="form" id="form1">
+		<ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages>
+		<ice:inputHidden value="#{editCustomerBean.customerId}"></ice:inputHidden>
+		<ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+			cellspacing="5" width="600" columns="4">
+			<ice:outputLabel value="Title*" styleClass="outputLabel" id="label2"></ice:outputLabel>
+				<ice:selectOneMenu styleClass="selectOneMenu" id="menu1" value="#{editCustomerBean.selectedTitle}">
+
+					<f:selectItems value="#{editCustomerBean.titleList}" id="selectItems99" />
+				</ice:selectOneMenu>
+				
+			<ice:outputLabel value="Lastname*" styleClass="outputLabel" id="label3"></ice:outputLabel>
+			<ice:inputText styleClass="inputText" id="text1"
+				value="#{editCustomerBean.customer.lastName}"
+				required="true"></ice:inputText>
+			<ice:outputLabel value="Firstnames*" styleClass="outputLabel"
+				id="label4"></ice:outputLabel>
+			<ice:inputText styleClass="inputText" id="text2"
+				value="#{editCustomerBean.customer.firstNames}"
+				required="true"></ice:inputText>
+			<ice:outputLabel value="Date Of Birth*" styleClass="outputLabel"
+				id="label5"></ice:outputLabel>
+			<ice:inputText styleClass="inputText" id="text3"
+				value="#{editCustomerBean.dateOfBirth}"
+				required="true">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</ice:inputText>
+			<ice:outputLabel value="National ID*" styleClass="outputLabel"
+				id="label6"></ice:outputLabel>
+			<ice:inputText styleClass="inputText" id="text4"
+				value="#{editCustomerBean.customer.nationalId}"
+				required="true"></ice:inputText>
+			<ice:outputLabel value="Gender*" styleClass="outputLabel" id="label7"></ice:outputLabel>
+			<ice:selectOneMenu styleClass="selectOneMenu" id="menu2"
+				value="#{editCustomerBean.selectedGender}">
+				<f:selectItems id="selectItems5"
+					value="#{editCustomerBean.genderList}" />
+			</ice:selectOneMenu>
+			<ice:outputLabel value="Marital Status*" styleClass="outputLabel"
+				id="label8"></ice:outputLabel>
+			<ice:selectOneMenu styleClass="selectOneMenu" id="menu3"
+				value="#{editCustomerBean.selectedMaritalStatus}">
+				<f:selectItems id="selectItems6"
+					value="#{editCustomerBean.maritalStatusList}" />
+			</ice:selectOneMenu>
+			<ice:outputLabel value="Customer Class*" styleClass="outputLabel"
+				id="label20"></ice:outputLabel>
+			<ice:selectOneMenu styleClass="selectOneMenu" id="menu7"
+				value="#{editCustomerBean.selectedCustomerClass}">
+				<f:selectItems id="selectItems4"
+					value="#{editCustomerBean.customerClassList}" />
+			</ice:selectOneMenu>
+			<f:facet name="header">
+				<ice:panelGroup styleClass="panelGroup" id="group1">
+					<ice:outputLabel value="Edit Personal Details"
+						styleClass="panelGridLabel" id="label1"></ice:outputLabel>
+				</ice:panelGroup>
+			</f:facet>
+		</ice:panelGrid>
+		<p>
+		<ice:panelGrid styleClass="panelGrid" id="grid2" cellpadding="5" cellspacing="5" width="600" columns="4">
+			<f:facet name="header">
+				<ice:panelGroup styleClass="panelGroup" id="group2">
+					<ice:outputLabel value="Edit Contact Details"
+						styleClass="panelGridLabel" id="label9"></ice:outputLabel>
+				</ice:panelGroup>
+			</f:facet>
+			
+			<ice:outputLabel value="Telephone (other)" styleClass="outputLabel"
+				id="label16" for="label7"></ice:outputLabel>
+			<ice:inputText styleClass="inputText" id="text12"
+				value="#{editCustomerBean.contactDetails.telephone}"
+				required="false"></ice:inputText>
+			<ice:outputLabel value="Email" styleClass="outputLabel" id="label73"></ice:outputLabel>
+			<ice:inputText styleClass="inputText" id="text6"
+				value="#{editCustomerBean.contactDetails.email}">
+
+			</ice:inputText>
+			<ice:outputLabel value="Street*" styleClass="outputLabel" id="label89"></ice:outputLabel>
+			<ice:inputText styleClass="inputText" id="text8"
+				value="#{editCustomerBean.contactDetails.street}"
+				required="true">
+
+			</ice:inputText>
+			<ice:outputLabel value="Suburb*" styleClass="outputLabel" id="label10"></ice:outputLabel>
+			<ice:inputText styleClass="inputText" id="text9"
+				value="#{editCustomerBean.contactDetails.suburb}"
+				required="true">
+
+			</ice:inputText>
+			<ice:outputLabel value="City*" styleClass="outputLabel" id="label11"></ice:outputLabel>
+			<ice:inputText styleClass="inputText" id="text10"
+				value="#{editCustomerBean.contactDetails.city}"
+				required="true">
+
+			</ice:inputText>
+			<ice:outputLabel value="Country*" styleClass="outputLabel" id="label12"></ice:outputLabel>
+			<ice:inputText styleClass="inputText" id="text11"
+				value="#{editCustomerBean.contactDetails.country}"
+				required="true">
+
+			</ice:inputText>
+		</ice:panelGrid>
+		
+		<ice:panelGrid styleClass="panelGrid" id="grid4" columns="2">
+				<ice:commandButton type="submit" value="Submit"
+					styleClass="commandButton" id="button2" action="#{editCustomerBean.submit}"></ice:commandButton>
+				<ice:commandButton type="submit" value="Cancel"
+					styleClass="commandButton" id="button1" action="#{editCustomerBean.cancel}"></ice:commandButton>
+			</ice:panelGrid>
+		</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				<ice:form styleClass="form" id="form1">
+					<ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table" globalOnly="true"></ice:messages>
+					<ice:outputText value="All fields marked with a * are required"></ice:outputText>
+					<ice:inputHidden value="#{editBankBranchBean.branchId}"></ice:inputHidden>
+					<p><ice:panelGrid styleClass="panelGrid" id="grid1" cellpadding="5"
+						cellspacing="5" columns="3" width="600">
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group2">
+								<ice:outputLabel value="Edit Bank Branch Details"
+									styleClass="panelGridLabel" id="label1"></ice:outputLabel>
+							</ice:panelGroup>
+						</f:facet>
+		
+						<ice:outputLabel value="Bank Name*" styleClass="outputLabel"
+							id="label2"></ice:outputLabel>
+						<ice:outputText value="#{editBankBranchBean.branch.bank.name}"></ice:outputText>
+						<ice:message styleClass="messages" for="bank" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Branch Name*" styleClass="outputLabel"
+							id="label3"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="branchName"
+							value="#{editBankBranchBean.branch.name}" required="true" requiredMessage="Please enter the branch name"></ice:inputText>
+							<ice:message styleClass="messages" for="branchName" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Branch Code*" styleClass="outputLabel"
+							id="label4"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="branchCode"
+							value="#{editBankBranchBean.branch.code}" required="true" requiredMessage="Please enter the branch code"></ice:inputText>
+						<ice:message styleClass="messages" for="branchCode" errorClass="errorMsg"></ice:message>
+					</ice:panelGrid></p>
+					<ice:panelGrid styleClass="panelGrid" id="grid3" columns="3"
+						width="600" cellpadding="5" cellspacing="5">
+		
+						<ice:outputLabel value="Contact Name*" styleClass="outputLabel"
+						id="label5"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="contactName"
+							value="#{editBankBranchBean.contactDetails.contactName}" required="true" requiredMessage="Please enter the contact name">		
+						</ice:inputText>
+						<ice:message styleClass="messages" for="contactName" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Contact Phone*" styleClass="outputLabel"
+						id="label6"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="telephone"
+							value="#{editBankBranchBean.contactDetails.telephone}" required="true" requiredMessage="Please enter the contact phone">		
+						</ice:inputText>
+						<ice:message styleClass="messages" for="telephone" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Email*" styleClass="outputLabel" id="label7"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="email"
+							value="#{editBankBranchBean.contactDetails.email}" required="true" requiredMessage="Please enter the email">		
+						</ice:inputText>
+						<ice:message styleClass="messages" for="email" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Fax" styleClass="outputLabel" id="label8"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="text7"
+							value="#{editBankBranchBean.contactDetails.fax}">
+		
+						</ice:inputText><ice:outputText styleClass="outputText"></ice:outputText>
+						<ice:outputLabel value="Street*" styleClass="outputLabel" id="label9"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="street"
+							value="#{editBankBranchBean.contactDetails.street}" required="true" requiredMessage="Please enter the street">		
+						</ice:inputText>
+						<ice:message styleClass="messages" for="street" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Suburb*" styleClass="outputLabel" id="label10"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="suburb"
+							value="#{editBankBranchBean.contactDetails.suburb}" required="true" requiredMessage="Please enter the suburb">		
+						</ice:inputText>
+						<ice:message styleClass="messages" for="suburb" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="City*" styleClass="outputLabel" id="label11"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="city"
+							value="#{editBankBranchBean.contactDetails.city}" required="true" requiredMessage="Please enter the city">		
+						</ice:inputText>
+						<ice:message styleClass="messages" for="city" errorClass="errorMsg"></ice:message>
+						<ice:outputLabel value="Country*" styleClass="outputLabel" id="label12"></ice:outputLabel>
+						<ice:inputText styleClass="inputText" id="country"
+							value="#{editBankBranchBean.contactDetails.country}" required="true" requiredMessage="Please enter the country">		
+						</ice:inputText>
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group1">
+								<ice:outputLabel value="Contact Details" styleClass="outputLabel"
+									id="label13"></ice:outputLabel>
+		
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelGrid>
+					<ice:panelGrid styleClass="panelGrid" id="grid2" cellpadding="5"
+						columns="2">
+						<ice:commandButton type="submit" value="Submit"
+							styleClass="commandButton" id="button1"
+							action="#{editBankBranchBean.submit}"></ice:commandButton>
+						<ice:commandButton type="submit" value=" Cancel"
+							styleClass="commandButton" id="button2"
+							action="#{editBankBranchBean.cancel}" partialSubmit="true" ></ice:commandButton>
+					</ice:panelGrid>
+		
+				</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

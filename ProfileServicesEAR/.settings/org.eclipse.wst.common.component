@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ProfileServicesEAR">
+        <wb-resource deploy-path="/" source-path="/"/>
+        <dependent-module archiveName="ProfileServicesEJB.jar" deploy-path="/" handle="module:/resource/ProfileServicesEJB/ProfileServicesEJB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ProfileServices.war" deploy-path="/" handle="module:/resource/ProfileServices/ProfileServices">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ProfileServicesClient.jar" deploy-path="/" handle="module:/resource/ProfileServicesClient/ProfileServicesClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EWalletUtils.jar" deploy-path="/" handle="module:/resource/EWalletUtils/EWalletUtils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

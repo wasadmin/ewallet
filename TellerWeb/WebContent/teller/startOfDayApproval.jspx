@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/stylesheet.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+		<ice:form styleClass="form" id="form1"><h2>Approve Teller Floats</h2>
+			<p><ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table"></ice:messages></p>
+			
+			<p></p>
+			<br/>
+			<ice:panelGrid styleClass="panelGrid" columns="2">
+			
+			</ice:panelGrid>
+				
+			<ice:panelGrid>
+			
+			
+			<ice:dataTable border="1" cellpadding="2" cellspacing="2"
+									columnClasses="columnClass1" headerClass="headerClass"
+									footerClass="footerClass" rowClasses="rowClass1, rowClass2"
+									styleClass="dataTable" id="tableEx1" width="600"
+									value="#{startOfDayBean.startDayTxns}" var="startDay">
+									<f:facet name="footer">
+						<ice:panelGrid styleClass="panelGrid" id="grid3" columns="2">
+							<ice:outputText style="font-weight : bold" styleClass="outputLabel" id="text23"
+								value="Total Teller Floats = "></ice:outputText>
+							<ice:outputText styleClass="outputText" style="font-weight : bold" id="text24" value="#{startOfDayBean.totalFloats}">
+							   <f:converter converterId="moneyConverter"/>
+							</ice:outputText>
+							
+						</ice:panelGrid>
+					
+				</f:facet>
+						<f:facet name="header">
+										<h:outputLabel value="Teller Start of Day Txns"
+											styleClass="outputText" id="label19"></h:outputLabel>
+									</f:facet>	
+									<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Date Created"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" 
+											value="#{startDay.dateCreated}">
+											<f:converter converterId="dateTimeFormatConverter" />
+											
+										
+											</h:outputText>
+											
+									</h:column>	
+									<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Teller"></h:outputText>
+										</f:facet>
+										
+											<ice:commandLink styleClass="commandLink" id="link1" action="#{startOfDayBean.viewTransactionInfo}">
+					<ice:outputText id="text6" styleClass="outputText2" style="color:green"  value="#{startDay.profileId}">
+					<f:converter converterId="profileConverter"/>
+					</ice:outputText>
+					<f:param name="startDayTxnId" value="#{startDay.id}"></f:param>
+				</ice:commandLink>
+									</h:column>	
+									
+									<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Branch"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" 
+											value="#{startDay.branchId}">
+												<f:converter converterId="branchNameConverter"/>
+											</h:outputText>
+									</h:column>	
+									<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Reference"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" 
+											value="#{startDay.id}">
+											
+											</h:outputText>
+									</h:column>	
+									<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Float Amount"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" 
+											value="#{startDay.amount}">
+													<f:converter converterId="moneyConverter"/>
+											</h:outputText>
+									</h:column>
+									
+									<h:column >
+										<f:facet name="header">
+											<h:outputText styleClass="outputText"
+												value="Status"></h:outputText>
+										</f:facet>
+										<h:outputText styleClass="outputText" 
+											value="#{startDay.status}"></h:outputText>
+									</h:column>		
+									
+			</ice:dataTable>
+			</ice:panelGrid>
+		</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+			<link rel="stylesheet" type="text/css" title="Style"
+				href="../theme/stylesheet.css" />
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jsp:root version="1.2" xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:hx="http://www.ibm.com/jsf/html_extended">
+
+	<jsp:directive.page contentType="text/html;charset=utf-8" />
+
+	<f:view>
+		<ui:composition template="../template/template.jspx">
+			<link href="../theme/style.css" rel="stylesheet" type="text/css" />
+			<link href="../theme/rime.css" rel="stylesheet" type="text/css" />
+			<ui:define name="header">
+				<ui:include src="../template/header.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="menu">
+				<ui:include src="../template/menu.jspx"></ui:include>
+			</ui:define>
+			<ui:define name="content">
+				 <ice:form styleClass="form" id="form1">
+				 <h2>Create Limit</h2>
+				 <ice:messages styleClass="messages" id="messages1" errorClass="errorMessage" infoClass="infoMessage" layout="table" globalOnly="true"></ice:messages>
+				 <ice:panelGrid styleClass="infoBox" >
+				 <ice:outputText value="All fields marked with a * are required"></ice:outputText>
+				 </ice:panelGrid>
+					<ice:panelGrid styleClass="panelGrid" id="grid1" columns="3" width="600" cellpadding="5" cellspacing="5">
+						<ice:outputText styleClass="outputLabel" 
+							value="Financial Institution* :"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="institution" value="#{createLimitBean.bankItem}" required="true" requiredMessage="Please enter the financial institution">
+							<f:selectItems 
+								value="#{createLimitBean.bankMenu}" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="institution" errorClass="errorMsg"></ice:message>
+						
+						<ice:outputText styleClass="outputLabel" id="textLimit"
+							value="Applicable Limit* :"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="limitForItem" valueChangeListener="#{createLimitBean.handleLimitTypeValueChange}"
+					       partialSubmit="true" value="#{createLimitBean.ownerTypeItem}" required="true" requiredMessage="Please select the Applicable Limit ">
+							<f:selectItems id="selectItemsOwner"
+								value="#{createLimitBean.ownerTypeMenu}" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="limitForItem" errorClass="errorMsg"></ice:message>
+						
+						
+						<ice:outputText styleClass="outputLabel" id="text2"
+							value="Limit Type* :"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="typeItem"
+							value="#{createLimitBean.typeItem}" required="true" requiredMessage="Please select the limit type">
+							<f:selectItems id="selectItems1"
+								value="#{createLimitBean.typeMenu}" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="typeItem" errorClass="errorMsg"></ice:message>
+						<ice:outputText styleClass="outputLabel" id="text10"
+							value="Account Class* :"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="accountClass"
+							value="#{createLimitBean.accountClassItem}" required="true" requiredMessage="Please select the account class" >
+							<f:selectItems id="selectItems3"
+								value="#{createLimitBean.accountClassMenu}" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="accountClass" errorClass="errorMsg"></ice:message>
+						<ice:outputText styleClass="outputLabel" id="text4" value="Period* :"></ice:outputText>
+						<ice:selectOneMenu styleClass="selectOneMenu" id="period" value="#{createLimitBean.periodTypeItem}" required="true" requiredMessage="Please select the period">
+							<f:selectItems value="#{createLimitBean.periodTypeMenu}" id="selectItems2" />
+						</ice:selectOneMenu>
+						<ice:message styleClass="messages" for="period" errorClass="errorMsg"></ice:message>
+						<ice:outputText styleClass="outputLabel" id="text3"
+							value="Minimum Value* :"></ice:outputText>
+						<ice:inputText styleClass="inputText" id="minimumValue" value="#{createLimitBean.minValue}" required="true" requiredMessage="Please enter the minimum value" validatorMessage="Minimum value cannot be below zero">
+							<f:converter converterId="doubleMoneyConverter" />
+									                    
+						</ice:inputText>
+						<ice:message styleClass="messages" for="minimumValue" errorClass="errorMsg"></ice:message>
+						<ice:outputText styleClass="outputLabel" id="text11"
+							value="Maximum Value* :"></ice:outputText>
+						<ice:inputText styleClass="inputText" id="maximumValue" value="#{createLimitBean.maxValue}" required="true" requiredMessage="Please enter the maximum value" validatorMessage="Maximum value cannot be below zero">
+						
+						<f:converter converterId="doubleMoneyConverter" />						
+						</ice:inputText>
+						<ice:message styleClass="messages" for="maximumValue" errorClass="errorMsg"></ice:message>
+						<ice:outputText styleClass="outputLabel" id="text6"
+							value="Effective Date (dd/mm/yyyy)* :"></ice:outputText>
+						<ice:inputText styleClass="inputText" id="effectiveDate"
+							value="#{createLimitBean.effectiveDate}" required="true" requiredMessage="Please an effective date">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</ice:inputText>
+						<ice:message styleClass="messages" for="effectiveDate" errorClass="errorMsg"></ice:message>
+						<ice:commandButton type="submit" value="Submit"
+							styleClass="commandButton" id="button1"
+							action="#{createLimitBean.createLimitAction}"></ice:commandButton>
+						<ice:commandButton type="submit" value="Cancel"
+							styleClass="commandButton" id="button2"
+							action="#{createLimitBean.cancelLimitCreation}" partialSubmit="true" ></ice:commandButton>
+						<f:facet name="header">
+							<ice:panelGroup styleClass="panelGroup" id="group1">
+								<ice:outputText styleClass="panelGridLabel" id="text1"
+									value="Enter New Limit Details"></ice:outputText>
+							</ice:panelGroup>
+						</f:facet>
+					</ice:panelGrid>
+				
+				
+					
+				</ice:form>
+			</ui:define>
+			<ui:define name="footer">
+				<ui:include src="../template/footer.jspx"></ui:include>
+			</ui:define>
+		</ui:composition>
+	</f:view>
+
+</jsp:root>

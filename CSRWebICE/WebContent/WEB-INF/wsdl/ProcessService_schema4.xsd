@@ -1,0 +1,1310 @@
+<?xml version="1.0" encoding="UTF-8"?><xs:schema targetNamespace="http://process.ewallet.esolutions.co.zw/" version="1.0" xmlns:ns1="http://service.bankservices.ewallet.esolutions.co.zw/" xmlns:ns2="http://service.contactdetailsservices.ewallet.esolutions.co.zw/" xmlns:ns3="http://service.customerservices.ewallet.esolutions.co.zw/" xmlns:tns="http://process.ewallet.esolutions.co.zw/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:import namespace="http://service.bankservices.ewallet.esolutions.co.zw/" schemaLocation="ProcessService_schema3.xsd"/>
+
+  <xs:import namespace="http://service.contactdetailsservices.ewallet.esolutions.co.zw/" schemaLocation="ProcessService_schema2.xsd"/>
+
+  <xs:import namespace="http://service.customerservices.ewallet.esolutions.co.zw/" schemaLocation="ProcessService_schema1.xsd"/>
+
+  <xs:element name="Exception" type="tns:Exception"/>
+
+  <xs:element name="approveDayEnd" type="tns:approveDayEnd"/>
+
+  <xs:element name="approveDayEndResponse" type="tns:approveDayEndResponse"/>
+
+  <xs:element name="checkIfThereAreTrxnTomark" type="tns:checkIfThereAreTrxnTomark"/>
+
+  <xs:element name="checkIfThereAreTrxnTomarkResponse" type="tns:checkIfThereAreTrxnTomarkResponse"/>
+
+  <xs:element name="confirmNonHolderWithdrawal" type="tns:confirmNonHolderWithdrawal"/>
+
+  <xs:element name="confirmNonHolderWithdrawalResponse" type="tns:confirmNonHolderWithdrawalResponse"/>
+
+  <xs:element name="createDayEnd" type="tns:createDayEnd"/>
+
+  <xs:element name="createDayEndResponse" type="tns:createDayEndResponse"/>
+
+  <xs:element name="createDayEndSummary" type="tns:createDayEndSummary"/>
+
+  <xs:element name="createDayEndSummaryResponse" type="tns:createDayEndSummaryResponse"/>
+
+  <xs:element name="createProcessTransaction" type="tns:createProcessTransaction"/>
+
+  <xs:element name="createProcessTransactionResponse" type="tns:createProcessTransactionResponse"/>
+
+  <xs:element name="deleteProcessTransactionsByDayEnd" type="tns:deleteProcessTransactionsByDayEnd"/>
+
+  <xs:element name="deleteProcessTransactionsByDayEndResponse" type="tns:deleteProcessTransactionsByDayEndResponse"/>
+
+  <xs:element name="depositCash" type="tns:depositCash"/>
+
+  <xs:element name="depositCashResponse" type="tns:depositCashResponse"/>
+
+  <xs:element name="disapproveDayEnd" type="tns:disapproveDayEnd"/>
+
+  <xs:element name="disapproveDayEndResponse" type="tns:disapproveDayEndResponse"/>
+
+  <xs:element name="editDayEnd" type="tns:editDayEnd"/>
+
+  <xs:element name="editDayEndResponse" type="tns:editDayEndResponse"/>
+
+  <xs:element name="editDayEndSummary" type="tns:editDayEndSummary"/>
+
+  <xs:element name="editDayEndSummaryResponse" type="tns:editDayEndSummaryResponse"/>
+
+  <xs:element name="findDayEndById" type="tns:findDayEndById"/>
+
+  <xs:element name="findDayEndByIdResponse" type="tns:findDayEndByIdResponse"/>
+
+  <xs:element name="findDayEndSummary" type="tns:findDayEndSummary"/>
+
+  <xs:element name="findDayEndSummaryResponse" type="tns:findDayEndSummaryResponse"/>
+
+  <xs:element name="getDailyAmountByCustomerIdAndTxnType" type="tns:getDailyAmountByCustomerIdAndTxnType"/>
+
+  <xs:element name="getDailyAmountByCustomerIdAndTxnTypeResponse" type="tns:getDailyAmountByCustomerIdAndTxnTypeResponse"/>
+
+  <xs:element name="getDayEndByDayEndStatus" type="tns:getDayEndByDayEndStatus"/>
+
+  <xs:element name="getDayEndByDayEndStatusAndBranch" type="tns:getDayEndByDayEndStatusAndBranch"/>
+
+  <xs:element name="getDayEndByDayEndStatusAndBranchResponse" type="tns:getDayEndByDayEndStatusAndBranchResponse"/>
+
+  <xs:element name="getDayEndByDayEndStatusResponse" type="tns:getDayEndByDayEndStatusResponse"/>
+
+  <xs:element name="getDayEndByTellerIdAndDateCreatedAndStatus" type="tns:getDayEndByTellerIdAndDateCreatedAndStatus"/>
+
+  <xs:element name="getDayEndByTellerIdAndDateCreatedAndStatusResponse" type="tns:getDayEndByTellerIdAndDateCreatedAndStatusResponse"/>
+
+  <xs:element name="getDayEndSummariesByDayEnd" type="tns:getDayEndSummariesByDayEnd"/>
+
+  <xs:element name="getDayEndSummariesByDayEndResponse" type="tns:getDayEndSummariesByDayEndResponse"/>
+
+  <xs:element name="getDayEndSummaryByDayEndId" type="tns:getDayEndSummaryByDayEndId"/>
+
+  <xs:element name="getDayEndSummaryByDayEndIdResponse" type="tns:getDayEndSummaryByDayEndIdResponse"/>
+
+  <xs:element name="getDayEndsByDayEndStatusAndDateRangeAndBranch" type="tns:getDayEndsByDayEndStatusAndDateRangeAndBranch"/>
+
+  <xs:element name="getDayEndsByDayEndStatusAndDateRangeAndBranchResponse" type="tns:getDayEndsByDayEndStatusAndDateRangeAndBranchResponse"/>
+
+  <xs:element name="getDayEndsByDayEndStatusAndDateRangeAndTeller" type="tns:getDayEndsByDayEndStatusAndDateRangeAndTeller"/>
+
+  <xs:element name="getDayEndsByDayEndStatusAndDateRangeAndTellerResponse" type="tns:getDayEndsByDayEndStatusAndDateRangeAndTellerResponse"/>
+
+  <xs:element name="getPocessTransactionsByDateRangeAndStatus" type="tns:getPocessTransactionsByDateRangeAndStatus"/>
+
+  <xs:element name="getPocessTransactionsByDateRangeAndStatusResponse" type="tns:getPocessTransactionsByDateRangeAndStatusResponse"/>
+
+  <xs:element name="getProcessTransaction" type="tns:getProcessTransaction"/>
+
+  <xs:element name="getProcessTransactionByMessageId" type="tns:getProcessTransactionByMessageId"/>
+
+  <xs:element name="getProcessTransactionByMessageIdResponse" type="tns:getProcessTransactionByMessageIdResponse"/>
+
+  <xs:element name="getProcessTransactionByTellerIdAndDateRangeAndStatus" type="tns:getProcessTransactionByTellerIdAndDateRangeAndStatus"/>
+
+  <xs:element name="getProcessTransactionByTellerIdAndDateRangeAndStatusResponse" type="tns:getProcessTransactionByTellerIdAndDateRangeAndStatusResponse"/>
+
+  <xs:element name="getProcessTransactionResponse" type="tns:getProcessTransactionResponse"/>
+
+  <xs:element name="getProcessTransactionsByApplicableParameters" type="tns:getProcessTransactionsByApplicableParameters"/>
+
+  <xs:element name="getProcessTransactionsByApplicableParametersResponse" type="tns:getProcessTransactionsByApplicableParametersResponse"/>
+
+  <xs:element name="getProcessTransactionsByBranch" type="tns:getProcessTransactionsByBranch"/>
+
+  <xs:element name="getProcessTransactionsByBranchAndDateRangeAndStatus" type="tns:getProcessTransactionsByBranchAndDateRangeAndStatus"/>
+
+  <xs:element name="getProcessTransactionsByBranchAndDateRangeAndStatusResponse" type="tns:getProcessTransactionsByBranchAndDateRangeAndStatusResponse"/>
+
+  <xs:element name="getProcessTransactionsByBranchResponse" type="tns:getProcessTransactionsByBranchResponse"/>
+
+  <xs:element name="getProcessTransactionsByDayEndId" type="tns:getProcessTransactionsByDayEndId"/>
+
+  <xs:element name="getProcessTransactionsByDayEndIdResponse" type="tns:getProcessTransactionsByDayEndIdResponse"/>
+
+  <xs:element name="getProcessTransactionsByTellerID" type="tns:getProcessTransactionsByTellerID"/>
+
+  <xs:element name="getProcessTransactionsByTellerIDResponse" type="tns:getProcessTransactionsByTellerIDResponse"/>
+
+  <xs:element name="getProcessTransactionsByTellerIdAndDateRange" type="tns:getProcessTransactionsByTellerIdAndDateRange"/>
+
+  <xs:element name="getProcessTransactionsByTellerIdAndDateRangeResponse" type="tns:getProcessTransactionsByTellerIdAndDateRangeResponse"/>
+
+  <xs:element name="getProcessTransactionsByTellerIdAndDayEndSummary" type="tns:getProcessTransactionsByTellerIdAndDayEndSummary"/>
+
+  <xs:element name="getProcessTransactionsByTellerIdAndDayEndSummaryResponse" type="tns:getProcessTransactionsByTellerIdAndDayEndSummaryResponse"/>
+
+  <xs:element name="getProcessTransactionsByTransactionStatus" type="tns:getProcessTransactionsByTransactionStatus"/>
+
+  <xs:element name="getProcessTransactionsByTransactionStatusResponse" type="tns:getProcessTransactionsByTransactionStatusResponse"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRange" type="tns:getProcessTransactionsWithinDateRange"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRangeByBankId" type="tns:getProcessTransactionsWithinDateRangeByBankId"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRangeByBankIdAndBranchId" type="tns:getProcessTransactionsWithinDateRangeByBankIdAndBranchId"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRangeByBankIdAndBranchIdResponse" type="tns:getProcessTransactionsWithinDateRangeByBankIdAndBranchIdResponse"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRangeByBankIdResponse" type="tns:getProcessTransactionsWithinDateRangeByBankIdResponse"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRangeByMsgType" type="tns:getProcessTransactionsWithinDateRangeByMsgType"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRangeByMsgTypeByBankId" type="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankId"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchId" type="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchId"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchIdResponse" type="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchIdResponse"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRangeByMsgTypeByBankIdResponse" type="tns:getProcessTransactionsWithinDateRangeByMsgTypeByBankIdResponse"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRangeByMsgTypeResponse" type="tns:getProcessTransactionsWithinDateRangeByMsgTypeResponse"/>
+
+  <xs:element name="getProcessTransactionsWithinDateRangeResponse" type="tns:getProcessTransactionsWithinDateRangeResponse"/>
+
+  <xs:element name="getTellerDayEnd" type="tns:getTellerDayEnd"/>
+
+  <xs:element name="getTellerDayEndResponse" type="tns:getTellerDayEndResponse"/>
+
+  <xs:element name="getTellerDayEndTotal" type="tns:getTellerDayEndTotal"/>
+
+  <xs:element name="getTellerDayEndTotalResponse" type="tns:getTellerDayEndTotalResponse"/>
+
+  <xs:element name="getTotalAmountByApplicableParameters" type="tns:getTotalAmountByApplicableParameters"/>
+
+  <xs:element name="getTotalAmountByApplicableParametersResponse" type="tns:getTotalAmountByApplicableParametersResponse"/>
+
+  <xs:element name="initializeAgentDeposit" type="tns:initializeAgentDeposit"/>
+
+  <xs:element name="initializeAgentDepositResponse" type="tns:initializeAgentDepositResponse"/>
+
+  <xs:element name="initializeAgentEMoneyTransfer" type="tns:initializeAgentEMoneyTransfer"/>
+
+  <xs:element name="initializeAgentEMoneyTransferResponse" type="tns:initializeAgentEMoneyTransferResponse"/>
+
+  <xs:element name="initializeAgentWithdrawal" type="tns:initializeAgentWithdrawal"/>
+
+  <xs:element name="initializeAgentWithdrawalResponse" type="tns:initializeAgentWithdrawalResponse"/>
+
+  <xs:element name="initializeEwalletHolderWithdrawal" type="tns:initializeEwalletHolderWithdrawal"/>
+
+  <xs:element name="initializeEwalletHolderWithdrawalResponse" type="tns:initializeEwalletHolderWithdrawalResponse"/>
+
+  <xs:element name="isPreviousDayEndRun" type="tns:isPreviousDayEndRun"/>
+
+  <xs:element name="isPreviousDayEndRunResponse" type="tns:isPreviousDayEndRunResponse"/>
+
+  <xs:element name="isTodaysDayEndRun" type="tns:isTodaysDayEndRun"/>
+
+  <xs:element name="isTodaysDayEndRunResponse" type="tns:isTodaysDayEndRunResponse"/>
+
+  <xs:element name="processDayEndBookEntries" type="tns:processDayEndBookEntries"/>
+
+  <xs:element name="processDayEndBookEntriesResponse" type="tns:processDayEndBookEntriesResponse"/>
+
+  <xs:element name="processEquationPosting" type="tns:processEquationPosting"/>
+
+  <xs:element name="processEquationPostingResponse" type="tns:processEquationPostingResponse"/>
+
+  <xs:element name="registerCustomer" type="tns:registerCustomer"/>
+
+  <xs:element name="registerCustomerResponse" type="tns:registerCustomerResponse"/>
+
+  <xs:element name="rollBackDayEndBookEntries" type="tns:rollBackDayEndBookEntries"/>
+
+  <xs:element name="rollBackDayEndBookEntriesResponse" type="tns:rollBackDayEndBookEntriesResponse"/>
+
+  <xs:element name="runDayEnd" type="tns:runDayEnd"/>
+
+  <xs:element name="runDayEndResponse" type="tns:runDayEndResponse"/>
+
+  <xs:element name="runTellerDayEnd" type="tns:runTellerDayEnd"/>
+
+  <xs:element name="runTellerDayEndResponse" type="tns:runTellerDayEndResponse"/>
+
+  <xs:element name="updateProcessTxn" type="tns:updateProcessTxn"/>
+
+  <xs:element name="updateProcessTxnResponse" type="tns:updateProcessTxnResponse"/>
+
+  <xs:element name="validateDeposit" type="tns:validateDeposit"/>
+
+  <xs:element name="validateDepositResponse" type="tns:validateDepositResponse"/>
+
+  <xs:element name="validateEwalletHolderWithdrawal" type="tns:validateEwalletHolderWithdrawal"/>
+
+  <xs:element name="validateEwalletHolderWithdrawalResponse" type="tns:validateEwalletHolderWithdrawalResponse"/>
+
+  <xs:complexType name="editDayEndSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="summary" type="tns:dayEndSummary"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dayEndSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dayEnd" type="tns:dayEnd"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element name="numberOfTxn" type="xs:long"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="processtransactionList" nillable="true" type="tns:processTransaction"/>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element name="valueOfTxns" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dayEnd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+      <xs:element name="cashTendered" type="xs:long"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dayEndDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dayEndId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="dayendsummaryList" nillable="true" type="tns:dayEndSummary"/>
+      <xs:element minOccurs="0" name="status" type="tns:dayEndStatus"/>
+      <xs:element minOccurs="0" name="tellerId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="processTransaction">
+    <xs:sequence>
+      <xs:element name="agentCommissionAmount" type="xs:long"/>
+      <xs:element minOccurs="0" name="agentCommissionId" type="xs:string"/>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element name="balance" type="xs:long"/>
+      <xs:element minOccurs="0" name="bankReference" type="xs:string"/>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerName" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dayEndId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dayEndSummary" type="tns:dayEndSummary"/>
+      <xs:element minOccurs="0" name="destinationAccountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="fromBankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="messageId" type="xs:string"/>
+      <xs:element minOccurs="0" name="narrative" type="xs:string"/>
+      <xs:element minOccurs="0" name="passcodePrompt" type="xs:string"/>
+      <xs:element name="passwordRetryCount" type="xs:int"/>
+      <xs:element minOccurs="0" name="profileId" type="xs:string"/>
+      <xs:element name="referredCommission" type="xs:long"/>
+      <xs:element name="referrerCommission" type="xs:long"/>
+      <xs:element minOccurs="0" name="responseCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="secretCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceAccountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceMobile" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceMobileId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="states" nillable="true" type="tns:transactionState"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+      <xs:element minOccurs="0" name="targetMobile" type="xs:string"/>
+      <xs:element minOccurs="0" name="targetMobileId" type="xs:string"/>
+      <xs:element name="tariffAmount" type="xs:long"/>
+      <xs:element minOccurs="0" name="tariffId" type="xs:string"/>
+      <xs:element minOccurs="0" name="timeout" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toBankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="toCustomerName" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="transactionCharges" nillable="true" type="tns:transactionCharge"/>
+      <xs:element minOccurs="0" name="transactionLocationId" type="xs:string"/>
+      <xs:element minOccurs="0" name="transactionLocationType" type="tns:transactionLocationType"/>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="transferType" type="tns:transferType"/>
+      <xs:element minOccurs="0" name="txnSuperType" type="tns:txnSuperType"/>
+      <xs:element minOccurs="0" name="utilityAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="utilityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="valueDate" type="xs:dateTime"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="transactionState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="narrative" type="xs:string"/>
+      <xs:element minOccurs="0" name="processTransaction" type="tns:processTransaction"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="transactionCharge">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agentType" type="tns:agentType"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="fromEQ3Account" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="processTransaction" type="tns:processTransaction"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+      <xs:element name="tariffAmount" type="xs:long"/>
+      <xs:element minOccurs="0" name="tariffId" type="xs:string"/>
+      <xs:element minOccurs="0" name="toEQ3Account" type="xs:string"/>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element name="version" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editDayEndSummaryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEndSummary"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="processDayEndBookEntries">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEnd" type="tns:dayEnd"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="processDayEndBookEntriesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initializeAgentEMoneyTransfer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestInfo" type="tns:requestInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="requestInfo">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element minOccurs="0" name="bankCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankPrefix" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerUtilityAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="destinationAccountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="locationType" type="tns:transactionLocationType"/>
+      <xs:element minOccurs="0" name="messageId" type="xs:string"/>
+      <xs:element minOccurs="0" name="mno" type="tns:mobileNetworkOperator"/>
+      <xs:element minOccurs="0" name="newPin" type="xs:string"/>
+      <xs:element minOccurs="0" name="oldPin" type="xs:string"/>
+      <xs:element minOccurs="0" name="passwordParts" type="xs:string"/>
+      <xs:element minOccurs="0" name="profileId" type="xs:string"/>
+      <xs:element minOccurs="0" name="secretCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceAccountNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceBankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceMobile" type="xs:string"/>
+      <xs:element minOccurs="0" name="sourceMobileProfileId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+      <xs:element minOccurs="0" name="targetBankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="targetMobile" type="xs:string"/>
+      <xs:element minOccurs="0" name="transactionType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="utilityName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initializeAgentEMoneyTransferResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:processResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="processResponse">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element name="balance" type="xs:long"/>
+      <xs:element minOccurs="0" name="messageId" type="xs:string"/>
+      <xs:element minOccurs="0" name="responseCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initializeEwalletHolderWithdrawal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestInfo" type="tns:requestInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initializeEwalletHolderWithdrawalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:processResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="confirmNonHolderWithdrawal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="txnRefId" type="xs:string"/>
+      <xs:element minOccurs="0" name="profileId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="confirmNonHolderWithdrawalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:processResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initializeAgentDeposit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestInfo" type="tns:requestInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initializeAgentDepositResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:processResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="runTellerDayEnd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEnd" type="tns:dayEnd"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="runTellerDayEndResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createProcessTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="processTxn" type="tns:processTransaction"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createProcessTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByBranchAndDateRangeAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="branch" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByBranchAndDateRangeAndStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="runDayEnd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankName" type="xs:string"/>
+      <xs:element minOccurs="0" name="profileId" type="xs:string"/>
+      <xs:element minOccurs="0" name="txnDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="msgType" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="runDayEndResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getTotalAmountByApplicableParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+      <xs:element minOccurs="0" name="txnType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="txnFamily" type="tns:txnFamily"/>
+      <xs:element minOccurs="0" name="tellerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTotalAmountByApplicableParametersResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPocessTransactionsByDateRangeAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPocessTransactionsByDateRangeAndStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="msgType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRangeByMsgTypeByBankIdAndBranchIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createDayEnd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEnd" type="tns:dayEnd"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createDayEndResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndsByDayEndStatusAndDateRangeAndBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dayEndStatus" type="tns:dayEndStatus"/>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndsByDayEndStatusAndDateRangeAndBranchResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndsByDayEndStatusAndDateRangeAndTeller">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dayEndStatus" type="tns:dayEndStatus"/>
+      <xs:element minOccurs="0" name="tellerid" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndsByDayEndStatusAndDateRangeAndTellerResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTellerDayEndTotal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankName" type="xs:string"/>
+      <xs:element minOccurs="0" name="profileId" type="xs:string"/>
+      <xs:element minOccurs="0" name="txnDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="msgType" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTellerDayEndTotalResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isTodaysDayEndRun">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tellerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dayEndDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isTodaysDayEndRunResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteProcessTransactionsByDayEnd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEnd" type="tns:dayEnd"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteProcessTransactionsByDayEndResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByApplicableParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+      <xs:element minOccurs="0" name="txnType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="txnFamily" type="tns:txnFamily"/>
+      <xs:element minOccurs="0" name="tellerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByApplicableParametersResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRangeByMsgType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="msgType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRangeByMsgTypeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByTellerIdAndDayEndSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tellerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dayEndSummaryId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByTellerIdAndDayEndSummaryResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateDeposit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sourceMobileId" type="xs:string"/>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="locationType" type="tns:transactionLocationType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateDepositResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isPreviousDayEndRun">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="profileId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dayEndDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isPreviousDayEndRunResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEndResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dayEndResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEndDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element name="status" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="tellerId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findDayEndById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEndId" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findDayEndByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndSummariesByDayEnd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEndId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndSummariesByDayEndResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dayEndSummary"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rollBackDayEndBookEntries">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEnd" type="tns:dayEnd"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="rollBackDayEndBookEntriesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateProcessTxn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:processTransaction"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateProcessTxnResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="branch" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByBranchResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registerCustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="regInfo" type="tns:registrationInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registrationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankAccount" type="ns1:bankAccount"/>
+      <xs:element minOccurs="0" name="contactDetails" type="ns2:contactDetails"/>
+      <xs:element minOccurs="0" name="customer" type="ns3:customer"/>
+      <xs:element minOccurs="0" name="mobileProfile" type="ns3:mobileProfile"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registerCustomerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndByDayEndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEndStatus" type="tns:dayEndStatus"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndByDayEndStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionByTellerIdAndDateRangeAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="tellerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionByTellerIdAndDateRangeAndStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByDayEndId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByDayEndIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDailyAmountByCustomerIdAndTxnType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDailyAmountByCustomerIdAndTxnTypeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByTellerIdAndDateRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="tellerId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByTellerIdAndDateRangeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTellerDayEnd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bankName" type="xs:string"/>
+      <xs:element minOccurs="0" name="profileId" type="xs:string"/>
+      <xs:element minOccurs="0" name="txnDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="msgType" type="tns:transactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTellerDayEndResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveDayEnd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEnd" type="tns:dayEnd"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="approveDayEndResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findDayEndSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findDayEndSummaryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEndSummary"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateEwalletHolderWithdrawal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sourceMobileId" type="xs:string"/>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="locationType" type="tns:transactionLocationType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="validateEwalletHolderWithdrawalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editDayEnd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEnd" type="tns:dayEnd"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="editDayEndResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByTransactionStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByTransactionStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRangeByBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRangeByBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionByMessageId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="messageId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionByMessageIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndSummaryByDayEndId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEndId" type="xs:string"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndSummaryByDayEndIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dayEndSummary"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRangeByMsgTypeByBankId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="msgType" type="tns:transactionType"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRangeByMsgTypeByBankIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndByDayEndStatusAndBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:dayEndStatus"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndByDayEndStatusAndBranchResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByTellerID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tellerId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsByTellerIDResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveDayEnd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEnd" type="tns:dayEnd"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="disapproveDayEndResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRangeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="depositCash">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="depositInfo" type="tns:depositInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="depositInfo">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:long"/>
+      <xs:element minOccurs="0" name="bankCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobileNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="profileId" type="xs:string"/>
+      <xs:element name="runningBalance" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="depositCashResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:processResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkIfThereAreTrxnTomark">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+      <xs:element minOccurs="0" name="dayEndDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkIfThereAreTrxnTomarkResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEndResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRangeByBankIdAndBranchId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fromDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="toDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="bankId" type="xs:string"/>
+      <xs:element minOccurs="0" name="branchId" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionsWithinDateRangeByBankIdAndBranchIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createDayEndSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="summary" type="tns:dayEndSummary"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createDayEndSummaryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:dayEndSummary"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initializeAgentWithdrawal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestInfo" type="tns:requestInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="initializeAgentWithdrawalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:processResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransaction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="info" type="tns:nonHolderWithdrawalInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="nonHolderWithdrawalInfo">
+    <xs:sequence>
+      <xs:element name="amount" type="xs:double"/>
+      <xs:element minOccurs="0" name="reference" type="xs:string"/>
+      <xs:element minOccurs="0" name="secretCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+      <xs:element minOccurs="0" name="targetMobile" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getProcessTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="processEquationPosting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dayEnd" type="tns:dayEnd"/>
+      <xs:element minOccurs="0" name="processTxn" type="tns:processTransaction"/>
+      <xs:element minOccurs="0" name="userName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="processEquationPostingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:processTransaction"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndByTellerIdAndDateCreatedAndStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tellerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dateCreated" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="status" type="tns:transactionStatus"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getDayEndByTellerIdAndDateCreatedAndStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dayEnd"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="dayEndStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DRAFT"/>
+      <xs:enumeration value="AWAITING_APPROVAL"/>
+      <xs:enumeration value="DISAPPROVED"/>
+      <xs:enumeration value="APPROVED"/>
+      <xs:enumeration value="COMPLETED"/>
+      <xs:enumeration value="MANUALLY_RESOLVE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="transactionStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VEREQ"/>
+      <xs:enumeration value="VERES"/>
+      <xs:enumeration value="PAREQ"/>
+      <xs:enumeration value="BANK_REQUEST"/>
+      <xs:enumeration value="DRAFT"/>
+      <xs:enumeration value="BANK_RESPONSE"/>
+      <xs:enumeration value="AWAITING_COLLECTION"/>
+      <xs:enumeration value="CREDIT_REQUEST"/>
+      <xs:enumeration value="COMPLETED"/>
+      <xs:enumeration value="FAILED"/>
+      <xs:enumeration value="MANUAL_RESOLVE"/>
+      <xs:enumeration value="AWAITING_DEBIT_RES"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="agentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AGENT"/>
+      <xs:enumeration value="BANK_BRANCH"/>
+      <xs:enumeration value="SUPER_AGENT"/>
+      <xs:enumeration value="SUB_AGENT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="transactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PIN"/>
+      <xs:enumeration value="TOPUP"/>
+      <xs:enumeration value="DEPOSIT"/>
+      <xs:enumeration value="WITHDRAWAL"/>
+      <xs:enumeration value="WITHDRAWAL_NONHOLDER"/>
+      <xs:enumeration value="BALANCE"/>
+      <xs:enumeration value="DAYEND_RECEIPTS"/>
+      <xs:enumeration value="DAYEND_PAYOUTS"/>
+      <xs:enumeration value="DAYEND_UNDERPOST"/>
+      <xs:enumeration value="DAYEND_OVERPOST"/>
+      <xs:enumeration value="PASSCODE"/>
+      <xs:enumeration value="CUSTOMER_ACTIVATION"/>
+      <xs:enumeration value="CHANGE_PASSCODE"/>
+      <xs:enumeration value="MINI_STATEMENT"/>
+      <xs:enumeration value="REFERRAL"/>
+      <xs:enumeration value="TARIFF"/>
+      <xs:enumeration value="EWALLET_TO_NON_HOLDER_TRANSFER"/>
+      <xs:enumeration value="BANKACCOUNT_TO_BANKACCOUNT_TRANSFER"/>
+      <xs:enumeration value="BANKACCOUNT_TO_EWALLET_TRANSFER"/>
+      <xs:enumeration value="BANKACCOUNT_TO_NONHOLDER_TRANSFER"/>
+      <xs:enumeration value="EWALLET_TO_EWALLET_TRANSFER"/>
+      <xs:enumeration value="EWALLET_TO_BANKACCOUNT_TRANSFER"/>
+      <xs:enumeration value="BALANCE_REQUEST"/>
+      <xs:enumeration value="BILLPAY"/>
+      <xs:enumeration value="EWALLET_BILLPAY"/>
+      <xs:enumeration value="EWALLET_TOPUP"/>
+      <xs:enumeration value="ENTITY_DOWNLOAD"/>
+      <xs:enumeration value="MERCHANT_REG"/>
+      <xs:enumeration value="AGENT_CUSTOMER_DEPOSIT"/>
+      <xs:enumeration value="AGENT_CUSTOMER_WITHDRAWAL"/>
+      <xs:enumeration value="SUPERAGENT_EWALLET_TRANSFER"/>
+      <xs:enumeration value="COMMISSION_TRANSFER"/>
+      <xs:enumeration value="ALERT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="transactionLocationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BANK_BRANCH"/>
+      <xs:enumeration value="AGENT"/>
+      <xs:enumeration value="ATM"/>
+      <xs:enumeration value="SMS"/>
+      <xs:enumeration value="USSD"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="transferType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INTERBANK"/>
+      <xs:enumeration value="INTRABANK"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="txnSuperType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DEPOSIT"/>
+      <xs:enumeration value="WITHDRAWAL"/>
+      <xs:enumeration value="TRANSFER"/>
+      <xs:enumeration value="BALANCE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="mobileNetworkOperator">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ECONET"/>
+      <xs:enumeration value="NETONE"/>
+      <xs:enumeration value="TELECEL"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="txnFamily">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TRANSFERS"/>
+      <xs:enumeration value="DEPOSITS"/>
+      <xs:enumeration value="WITHDRAWALS"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
